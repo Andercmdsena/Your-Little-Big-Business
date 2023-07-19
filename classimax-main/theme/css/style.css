@@ -6,22 +6,12 @@
  */
 
 /*=== MEDIA QUERY ===*/
-<<<<<<< HEAD
-@import url("https://fonts.googleapis.com/css2?family=Poiret+One&display=swap");
-body {
-  line-height: 1.5;
-  font-family: 'Poiret One', cursive
-}
-* {
-  font-family: 'Poiret One', cursive;
-  color: #000;
-=======
+
 @import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poiret+One&family=Varela+Round&display=swap');
 body {
   line-height: 1.5;
   font-family: 'Poiret One', cursive;
->>>>>>> aa4c88ec1959af11e6d9e84b1c42968c13c7b80c
 }
 
 p, li, input, select, button {

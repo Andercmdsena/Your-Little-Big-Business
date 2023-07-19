@@ -10,7 +10,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poiret+One&family=Varela+Round&display=swap');
 body {
   line-height: 1.5;
-  font-family: "Muli", sans-serif;
+  font-family: 'Poiret One', cursive;
 }
 
 p, li, input, select, button {
@@ -54,6 +54,20 @@ label {
   font-size: 14px;
   letter-spacing: 0;
   color: #848484;
+}
+
+#navbarSupportedContent > ul > li{
+  font-family: 'Poiret One', cursive; 
+  font-size: 1.2rem;
+}
+
+#navbarSupportedContent > ul > li a{
+  font-size: 1.2rem;
+}
+
+.dropdown-menu li a{
+  font-family: 'Poiret One', cursive; 
+  font-size: 1.2rem;
 }
 
 .nav-pills .nav-link {

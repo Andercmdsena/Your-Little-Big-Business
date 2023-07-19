@@ -6,7 +6,8 @@
  */
 
 /*=== MEDIA QUERY ===*/
-@import url("https://fonts.googleapis.com/css?family=Muli:300,400,600,700,800,900");
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&family=Varela+Round&display=swap');
 body {
   line-height: 1.5;
   font-family: "Muli", sans-serif;
@@ -2292,3 +2293,51 @@ form textarea {
   }
 }
 /*# sourceMappingURL=style.css.map */
+
+.border{
+  border-radius: 20px;
+  width: 600px;
+  box-shadow:  7px 7px 59px #d5d5d5,
+             -7px -7px 59px #ebebeb;
+  
+}
+
+#content-main
+{
+  padding-top: 160px;
+}
+
+.border h3{
+  border-top-left-radius: 20px ;
+  border-top-right-radius: 20px ;
+
+}
+
+#ilustracion_login{
+  height: 580px;
+  margin-left: 200px;
+  width: 650px;
+}
+
+
+
+fieldset button
+{
+  margin-left: 24%;
+  width: 300px;
+}
+
+
+#btn-google{
+  border: 1px solid #bdd0ff;
+  font-family: 'Poiret One', cursive;
+  font-size:1.2rem;
+  font-weight:600;
+}
+
+#btn-ingresar{
+  background: #bdd0ff;
+  font-family: 'Poiret One', cursive;
+  font-size:1.2rem; 
+  font-weight:600;
+}

@@ -2333,6 +2333,11 @@ fieldset button
   font-family: 'Poiret One', cursive;
   font-size:1.2rem;
   font-weight:600;
+  transition: all 0.2s ease;
+}
+
+#btn-google:hover{
+  background-color: rgba(222, 222, 222, 0.313);
 }
 
 #btn-ingresar{
@@ -2340,4 +2345,11 @@ fieldset button
   font-family: 'Poiret One', cursive;
   font-size:1.2rem; 
   font-weight:600;
+  transition: all 0.2s ease;
+}
+
+#btn-ingresar:hover{
+  background: none;
+  border: 1px solid #bdd0ff;
+
 }

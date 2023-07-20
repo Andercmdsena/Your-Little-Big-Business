@@ -1,0 +1,94 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&family=Varela+Round&display=swap');
+
+body {
+  line-height: 1.5;
+  font-family: 'Poiret One', cursive;
+}
+
+.footer {
+    background: #BDD0FF;
+  }
+  .footer .block h4 {
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 25px;
+  }
+  .footer .block.about img {
+    margin-bottom: 25px;
+  }
+  .footer .block.about p {
+    line-height: 26px;
+  }
+  .footer .block ul li {
+    margin-bottom: 10px;
+  }
+  .footer .block ul li a {
+    display: block;
+    font-size: 14px;
+    color: #797979;
+  }
+  .footer .block ul li a:hover {
+    color: #5672f9;
+    text-decoration: underline;
+  }
+  .footer .block ul.terms-list {
+    margin-top: 10px;
+  }
+  .footer .block ul.terms-list li a {
+    padding-right: 10px;
+  }
+  .footer .block-2 {
+    padding: 18px 30px;
+    background: #BDD0FF;
+    border-radius: 2px;
+  }
+  .footer .block-2.app-promotion {
+    margin-bottom: 20px;
+  }
+  .footer .block-2.app-promotion p {
+    margin-left: 20px;
+    color: #fff;
+  }
+  .footer .block-2.discount-coupon p {
+    color: #fff;
+    margin-bottom: 0;
+  }
+  .footer .block-2.discount-coupon p a {
+    color: #5672f9;
+  }
+  
+  .footer-bottom {
+    position: relative;
+    background: #a8c0ff;
+    padding: 25px 0;
+  }
+  @media (max-width: 480px) {
+    .footer-bottom {
+      text-align: center;
+    }
+  }
+  .footer-bottom .copyright p {
+    color: #c7c7c7;
+    margin-bottom: 0;
+  }
+  .footer-bottom .social-media-icons {
+    margin-right: -20px;
+  }
+  @media (max-width: 992px) {
+    .footer-bottom .social-media-icons {
+      margin-right: 0;
+    }
+  }
+  .footer-bottom .social-media-icons li {
+    display: inline-block;
+  }
+  .footer-bottom .social-media-icons li a {
+    color: #000000;
+    padding: 0 20px;
+  }
+  .footer-bottom .social-media-icons li a:hover {
+    color: #fff !important;
+    text-decoration: none;
+  }

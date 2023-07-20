@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&family=Varela+Round&display=swap');
+
+body {
+  line-height: 1.5;
+  font-family: 'Poiret One', cursive;
+}
+
+#btn-google{
+    border: 1px solid #bdd0ff;
+    font-family: 'Poiret One', cursive;
+    font-size:1.2rem;
+    font-weight:600;
+    transition: all 0.2s ease;
+  }
+  
+  #btn-google:hover{
+    background-color: rgba(222, 222, 222, 0.313);
+  }
+  
+  #btn-ingresar{
+    background: #bdd0ff;
+    font-family: 'Poiret One', cursive;
+    font-size:1.2rem; 
+    font-weight:600;
+    transition: all 0.2s ease;
+  }
+  
+  #btn-ingresar:hover{
+    background: none;
+    border: 1px solid #bdd0ff;
+  
+  }

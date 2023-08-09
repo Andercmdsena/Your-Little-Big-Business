@@ -102,7 +102,9 @@ Essential Scripts
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU" defer></script>
   <script src="plugins/google-map/map.js" defer></script>
 
+  <!-- controlador de login con Google -->
   <script src="js/script.js"></script>
+  <script type="module" src="../controller/firebase/signIn.js"></script>
 
 </body>
 

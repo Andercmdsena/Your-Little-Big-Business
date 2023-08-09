@@ -7,7 +7,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<nav class="navbar navbar-expand-lg navbar-light navigation">
-					<a class="navbar-brand" href="index.html">
+					<a id="logo" class="navbar-brand" href="index.php">
 						<img src="images/Mi proyecto.png" alt="" style="width: 50px ; height: 50px;">
 					</a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -17,7 +17,7 @@
 					</button>
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
 						<ul class="navbar-nav ml-auto main-nav ">
-							<li class="nav-item active">
+							<li id="home" class="nav-item active">
 								<a class="nav-link" href="index.php">Home</a>
 							</li>
 							<li class="nav-item @@pages">
@@ -40,13 +40,13 @@
 							</li>
 						</ul>
 						<ul class="navbar-nav ml-auto mt-10">
-							<li id="login-btn" class="nav-item">
+							<li id="login-btn" class="nav-item d-block pt-4">
 								<a class="nav-link login-button" href="login.php">Login</a>
 							</li>
-							<li id="signup-btn" class="nav-item">
+							<li id="signup-btn" class="nav-item d-block pt-4">
 								<a class="nav-link text-white add-button" href="register.php">Ingresar</a>
 							</li>
-							<li id="carrito"><a class="nav-link" href="#">Carrito</a></li>
+							<li class="nav-item d-block pt-4" id="carrito"><a class="nav-link" href="#">Carrito</a></li>
 						</ul>
 
 					</div>

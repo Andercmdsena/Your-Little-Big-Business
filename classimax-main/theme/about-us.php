@@ -1,3 +1,5 @@
+<?php include_once("../controller/Main.php")  ?>
+
 <!DOCTYPE html>
 
 <!--
@@ -46,6 +48,10 @@
 
 
 <?php include("../components/header.php") ?>
+    <!-- capturar nombre de usuario -->
+    <script>
+      let userName = <?php echo json_encode($nameUser); ?>;
+    </script>
 
 <!--================================
 =            Page Title            =
@@ -196,6 +202,8 @@ Essential Scripts
 <script src="plugins/google-map/map.js" defer></script>
 
 <script src="js/script.js"></script>
+<script type="module" src="../controller/firebase/main.js"></script>
+
 
 </body>
 

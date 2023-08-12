@@ -55,11 +55,15 @@
         <div class="border border" style="border-radius: 20px;">
           
           <h3 class="bg-gray p-4" style="border-top-left-radius: 20px; border-top-right-radius: 20px; background-color: #BDD0FF;">Registrate</h3>
-          <form action="#">
+          <form action="../controller/insertarUs.php" method="post">
             <fieldset class="p-4">
-              <input class="form-control mb-3" type="email" placeholder="Email*" required>
-              <input class="form-control mb-3" type="password" placeholder="Password*" required>
-              <input class="form-control mb-3" type="password" placeholder="Confirm Password*" required>
+              <input class="form-control mb-3" type="text"name="email" placeholder="Email*" required>
+              <input class="form-control mb-3" type="text" name="clave" placeholder="Password*" required>
+              <input class="form-control mb-3" type="text" name="con_clave" placeholder="Confirm Password*" required>
+              <select name="rol" id="">
+                <option value="Cliente">Cliente</option>
+                <option value="Emprendedor">Emprendedor</option>
+              </select>
               <div class="loggedin-forgot d-inline-flex my-3">
                 <input type="checkbox" id="registering" class="mt-1">
                 <label for="registering" class="px-2">Al registrate acepta nuestros <a class="text-primary font-weight-bold" href="terms-condition.html">Terminos y condiciones</a></label>
@@ -73,6 +77,7 @@
   </div>
 </section>
 
+    
 <!-- 
 Essential Scripts
 =====================================-->

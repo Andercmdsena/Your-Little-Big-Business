@@ -51,11 +51,12 @@
       <div class="col-lg-5 border p-0">
         <h3 style="background-color: #bdd0ff; font-family: 'Poiret One', cursive;font-size: 1.5rem;"
           class="p-4 text-center w-100">Ingresar</h3>
-        <form class="py-4 text-center" action="#">
+
+        <form class="py-4 text-center" action="../controller/iniciarSesion.php" method="post">
           <fieldset class="p-4 ">
-            <input style="font-size:1.2rem; font-weight:400; font-family: 'Poiret One', cursive;"
+            <input name="email" style="font-size:1.2rem; font-weight:400; font-family: 'Poiret One', cursive;"
               class="form-control mb-3" type="text" placeholder="Username" required>
-            <input style="font-size:1.2rem; font-weight:400; font-family: 'Poiret One', cursive;"
+            <input name="clave" style="font-size:1.2rem; font-weight:400; font-family: 'Poiret One', cursive;"
               class="form-control mb-3" type="password" placeholder="Password" required>
             <button id="btn-ingresar" type="submit" class="btn font-weight-bold w-75 mt-3">Log in</button>
             <a style="font-family: 'Poiret One', cursive; font-size:1.2rem; font-weight:600"

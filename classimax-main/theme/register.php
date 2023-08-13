@@ -58,13 +58,15 @@
           <form action="../controller/insertarUs.php" method="post">
             <fieldset class="p-4">
               <input class="form-control mb-3" type="text"name="email" placeholder="Email*" required>
-              <input class="form-control mb-3" type="text" name="clave" placeholder="Password*" required>
-              <input class="form-control mb-3" type="text" name="con_clave" placeholder="Confirm Password*" required>
+              <input class="form-control mb-3" type="password" name="clave" id="clave" placeholder="Password*" required>
+              <input class="form-control mb-3" type="password" id="con_clave" name="con_clave" placeholder="Confirm Password*" required>
               <select name="rol" id="">
                 <option value="Cliente">Cliente</option>
                 <option value="Emprendedor">Emprendedor</option>
               </select>
               <div class="loggedin-forgot d-inline-flex my-3">
+                <input type="checkbox" id="mostrar_contraseña">
+                <label for="">Mostrar  contraseña</label>
                 <input type="checkbox" id="registering" class="mt-1">
                 <label for="registering" class="px-2">Al registrate acepta nuestros <a class="text-primary font-weight-bold" href="terms-condition.html">Terminos y condiciones</a></label>
               </div>
@@ -77,6 +79,28 @@
   </div>
 </section>
 
+<script>
+  const obt = document.getElementById('mostrar_contraseña');
+  const ver = document.getElementById('clave');
+
+  obt.addEventListener("change", function(){
+    if (obt.checked){
+      ver.type = "text";
+    }else{
+      ver.type = "password"
+    }
+  });
+  const obt2 = document.getElementById('mostrar_contraseña');
+  const ver2 = document.getElementById('con_clave');
+
+  obt2.addEventListener("change", function(){
+    if (obt2.checked){
+      ver2.type = "text";
+    }else{
+      ver2.type = "password"
+    }
+  });
+</script>
     
 <!-- 
 Essential Scripts

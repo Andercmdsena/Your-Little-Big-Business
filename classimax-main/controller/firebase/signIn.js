@@ -18,9 +18,12 @@ const signIn = async () => {
     
     const signInWithGoogle = async (provider) => {
         let res = await signInWithPopup(auth, provider)
-
+        return res;
     }
-    await signInWithGoogle(provider);   
+    let result = await signInWithGoogle(provider);   
+    if(result?.user){
+        location.href = "modal-role.php";
+    }
 }
 
 btnSignIn.addEventListener('click', () => {
@@ -36,7 +39,7 @@ btnSignIn.addEventListener('click', () => {
 //--------------------------------------------------
 //--------------------------------------------------
 
-window.addEventListener('DOMContentLoaded', () => {
+/* window.addEventListener('DOMContentLoaded', () => {
     onAuthStateChanged(auth, (user) => {
         if (user) {
             
@@ -45,6 +48,6 @@ window.addEventListener('DOMContentLoaded', () => {
             console.log("Not logged");
         }
     })
-})
+}) */
 
 

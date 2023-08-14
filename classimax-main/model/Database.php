@@ -1,8 +1,10 @@
 <?php
 
-require_once __DIR__ . '/../vendor/autoload.php';
+//require_once __DIR__ . '/../vendor/autoload.php';
 
-Dotenv\Dotenv::createUnsafeImmutable(__DIR__ . "/../")->load();
+//Dotenv\Dotenv::createUnsafeImmutable(__DIR__ . "/../")->load();
+
+include("../constants/constants.php");
 
 class Database {
     private string $host;
@@ -11,9 +13,9 @@ class Database {
     private string $password = '';
 
     public function __construct(){
-        $this->host = getenv('DB_HOST');
-        $this->dbname = getenv('DB_NAME');
-        $this->user = getenv('DB_USER');
+        $this->host = DB_HOST;
+        $this->dbname = DB_NAME;
+        $this->user = DB_USER;
     }
 
     public function connect() : object{

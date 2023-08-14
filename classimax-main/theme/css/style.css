@@ -545,7 +545,7 @@ ul.pagination .active a {
 }
 
 .bg-1 {
-  background: url("../images/home/hero.jpg");
+  background: url("../images/home/herop.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -1935,3 +1935,102 @@ form textarea {
 }
 /*# sourceMappingURL=style.css.map */
 
+#hero li a{
+  padding: 18px;
+  font-size: 15px;
+  font-family: 'Poiret One', cursive;
+  font-weight: bold;
+  background-color: rgba(128, 128, 128, 0.575);
+
+}
+
+#hero li a:hover{
+  background-color: #BDD0FF;
+  color: black;
+
+}
+
+#hero p{
+  margin-bottom: 60px;
+}
+/* ----------------Estilos del index.php--------------------- */
+#busqueda_avanzada{
+  background-color: #BDD0FF;
+  border-radius: 25px;
+}
+
+#busqueda_avanzada span{
+  font-family: 'Poiret One', cursive;
+  font-weight: bold;
+}
+
+#busqueda_avanzada input{
+  font-family: 'Poiret One', cursive;
+  font-weight: bold;
+}
+#busqueda_avanzada input:focus{
+  border: 1px solid black;
+}
+
+
+#busqueda_avanzada ul li{
+  font-family: 'Poiret One', cursive;
+  font-weight: bold;
+}
+#busqueda_avanzada select option{
+  border: 1px solid black;
+}
+#busqueda_avanzada button{
+  font-family: 'Poiret One', cursive;
+  font-weight: bold;
+  background-color: #00221C;
+  color: rgb(255, 255, 255);
+  border: none;
+  transition: 0.5s;
+}
+
+#busqueda_avanzada button::before {
+  /* ... otros estilos ... */
+  will-change: transform; /* Indicar que habrá cambios en la transformación */
+}
+#busqueda_avanzada button:hover{
+  transform: scale(1.04);
+}
+
+/* ---------------------------Carrusel de productos que esta en el index.php--------------- */
+#carrusel_index h2{
+  font-family: 'Varela Round', sans-serif;
+  font-weight: bold;
+}
+#carrusel_index p{
+  font-family: 'Poiret One', cursive;
+  font-weight: bold;
+  color: black;
+}
+
+/* ------------------------------Seccion de categorias index.php ----------------*/
+
+#seccion_categoria h4{
+  font-family: 'Varela Round', sans-serif;
+  font-weight: bold;
+}
+#seccion_categoria h2{
+  font-family: 'Varela Round', sans-serif;
+  font-weight: bold;
+}
+#seccion_categoria p{
+  font-family: 'Varela Round', sans-serif;
+  font-weight: bold;
+}
+#seccion_categoria ul li{
+  font-family: 'Poiret One', cursive;
+  font-weight: bold;
+}
+
+.cat_item{
+  transition-duration: 0.5s;
+}
+.cat_item:hover{
+  transform: scale(1.05);
+  box-shadow: 1px 1px 12px black;
+}

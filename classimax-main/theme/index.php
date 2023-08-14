@@ -47,17 +47,17 @@
 =            Hero Area            =
 ================================-->
 
-<section class="hero-area bg-1 text-center overly">
+<section class="hero-area bg-1 text-center overly" id="hero">
 	<!-- Container Start -->
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
 				<!-- Header Contetnt -->
 				<div class="content-block">
-					<h1>Buy & Sell Near You </h1>
-					<p>Join the millions who buy and sell from each other <br> everyday in local communities around the world</p>
+					<h1>Encuentra todo lo que necesitas</h1>
+					<p>Explora nuestra amplia gama de productos y servicios <br> para encontrar todo lo que necesitas</p>
 					<div class="short-popular-category-list text-center">
-						<h2>Popular Category</h2>
+						<h2>Categorias</h2>
 						<ul class="list-inline">
 							<li class="list-inline-item">
 								<a href="category.html"><i class="fa fa-bed"></i> Hotel</a></li>
@@ -78,7 +78,7 @@
 
 				</div>
 				<!-- Advance Search -->
-				<div class="advance-search">
+				<div class="advance-search" id="busqueda_avanzada">
 					<div class="container">
 						<div class="row justify-content-center">
 							<div class="col-lg-12 col-md-12 align-content-center">
@@ -86,14 +86,14 @@
 									<div class="form-row">
 										<div class="form-group col-xl-4 col-lg-3 col-md-6">
 											<input type="text" class="form-control my-2 my-lg-1" id="inputtext4"
-												placeholder="What are you looking for">
+												placeholder="Que estas buscando?">
 										</div>
 										<div class="form-group col-lg-3 col-md-6">
 											<select class="w-100 form-control mt-lg-1 mt-md-2">
-												<option>Category</option>
-												<option value="1">Top rated</option>
-												<option value="2">Lowest Price</option>
-												<option value="4">Highest Price</option>
+												<option>Categoria</option>
+												<option value="1">Cocina y hogar</option>
+												<option value="2">Tecnologia</option>
+												<option value="4">libros</option>
 											</select>
 										</div>
 										<div class="form-group col-lg-3 col-md-6">
@@ -119,13 +119,13 @@
 =            Popular deals section            =
 ============================================-->
 
-<section class="popular-deals section bg-gray">
+<section class="popular-deals section bg-gray" id="carrusel_index">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
 				<div class="section-title">
-					<h2>Trending Adds</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas, magnam.</p>
+					<h2>Los mejores productos</h2>
+					<p>Vez algo que te guste o te llame la atención?</p>
 				</div>
 			</div>
 		</div>
@@ -140,20 +140,20 @@
 		<div class="thumb-content">
 			<!-- <div class="price">$200</div> -->
 			<a href="single.html">
-				<img class="card-img-top img-fluid" src="images/products/products-1.jpg" alt="Card image cap">
+				<img class="card-img-top img-fluid" src="images/products/portatil.jpg" alt="Card image cap">
 			</a>
 		</div>
 		<div class="card-body">
-		    <h4 class="card-title"><a href="single.html">11inch Macbook Air</a></h4>
+		    <h4 class="card-title"><a href="single.html">Computador gamer</a></h4>
 		    <ul class="list-inline product-meta">
 		    	<li class="list-inline-item">
-		    		<a href="single.html"><i class="fa fa-folder-open-o"></i>Electronics</a>
+		    		<a href="single.html"><i class="fa fa-folder-open-o"></i>Tecnologia</a>
 		    	</li>
 		    	<li class="list-inline-item">
-		    		<a href="category.html"><i class="fa fa-calendar"></i>26th December</a>
+		    		<a href="category.html"><i class="fa fa-calendar"></i>26 de Julion</a>
 		    	</li>
 		    </ul>
-		    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, aliquam!</p>
+		    <p class="card-text">La laptop GAMER: Experimenta un rendimiento sin igual en un diseño portátil.</p>
 		    <div class="product-ratings">
 		    	<ul class="list-inline">
 		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
@@ -177,20 +177,20 @@
 		<div class="thumb-content">
 			<!-- <div class="price">$200</div> -->
 			<a href="single.html">
-				<img class="card-img-top img-fluid" src="images/products/products-2.jpg" alt="Card image cap">
+				<img class="card-img-top img-fluid " src="images/products/celular.jpg" alt="Card image cap">
 			</a>
 		</div>
 		<div class="card-body">
-		    <h4 class="card-title"><a href="single.html">Full Study Table Combo</a></h4>
+		    <h4 class="card-title"><a href="single.html">Celular inteligente</a></h4>
 		    <ul class="list-inline product-meta">
 		    	<li class="list-inline-item">
-		    		<a href="single.html"><i class="fa fa-folder-open-o"></i>Furnitures</a>
+		    		<a href="single.html"><i class="fa fa-folder-open-o"></i>Tecnologia</a>
 		    	</li>
 		    	<li class="list-inline-item">
-		    		<a href="category.html"><i class="fa fa-calendar"></i>26th December</a>
+		    		<a href="category.html"><i class="fa fa-calendar"></i>11 de enero</a>
 		    	</li>
 		    </ul>
-		    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, aliquam!</p>
+		    <p class="card-text">Potencia y estilo en tu mano: un teléfono inteligente de calidad y para todo .</p>
 		    <div class="product-ratings">
 		    	<ul class="list-inline">
 		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
@@ -214,20 +214,20 @@
 		<div class="thumb-content">
 			<!-- <div class="price">$200</div> -->
 			<a href="single.html">
-				<img class="card-img-top img-fluid" src="images/products/products-3.jpg" alt="Card image cap">
+				<img class="card-img-top img-fluid" src="images/products/libro.jpg" alt="Card image cap">
 			</a>
 		</div>
 		<div class="card-body">
-		    <h4 class="card-title"><a href="single.html">11inch Macbook Air</a></h4>
+		    <h4 class="card-title"><a href="single.html">Libro de negocios</a></h4>
 		    <ul class="list-inline product-meta">
 		    	<li class="list-inline-item">
-		    		<a href="single.html"><i class="fa fa-folder-open-o"></i>Electronics</a>
+		    		<a href="single.html"><i class="fa fa-folder-open-o"></i>Libros</a>
 		    	</li>
 		    	<li class="list-inline-item">
-		    		<a href="category.html"><i class="fa fa-calendar"></i>26th December</a>
+		    		<a href="category.html"><i class="fa fa-calendar"></i>2 de febrero</a>
 		    	</li>
 		    </ul>
-		    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, aliquam!</p>
+		    <p class="card-text">Descubre estrategias probadas en este libro de negocios. Obtén ideas frescas para alcanzar el éxito.</p>
 		    <div class="product-ratings">
 		    	<ul class="list-inline">
 		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
@@ -251,20 +251,20 @@
 		<div class="thumb-content">
 			<!-- <div class="price">$200</div> -->
 			<a href="single.html">
-				<img class="card-img-top img-fluid" src="images/products/products-2.jpg" alt="Card image cap">
+				<img class="card-img-top img-fluid" src="images/products/bicicleta.jpg" alt="Card image cap">
 			</a>
 		</div>
 		<div class="card-body">
-		    <h4 class="card-title"><a href="single.html">Full Study Table Combo</a></h4>
+		    <h4 class="card-title"><a href="single.html">Bicicleta</a></h4>
 		    <ul class="list-inline product-meta">
 		    	<li class="list-inline-item">
-		    		<a href="single.html"><i class="fa fa-folder-open-o"></i>Furnitures</a>
+		    		<a href="single.html"><i class="fa fa-folder-open-o"></i>Hogar</a>
 		    	</li>
 		    	<li class="list-inline-item">
-		    		<a href="category.html"><i class="fa fa-calendar"></i>26th December</a>
+		    		<a href="category.html"><i class="fa fa-calendar"></i>23 de agosto</a>
 		    	</li>
 		    </ul>
-		    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, aliquam!</p>
+		    <p class="card-text">Libertad sobre ruedas: una bicicleta que combina rendimiento para explorar el mundo..</p>
 		    <div class="product-ratings">
 		    	<ul class="list-inline">
 		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
@@ -293,35 +293,35 @@
 =            All Category Section            =
 ===========================================-->
 
-<section class=" section">
+<section class=" section" id="seccion_categoria">
 	<!-- Container Start -->
 	<div class="container">
 		<div class="row">
 			<div class="col-12">
 				<!-- Section title -->
 				<div class="section-title">
-					<h2>All Categories</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, provident!</p>
+					<h2>Todas las categorias</h2>
+					<p>Todo lo que buscas y necesitas en la palma de tu mano, a un solo click</p>
 				</div>
 				<div class="row">
 					<!-- Category list -->
-					<div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6">
-						<div class="category-block">
+					<div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6 ">
+						<div class="category-block cat_item ">
 							<div class="header">
 								<i class="fa fa-laptop icon-bg-1"></i>
-								<h4>Electronics</h4>
+								<h4>Tecnologia</h4>
 							</div>
 							<ul class="category-list">
-								<li><a href="category.html">Laptops <span>93</span></a></li>
-								<li><a href="category.html">Iphone <span>233</span></a></li>
-								<li><a href="category.html">Microsoft <span>183</span></a></li>
-								<li><a href="category.html">Monitors <span>343</span></a></li>
+								<li><a href="category.html">Computadores <span>93</span></a></li>
+								<li><a href="category.html">Celulares<span>233</span></a></li>
+								<li><a href="category.html">Licencias<span>183</span></a></li>
+								<li><a href="category.html">Pantallas<span>343</span></a></li>
 							</ul>
 						</div>
 					</div> <!-- /Category List -->
 					<!-- Category list -->
 					<div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6">
-						<div class="category-block">
+						<div class="category-block cat_item ">
 							<div class="header">
 								<i class="fa fa-apple icon-bg-2"></i>
 								<h4>Restaurants</h4>
@@ -336,7 +336,7 @@
 					</div> <!-- /Category List -->
 					<!-- Category list -->
 					<div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6">
-						<div class="category-block">
+						<div class="category-block cat_item">
 							<div class="header">
 								<i class="fa fa-home icon-bg-3"></i>
 								<h4>Real Estate</h4>
@@ -351,7 +351,7 @@
 					</div> <!-- /Category List -->
 					<!-- Category list -->
 					<div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6">
-						<div class="category-block">
+						<div class="category-block cat_item">
 							<div class="header">
 								<i class="fa fa-shopping-basket icon-bg-4"></i>
 								<h4>Shoppings</h4>
@@ -366,7 +366,7 @@
 					</div> <!-- /Category List -->
 					<!-- Category list -->
 					<div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6">
-						<div class="category-block">
+						<div class="category-block cat_item">
 							<div class="header">
 								<i class="fa fa-briefcase icon-bg-5"></i>
 								<h4>Jobs</h4>
@@ -381,7 +381,7 @@
 					</div> <!-- /Category List -->
 					<!-- Category list -->
 					<div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6">
-						<div class="category-block">
+						<div class="category-block cat_item">
 							<div class="header">
 								<i class="fa fa-car icon-bg-6"></i>
 								<h4>Vehicles</h4>
@@ -396,7 +396,7 @@
 					</div> <!-- /Category List -->
 					<!-- Category list -->
 					<div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6">
-						<div class="category-block">
+						<div class="category-block cat_item">
 							<div class="header">
 								<i class="fa fa-paw icon-bg-7"></i>
 								<h4>Pets</h4>
@@ -411,7 +411,7 @@
 					</div> <!-- /Category List -->
 					<!-- Category list -->
 					<div class="col-lg-3 offset-lg-0 col-md-5 offset-md-1 col-sm-6">
-						<div class="category-block">
+						<div class="category-block cat_item">
 
 							<div class="header">
 								<i class="fa fa-laptop icon-bg-8"></i>

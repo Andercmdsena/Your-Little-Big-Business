@@ -2,17 +2,17 @@
 <link href="./plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="css/footer/footer.css">
 
-<footer class="footer section section-sm">
+<footer class="footer section section-sm primero_footer">
   <!-- Container Start -->
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-3 col-md-7 offset-md-1 offset-lg-0 mb-4 mb-lg-0">
+  <div class="container ">
+    <div class="row justify-content-around align-items-center">
+      <div class="col-lg-3 col-md-6 offset-md-1 offset-lg-0 mb-4 mb-lg-0">
         <!-- About -->
         <div class="block about">
           <!-- footer logo -->
           <img src="images/negrologo YLBB.png" alt="logo">
           <!-- description -->
-          <p class="alt-color" style="color:black; font-family: 'Poiret One', cursive; font-size: 20px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+          <p class="alt-color" style="color:black;font-weight:bold; font-family: 'Poiret One', cursive; font-size: 18px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
             laboris nisi ut aliquip ex ea commodo consequat.</p>
         </div>
@@ -41,12 +41,11 @@
             <li><a href="single-blog.html">Single Post</a>
             </li>
             <li><a href="blog.html">Blog</a></li>
-
-
-
           </ul>
         </div>
       </div>
+    </div>
+  </div>
 
   <!-- Container End -->
 </footer>

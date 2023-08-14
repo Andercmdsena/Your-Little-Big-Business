@@ -3,10 +3,10 @@
 <link rel="stylesheet" href="css/header/header.css">
 
 <header>
-	<div class="container">
+	<div class="container" id="menu">
 		<div class="row">
 			<div class="col-md-12">
-				<nav class="navbar navbar-expand-lg navbar-light navigation">
+				<nav class="navbar  navbar-expand-lg navbar-light navigation">
 					<a id="logo" class="navbar-brand" href="index.php">
 						<img src="images/Mi proyecto.png" alt="" style="width: 50px ; height: 50px;">
 					</a>
@@ -44,9 +44,9 @@
 								<a class="nav-link login-button" href="login.php">Login</a>
 							</li>
 							<li id="signup-btn" class="nav-item d-block pt-4">
-								<a class="nav-link text-white add-button" href="register.php">Ingresar</a>
+								<a class="nav-link ingresar-btn text-white add-button" href="register.php">Ingresar</a>
 							</li>
-							<li class="nav-item d-block pt-4" id="carrito"><a class="nav-link" href="#">Carrito</a></li>
+							<li class="nav-item d-block pt-4 carrito_boton" ><a class="nav-link carrito-btn" href="#">Carrito</a></li>
 						</ul>
 
 					</div>

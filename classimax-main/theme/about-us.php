@@ -14,7 +14,7 @@
 
   <!-- ** Basic Page Needs ** -->
   <meta charset="utf-8">
-  <title>Classimax | Classified Marketplace Template</title>
+  <title>YLBB | You little big business</title>
 
   <!-- ** Mobile Specific Metas ** -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,7 +24,7 @@
   <meta name="generator" content="Themefisher Classified Marketplace Template v1.0">
 
   <!-- favicon -->
-  <link href="images/favicon.png" rel="shortcut icon">
+  <link href="images/logoylbb.png" rel="shortcut icon">
 
   <!-- 
   Essential stylesheets
@@ -62,7 +62,7 @@
 		<div class="row">
 			<div class="col-md-8 offset-md-2 text-center">
 				<!-- Title text -->
-				<h3>About Us</h3>
+				<h3>Sobre nosotros</h3>
 			</div>
 		</div>
 	</div>
@@ -79,16 +79,15 @@
       </div>
       <div class="col-lg-6 pt-5 pt-lg-0">
         <div class="about-content">
-          <h3 class="font-weight-bold">Introduction</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc est justo, aliquam nec tempor
-            fermentum, commodo et libero. Quisque et rutrum arcu. Vivamus dictum tincidunt magna id
-            euismod. Nam sollicitudin mi quis orci lobortis feugiat.</p>
-          <h3 class="font-weight-bold">How we can help</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc est justo, aliquam nec tempor
-            fermentum, commodo et libero. Quisque et rutrum arcu. Vivamus dictum tincidunt magna id
-            euismod. Nam sollicitudin mi quis orci lobortis feugiat. Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit. Nunc est justo, aliquam nec tempor fermentum, commodo et libero. Quisque et rutrum arcu. Vivamus dictum
-            tincidunt magna id euismod. Nam sollicitudin mi quis orci lobortis feugiat.</p>
+          <h3 class="font-weight-bold">Equipo YLBB</h3>
+          <p>El equipo de YLBB esta conformado por estudiantes del SENA que cursan la carrera de analisis y desarrollo de 
+            sotfware en el centro de diseño y metrologia distrito capital. Los miembros del grupo son: Anderson Tovar, Juan pinilla,
+            Juan alvis, Samuel Diaz, Simon Sanchez y Edison Ramirez.
+          </p>
+          <h3 class="font-weight-bold">Como podemos ayudarle</h3>
+          <p>Nuestro grupo creo esta pagina con fin de ayudar a las pymes de Bogota D.C al poderles ofrecer esta pagina como metodo
+            de publicidad y venta de sus productos y servicios.
+          </p>
         </div>
       </div>
     </div>
@@ -100,15 +99,15 @@
     <div class="row">
       <div class="col-lg-12">
         <div class="heading text-center text-capitalize font-weight-bold py-5">
-          <h2>our team</h2>
+          <h2>Nuestro equipo</h2>
         </div>
       </div>
       <div class="col-lg-3 col-sm-6">
         <div class="card my-3 my-lg-0">
           <img class="card-img-top" src="images/team/team1.jpg" class="img-fluid w-100" alt="Card image cap">
           <div class="card-body bg-gray text-center">
-            <h5 class="card-title">John Doe</h5>
-            <p class="card-text">Founder / CEO</p>
+            <h5 class="card-title">Edison Ramirez</h5>
+            <p class="card-text">Desarrollador</p>
           </div>
         </div>
       </div>
@@ -116,8 +115,8 @@
         <div class="card my-3 my-lg-0">
           <img class="card-img-top" src="images/team/team2.jpg" class="img-fluid w-100" alt="Card image cap">
           <div class="card-body bg-gray text-center">
-            <h5 class="card-title">John Doe</h5>
-            <p class="card-text">Founder / CEO</p>
+            <h5 class="card-title">Juan Alvis</h5>
+            <p class="card-text">Desarrolador</p>
           </div>
         </div>
       </div>
@@ -125,8 +124,8 @@
         <div class="card my-3 my-lg-0">
           <img class="card-img-top" src="images/team/team3.jpg" class="img-fluid w-100" alt="Card image cap">
           <div class="card-body bg-gray text-center">
-            <h5 class="card-title">John Doe</h5>
-            <p class="card-text">Founder / CEO</p>
+            <h5 class="card-title">Anderson tovar</h5>
+            <p class="card-text">Desarrollador</p>
           </div>
         </div>
       </div>
@@ -134,8 +133,8 @@
         <div class="card my-3 my-lg-0">
           <img class="card-img-top" src="images/team/team4.jpg" class="img-fluid w-100" alt="Card image cap">
           <div class="card-body bg-gray text-center">
-            <h5 class="card-title">John Doe</h5>
-            <p class="card-text">Founder / CEO</p>
+            <h5 class="card-title">Samuel Diaz </h5>
+            <p class="card-text">Desarrollador</p>
           </div>
         </div>
       </div>
@@ -150,29 +149,29 @@
         <div class="counter-content text-center bg-light py-4 rounded">
           <i class="fa fa-smile-o d-block"></i>
           <span class="counter my-2 d-block" data-count="2314">0</span>
-          <h5>Happy Customers</h5>
+          <h5>Clientes felices</h5>
           </script>
         </div>
       </div>
       <div class="col-lg-3 col-sm-6 my-lg-0 my-3">
         <div class="counter-content text-center bg-light py-4 rounded">
           <i class="fa fa-user-o d-block"></i>
-          <span class="counter my-2 d-block" data-count="1013">0</span>
-          <h5>Active Members</h5>
+          <span class="counter my-2 d-block" data-count="5">0</span>
+          <h5>Miembros activos</h5>
         </div>
       </div>
       <div class="col-lg-3 col-sm-6 my-lg-0 my-3">
         <div class="counter-content text-center bg-light py-4 rounded">
           <i class="fa fa-bookmark-o d-block"></i>
           <span class="counter my-2 d-block" data-count="2413">0</span>
-          <h5>Verified Ads</h5>
+          <h5>Pymes</h5>
         </div>
       </div>
       <div class="col-lg-3 col-sm-6 my-lg-0 my-3">
         <div class="counter-content text-center bg-light py-4 rounded">
           <i class="fa fa-smile-o d-block"></i>
           <span class="counter my-2 d-block" data-count="200">0</span>
-          <h5>Happy Customers</h5>
+          <h5>Valoraciones</h5>
         </div>
       </div>
     </div>

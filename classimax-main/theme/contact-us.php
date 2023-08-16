@@ -12,7 +12,7 @@
 
   <!-- ** Basic Page Needs ** -->
   <meta charset="utf-8">
-  <title>Classimax | Classified Marketplace Template</title>
+  <title>YLBB | You little big business</title>
 
   <!-- ** Mobile Specific Metas ** -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,7 +22,7 @@
   <meta name="generator" content="Themefisher Classified Marketplace Template v1.0">
 
   <!-- favicon -->
-  <link href="images/favicon.png" rel="shortcut icon">
+  <link href="images/logoylbb.png" rel="shortcut icon">
 
   <!-- 
   Essential stylesheets
@@ -56,7 +56,7 @@
 		<div class="row">
 			<div class="col-md-8 offset-md-2 text-center">
 				<!-- Title text -->
-				<h3>Contact Us</h3>
+				<h3>Contactanos</h3>
 			</div>
 		</div>
 	</div>
@@ -70,7 +70,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="contact-us-content p-4">
-                    <h5>Contact Us</h5>
+                    <h5>Sobre nosotros</h5>
                     <h1 class="pt-3">Hello, what's on your mind?</h1>
                     <p class="pt-3 pb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla elit dolor, blandit vel euismod ac, lentesque et dolor. Ut id tempus ipsum.</p>
                 </div>

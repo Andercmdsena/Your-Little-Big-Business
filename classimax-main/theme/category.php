@@ -14,7 +14,7 @@
 
   <!-- ** Basic Page Needs ** -->
   <meta charset="utf-8">
-  <title>Classimax | Classified Marketplace Template</title>
+  <title>YLBB | You little big business</title>
 
   <!-- ** Mobile Specific Metas ** -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,7 +24,7 @@
   <meta name="generator" content="Themefisher Classified Marketplace Template v1.0">
 
   <!-- favicon -->
-  <link href="images/favicon.png" rel="shortcut icon">
+  <link href="images/logoylbb.png" rel="shortcut icon">
 
   <!-- 
   Essential stylesheets
@@ -60,10 +60,10 @@
 							</div>
 							<div class="form-group col-lg-3 col-md-6">
 								<select class="w-100 form-control my-2 my-lg-0">
-									<option>Category</option>
-									<option value="1">Top rated</option>
-									<option value="2">Lowest Price</option>
-									<option value="4">Highest Price</option>
+									<option>Categoria</option>
+									<option value="1">Mejor valorado</option>
+									<option value="2">Menor precio</option>
+									<option value="4">Mayor precio</option>
 								</select>
 							</div>
 							<div class="form-group col-lg-3 col-md-6">
@@ -71,7 +71,7 @@
 							</div>
 							<div class="form-group col-xl-2 col-lg-3 col-md-6">
 
-								<button type="submit" class="btn btn-primary active w-100">Search Now</button>
+								<button type="submit" class="btn btn-primary active w-100">Buscar</button>
 							</div>
 						</div>
 					</form>
@@ -85,8 +85,8 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="search-result bg-gray">
-					<h2>Results For "Electronics"</h2>
-					<p>123 Results on 12 December, 2017</p>
+					<h2>Resultados</h2>
+					<p></p>
 				</div>
 			</div>
 		</div>
@@ -94,72 +94,72 @@
 			<div class="col-lg-3 col-md-4">
 				<div class="category-sidebar">
 					<div class="widget category-list">
-	<h4 class="widget-header">All Category</h4>
+	<h4 class="widget-header">Todas las categorias</h4>
 	<ul class="category-list">
-		<li><a href="category.html">Laptops <span>93</span></a></li>
+		<li><a href="category.html">Portatiles <span>93</span></a></li>
 		<li><a href="category.html">Iphone <span>233</span></a></li>
 		<li><a href="category.html">Microsoft  <span>183</span></a></li>
-		<li><a href="category.html">Monitors <span>343</span></a></li>
+		<li><a href="category.html">Monitores <span>343</span></a></li>
 	</ul>
 </div>
 
 <div class="widget category-list">
-	<h4 class="widget-header">Nearby</h4>
+	<h4 class="widget-header">Localidades</h4>
 	<ul class="category-list">
-		<li><a href="category.html">New York <span>93</span></a></li>
-		<li><a href="category.html">New Jersy <span>233</span></a></li>
-		<li><a href="category.html">Florida  <span>183</span></a></li>
-		<li><a href="category.html">California <span>120</span></a></li>
-		<li><a href="category.html">Texas <span>40</span></a></li>
-		<li><a href="category.html">Alaska <span>81</span></a></li>
+		<li><a href="category.html">Kennedy<span>93</span></a></li>
+		<li><a href="category.html">Engativa<span>233</span></a></li>
+		<li><a href="category.html">Bosa<span>183</span></a></li>
+		<li><a href="category.html">Suba<span>120</span></a></li>
+		<li><a href="category.html">Puente aranda<span>40</span></a></li>
+		<li><a href="category.html">Ciudad bolivar<span>81</span></a></li>
 	</ul>
 </div>
 
 <div class="widget filter">
-	<h4 class="widget-header">Show Produts</h4>
+	<h4 class="widget-header">Mostrar productos</h4>
 	<select>
-		<option>Popularity</option>
-		<option value="1">Top rated</option>
-		<option value="2">Lowest Price</option>
-		<option value="4">Highest Price</option>
+		<option>Popularidad</option>
+		<option value="1">Mejor valorado</option>
+		<option value="2">Menor precio</option>
+		<option value="4">Mayor precio</option>
 	</select>
 </div>
 
 <div class="widget price-range w-100">
-	<h4 class="widget-header">Price Range</h4>
+	<h4 class="widget-header">Rango de precios</h4>
 	<div class="block">
-						<input class="range-track w-100" type="text" data-slider-min="0" data-slider-max="5000" data-slider-step="5"
-						data-slider-value="[0,5000]">
+						<input class="range-track w-100" type="text" data-slider-min="0" data-slider-max="1.000.000" data-slider-step="#"
+						data-slider-value="[0,1.000.000]">
 				<div class="d-flex justify-content-between mt-2">
-						<span class="value">$10 - $5000</span>
+						<span class="value">$0 - $1.000.000</span>
 				</div>
 	</div>
 </div>
 
 <div class="widget product-shorting">
-	<h4 class="widget-header">By Condition</h4>
+	<h4 class="widget-header">Condicion del producto</h4>
 	<div class="form-check">
 	  <label class="form-check-label">
 	    <input class="form-check-input" type="checkbox" value="">
-	    Brand New
+	    Nuevo
 	  </label>
 	</div>
 	<div class="form-check">
 	  <label class="form-check-label">
 	    <input class="form-check-input" type="checkbox" value="">
-	    Almost New
+	    Poco usado
 	  </label>
 	</div>
 	<div class="form-check">
 	  <label class="form-check-label">
 	    <input class="form-check-input" type="checkbox" value="">
-	    Gently New
+	  Usado
 	  </label>
 	</div>
 	<div class="form-check">
 	  <label class="form-check-label">
 	    <input class="form-check-input" type="checkbox" value="">
-	    Havely New
+	    Desgaste
 	  </label>
 	</div>
 </div>
@@ -170,17 +170,17 @@
 				<div class="category-search-filter">
 					<div class="row">
 						<div class="col-md-6 text-center text-md-left">
-							<strong>Short</strong>
+							<strong>Filtrar</strong>
 							<select>
-								<option>Most Recent</option>
-								<option value="1">Most Popular</option>
-								<option value="2">Lowest Price</option>
-								<option value="4">Highest Price</option>
+								<option>Mas reciente</option>
+								<option value="1">Mas popular</option>
+								<option value="2">Menor precio</option>
+								<option value="4">Mayor precio</option>
 							</select>
 						</div>
 						<div class="col-md-6 text-center text-md-right mt-2 mt-md-0">
 							<div class="view">
-								<strong>Views</strong>
+								<strong>Ver</strong>
 								<ul class="list-inline view-switcher">
 									<li class="list-inline-item">
 										<a href="#!" onclick="event.preventDefault();" class="text-info"><i class="fa fa-th-large"></i></a>
@@ -206,16 +206,16 @@
 			</a>
 		</div>
 		<div class="card-body">
-		    <h4 class="card-title"><a href="single.html">11inch Macbook Air</a></h4>
+		    <h4 class="card-title"><a href="single.html">Cama</a></h4>
 		    <ul class="list-inline product-meta">
 		    	<li class="list-inline-item">
-		    		<a href="single.html"><i class="fa fa-folder-open-o"></i>Electronics</a>
+		    		<a href="single.html"><i class="fa fa-folder-open-o"></i>Para el hogar</a>
 		    	</li>
 		    	<li class="list-inline-item">
-		    		<a href="category.html"><i class="fa fa-calendar"></i>26th December</a>
+		    		<a href="category.html"><i class="fa fa-calendar"></i>26 de diciembre</a>
 		    	</li>
 		    </ul>
-		    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, aliquam!</p>
+		    <p class="card-text">Cama multiplex</p>
 		    <div class="product-ratings">
 		    	<ul class="list-inline">
 		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
@@ -243,16 +243,16 @@
 			</a>
 		</div>
 		<div class="card-body">
-		    <h4 class="card-title"><a href="single.html">Study Table Combo</a></h4>
+		    <h4 class="card-title"><a href="single.html">Combo de mesa de estudio</a></h4>
 		    <ul class="list-inline product-meta">
 		    	<li class="list-inline-item">
-		    		<a href="single.html"><i class="fa fa-folder-open-o"></i>Furnitures</a>
+		    		<a href="single.html"><i class="fa fa-folder-open-o"></i>Estanteria</a>
 		    	</li>
 		    	<li class="list-inline-item">
-		    		<a href="category.html"><i class="fa fa-calendar"></i>26th December</a>
+		    		<a href="category.html"><i class="fa fa-calendar"></i>26 de diciembre</a>
 		    	</li>
 		    </ul>
-		    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, aliquam!</p>
+		    <p class="card-text">Mesa de estudio con combo de mesa de noche</p>
 		    <div class="product-ratings">
 		    	<ul class="list-inline">
 		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
@@ -280,16 +280,16 @@
 			</a>
 		</div>
 		<div class="card-body">
-		    <h4 class="card-title"><a href="single.html">11inch Macbook Air</a></h4>
+		    <h4 class="card-title"><a href="single.html">Cama</a></h4>
 		    <ul class="list-inline product-meta">
 		    	<li class="list-inline-item">
-		    		<a href="single.html"><i class="fa fa-folder-open-o"></i>Electronics</a>
+		    		<a href="single.html"><i class="fa fa-folder-open-o">Para el hogar</i></a>
 		    	</li>
 		    	<li class="list-inline-item">
-		    		<a href="category.html"><i class="fa fa-calendar"></i>26th December</a>
+		    		<a href="category.html"><i class="fa fa-calendar"></i>26 de diciembre</a>
 		    	</li>
 		    </ul>
-		    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, aliquam!</p>
+		    <p class="card-text">Cama multiplexe</p>
 		    <div class="product-ratings">
 		    	<ul class="list-inline">
 		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
@@ -317,16 +317,16 @@
 			</a>
 		</div>
 		<div class="card-body">
-		    <h4 class="card-title"><a href="single.html">11inch Macbook Air</a></h4>
+		    <h4 class="card-title"><a href="single.html">Cama</a></h4>
 		    <ul class="list-inline product-meta">
 		    	<li class="list-inline-item">
-		    		<a href="single.html"><i class="fa fa-folder-open-o"></i>Electronics</a>
+		    		<a href="single.html"><i class="fa fa-folder-open-o"></i>Para el hogar</a>
 		    	</li>
 		    	<li class="list-inline-item">
-		    		<a href="category.html"><i class="fa fa-calendar"></i>26th December</a>
+		    		<a href="category.html"><i class="fa fa-calendar"></i>26 de diciembre</a>
 		    	</li>
 		    </ul>
-		    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, aliquam!</p>
+		    <p class="card-text">Cama multiplex</p>
 		    <div class="product-ratings">
 		    	<ul class="list-inline">
 		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
@@ -354,16 +354,16 @@
 			</a>
 		</div>
 		<div class="card-body">
-		    <h4 class="card-title"><a href="single.html">Study Table Combo</a></h4>
+		    <h4 class="card-title"><a href="single.html">Combo de mesa de estudio</a></h4>
 		    <ul class="list-inline product-meta">
 		    	<li class="list-inline-item">
 		    		<a href="single.html"><i class="fa fa-folder-open-o"></i>Furnitures</a>
 		    	</li>
 		    	<li class="list-inline-item">
-		    		<a href="category.html"><i class="fa fa-calendar"></i>26th December</a>
+		    		<a href="category.html"><i class="fa fa-calendar"></i>26 de diciembre</a>
 		    	</li>
 		    </ul>
-		    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, aliquam!</p>
+		    <p class="card-text">Mesa de estudio con combo de mesa de noche</p>
 		    <div class="product-ratings">
 		    	<ul class="list-inline">
 		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
@@ -391,16 +391,16 @@
 			</a>
 		</div>
 		<div class="card-body">
-		    <h4 class="card-title"><a href="single.html">11inch Macbook Air</a></h4>
+		    <h4 class="card-title"><a href="single.html">Cama</a></h4>
 		    <ul class="list-inline product-meta">
 		    	<li class="list-inline-item">
-		    		<a href="single.html"><i class="fa fa-folder-open-o"></i>Electronics</a>
+		    		<a href="single.html"><i class="fa fa-folder-open-o"></i>Para el hogar</a>
 		    	</li>
 		    	<li class="list-inline-item">
-		    		<a href="category.html"><i class="fa fa-calendar"></i>26th December</a>
+		    		<a href="category.html"><i class="fa fa-calendar"></i>26 de diciembre</a>
 		    	</li>
 		    </ul>
-		    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, aliquam!</p>
+		    <p class="card-text">Cama multiplex</p>
 		    <div class="product-ratings">
 		    	<ul class="list-inline">
 		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
@@ -428,16 +428,16 @@
 			</a>
 		</div>
 		<div class="card-body">
-		    <h4 class="card-title"><a href="single.html">11inch Macbook Air</a></h4>
+		    <h4 class="card-title"><a href="single.html">Cama</a></h4>
 		    <ul class="list-inline product-meta">
 		    	<li class="list-inline-item">
-		    		<a href="single.html"><i class="fa fa-folder-open-o"></i>Electronics</a>
+		    		<a href="single.html"><i class="fa fa-folder-open-o"></i>Para el hogar</a>
 		    	</li>
 		    	<li class="list-inline-item">
-		    		<a href="category.html"><i class="fa fa-calendar"></i>26th December</a>
+		    		<a href="category.html"><i class="fa fa-calendar"></i>26 de diciembre</a>
 		    	</li>
 		    </ul>
-		    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, aliquam!</p>
+		    <p class="card-text">Cama multiplex</p>
 		    <div class="product-ratings">
 		    	<ul class="list-inline">
 		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
@@ -465,16 +465,16 @@
 			</a>
 		</div>
 		<div class="card-body">
-		    <h4 class="card-title"><a href="single.html">Study Table Combo</a></h4>
+		    <h4 class="card-title"><a href="single.html">Combo de mesa de estudio</a></h4>
 		    <ul class="list-inline product-meta">
 		    	<li class="list-inline-item">
 		    		<a href="single.html"><i class="fa fa-folder-open-o"></i>Furnitures</a>
 		    	</li>
 		    	<li class="list-inline-item">
-		    		<a href="category.html"><i class="fa fa-calendar"></i>26th December</a>
+		    		<a href="category.html"><i class="fa fa-calendar"></i>26 de diciembre</a>
 		    	</li>
 		    </ul>
-		    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, aliquam!</p>
+		    <p class="card-text">Mesa de estudio con combo de mesa de noche</p>
 		    <div class="product-ratings">
 		    	<ul class="list-inline">
 		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
@@ -502,16 +502,16 @@
 			</a>
 		</div>
 		<div class="card-body">
-		    <h4 class="card-title"><a href="single.html">11inch Macbook Air</a></h4>
+		    <h4 class="card-title"><a href="single.html">Cama</a></h4>
 		    <ul class="list-inline product-meta">
 		    	<li class="list-inline-item">
-		    		<a href="single.html"><i class="fa fa-folder-open-o"></i>Electronics</a>
+		    		<a href="single.html"><i class="fa fa-folder-open-o"></i>Para el hogar</a>
 		    	</li>
 		    	<li class="list-inline-item">
-		    		<a href="category.html"><i class="fa fa-calendar"></i>26th December</a>
+		    		<a href="category.html"><i class="fa fa-calendar"></i>26 de diciembre</a>
 		    	</li>
 		    </ul>
-		    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, aliquam!</p>
+		    <p class="card-text">Cama multiplex</p>
 		    <div class="product-ratings">
 		    	<ul class="list-inline">
 		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
@@ -536,7 +536,7 @@
 							<li class="page-item">
 								<a class="page-link" href="category.html" aria-label="Previous">
 									<span aria-hidden="true">&laquo;</span>
-									<span class="sr-only">Previous</span>
+									<span class="sr-only">Anterior</span>
 								</a>
 							</li>
 							<li class="page-item"><a class="page-link" href="category.html">1</a></li>
@@ -545,7 +545,7 @@
 							<li class="page-item">
 								<a class="page-link" href="category.html" aria-label="Next">
 									<span aria-hidden="true">&raquo;</span>
-									<span class="sr-only">Next</span>
+									<span class="sr-only">Siguiente</span>
 								</a>
 							</li>
 						</ul>

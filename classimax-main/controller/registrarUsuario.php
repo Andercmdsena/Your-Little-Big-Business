@@ -10,6 +10,7 @@ $email = $_POST["email"];
 $telefono = $_POST["telefono"];
 $clave = $_POST["telefono"];
 $rol = $_POST["rol"];
+$estado = $_POST["estado"];
 
 
     if (strlen($nombre)>0 && strlen($apellido)>0 && strlen($email)>0 && strlen($telefono)>0) {
@@ -19,7 +20,7 @@ $rol = $_POST["rol"];
         $mover=move_uploaded_file($_FILES['foto'] ['tmp_name'], $foto);
 
         $objConsulta = new consultas();
-        $result = $objConsulta->insertarUsuariodesdeAdmin($nombre,$apellido,$email,$telefono, $claveinc, $rol, $foto);
+        $result = $objConsulta->insertarUsuariodesdeAdmin($nombre,$apellido,$email,$telefono, $claveinc, $rol,$estado, $foto);
     } else{
     echo '<script> alert("Los campos estan incompletos o la controseña no coincide") </script>';
     echo '<script>location.href="../views/administrador/registrar_usuario.php" </script>';

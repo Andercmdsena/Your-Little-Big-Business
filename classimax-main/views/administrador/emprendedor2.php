@@ -3,8 +3,8 @@
 
 require_once ("../../model/conexion.php");
 require_once ("../../model/consultas.php");
-require_once ("../../controller/mostrarInfoEmprendedor.php");
 require_once ("../../model/seguridadEmprendedor.php");
+require_once ("../../controller/mostrarInfoEmprendedor.php");
 ?>
 
 
@@ -17,7 +17,7 @@ require_once ("../../model/seguridadEmprendedor.php");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Perfil Emprendedor</title>
+    <title>Focus Admin Dashboard</title>
 
     <!-- ================= Favicon ================== -->
     <!-- Standard -->
@@ -74,9 +74,62 @@ require_once ("../../model/seguridadEmprendedor.php");
 
 <body>
 
-    <?php
-    include "menu_emprendedor.php"
-    ?>
+    <div class="sidebar sidebar-hide-to-small sidebar-shrink sidebar-gestures">
+        <div class="nano ">
+            <div class="nano-content" id="panel_izq">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="../client-site/images/Mi proyecto.png" alt="" /> 
+                        
+                    </a>
+                </div>
+                <ul>
+                    
+
+                    <li class="label">Modulos</li>
+                    <li>
+                        <a>
+                            <i class="ti-home"></i>Inicio</a>
+                    </li>
+                    <li>
+                        
+                        <ul>
+                           
+                            
+                        </ul>
+                    </li>
+                    <!-- <li>
+                        <a class="sidebar-sub-toggle">
+                            <i class="ti-money"></i> Ventas
+                            <span class="sidebar-collapse-icon ti-angle-down"></span>
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="chart-flot.html"><i class="ti-shopping-cart"></i> N° Ventas</a>
+                            </li>
+                            <li>
+                                <a href="chart-morris.html"> <i class="ti-eye"></i> Ver</a>
+                            </li>
+                            
+                        </ul>
+                    </li> -->
+
+
+
+                    <?php
+
+                    perfilUsuario()
+                    ?>
+
+
+
+                    
+                  
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- /# sidebar -->
 
 
     <div class="header">
@@ -105,7 +158,7 @@ require_once ("../../model/seguridadEmprendedor.php");
                         <div class="page-header">
                             <div class="page-title">
                                 <h1>Hola,
-                                    <span>Bienvenido a la vista de emprendedor</span>
+                                    <span>Bienvenido a la vista de usuario</span>
                                 </h1>
                             </div>
                         </div>
@@ -120,18 +173,19 @@ require_once ("../../model/seguridadEmprendedor.php");
                     <div class="row">
                         <div class="col-md-12 descripcion_admin">
                             <p>
-                            Bienvenido a tu perfil personal. Aquí encontrarás una variedad de opciones y funciones que te permiten gestionar tu experiencia en nuestra plataforma de manera personalizada.
+                            Bienvenido a tu perfil personal, [Nombre del Usuario]. Aquí encontrarás una variedad de opciones y funciones que te permiten gestionar tu experiencia en nuestra plataforma de manera personalizada.
                             </p>
                             <p>
                             
                         </div>
 
                     </div>    
-                    <?php
-                    include("editarUs.php")
-
-
-                    ?>
+                    <table class="table table-hover">
+                                            <tbody>
+                                            <?php
+                                            perfilEditarUsuario();
+                                            ?>
+                                        </table>
 
                     <div class="row">
                         <div class="col-lg-12">

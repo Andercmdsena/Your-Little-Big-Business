@@ -99,10 +99,6 @@ include "menu.php"
                 </div>
             </div>
         </div>
-        <?php 
-        include "../../components/header.php"
-
-        ?>
     </div>
 
 

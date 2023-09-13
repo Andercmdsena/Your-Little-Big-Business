@@ -78,7 +78,7 @@ require_once ("../../controller/mostrarInfoUsuario.php");
 
 <?php
 
-
+ 
 include "menu.php"
 ?>
     <!-- /# sidebar -->
@@ -99,6 +99,10 @@ include "menu.php"
                 </div>
             </div>
         </div>
+        <?php 
+        include "../../components/header.php"
+
+        ?>
     </div>
 
 

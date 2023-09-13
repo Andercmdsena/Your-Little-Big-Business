@@ -8,7 +8,7 @@
 			<div class="col-md-12">
 				<nav class="navbar  navbar-expand-lg navbar-light navigation">
 					<a id="logo" class="navbar-brand" href="main_page.php">
-						<img src="images/Mi proyecto.png" alt="" style="width: 50px ; height: 50px;">
+						<img src="../theme/images/Mi proyecto.png" alt="" style="width: 50px ; height: 50px;">
 					</a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse"
 						data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"

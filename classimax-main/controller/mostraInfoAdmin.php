@@ -81,11 +81,7 @@ function perfilAdmin(){
                     </li>
         
 
-                    <li>
-                        <a href="../../controller/cerrarSesion.php">
-                            <i class="ti-close"></i> Salir</a>
-                        
-                    </li>
+                    
         
         ';
     }

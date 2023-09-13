@@ -80,13 +80,16 @@ require_once ("../../controller/mostrarInfoUsuario.php");
         <div class="nano ">
             <div class="nano-content" id="panel_izq">
                 <div class="logo">
-                    <a href="../../theme/index.php">
+                    <a href="home.php">
                         <img src="../../theme/images/Mi proyecto.png" alt="" /> 
                         
                     </a>
                 </div>
                 <ul>
-                    
+                <?php
+
+                perfilAdmin()
+                ?>
 
                     <li class="label">Modulos</li>
                     <li>
@@ -120,6 +123,12 @@ require_once ("../../controller/mostrarInfoUsuario.php");
                            
                             
                         </ul>
+                        <li>
+                        <a href="../../controller/cerrarSesion.php">
+                            <i class="ti-close"></i> Salir</a>
+                        
+                    </li>
+                        
                     </li>
                     <!-- <li>
                         <a class="sidebar-sub-toggle">
@@ -139,10 +148,7 @@ require_once ("../../controller/mostrarInfoUsuario.php");
 
 
 
-                    <?php
-
-                     perfilAdmin()
-                    ?>
+                    
 
 
 

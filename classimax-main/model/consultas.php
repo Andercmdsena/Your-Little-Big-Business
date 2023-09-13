@@ -34,7 +34,7 @@ class consultas{
             echo '<script>location.href="../theme/productos.php" </script>';
         }
     }
-    public function insertarUsuariodesdeAdmin($nombre,$apellido,$email,$telefono, $claveinc, $rol, $foto){
+    public function insertarUsuariodesdeAdmin($nombre,$apellido,$email,$telefono, $claveinc, $rol, $estado, $foto){
         $modelo = new conexion();
         $conexion = $modelo -> get_conexion();
         $consultas = "SELECT * FROM usuario WHERE email=:email";
@@ -51,7 +51,7 @@ class consultas{
             echo '<script> alert("Los datos del usuario ya se encuentra en el sistema") </script>';
             echo '<script>location.href="../theme/register.php" </script>';
         }else{
-            $insertar = "INSERT INTO usuario (Nombre, Apellido, Email, Telefono, Clave, Rol, foto) VALUES(:nombre, :apellido, :email, :telefono, :clave, :rol, :foto)";
+            $insertar = "INSERT INTO usuario (Nombre, Apellido, Email, Telefono, Clave, Rol,Estado, foto) VALUES(:nombre, :apellido, :email, :telefono, :clave, :rol, :estado, :foto)";
 
             $result = $conexion->prepare($insertar);
 
@@ -61,6 +61,7 @@ class consultas{
             $result->bindParam(":telefono", $telefono);
             $result->bindParam(":clave", $claveinc);
             $result->bindParam(":rol", $rol);
+            $result->bindParam(":estado", $estado);
             $result->bindParam(":foto", $foto);
 
             $result->execute();
@@ -394,6 +395,26 @@ class consultas{
         }
         
       }
+      public function modificarEmprendedor($arg_campo, $arg_valor, $arg_id_producto){
+        $objConexion = new Conexion();
+        $conexion = $objConexion -> get_conexion();
+
+        $consulta = "UPDATE usuario set $arg_campo = :valor WHERE ID = :id_producto";
+
+        $result = $conexion ->prepare($consulta);
+
+        $result->bindParam(":valor", $arg_valor);
+        $result->bindParam(":id_producto", $arg_id_producto);
+
+        if(!$result){
+            return "Error al modificar el usuario";
+        }else{
+            $result -> execute();
+            echo '<script> alert("Usuario actualizado exitosamente") </script>';
+            echo "<script> location.href='../views/administrador/emprendedor.php' </script>";
+        }
+        
+      }
       public function cargarUsuarioAdmin($arg_id_producto){
         $f=null;
  
@@ -616,15 +637,21 @@ class ValidarSesion
                 $_SESSION['id'] = ($tipo_de_rol == "administrador") ? $f['Identificacion'] : $f['ID'];
                 $_SESSION['email'] = $f['email'] ?? $f['Email'];
                 $_SESSION['rol'] = $f['rol'] ?? $f['Rol'];
+                $_SESSION['estado'] = $f['Estado'] ?? $f['estado'];
                 $_SESSION['AUTENTICADO'] = "SI";
 
                 // Redirigimos al usuario según el tipo_de_rol
-                echo '<script> alert("Bienvenido") </script>';
+                
                 if ($tipo_de_rol == "administrador") {
+                    echo '<script> alert("Bienvenido") </script>';
                     echo "<script> location.href='../views/administrador/home.php' </script>";
-                } elseif($tipo_de_rol == "cliente"){
+                } 
+                elseif($tipo_de_rol == "cliente"){
+                    echo '<script> alert("Bienvenido") </script>';
                     echo "<script> location.href='../Views/administrador/usuario.php' </script>";
-                }else {
+                } 
+                else {
+                    echo '<script> alert("Bienvenido") </script>';
                     echo "<script> location.href='../Views/administrador/emprendedor.php' </script>";
                 }
             } else {

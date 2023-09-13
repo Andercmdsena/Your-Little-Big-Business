@@ -149,7 +149,7 @@ function perfilEditarUsuario(){
 
 
             <div class="p-5 tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-              <form action="../../controller/modificarUsuario.php" method="POST" enctype="multipart/form-data">
+              <form action="../../controller/modificarEmprendedor.php" method="POST" enctype="multipart/form-data">
                 <div class="row formulario">
                   <div class="form-group col-lg-6">
                     <label>Identificacion</label>
@@ -261,7 +261,7 @@ function cerrarSesionPopup2()
                             </ul>
                             <ul class="navbar-nav ml-auto mt-10">
                             <li class="nav-item">
-                                <a class="btn btn-light" href="usuario2.php?id='.$f['ID'].'">Editar Perfil</a>
+                                <a class="btn btn-light" href="emprendedor2.php?id='.$f['ID'].'">Editar Perfil</a>
                             </li>
                             <li class="nav-item">
                                 <a class="btn btn-light" href="../../controller/cerrarSesion.php" ../../controller/cerrarSesion.php>Cerrar sesion</a>

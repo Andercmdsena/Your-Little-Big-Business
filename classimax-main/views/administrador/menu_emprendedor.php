@@ -80,7 +80,7 @@ require_once ("../../model/seguridadEmprendedor.php");
                 <div class="logo">
                     <a href="index.html">
                         <img src="../client-site/images/Mi proyecto.png" alt="" /> 
-                        
+
                     </a>
                 </div>
                 <ul>
@@ -100,7 +100,7 @@ require_once ("../../model/seguridadEmprendedor.php");
                     </li>
                     <li>
                         <a class="sidebar-sub-toggle">
-                            <i class="ti-money"></i> Producto
+                            <i class="ti-money"></i> Productos
                             <span class="sidebar-collapse-icon ti-angle-down"></span>
                         </a>
                         <ul>
@@ -108,7 +108,7 @@ require_once ("../../model/seguridadEmprendedor.php");
                                 <a href="registroProductos.php"><i class="ti-shopping-cart"></i>Registro productos</a>
                             </li>
                             <li>
-                                <a href="chart-morris.html"> <i class="ti-eye"></i> Ver</a>
+                                <a href="verProductos.php"> <i class="ti-eye"></i> Ver</a>
                             </li>
                             
                         </ul>

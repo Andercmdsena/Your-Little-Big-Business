@@ -11,13 +11,12 @@
 
 
 #panel_izq a{
-    color: yellow;
+    color: rgb(0, 0, 0);
     font-family: 'Poiret One', cursive;
     font-weight: bold;
+    background: white;
 }
-#panel_izq a:hover{
-    background: #bdd0ff7a;
-}
+
 
 label{
     font-family: 'Poiret One', cursive;
@@ -36,7 +35,7 @@ tbody tr td {
     font-size: 25px;
     border-radius: 40px;
     color: black;
-    background-color: #BDD0FF !important;
+    background-color: white !important;
 }
 .card input{
     font-family: 'Poiret One', cursive;
@@ -101,9 +100,10 @@ tbody tr td {
     color: black;
     background-color: white;
     transition: 0.5s;
+    margin-left: 20px;
 }
 .btn:not(:disabled):not(.disabled):hover{
-    background-color: rgb(233, 233, 233);
+    background-color: rgb(236, 236, 236);
 }
 .perfil-user img{
     border-radius: 20px;
@@ -119,6 +119,29 @@ tbody tr td{
     font-weight: bold; 
 }
 
+.sidebar .nano>.nano-content {
+    top: 140px;
+}
 
+.sidebar{
+    background: white;
+}
 
+.sidebar .nano-content>ul li>a{
+    background: white;
+}
+.logo{
+    background: none;
+    
+}
 
+.sidebar .nano-content>ul li.label{
+    color: black;
+    font-family: 'Poiret One', cursive;
+    font-weight: bold; 
+
+}
+
+.sidebar .nano-content>ul>li.active>a, .sidebar .nano-content>ul>li.open>a, .sidebar .nano-content>ul>li>ul{
+    background: rgb(240, 33, 33);
+}

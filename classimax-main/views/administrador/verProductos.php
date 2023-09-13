@@ -20,7 +20,7 @@ require_once ("../../model/seguridadEmprendedor.php");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Focus Admin Dashboard</title>
+    <title>Perfil Emprendedor Productos</title>
 
     <!-- ================= Favicon ================== -->
     <!-- Standard -->
@@ -115,7 +115,7 @@ include "menu_emprendedor.php"
                                 <h1>Ver productos registrados
                                     
                                 </h1>
-                                <p>Elija la opcion que desea realiza, editar o eliminar</p>
+                                <p>Elija la opcion que desea realizar, editar o eliminar</p>
                             </div>
                         </div>
                     </div>
@@ -125,9 +125,9 @@ include "menu_emprendedor.php"
                             <div class="page-title">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item">
-                                        <a href="#">Dashboard</a>
+                                        
                                     </li>
-                                    <li class="breadcrumb-item active">UI-Blank</li>
+                                    
                                 </ol>
                             </div>
                         </div>

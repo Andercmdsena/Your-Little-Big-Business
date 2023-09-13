@@ -14,7 +14,7 @@
     color: rgb(0, 0, 0);
     font-family: 'Poiret One', cursive;
     font-weight: bold;
-    background: white;
+    background: #cfd6ff;
 }
 
 
@@ -98,12 +98,20 @@ tbody tr td {
     border: 1px solid black;
     border-radius: 20px;
     color: black;
+<<<<<<< HEAD
     background-color: rgb(28, 155, 138);
+=======
+    background-color: rgb(231, 198, 255);
+>>>>>>> 82ab98cf1b8e1256dc16ba7d45f959509bb441b4
     transition: 0.5s;
     margin-left: 20px;
 }
 .btn:not(:disabled):not(.disabled):hover{
+<<<<<<< HEAD
     background-color: rgb(255, 113, 19);
+=======
+    background-color: rgba(135, 69, 181, 0.719);
+>>>>>>> 82ab98cf1b8e1256dc16ba7d45f959509bb441b4
 }
 .perfil-user img{
     border-radius: 20px;
@@ -124,11 +132,19 @@ tbody tr td{
 }
 
 .sidebar{
+<<<<<<< HEAD
     background: #BDD0FF;
 }
 
 .sidebar .nano-content>ul li>a{
     background: rgb(255, 69, 140);
+=======
+    background: #cfd6ff;
+}
+
+.sidebar .nano-content>ul li>a{
+    background: #fff;
+>>>>>>> 82ab98cf1b8e1256dc16ba7d45f959509bb441b4
 }
 .logo{
     background: none;

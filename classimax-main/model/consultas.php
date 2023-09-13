@@ -493,6 +493,24 @@ class consultas{
       }
 
 
+     public function actualizarClaveUsuario($identificacion, $claveMd){
+        $objConexion = new Conexion();
+        $conexion = $objConexion -> get_conexion();
+
+        $consulta = "UPDATE usuario Set clave=:claveMd WHERE ID = :identificacion";
+
+        $result = $conexion ->prepare($consulta);
+
+        $result->bindParam(":identificacion", $identificacion);
+        $result->bindParam(":claveMd", $claveMd);
+
+        $result -> execute();
+
+        echo '<script>alert("Informacion actualizada")</script>';
+        echo "<script>location.href='../views/administrador/usuario2.php?id=$identificacion'</script>";
+      }
+
+
 
       // -------------------------------------------------Consultas emprendedor-------------------------
 
@@ -528,6 +546,29 @@ class consultas{
             echo '<script>location.href="../views/administrador/registroProductos.php" </script>';
         }
     }
+    public function mostrarProducto(){
+
+
+        $f=null;
+ 
+ 
+         $objConexion = new Conexion();
+         $conexion = $objConexion -> get_conexion();
+ 
+         $consultar = "SELECT * FROM productos order by nombre asc";
+ 
+         $result=$conexion->prepare($consultar);
+ 
+        $result->execute();
+        
+ 
+        while ($resultado=$result->fetch()) {
+         $f[] = $resultado;
+        }
+ 
+        return $f;
+ 
+     }
 }
 
 

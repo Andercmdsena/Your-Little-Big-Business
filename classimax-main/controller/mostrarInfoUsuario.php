@@ -204,7 +204,7 @@ function perfilEditarUsuario(){
 
 
             <div class="p-5 tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-            <form action="../../controller/modificarClaveAdmin.php" method="POST" enctype="multipart/form-data">
+            <form action="../../controller/modificarClaveUsuario.php" method="POST" enctype="multipart/form-data">
                 <div class="row formulario">
                 <div class="form-group col-lg-6">
                  <label>Identificacion</label>

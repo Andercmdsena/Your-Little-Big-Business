@@ -1,4 +1,4 @@
-<link href="./plugins/bootstrap/bootstrap.min.css" rel="stylesheet">
+	<link href="./plugins/bootstrap/bootstrap.min.css" rel="stylesheet">
 <link href="./plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" href="css/header/header.css">
 
@@ -7,7 +7,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<nav class="navbar  navbar-expand-lg navbar-light navigation">
-					<a id="logo" class="navbar-brand" href="index.php">
+					<a id="logo" class="navbar-brand" href="main_page.php">
 						<img src="images/Mi proyecto.png" alt="" style="width: 50px ; height: 50px;">
 					</a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -33,20 +33,16 @@
 								</a>
 								<!-- Dropdown list -->
 								<ul class="dropdown-menu">
-									<li><a class="dropdown-item @@category" href="category.php">Productos</a>
+									<li><a class="dropdown-item @@category" href="productos.php">Productos</a>
 									</li>
-									<li><a class="dropdown-item @@category" href="category.php">Servicios</a></li>
+									<li><a class="dropdown-item @@category" href="servicios.php">Servicios</a></li>
 								</ul>
 							</li>
 						</ul>
 						<ul class="navbar-nav ml-auto mt-10">
-							<li id="login-btn" class="nav-item d-block pt-4">
-								<a class="nav-link login-button" href="login.php">Login</a>
-							</li>
-							<li id="signup-btn" class="nav-item d-block pt-4">
-								<a class="nav-link ingresar-btn text-white add-button" href="register.php">Ingresar</a>
-							</li>
-							<li class="nav-item d-block pt-4 carrito_boton" ><a class="nav-link carrito-btn" href="#">Carrito</a></li>
+							
+							<!-- <li class="nav-item d-block pt-4 carrito_boton" ><a class="nav-link carrito-btn" href="index.php">Salir</a></li>
+							<li class="nav-item d-block pt-4 carrito_boton" ><a class="nav-link carrito-btn" href="#">Carrito</a></li> -->
 						</ul>
 
 					</div>

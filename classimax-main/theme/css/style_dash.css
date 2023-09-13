@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&family=Varela+Round&display=swap');
+
+.descripcion_admin p{
+    font-size: 15px;
+    COLOR: black;
+    font-weight: bold   ;
+    font-family: 'Poiret One', cursive;
+
+}
+
+
+#panel_izq a{
+    color: yellow;
+    font-family: 'Poiret One', cursive;
+    font-weight: bold;
+}
+#panel_izq a:hover{
+    background: #bdd0ff7a;
+}
+
+label{
+    font-family: 'Poiret One', cursive;
+    font-weight: bold;
+    font-size: 25px;
+}
+tbody tr td {
+    font-family: 'Poiret One', cursive;
+    font-weight: bold;
+    font-size: 20px;
+    color: black;
+}
+.card{
+    font-family: 'Poiret One', cursive;
+    font-weight: 900;
+    font-size: 25px;
+    border-radius: 40px;
+    color: black;
+    background-color: #BDD0FF !important;
+}
+.card input{
+    font-family: 'Poiret One', cursive;
+    font-weight: 900;
+    color: black;
+    background-color: #ffffff !important;
+    border:1px solid black;
+    border-radius: 10px;
+}
+.card select{
+    font-family: 'Poiret One', cursive;
+    font-weight: bold;
+    color: black;
+    background-color: #ffffff !important;
+    border:1px solid black;
+    border-radius: 10px;
+}
+
+.card-title h4{
+    font-family: 'Varela', cursive;
+    font-weight: bold;
+    font-size: 35px;
+}
+.formulario label{
+    font-family: 'Poiret One', cursive;
+    font-weight: bold;
+    font-size: 23px;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    font-family: 'Poiret One', cursive;
+    font-weight: bold;
+    font-size: 25px;
+    color: black;
+    background-color: white;
+    margin: 0 10px 0 10px;
+}
+.nav-tabs .nav-link{
+    background: white;
+    margin: 0 10px 0 10px;
+    font-weight: bold;
+    font-size: 25px;
+    border: 1px solid black;
+    border-radius: 20px;
+    color: black;
+}
+.nav-tabs{
+    border: none;
+}
+
+.text-center{
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+}
+
+.btn:not(:disabled):not(.disabled){
+    font-weight: bold;
+    font-size: 25px;
+    border: 1px solid black;
+    border-radius: 20px;
+    color: black;
+    background-color: white;
+    transition: 0.5s;
+}
+.btn:not(:disabled):not(.disabled):hover{
+    background-color: rgb(233, 233, 233);
+}
+.perfil-user img{
+    border-radius: 20px;
+}
+
+
+.modificar-user{
+    background-color: rgb(255, 253, 253) !important;
+    box-shadow: 4px 4px 8px black;
+}
+tbody tr td{
+    font-family: 'Poiret One', cursive;
+    font-weight: bold; 
+}
+
+
+
+

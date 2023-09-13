@@ -12,33 +12,31 @@
           <!-- footer logo -->
           <img src="images/negrologo YLBB.png" alt="logo">
           <!-- description -->
-          <p class="alt-color" style="color:black;font-weight:bold; font-family: 'Poiret One', cursive; font-size: 18px;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-            laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <p class="alt-color parrafos" style="color:black;font-weight:bold; font-family: 'Poiret One', cursive; font-size: 20px;">Your Little Big Business es una plataforma en línea que potencia tus sueños emprendedores. Te ofrecemos un espacio para presentar y vender tus productos</p>
         </div>
       </div>
       <!-- Link list -->
       <div class="col-lg-2 offset-lg-1 col-md-3 col-6 mb-4 mb-lg-0">
-        <div class="block">
-          <h4 style="color: black; font-size: 20px;">Site Pages</h4>
+        <div class="block" id="listas">
+          <h4 style="color: black; font-size: 20px;">Cosas de interes</h4>
           <ul>
-            <li><a href="dashboard-my-ads.html">My Ads</a></li>
-            <li><a href="dashboard-favourite-ads.html">Favourite Ads</a></li>
-            <li><a href="dashboard-archived-ads.html">Archived Ads</a></li>
-            <li><a href="dashboard-pending-ads.html">Pending Ads</a></li>
-            <li><a href="terms-condition.html">Terms & Conditions</a></li>
+            <li><a href="dashboard-my-ads.html">Preferencia</a></li>
+            <li><a href="dashboard-favourite-ads.html">Articulos favoritos</a></li>
+            <li><a href="dashboard-archived-ads.html">Servicios favoritos</a></li>
+            <li><a href="dashboard-pending-ads.html">Sobre nosotro</a></li>
+            <li><a href="terms-condition.html">Terminos y condiciones</a></li>
           </ul>
         </div>
       </div>
       <!-- Link list -->
       <div class="col-lg-2 col-md-3 offset-md-1 offset-lg-0 col-6 mb-4 mb-md-0">
-        <div class="block">
-          <h4 style="color: black;">Admin Pages</h4>
+        <div class="block" id="listas2">
+          <h4 style="color: black; font-size: 20px;">Paginas</h4>
           <ul>
-            <li><a href="category.html">Category</a></li>
-            <li><a href="single.html">Single Page</a></li>
-            <li><a href="store.html">Store Single</a></li>
-            <li><a href="single-blog.html">Single Post</a>
+            <li><a href="category.html">Categorias</a></li>
+            <li><a href="single.html">Servicios</a></li>
+            <li><a href="store.html">Productos</a></li>
+            <li><a href="single-blog.html">metodos de pago</a>
             </li>
             <li><a href="blog.html">Blog</a></li>
           </ul>
@@ -60,7 +58,7 @@
           <p>Copyright &copy; <script>
               var CurrentYear = new Date().getFullYear()
               document.write(CurrentYear)
-            </script>. Designed & Developed by <a class="text-white" href="https://themefisher.com">Themefisher</a></p>
+            </script>. Diseñado y desarrollador por<a class="text-red" href="https://themefisher.com"> Grupo 4</a></p>
         </div>
       </div>
       <div class="col-lg-6">

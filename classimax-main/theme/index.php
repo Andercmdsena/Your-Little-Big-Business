@@ -41,7 +41,59 @@
 <body class="body-wrapper">
 
 
-<?php include("../components/header.php") ?>
+<header>
+	<div class="container" id="menu">
+		<div class="row">
+			<div class="col-md-12">
+				<nav class="navbar  navbar-expand-lg navbar-light navigation">
+					<a id="logo" class="navbar-brand" href="index.php">
+						<img src="images/Mi proyecto.png" alt="" style="width: 50px ; height: 50px;">
+					</a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse"
+						data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+						aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav ml-auto main-nav ">
+							<li id="home" class="nav-item active">
+								<a class="nav-link" href="index.php">Home </a>
+							</li>
+							<li class="nav-item @@pages">
+								<a class="nav-link @@about" href="about-us.php" aria-haspopup="true"
+									aria-expanded="false">
+									Sobre nosotros 
+								</a>
+							</li>
+							<li class="nav-item dropdown dropdown-slide @@listing">
+								<a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+									aria-expanded="false">
+									Categorias<span><i class="fa fa-angle-down"></i></span>
+								</a>
+								<!-- Dropdown list -->
+								<ul class="dropdown-menu">
+									<li><a class="dropdown-item @@category" href="productos.php">Productos</a>
+									</li>
+									<li><a class="dropdown-item @@category" href="servicios.php">Servicios</a></li>
+								</ul>
+							</li>
+						</ul>
+						<ul class="navbar-nav ml-auto mt-10">
+							<li id="login-btn" class="nav-item d-block pt-4">
+								<a class="nav-link login-button" href="login.php">Ingresar</a>
+							</li>
+							<li id="signup-btn" class="nav-item d-block pt-4">
+								<a class="nav-link ingresar-btn text-white add-button" href="register.php">Registrate</a>
+							</li>
+							<li class="nav-item d-block pt-4 carrito_boton" ><a class="nav-link carrito-btn" href="#">Carrito</a></li>
+						</ul>
+
+					</div>
+				</nav>
+			</div>
+		</div>
+	</div>
+</header>
 
 <!--===============================
 =            Hero Area            =
@@ -58,20 +110,20 @@
 					<p>Explora nuestra amplia gama de productos y servicios <br> para encontrar todo lo que necesitas</p>
 					<div class="short-popular-category-list text-center">
 						<h2>Categorias</h2>
-						<ul class="list-inline">
+						<ul class="list-inline"> 
 							<li class="list-inline-item">
-								<a href="category.html"><i class="fa fa-bed"></i> Hotel</a></li>
+								<a href="category.html"><i class="fa fa-bed"></i>Libros</a></li>
 							<li class="list-inline-item">
-								<a href="category.html"><i class="fa fa-grav"></i> Fitness</a>
+								<a href="category.html"><i class="fa fa-grav"></i>Deportes</a>
 							</li>
 							<li class="list-inline-item">
-								<a href="category.html"><i class="fa fa-car"></i> Cars</a>
+								<a href="category.html"><i class="fa fa-car"></i>Refacciones</a>
 							</li>
 							<li class="list-inline-item">
-								<a href="category.html"><i class="fa fa-cutlery"></i> Restaurants</a>
+								<a href="category.html"><i class="fa fa-cutlery"></i>Comida</a>
 							</li>
 							<li class="list-inline-item">
-								<a href="category.html"><i class="fa fa-coffee"></i> Cafe</a>
+								<a href="category.html"><i class="fa fa-coffee"></i>Estudio</a>
 							</li>
 						</ul>
 					</div>
@@ -296,7 +348,7 @@
 <section class=" section" id="seccion_categoria">
 	<!-- Container Start -->
 	<div class="container">
-		<div class="row">
+		<div class="row" id="cartas">
 			<div class="col-12">
 				<!-- Section title -->
 				<div class="section-title">
@@ -324,13 +376,13 @@
 						<div class="category-block cat_item ">
 							<div class="header">
 								<i class="fa fa-apple icon-bg-2"></i>
-								<h4>Restaurants</h4>
+								<h4>Restaurantes</h4>
 							</div>
 							<ul class="category-list">
-								<li><a href="category.html">Cafe <span>393</span></a></li>
-								<li><a href="category.html">Fast food <span>23</span></a></li>
-								<li><a href="category.html">Restaurants <span>13</span></a></li>
-								<li><a href="category.html">Food Track<span>43</span></a></li>
+								<li><a href="category.html">Comidas <span>393</span></a></li>
+								<li><a href="category.html">Bebidas <span>23</span></a></li>
+								<li><a href="category.html">Comida rapido <span>13</span></a></li>
+								<li><a href="category.html">Comida saludable<span>43</span></a></li>
 							</ul>
 						</div>
 					</div> <!-- /Category List -->
@@ -339,13 +391,13 @@
 						<div class="category-block cat_item">
 							<div class="header">
 								<i class="fa fa-home icon-bg-3"></i>
-								<h4>Real Estate</h4>
+								<h4>Cosas para el hogar</h4>
 							</div>
 							<ul class="category-list">
-								<li><a href="category.html">Farms <span>93</span></a></li>
-								<li><a href="category.html">Gym <span>23</span></a></li>
-								<li><a href="category.html">Hospitals <span>83</span></a></li>
-								<li><a href="category.html">Parolurs <span>33</span></a></li>
+								<li><a href="category.html">Muebles <span>93</span></a></li>
+								<li><a href="category.html">Electrodomesticos <span>23</span></a></li>
+								<li><a href="category.html">Decoraciones <span>83</span></a></li>
+								<li><a href="category.html">Plantas <span>33</span></a></li>
 							</ul>
 						</div>
 					</div> <!-- /Category List -->
@@ -354,13 +406,13 @@
 						<div class="category-block cat_item">
 							<div class="header">
 								<i class="fa fa-shopping-basket icon-bg-4"></i>
-								<h4>Shoppings</h4>
+								<h4>Infantil</h4>
 							</div>
 							<ul class="category-list">
-								<li><a href="category.html">Mens Wears <span>53</span></a></li>
-								<li><a href="category.html">Accessories <span>212</span></a></li>
-								<li><a href="category.html">Kids Wears <span>133</span></a></li>
-								<li><a href="category.html">It & Software <span>143</span></a></li>
+								<li><a href="category.html">Juguetes <span>53</span></a></li>
+								<li><a href="category.html">Ropa <span>212</span></a></li>
+								<li><a href="category.html">Libros <span>133</span></a></li>
+								<li><a href="category.html">Carros <span>143</span></a></li>
 							</ul>
 						</div>
 					</div> <!-- /Category List -->
@@ -369,13 +421,13 @@
 						<div class="category-block cat_item">
 							<div class="header">
 								<i class="fa fa-briefcase icon-bg-5"></i>
-								<h4>Jobs</h4>
+								<h4>Trabajo</h4>
 							</div>
 							<ul class="category-list">
-								<li><a href="category.html">It Jobs <span>93</span></a></li>
-								<li><a href="category.html">Cleaning & Washing <span>233</span></a></li>
-								<li><a href="category.html">Management <span>183</span></a></li>
-								<li><a href="category.html">Voluntary Works <span>343</span></a></li>
+								<li><a href="category.html">Archivo <span>93</span></a></li>
+								<li><a href="category.html">Carpetas <span>233</span></a></li>
+								<li><a href="category.html">Boligrafos <span>183</span></a></li>
+								<li><a href="category.html">Oficina <span>343</span></a></li>
 							</ul>
 						</div>
 					</div> <!-- /Category List -->
@@ -384,13 +436,13 @@
 						<div class="category-block cat_item">
 							<div class="header">
 								<i class="fa fa-car icon-bg-6"></i>
-								<h4>Vehicles</h4>
+								<h4>Vehiculos</h4>
 							</div>
 							<ul class="category-list">
-								<li><a href="category.html">Bus <span>193</span></a></li>
-								<li><a href="category.html">Cars <span>23</span></a></li>
-								<li><a href="category.html">Motobike <span>33</span></a></li>
-								<li><a href="category.html">Rent a car <span>73</span></a></li>
+								<li><a href="category.html">Refacciones <span>193</span></a></li>
+								<li><a href="category.html">Aceite <span>23</span></a></li>
+								<li><a href="category.html">Faros <span>33</span></a></li>
+								<li><a href="category.html">Retrovispres <span>73</span></a></li>
 							</ul>
 						</div>
 					</div> <!-- /Category List -->
@@ -399,13 +451,13 @@
 						<div class="category-block cat_item">
 							<div class="header">
 								<i class="fa fa-paw icon-bg-7"></i>
-								<h4>Pets</h4>
+								<h4>Mascotas</h4>
 							</div>
 							<ul class="category-list">
-								<li><a href="category.html">Cats <span>65</span></a></li>
-								<li><a href="category.html">Dogs <span>23</span></a></li>
-								<li><a href="category.html">Birds <span>113</span></a></li>
-								<li><a href="category.html">Others <span>43</span></a></li>
+								<li><a href="category.html">Gatos <span>65</span></a></li>
+								<li><a href="category.html">Perros <span>23</span></a></li>
+								<li><a href="category.html">Aves <span>113</span></a></li>
+								<li><a href="category.html">Otros <span>43</span></a></li>
 							</ul>
 						</div>
 					</div> <!-- /Category List -->
@@ -415,13 +467,13 @@
 
 							<div class="header">
 								<i class="fa fa-laptop icon-bg-8"></i>
-								<h4>Services</h4>
+								<h4>Servicios</h4>
 							</div>
 							<ul class="category-list">
-								<li><a href="category.html">Cleaning <span>93</span></a></li>
-								<li><a href="category.html">Car Washing <span>233</span></a></li>
-								<li><a href="category.html">Clothing <span>183</span></a></li>
-								<li><a href="category.html">Business <span>343</span></a></li>
+								<li><a href="category.html">Limpieza <span>93</span></a></li>
+								<li><a href="category.html">Cocina <span>233</span></a></li>
+								<li><a href="category.html">Asesoramiento legal <span>183</span></a></li>
+								<li><a href="category.html">Otros <span>343</span></a></li>
 							</ul>
 						</div>
 					</div> <!-- /Category List -->
@@ -445,11 +497,10 @@
 		<div class="row justify-content-md-center text-center">
 			<div class="col-md-8">
 				<div class="content-holder">
-					<h2>Start today to get more exposure and
-					grow your business</h2>
+					<h2>Empieza hoy a publicar tu emprendimiento y crecer</h2>
 					<ul class="list-inline mt-30">
-						<li class="list-inline-item"><a class="btn btn-main" href="ad-listing.html">Add Listing</a></li>
-						<li class="list-inline-item"><a class="btn btn-secondary" href="category.html">Browser Listing</a></li>
+						<li class="list-inline-item"><a class="btn btn-main" href="ad-listing.html">Busca tus productos</a></li>
+						<li class="list-inline-item"><a class="btn btn-secondary" href="category.html">Busca tus servicios</a></li>
 					</ul>
 				</div>
 			</div>

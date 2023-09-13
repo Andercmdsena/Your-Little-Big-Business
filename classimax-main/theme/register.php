@@ -35,6 +35,7 @@
   <link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <link href="plugins/slick/slick.css" rel="stylesheet">
   <link href="plugins/slick/slick-theme.css" rel="stylesheet">
+  
   <link href="plugins/jquery-nice-select/css/nice-select.css" rel="stylesheet">
   
   <link href="css/style.css" rel="stylesheet">
@@ -46,7 +47,59 @@
 <body class="body-wrapper" style="font-family: 'Poiret One', cursive;">
 
 
-<?php include("../components/header.php") ?>
+<header>
+	<div class="container" id="menu">
+		<div class="row">
+			<div class="col-md-12">
+				<nav class="navbar  navbar-expand-lg navbar-light navigation">
+					<a id="logo" class="navbar-brand" href="index.php">
+						<img src="images/Mi proyecto.png" alt="" style="width: 50px ; height: 50px;">
+					</a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse"
+						data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+						aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav ml-auto main-nav ">
+							<li id="home" class="nav-item active">
+								<a class="nav-link" href="index.php">Home</a>
+							</li>
+							<li class="nav-item @@pages">
+								<a class="nav-link @@about" href="about-us.php" aria-haspopup="true"
+									aria-expanded="false">
+									Sobre nosotros
+								</a>
+							</li>
+							<li class="nav-item dropdown dropdown-slide @@listing">
+								<a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+									aria-expanded="false">
+									Categorias<span><i class="fa fa-angle-down"></i></span>
+								</a>
+								<!-- Dropdown list -->
+								<ul class="dropdown-menu">
+									<li><a class="dropdown-item @@category" href="category.php">Productos</a>
+									</li>
+									<li><a class="dropdown-item @@category" href="category.php">Servicios</a></li>
+								</ul>
+							</li>
+						</ul>
+						<ul class="navbar-nav ml-auto mt-10">
+							<li id="login-btn" class="nav-item d-block pt-4">
+								<a class="nav-link login-button" href="login.php">Ingresar</a>
+							</li>
+							<li id="signup-btn" class="nav-item d-block pt-4">
+								<a class="nav-link ingresar-btn text-white add-button" href="register.php">Registrate</a>
+							</li>
+							<li class="nav-item d-block pt-4 carrito_boton" ><a class="nav-link carrito-btn" href="#">Carrito</a></li>
+						</ul>
+
+					</div>
+				</nav>
+			</div>
+		</div>
+	</div>
+</header>
 <section class="login py-5 border-top-1">
   <div class="container">
     <div class="row justify-content-center" >
@@ -57,7 +110,10 @@
           <h3 class="bg-gray p-4" style="border-top-left-radius: 20px; border-top-right-radius: 20px; background-color: #BDD0FF;">Registrate</h3>
           <form action="../controller/insertarUs.php" method="post">
             <fieldset class="p-4">
-              <input class="form-control mb-3" type="text"name="email" placeholder="Email*" required>
+              <input class="form-control mb-3" type="text" name="nombre" placeholder="Nombre" required>
+              <input class="form-control mb-3" type="text" name="apellido" placeholder="Apellido" required>
+              <input class="form-control mb-3" type="text" name="email" placeholder="Email*" required>
+              <input class="form-control mb-3" type="tel" name="telefono" placeholder="Telefono*" required>
               <input class="form-control mb-3" type="password" name="clave" id="clave" placeholder="Password*" required>
               <input class="form-control mb-3" type="password" id="con_clave" name="con_clave" placeholder="Confirm Password*" required>
               <select name="rol" id="">

@@ -58,10 +58,10 @@
 							</div>
 							<div class="form-group col-lg-3 col-md-6">
 								<select class="w-100 form-control my-2 my-lg-0">
-									<option>Category</option>
-									<option value="1">Top rated</option>
-									<option value="2">Lowest Price</option>
-									<option value="4">Highest Price</option>
+									<option>Categoria</option>
+									<option value="1">Mayor precio</option>
+									<option value="2">Menor precio</option>
+									<option value="4">Mas reciente</option>
 								</select>
 							</div>
 							<div class="form-group col-lg-3 col-md-6">
@@ -69,7 +69,7 @@
 							</div>
 							<div class="form-group col-xl-2 col-lg-3 col-md-6">
 
-								<button type="submit" class="btn btn-primary active w-100">Search Now</button>
+								<button type="submit" class="btn btn-primary active w-100">Buscar ahora</button>
 							</div>
 						</div>
 					</form>
@@ -88,19 +88,19 @@
 			<!-- Left sidebar -->
 			<div class="col-lg-8">
 				<div class="product-details">
-					<h1 class="product-title">Hp Dual Core 2gb Ram-Slim Laptop Available In Very Low Price</h1>
+					<h1 class="product-title">La laptop GAMER: Experimenta un rendimiento sin igual en un diseño portátil.</h1>
 					<div class="product-meta">
 						<ul class="list-inline">
-							<li class="list-inline-item"><i class="fa fa-user-o"></i> By <a href="user-profile.html">Andrew</a></li>
-							<li class="list-inline-item"><i class="fa fa-folder-open-o"></i> Category<a href="category.html">Electronics</a></li>
-							<li class="list-inline-item"><i class="fa fa-location-arrow"></i> Location<a href="category.html">Dhaka Bangladesh</a></li>
+							<li class="list-inline-item"><i class="fa fa-user-o"></i> Vendido por <a href="user-profile.html"></a></li>
+							<li class="list-inline-item"><i class="fa fa-folder-open-o"></i> Categoria<a href="category.html">Tecnologia</a></li>
+							<li class="list-inline-item"><i class="fa fa-location-arrow"></i> Localización<a href="category.html">..........</a></li>
 						</ul>
 					</div>
 
 					<!-- product slider -->
 					<div class="product-slider">
 						<div class="product-slider-item my-4" data-image="images/products/products-1.jpg">
-							<img class="img-fluid w-100" src="images/products/products-1.jpg" alt="product-img">
+							<img class="img-fluid w-100" src="images/products/portatil.jpg" alt="product-img">
 						</div>
 						<div class="product-slider-item my-4" data-image="images/products/products-2.jpg">
 							<img class="d-block img-fluid w-100" src="images/products/products-2.jpg" alt="Second slide">
@@ -121,38 +121,37 @@
 						<ul class="nav nav-pills  justify-content-center" id="pills-tab" role="tablist">
 							<li class="nav-item">
 								<a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home"
-								 aria-selected="true">Product Details</a>
+								 aria-selected="true">	<datagrid>Detalle del producto</datagrid></a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile"
-								 aria-selected="false">Specifications</a>
+								 aria-selected="false">Especificaciones</a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact"
-								 aria-selected="false">Reviews</a>
+								 aria-selected="false">Reseñas</a>
 							</li>
 						</ul>
 						<div class="tab-content" id="pills-tabContent">
 							<div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-								<h3 class="tab-title">Product Description</h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia laudantium beatae quod perspiciatis, neque
-									dolores eos rerum, ipsa iste cum culpa numquam amet provident eveniet pariatur, sunt repellendus quas
-									voluptate dolor cumque autem molestias. Ab quod quaerat molestias culpa eius, perferendis facere vitae commodi
-									maxime qui numquam ex voluptatem voluptate, fuga sequi, quasi! Accusantium eligendi vitae unde iure officia
-									amet molestiae velit assumenda, quidem beatae explicabo dolore laboriosam mollitia quod eos, eaque voluptas
-									enim fuga laborum, error provident labore nesciunt ad. Libero reiciendis necessitatibus voluptates ab
-									excepturi rem non, nostrum aut aperiam? Itaque, aut. Quas nulla perferendis neque eveniet ullam?</p>
+								<h3 class="tab-title">Descripción del producto</h3>
+								<p>Un portátil, también conocido como laptop o computadora portátil, es un dispositivo informático compacto y portátil diseñado para facilitar la computación móvil. Está compuesto por varios componentes esenciales que permiten el funcionamiento de un sistema informático completo en un formato compacto y fácil de transportar.</p>
 
 								<iframe width="100%" height="400" src="https://www.youtube.com/embed/LUH7njvhydE?rel=0&amp;controls=0&amp;showinfo=0"
 								 frameborder="0" allowfullscreen></iframe>
 								<p></p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam sed, officia reiciendis necessitatibus
-									obcaecati eum, quaerat unde illo suscipit placeat nihil voluptatibus ipsa omnis repudiandae, excepturi! Id
-									aperiam eius perferendis cupiditate exercitationem, mollitia numquam fuga, inventore quam eaque cumque fugiat,
-									neque repudiandae dolore qui itaque iste asperiores ullam ut eum illum aliquam dignissimos similique! Aperiam
-									aut temporibus optio nulla numquam molestias eum officia maiores aliquid laborum et officiis pariatur,
-									delectus sapiente molestiae sit accusantium a libero, eligendi vero eius laboriosam minus. Nemo quibusdam
-									nesciunt doloribus repellendus expedita necessitatibus velit vero?</p>
+								<p>
+								CPU: Procesador Intel o AMD.
+								RAM: 4 GB o más.
+								Almacenamiento: HDD o SSD con capacidad de 128 GB o superior.
+								GPU: Integrada o dedicada para gráficos.
+								Pantalla: Resolución HD, Full HD o 4K.
+								Puertos: USB, HDMI, Ethernet, etc.
+								Batería: Autonomía de 4 a 12 horas.
+								Sistema Operativo: Windows, macOS o Linux.
+								Diseño: Variado, desde ultradelgados hasta más robustos.
+								Seguridad: Opciones como huellas digitales o reconocimiento facial.
+								</p>
 
 							</div>
 							<div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
@@ -160,27 +159,27 @@
 								<table class="table table-bordered product-table">
 									<tbody>
 										<tr>
-											<td>Seller Price</td>
+											<td>Precio del vendedor</td>
 											<td>$450</td>
 										</tr>
 										<tr>
-											<td>Added</td>
-											<td>26th December</td>
+											<td>Agregado</td>
+											<td>26 Diciembre</td>
 										</tr>
 										<tr>
-											<td>State</td>
-											<td>Dhaka</td>
+											<td>Localidad</td>
+											<td>......</td>
 										</tr>
 										<tr>
-											<td>Brand</td>
-											<td>Apple</td>
+											<td>Marca</td>
+											<td>MSI</td>
 										</tr>
 										<tr>
-											<td>Condition</td>
-											<td>Used</td>
+											<td>Condición</td>
+											<td>Nuevo</td>
 										</tr>
 										<tr>
-											<td>Model</td>
+											<td>Modelo</td>
 											<td>2017</td>
 										</tr>
 										<tr>
@@ -195,7 +194,7 @@
 								</table>
 							</div>
 							<div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-								<h3 class="tab-title">Product Review</h3>
+								<h3 class="tab-title">Reseñas del producto</h3>
 								<div class="product-review">
 									<div class="media">
 										<!-- Avater -->
@@ -222,21 +221,20 @@
 												</ul>
 											</div>
 											<div class="name">
-												<h5>Jessica Brown</h5>
+												<h5>JAlguien</h5>
 											</div>
 											<div class="date">
-												<p>Mar 20, 2018</p>
+												<p>Marzo 20, 2018</p>
 											</div>
 											<div class="review-comment">
 												<p>
-													Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremqe laudant tota rem ape
-													riamipsa eaque.
+												Mi experiencia con este portátil ha sido impresionante. Su rendimiento es excepcional gracias a su potente CPU y una generosa cantidad de RAM, lo que facilita la multitarea sin problemas. La pantalla Full HD ofrece colores vibrantes y detalles nítidos, perfecta para ver películas o trabajar en proyectos creativos
 												</p>
 											</div>
 										</div>
 									</div>
 									<div class="review-submission">
-										<h3 class="tab-title">Submit your review</h3>
+										<h3 class="tab-title">Enviar tu reseña</h3>
 										<!-- Rate -->
 										<div class="rate">
 											<div class="starrr"></div>
@@ -244,16 +242,16 @@
 										<div class="review-submit">
 											<form action="#" method="POST" class="row">
 												<div class="col-lg-6 mb-3">
-													<input type="text" name="name" id="name" class="form-control" placeholder="Name" required>
+													<input type="text" name="name" id="name" class="form-control" placeholder="Nombre" required>
 												</div>
 												<div class="col-lg-6 mb-3">
-													<input type="email" name="email" id="email" class="form-control" placeholder="Email" required>
+													<input type="email" name="email" id="email" class="form-control" placeholder="Correo" required>
 												</div>
 												<div class="col-12 mb-3">
-													<textarea name="review" id="review" rows="6" class="form-control" placeholder="Message" required></textarea>
+													<textarea name="review" id="review" rows="6" class="form-control" placeholder="Mensaje" required></textarea>
 												</div>
 												<div class="col-12">
-													<button type="submit" class="btn btn-main">Sumbit</button>
+													<button type="submit" class="btn btn-main">Enviar</button>
 												</div>
 											</form>
 										</div>
@@ -267,19 +265,18 @@
 			<div class="col-lg-4">
 				<div class="sidebar">
 					<div class="widget price text-center">
-						<h4>Price</h4>
+						<h4>Precio</h4>
 						<p>$230</p>
 					</div>
 					<!-- User Profile widget -->
 					<div class="widget user text-center">
 						<img class="rounded-circle img-fluid mb-5 px-5" src="images/user/user-thumb.jpg" alt="">
-						<h4><a href="user-profile.html">Jonathon Andrew</a></h4>
-						<p class="member-time">Member Since Jun 27, 2017</p>
-						<a href="single.html">See all ads</a>
+						<h4><a href="user-profile.html">Alguin</a></h4>
+						<p class="member-time">Miembro desde Junio 27, 2017</p>
+						<a href="single.html">Ver todas publicaciones</a>
 						<ul class="list-inline mt-20">
-							<li class="list-inline-item"><a href="contact-us.html" class="btn btn-contact d-inline-block  btn-primary px-lg-5 my-1 px-md-3">Contact</a></li>
-							<li class="list-inline-item"><a href="single.html" class="btn btn-offer d-inline-block btn-primary ml-n1 my-1 px-lg-4 px-md-3">Make an
-									offer</a></li>
+							<li class="list-inline-item"><a href="contact-us.html" class="btn btn-contact d-inline-block  btn-primary px-lg-5 my-1 px-md-3">Contacto</a></li>
+							<li class="list-inline-item"><a href="single.html" class="btn btn-offer d-inline-block btn-primary ml-n1 my-1 px-lg-4 px-md-3">Hacer una oferta</a></li>
 						</ul>
 					</div>
 					<!-- Map Widget -->
@@ -291,30 +288,29 @@
 					<!-- Rate Widget -->
 					<div class="widget rate">
 						<!-- Heading -->
-						<h5 class="widget-header text-center">What would you rate
+						<h5 class="widget-header text-center">Como calificarías 
 							<br>
-							this product</h5>
+							este producto</h5>
 						<!-- Rate -->
 						<div class="starrr"></div>
 					</div>
 					<!-- Safety tips widget -->
 					<div class="widget disclaimer">
-						<h5 class="widget-header">Safety Tips</h5>
+						<h5 class="widget-header">Consejo seguros</h5>
 						<ul>
-							<li>Meet seller at a public place</li>
-							<li>Check the item before you buy</li>
-							<li>Pay only after collecting the item</li>
-							<li>Pay only after collecting the item</li>
+							<li>Reunete con el vendedor enn un lugar publico</li>
+							<li>Revisa el producto antes de comprarlo</li>
+							<li>Pagar despues de adquirir el producto</li>
+						
 						</ul>
 					</div>
 					<!-- Coupon Widget -->
 					<div class="widget coupon text-center">
 						<!-- Coupon description -->
-						<p>Have a great product to post ? Share it with
-							your fellow users.
+						<p>Tienes un prodcuto para publicar, compartelo con tus usuarios.
 						</p>
 						<!-- Submii button -->
-						<a href="single.html" class="btn btn-transparent-white">Submit Listing</a>
+						<a href="single.html" class="btn btn-transparent-white">Enviar listado</a>
 					</div>
 
 				</div>

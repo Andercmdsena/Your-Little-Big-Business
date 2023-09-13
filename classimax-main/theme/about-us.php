@@ -42,6 +42,7 @@
 
 
 
+
 </head>
 
 <body class="body-wrapper">
@@ -69,26 +70,21 @@
 	<!-- Container End -->
 </section>
 
-<section class="section">
+<section class="section contenido_us">
   <div class="container">
     <div class="row">
       <div class="col-lg-6">
         <div class="about-img">
-          <img src="images/about/about.jpg" class="img-fluid w-100 rounded" alt="">
+          <img src="images/admins/about.jpg" class="img-fluid w-100 rounded" alt="">
         </div>
       </div>
-      <div class="col-lg-6 pt-5 pt-lg-0">
+      <div class="col-lg-6 pt-5 pt-lg-0" >
         <div class="about-content">
-          <h3 class="font-weight-bold">Introduction</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc est justo, aliquam nec tempor
-            fermentum, commodo et libero. Quisque et rutrum arcu. Vivamus dictum tincidunt magna id
-            euismod. Nam sollicitudin mi quis orci lobortis feugiat.</p>
-          <h3 class="font-weight-bold">How we can help</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc est justo, aliquam nec tempor
-            fermentum, commodo et libero. Quisque et rutrum arcu. Vivamus dictum tincidunt magna id
-            euismod. Nam sollicitudin mi quis orci lobortis feugiat. Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit. Nunc est justo, aliquam nec tempor fermentum, commodo et libero. Quisque et rutrum arcu. Vivamus dictum
-            tincidunt magna id euismod. Nam sollicitudin mi quis orci lobortis feugiat.</p>
+          <h3 class="font-weight-bold" id="h3_us">Introduccion</h3>
+          <p>Detrás de cada línea de código, cada diseño cuidadosamente elaborado y cada función innovadora, se encuentra nuestro dedicado equipo de desarrollo en Your Little Big Business. Somos un grupo apasionado de profesionales creativos y amantes de la tecnología que se unen con un propósito: hacer que tu experiencia en nuestra plataforma sea excepcional. </p>
+          <br>
+          <br>
+          
         </div>
       </div>
     </div>
@@ -99,43 +95,52 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
-        <div class="heading text-center text-capitalize font-weight-bold py-5">
-          <h2>our team</h2>
+        <div class="heading text-center text-capitalize font-weight-bold py-5"  id="equipo">
+          <h2>Nuestro equipo</h2>
         </div>
       </div>
       <div class="col-lg-3 col-sm-6">
         <div class="card my-3 my-lg-0">
-          <img class="card-img-top" src="images/team/team1.jpg" class="img-fluid w-100" alt="Card image cap">
+          <img class="card-img-top personas" src="images/team/team1.jpg" class="img-fluid w-100" alt="Card image cap">
           <div class="card-body bg-gray text-center">
-            <h5 class="card-title">John Doe</h5>
-            <p class="card-text">Founder / CEO</p>
+            <h5 class="card-title">Anderson Tovar</h5>
+            <p class="card-text">Fundador/desarollador</p>
           </div>
         </div>
       </div>
       <div class="col-lg-3 col-sm-6">
         <div class="card my-3 my-lg-0">
-          <img class="card-img-top" src="images/team/team2.jpg" class="img-fluid w-100" alt="Card image cap">
+          <img class="card-img-top personas" src="images/team/team2.jpg" class="img-fluid w-100" alt="Card image cap">
           <div class="card-body bg-gray text-center">
-            <h5 class="card-title">John Doe</h5>
-            <p class="card-text">Founder / CEO</p>
+            <h5 class="card-title">Juan Alvis</h5>
+            <p class="card-text">Fundador/desarollador</p>
           </div>
         </div>
       </div>
       <div class="col-lg-3 col-sm-6">
         <div class="card my-3 my-lg-0">
-          <img class="card-img-top" src="images/team/team3.jpg" class="img-fluid w-100" alt="Card image cap">
+          <img class="card-img-top personas" src="images/admins/samuel.jpeg" class="img-fluid w-100" alt="Card image cap">
           <div class="card-body bg-gray text-center">
-            <h5 class="card-title">John Doe</h5>
-            <p class="card-text">Founder / CEO</p>
+            <h5 class="card-title">Samuel Diaz</h5>
+            <p class="card-text">Fundador/desarollador</p>
           </div>
         </div>
       </div>
       <div class="col-lg-3 col-sm-6">
         <div class="card my-3 my-lg-0">
-          <img class="card-img-top" src="images/team/team4.jpg" class="img-fluid w-100" alt="Card image cap">
+          <img class="card-img-top personas" src="images/admins/simon.jpg" class="img-fluid w-100" alt="Card image cap">
           <div class="card-body bg-gray text-center">
-            <h5 class="card-title">John Doe</h5>
-            <p class="card-text">Founder / CEO</p>
+            <h5 class="card-title">Simon Peralta</h5>
+            <p class="card-text">Fundador/desarollador</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-6">
+        <div class="card my-3 my-lg-0">
+          <img class="card-img-top personas" src="images/admins/edison.jpeg" class="img-fluid w-100" alt="Card image cap">
+          <div class="card-body bg-gray text-center">
+            <h5 class="card-title">Edison Ramirez</h5>
+            <p class="card-text">Fundador/desarollador</p>
           </div>
         </div>
       </div>
@@ -150,7 +155,7 @@
         <div class="counter-content text-center bg-light py-4 rounded">
           <i class="fa fa-smile-o d-block"></i>
           <span class="counter my-2 d-block" data-count="2314">0</span>
-          <h5>Happy Customers</h5>
+          <h5>Usuarios felices</h5>
           </script>
         </div>
       </div>
@@ -158,21 +163,21 @@
         <div class="counter-content text-center bg-light py-4 rounded">
           <i class="fa fa-user-o d-block"></i>
           <span class="counter my-2 d-block" data-count="1013">0</span>
-          <h5>Active Members</h5>
+          <h5>Miembros activos</h5>
         </div>
       </div>
       <div class="col-lg-3 col-sm-6 my-lg-0 my-3">
         <div class="counter-content text-center bg-light py-4 rounded">
           <i class="fa fa-bookmark-o d-block"></i>
           <span class="counter my-2 d-block" data-count="2413">0</span>
-          <h5>Verified Ads</h5>
+          <h5>Productos activos</h5>
         </div>
       </div>
       <div class="col-lg-3 col-sm-6 my-lg-0 my-3">
         <div class="counter-content text-center bg-light py-4 rounded">
           <i class="fa fa-smile-o d-block"></i>
           <span class="counter my-2 d-block" data-count="200">0</span>
-          <h5>Happy Customers</h5>
+          <h5>Servicios activos</h5>
         </div>
       </div>
     </div>
@@ -202,7 +207,7 @@ Essential Scripts
 <script src="plugins/google-map/map.js" defer></script>
 
 <script src="js/script.js"></script>
-<script type="module" src="../controller/firebase/main.js"></script>
+
 
 
 </body>

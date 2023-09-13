@@ -1,3 +1,12 @@
+<?php
+
+require_once("../model/conexion.php");
+require_once("../model/consultas.php");
+require_once("../controller/mostrarInfoUsuario.php");
+
+?>;
+
+
 <!DOCTYPE html>
 
 <!--
@@ -67,105 +76,105 @@
 					<!-- Dashboard Links -->
           <div class="widget user-dashboard-menu">
             <ul>
-              <li><a href="index.html">Savings Dashboard</a></li>
-              <li><a href="index.html">Saved Offer <span>(5)</span></a></li>
-              <li><a href="index.html">Favourite Stores <span>(3)</span></a></li>
-              <li><a href="index.html">Recommended</a></li>
+			<?php 
+			cargarUsuarioPerfil();
+			
+			?>
             </ul>
           </div>
 				</div>
 			</div>
-			<div class="col-lg-8">
+			<div class="col-lg-8" id="informacion_per">
 				<!-- Edit Profile Welcome Text -->
 				<div class="widget welcome-message">
-					<h2>Edit profile</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
+					<h2>Edita tu perfil</h2>
+					<p>En esta sección puedes actualizar tus datos y gestionar las configuracción de tu perfil</p>
 				</div>
 				<!-- Edit Personal Info -->
-				<div class="row">
+				<div class="row" id="cold">
 					<div class="col-lg-6 col-md-6">
-						<div class="widget personal-info">
-							<h3 class="widget-header user">Edit Personal Information</h3>
+						<div class="widget " >
+							<h3 class="widget-header user">Edita perfil</h3>
 							<form action="#">
 								<!-- First Name -->
-								<div class="form-group">
-									<label for="first-name">First Name</label>
+								<div class="form-group personal-info">
+									<label for="first-name">Nombres</label>
 									<input type="text" class="form-control" id="first-name">
 								</div>
 								<!-- Last Name -->
-								<div class="form-group">
-									<label for="last-name">Last Name</label>
+								<div class="form-group personal-info">
+									<label for="last-name">Apellidos</label>
 									<input type="text" class="form-control" id="last-name">
 								</div>
 								<!-- File chooser -->
-								<div class="form-group choose-file d-inline-flex">
+								<div class="form-group personal-info choose-file d-inline-flex">
 									<i class="fa fa-user text-center px-3"></i>
 									<input type="file" class="form-control-file mt-2 pt-1" id="input-file">
 								 </div>
 								<!-- Comunity Name -->
-								<div class="form-group">
-									<label for="comunity-name">Comunity Name</label>
+								<div class="form-group personal-info">
+									<label for="comunity-name">Pais</label>
 									<input type="text" class="form-control" id="comunity-name">
 								</div>
 								<!-- Checkbox -->
 								<div class="form-check">
 								  <label class="form-check-label" for="hide-profile">
 									<input class="form-check-input mt-1" type="checkbox" value="" id="hide-profile">
-									Hide Profile from Public/Comunity
+									Perfil privado	
 								  </label>
 								</div>
 								<!-- Zip Code -->
-								<div class="form-group">
-									<label for="zip-code">Zip Code</label>
+								<div class="form-group  personal-info">
+									<label for="zip-code">Codigo postal</label>
 									<input type="text" class="form-control" id="zip-code">
 								</div>
 								<!-- Submit button -->
-								<button class="btn btn-transparent">Save My Changes</button>
+								<button class="btn btn-transparent btn-perfil">Guardar mis cambios</button>
 							</form>
 						</div>
 					</div>
 					<div class="col-lg-6 col-md-6">
 						<!-- Change Password -->
 					<div class="widget change-password">
-						<h3 class="widget-header user">Edit Password</h3>
+						<h3 class="widget-header user">Editar contraseña</h3>
 						<form action="#">
 							<!-- Current Password -->
-							<div class="form-group">
-								<label for="current-password">Current Password</label>
+							<div class="form-group personal-info">
+								<label for="current-password">Antigua contraseña</label>
 								<input type="password" class="form-control" id="current-password">
 							</div>
 							<!-- New Password -->
-							<div class="form-group">
-								<label for="new-password">New Password</label>
+							<div class="form-group personal-info">
+								<label for="new-password">Nueva contraseña</label>
 								<input type="password" class="form-control" id="new-password">
 							</div>
 							<!-- Confirm New Password -->
-							<div class="form-group">
-								<label for="confirm-password">Confirm New Password</label>
+							<div class="form-group personal-info">
+								<label for="confirm-password">Confirmar nueva contraseña</label>
 								<input type="password" class="form-control" id="confirm-password">
 							</div>
 							<!-- Submit Button -->
-							<button class="btn btn-transparent">Change Password</button>
+							<button class="btn btn-transparent btn-perfil">Cambiar contraseña</button>
 						</form>
 					</div>
 					</div>
 					<div class="col-lg-6 col-md-6">
 						<!-- Change Email Address -->
 					<div class="widget change-email mb-0">
-						<h3 class="widget-header user">Edit Email Address</h3>
+						<h3 class="widget-header user">Editar dirección de correo</h3>
 						<form action="#">
 							<!-- Current Password -->
-							<div class="form-group">
-								<label for="current-email">Current Email</label>
-								<input type="email" class="form-control" id="current-email">
+							<div class="form-group personal-info">
+								<label for="current-email">Antiguo correo</label>
+								<input type="email" class="form-control " id="current-email">
 							</div>
 							<!-- New email -->
-							<div class="form-group">
-								<label for="new-email">New email</label>
+							<div class="form-group personal-info">
+								<label for="new-email">Nuevo correo</label>
 								<input type="email" class="form-control" id="new-email">
 							</div>
 							<!-- Submit Button -->
-							<button class="btn btn-transparent">Change email</button>
+							<button class="btn btn-transparent btn-perfil btn-perfil" id="btn-perfil">Cambiar correo</button>
 						</form>
 					</div>
 					</div>

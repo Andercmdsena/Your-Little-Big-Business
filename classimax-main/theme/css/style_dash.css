@@ -14,7 +14,7 @@
     color: rgb(0, 0, 0);
     font-family: 'Poiret One', cursive;
     font-weight: bold;
-    background: white;
+    background: #cfd6ff;
 }
 
 
@@ -98,12 +98,12 @@ tbody tr td {
     border: 1px solid black;
     border-radius: 20px;
     color: black;
-    background-color: white;
+    background-color: rgb(231, 198, 255);
     transition: 0.5s;
     margin-left: 20px;
 }
 .btn:not(:disabled):not(.disabled):hover{
-    background-color: rgb(236, 236, 236);
+    background-color: rgba(135, 69, 181, 0.719);
 }
 .perfil-user img{
     border-radius: 20px;
@@ -124,11 +124,11 @@ tbody tr td{
 }
 
 .sidebar{
-    background: white;
+    background: #cfd6ff;
 }
 
 .sidebar .nano-content>ul li>a{
-    background: white;
+    background: #fff;
 }
 .logo{
     background: none;

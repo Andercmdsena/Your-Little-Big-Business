@@ -2,11 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poiret+One&family=Varela+Round&display=swap');
 
 .descripcion_admin p{
-    font-size: 15px;
+    font-size: 17px;
     COLOR: black;
     font-weight: bold   ;
     font-family: 'Poiret One', cursive;
-
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 
@@ -14,7 +15,7 @@
     color: rgb(0, 0, 0);
     font-family: 'Poiret One', cursive;
     font-weight: bold;
-    background: #cfd6ff;
+    background: #BDD0FF;
 }
 
 
@@ -35,13 +36,13 @@ tbody tr td {
     font-size: 25px;
     border-radius: 10px;
     color: black;
-    background-color: rgb(173, 36, 36) !important;
+    background-color: #eecfff !important;
 }
 .card input{
     font-family: 'Poiret One', cursive;
     font-weight: 900;
     color: black;
-    background-color: #BDD0FF!important;
+    background-color: #ffffff!important;
     border:1px solid black;
     border-radius: 10px;
 }
@@ -49,7 +50,7 @@ tbody tr td {
     font-family: 'Poiret One', cursive;
     font-weight: bold;
     color: black;
-    background-color: #5fb471 !important;
+    background-color: #ffffff !important;
     border:1px solid black;
     border-radius: 10px;
 }
@@ -74,7 +75,7 @@ tbody tr td {
     margin: 0 10px 0 10px;
 }
 .nav-tabs .nav-link{
-    background: rgb(115, 83, 255);
+    background: #BDD0FF;
     margin: 0 10px 0 10px;
     font-weight: bold;
     font-size: 25px;
@@ -98,20 +99,14 @@ tbody tr td {
     border: 1px solid black;
     border-radius: 20px;
     color: black;
-<<<<<<< HEAD
     background-color: rgb(28, 155, 138);
-=======
     background-color: rgb(231, 198, 255);
->>>>>>> 82ab98cf1b8e1256dc16ba7d45f959509bb441b4
     transition: 0.5s;
     margin-left: 20px;
 }
 .btn:not(:disabled):not(.disabled):hover{
-<<<<<<< HEAD
     background-color: rgb(255, 113, 19);
-=======
     background-color: rgba(135, 69, 181, 0.719);
->>>>>>> 82ab98cf1b8e1256dc16ba7d45f959509bb441b4
 }
 .perfil-user img{
     border-radius: 20px;
@@ -132,19 +127,16 @@ tbody tr td{
 }
 
 .sidebar{
-<<<<<<< HEAD
     background: #BDD0FF;
 }
 
 .sidebar .nano-content>ul li>a{
     background: rgb(255, 69, 140);
-=======
     background: #cfd6ff;
 }
 
 .sidebar .nano-content>ul li>a{
     background: #fff;
->>>>>>> 82ab98cf1b8e1256dc16ba7d45f959509bb441b4
 }
 .logo{
     background: none;

@@ -3667,11 +3667,9 @@ tbody tr td:last-child {
 }
 body {
   font-family: 'Roboto', sans-serif;
-<<<<<<< HEAD
+
   background: #BDD0FF;
-=======
   background: #dee3ff;
->>>>>>> 82ab98cf1b8e1256dc16ba7d45f959509bb441b4
   color: #868e96;
   font-size: 14px;
 }

@@ -107,11 +107,7 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
-<<<<<<< HEAD
-        <div class="heading text-center text-capitalize font-weight-bold py-5">
-=======
         <div class="heading text-center text-capitalize font-weight-bold py-5"  id="equipo">
->>>>>>> d1f62d5cfa4e2d14ae3bd63f13e2546151b9a78a
           <h2>Nuestro equipo</h2>
         </div>
       </div>
@@ -119,13 +115,8 @@
         <div class="card my-3 my-lg-0">
           <img class="card-img-top personas" src="images/team/team1.jpg" class="img-fluid w-100" alt="Card image cap">
           <div class="card-body bg-gray text-center">
-<<<<<<< HEAD
-            <h5 class="card-title">Edison Ramirez</h5>
-            <p class="card-text">Desarrollador</p>
-=======
             <h5 class="card-title">Anderson Tovar</h5>
             <p class="card-text">Fundador/desarollador</p>
->>>>>>> d1f62d5cfa4e2d14ae3bd63f13e2546151b9a78a
           </div>
         </div>
       </div>

@@ -76,7 +76,9 @@ body {
     }
   }
   .footer-bottom .copyright p {
-    color: #c7c7c7;
+    color: #000000;
+    font-family: 'Poiret One', cursive;
+    font-weight: bold;
     margin-bottom: 0;
   }
   .footer-bottom .social-media-icons {
@@ -98,6 +100,23 @@ body {
     color: #fff !important;
     text-decoration: none;
   }
+.text-red{
+  color: red;
+  font-family: 'Poiret One', cursive;
+  font-weight: bold;
+}
+
+
+#listas ul li a{
+  font-family: 'Poiret One', cursive;
+  font-weight: bold;
+  font-size: 20px;
+}
+#listas2 ul li a{
+  font-family: 'Poiret One', cursive;
+  font-weight: bold;
+  font-size: 20px;
+}
 
 
 

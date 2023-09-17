@@ -22,7 +22,7 @@ p, li, input, select, button {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Poiret One', cursive;
+  font-family: 'Varela Round', sans-serif;
   font-weight: 600;
   color: #333;
 }
@@ -169,7 +169,7 @@ a:hover {
   border-radius: 2px;
   height: 50px;
   background-color: transparent;
-  color: #666;
+  color: #000000;
   box-shadow: none;
   font-size: 15px;
 }
@@ -379,7 +379,7 @@ button {
 }
 .btn-secondary:hover {
   background: #5672f9;
-  color: #fff;
+  color: #000000;
   border-color: #fff;
 }
 
@@ -514,9 +514,10 @@ ul.pagination .active a {
 .page-search .advance-search .form-group {
   margin-bottom: 0;
 }
+
 .page-search .advance-search .form-control {
-  border: 1px solid #fff;
-  color: #fff;
+  border: 0px solid #fff;
+  color: #000000;
 }
 .page-search .advance-search ::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
@@ -904,8 +905,9 @@ ul.pagination .active a {
 .category-block {
   box-shadow: 0px 7px 16px 0px rgba(0, 0, 0, 0.09);
   padding: 20px 25px;
-  border-radius: 3px;
+  border-radius: 20px;
   margin-bottom: 25px;
+
 }
 .category-block .header {
   margin-bottom: 20px;
@@ -971,15 +973,20 @@ ul.pagination .active a {
 }
 .category-block .category-list li a {
   display: block;
-  color: #777;
-  font-size: 13px;
+  color: #000000;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Poiret One', cursive;
+
 }
 .category-block .category-list li a span {
   float: right;
-  font-size: 10px;
+  font-size: 14px;
   border-radius: 10px;
   padding: 3px 8px;
-  color: #84919B;
+  font-weight: bold;
+  font-family: 'Poiret One', cursive;
+  color: #000000;
 }
 .category-block .category-list li a:hover {
   text-decoration: underline;
@@ -1061,11 +1068,14 @@ ul.pagination .active a {
 }
 .product-item .card .card-body {
   padding: 20px;
+  border-bottom: 5px solid #BDD0FF;
+  border-radius: 10px;
 }
 .product-item .card .card-body .card-title {
   font-size: 18px;
   margin-bottom: 5px;
   font-weight: 600;
+
 }
 .product-item .card .card-body .card-text {
   color: #777;
@@ -1238,7 +1248,6 @@ ul.pagination .active a {
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
   padding: 25px 30px 30px;
   margin-bottom: 30px;
-  border-radius: 2px;
 }
 .widget .widget-header {
   display: block;
@@ -1417,7 +1426,7 @@ ul.pagination .active a {
   font-size: 14px;
   line-height: 26px;
   letter-spacing: 0;
-  color: #848484;
+  color: #000000;
 }
 .widget.personal-info .form-group, .widget.change-password .form-group, .widget.change-email .form-group {
   margin-bottom: 25px;
@@ -1868,6 +1877,8 @@ article.single-post p {
 
 .about-content p {
   line-height: 30px;
+  font-family: 'Poiret One', cursive;
+  font-weight: bold;
 }
 
 .counter-content i {
@@ -1938,6 +1949,7 @@ form textarea {
 #hero li a{
   padding: 18px;
   font-size: 15px;
+  border-radius: 10px;
   font-family: 'Poiret One', cursive;
   font-weight: bold;
   background-color: rgba(128, 128, 128, 0.575);
@@ -1983,7 +1995,7 @@ form textarea {
 #busqueda_avanzada button{
   font-family: 'Poiret One', cursive;
   font-weight: bold;
-  background-color: #00221C;
+  background-color: #e394ff;
   color: rgb(255, 255, 255);
   border: none;
   transition: 0.5s;
@@ -2032,5 +2044,194 @@ form textarea {
 }
 .cat_item:hover{
   transform: scale(1.05);
-  box-shadow: 1px 1px 12px black;
+  box-shadow: 3px 3px 12px #BDD0FF;
+}
+
+/* ---------------------Sobre nosotros-------- */
+
+#equipo h2{
+  font-family: 'Poiret One', cursive;
+  font-weight: bold;
+  color: black;
+
+}
+.card-title {
+  margin-bottom: 0.75rem;
+  color: black;
+  font-family: 'Poiret One', cursive;
+  font-weight: bold;
+  font-size: 25px;
+}
+.card-text:last-child {
+  margin-bottom: 0;
+  font-size: 20px;
+  color: black;
+  font-family: 'Poiret One', cursive;
+  font-weight: bold;
+}
+
+.counter-content h5 {
+  font-size: 24px;
+  color: black;
+  font-family: 'Poiret One', cursive;
+  font-weight: bold;
+  
+}
+
+
+/* -----------------------Todas las categorias index.php-------------------- */
+.search-result h2{
+  color: black;
+  font-family: 'Poiret One', cursive;
+  font-weight: bold;
+  font-size: 30px;
+}
+.search-result p{
+  color: black;
+  font-family: 'Poiret One', cursive;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.widget .widget-header {
+  color: black;
+  font-family: 'Poiret One', cursive;
+  font-weight: bold;
+  font-size: 25px;
+}
+.widget.category-list ul li a {
+  font-family: 'Poiret One', cursive;
+  font-weight: bold;
+}
+.product-item .card .card-body .card-text {
+  color: black;
+  font-family: 'Poiret One', cursive;
+  font-weight: bold;
+}
+
+.product-item .product-meta li a {
+  color: black;
+  font-family: 'Poiret One', cursive;
+  font-weight: bold;
+}
+.form-check-label {
+  color: black;
+  font-family: 'Poiret One', cursive;
+  font-weight: bold;
+}
+
+  
+.btn:not(:disabled):not(.disabled) {
+  cursor: pointer;
+  COLOR: black;
+  font-family: 'Poiret One', cursive;
+  font-weight: bold;
+}
+#filtro option{
+  font-size: 17px;
+}
+.personas{
+  height: 300px;
+}
+
+/* --------------------------Perfil usuario---------------------- */
+
+
+.welcome-message h2 {
+  font-size: 80px;
+  COLOR: black;
+  font-family: 'Varela Round', sans-serif;
+  font-weight: bold;
+
+}
+.welcome-message P {
+  font-size: 20px;
+  COLOR: black;
+  font-family: 'Poiret One', cursive;
+  font-weight: bold;
+
+}
+
+.widget .widget-header {
+  color: rgb(0, 0, 0);
+  font-family: 'Poiret One', cursive;
+  font-weight: bold;
+  font-size: 28px;
+}
+
+.personal-info label{
+  COLOR: black;
+  font-family: 'Poiret One', cursive;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.btn-perfil:hover{
+  background-color: #BDD0FF;
+}
+
+/* -------------------------Single.php------------------------------- */
+
+.product-details .product-title{
+  font-size: 35px;
+  font-family: 'Varela Round', cursive;
+  font-weight: bold;
+}
+
+.list-inline{
+  font-size: 35px;
+  font-family: 'Varela Round', cursive;
+  font-weight: bold;
+}
+.product-details .product-meta li{
+  font-family: 'Poiret One', cursive;
+  font-size: 25px;
+  color: black;
+}
+
+.product-details .content p{
+  font-family: 'Poiret One', cursive;
+  font-size: 20px;
+  color: black;
+  line-height: 35px;
+}
+.product-table tr td:first-child{
+  font-family: 'Poiret One', cursive;
+  font-size: 20px;
+  color: black;
+  line-height: 35px;
+  font-weight: bold;
+}
+
+.product-table tr td{
+  font-family: 'Poiret One', cursive;
+  font-size: 20px;
+  color: black;
+  line-height: 35px;
+}
+
+.product-details .content .nav .nav-item .nav-link.active{
+  background: #BDD0FF;
+  font-family: 'Poiret One', cursive;
+  font-size: 20px;
+  color: black;
+  line-height: 35px;
+  font-weight: bold;
+}
+.product-details .content .nav .nav-item .nav-link{
+  background: #BDD0FF;
+  font-family: 'Poiret One', cursive;
+  font-size: 20px;
+  color: black;
+  line-height: 35px;
+  font-weight: bold;
+}
+
+.product-details .content .nav .nav-item .nav-link:hover{
+  background: #acc3fd;
+  font-family: 'Poiret One', cursive;
+  font-size: 20px;
+  color: black;
+  line-height: 35px;
+  font-weight: bold;
 }

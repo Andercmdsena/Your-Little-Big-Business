@@ -61,11 +61,7 @@
 							<div class="form-group col-lg-3 col-md-6">
 								<select class="w-100 form-control my-2 my-lg-0">
 									<option>Categoria</option>
-<<<<<<< HEAD:classimax-main/theme/category.php
-									<option value="1">Mejor valorado</option>
-=======
 									<option value="1">Mas relevantes</option>
->>>>>>> d1f62d5cfa4e2d14ae3bd63f13e2546151b9a78a:classimax-main/theme/productos.php
 									<option value="2">Menor precio</option>
 									<option value="4">Mayor precio</option>
 								</select>
@@ -88,50 +84,26 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-<<<<<<< HEAD:classimax-main/theme/category.php
-				<div class="search-result bg-gray">
-					<h2>Resultados</h2>
-					<p></p>
-=======
 				<div class="search-result bg-gray " id="resultados">
 					<h2>Resultados para tu "busqueda"</h2>
 					<p>123 resultadps en 12 Diciembre, 2017</p>
->>>>>>> d1f62d5cfa4e2d14ae3bd63f13e2546151b9a78a:classimax-main/theme/productos.php
 				</div>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-lg-3 col-md-4">
 				<div class="category-sidebar">
-<<<<<<< HEAD:classimax-main/theme/category.php
-					<div class="widget category-list">
-	<h4 class="widget-header">Todas las categorias</h4>
-	<ul class="category-list">
-		<li><a href="category.html">Portatiles <span>93</span></a></li>
-		<li><a href="category.html">Iphone <span>233</span></a></li>
-=======
 					<div class="widget category-list categorias">
 	<h4 class="widget-header">Todas</h4>
 	<ul class="category-list">
 		<li><a href="category.html">Computadores <span>93</span></a></li>
 		<li><a href="category.html">Celulares <span>233</span></a></li>
->>>>>>> d1f62d5cfa4e2d14ae3bd63f13e2546151b9a78a:classimax-main/theme/productos.php
 		<li><a href="category.html">Microsoft  <span>183</span></a></li>
 		<li><a href="category.html">Monitores <span>343</span></a></li>
 	</ul>
 </div>
 
 <div class="widget category-list">
-<<<<<<< HEAD:classimax-main/theme/category.php
-	<h4 class="widget-header">Localidades</h4>
-	<ul class="category-list">
-		<li><a href="category.html">Kennedy<span>93</span></a></li>
-		<li><a href="category.html">Engativa<span>233</span></a></li>
-		<li><a href="category.html">Bosa<span>183</span></a></li>
-		<li><a href="category.html">Suba<span>120</span></a></li>
-		<li><a href="category.html">Puente aranda<span>40</span></a></li>
-		<li><a href="category.html">Ciudad bolivar<span>81</span></a></li>
-=======
 	<h4 class="widget-header">Lugares</h4>
 	<ul class="category-list">
 		<li><a href="category.html">Kennedy <span>93</span></a></li>
@@ -140,33 +112,21 @@
 		<li><a href="category.html">Suba <span>120</span></a></li>
 		<li><a href="category.html">Barrios unidos <span>40</span></a></li>
 		<li><a href="category.html">12 de octubre <span>81</span></a></li>
->>>>>>> d1f62d5cfa4e2d14ae3bd63f13e2546151b9a78a:classimax-main/theme/productos.php
 	</ul>
 </div>
 
 <div class="widget filter">
 	<h4 class="widget-header">Mostrar productos</h4>
 	<select>
-<<<<<<< HEAD:classimax-main/theme/category.php
-		<option>Popularidad</option>
-		<option value="1">Mejor valorado</option>
-		<option value="2">Menor precio</option>
-		<option value="4">Mayor precio</option>
-=======
 		<option>Populares</option>
 		<option value="1">Top ventas</option>
 		<option value="2">Precio mas bajo</option>
 		<option value="4">Precio mas alto</option>
->>>>>>> d1f62d5cfa4e2d14ae3bd63f13e2546151b9a78a:classimax-main/theme/productos.php
 	</select>
 </div>
 
 <div class="widget price-range w-100">
-<<<<<<< HEAD:classimax-main/theme/category.php
-	<h4 class="widget-header">Rango de precios</h4>
-=======
 	<h4 class="widget-header">Rango de precio</h4>
->>>>>>> d1f62d5cfa4e2d14ae3bd63f13e2546151b9a78a:classimax-main/theme/productos.php
 	<div class="block">
 						<input class="range-track w-100" type="text" data-slider-min="0" data-slider-max="1.000.000" data-slider-step="#"
 						data-slider-value="[0,1.000.000]">
@@ -177,11 +137,7 @@
 </div>
 
 <div class="widget product-shorting">
-<<<<<<< HEAD:classimax-main/theme/category.php
-	<h4 class="widget-header">Condicion del producto</h4>
-=======
 	<h4 class="widget-header">Condiciones</h4>
->>>>>>> d1f62d5cfa4e2d14ae3bd63f13e2546151b9a78a:classimax-main/theme/productos.php
 	<div class="form-check">
 	  <label class="form-check-label">
 	    <input class="form-check-input" type="checkbox" value="">
@@ -191,31 +147,19 @@
 	<div class="form-check">
 	  <label class="form-check-label">
 	    <input class="form-check-input" type="checkbox" value="">
-<<<<<<< HEAD:classimax-main/theme/category.php
-	    Poco usado
-=======
 	    Usado
->>>>>>> d1f62d5cfa4e2d14ae3bd63f13e2546151b9a78a:classimax-main/theme/productos.php
 	  </label>
 	</div>
 	<div class="form-check">
 	  <label class="form-check-label">
 	    <input class="form-check-input" type="checkbox" value="">
-<<<<<<< HEAD:classimax-main/theme/category.php
-	  Usado
-=======
 	    Poco uso
->>>>>>> d1f62d5cfa4e2d14ae3bd63f13e2546151b9a78a:classimax-main/theme/productos.php
 	  </label>
 	</div>
 	<div class="form-check">
 	  <label class="form-check-label">
 	    <input class="form-check-input" type="checkbox" value="">
-<<<<<<< HEAD:classimax-main/theme/category.php
-	    Desgaste
-=======
 	    Casi nuevo
->>>>>>> d1f62d5cfa4e2d14ae3bd63f13e2546151b9a78a:classimax-main/theme/productos.php
 	  </label>
 	</div>
 </div>
@@ -226,11 +170,7 @@
 				<div class="category-search-filter">
 					<div class="row">
 						<div class="col-md-6 text-center text-md-left">
-<<<<<<< HEAD:classimax-main/theme/category.php
-							<strong>Filtrar</strong>
-=======
 							<strong>Filtro</strong>
->>>>>>> d1f62d5cfa4e2d14ae3bd63f13e2546151b9a78a:classimax-main/theme/productos.php
 							<select>
 								<option>Mas reciente</option>
 								<option value="1">Mas popular</option>
@@ -240,11 +180,7 @@
 						</div>
 						<div class="col-md-6 text-center text-md-right mt-2 mt-md-0">
 							<div class="view">
-<<<<<<< HEAD:classimax-main/theme/category.php
-								<strong>Ver</strong>
-=======
 								<strong>Visitas</strong>
->>>>>>> d1f62d5cfa4e2d14ae3bd63f13e2546151b9a78a:classimax-main/theme/productos.php
 								<ul class="list-inline view-switcher">
 									<li class="list-inline-item">
 										<a href="#!" onclick="event.preventDefault();" class="text-info"><i class="fa fa-th-large"></i></a>
@@ -270,18 +206,6 @@
 			</a>
 		</div>
 		<div class="card-body">
-<<<<<<< HEAD:classimax-main/theme/category.php
-		    <h4 class="card-title"><a href="single.html">Cama</a></h4>
-		    <ul class="list-inline product-meta">
-		    	<li class="list-inline-item">
-		    		<a href="single.html"><i class="fa fa-folder-open-o"></i>Para el hogar</a>
-		    	</li>
-		    	<li class="list-inline-item">
-		    		<a href="category.html"><i class="fa fa-calendar"></i>26 de diciembre</a>
-		    	</li>
-		    </ul>
-		    <p class="card-text">Cama multiplex</p>
-=======
 		    <h4 class="card-title"><a href="single.html">Celular inteligente</a></h4>
 		    <ul class="list-inline product-meta">
 		    	<li class="list-inline-item">
@@ -292,7 +216,6 @@
 		    	</li>
 		    </ul>
 		    <p class="card-text">Potencia y estilo en tu mano: un teléfono inteligente de calidad y para todo .</p>
->>>>>>> d1f62d5cfa4e2d14ae3bd63f13e2546151b9a78a:classimax-main/theme/productos.php
 		    <div class="product-ratings">
 		    	<ul class="list-inline">
 		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
@@ -320,18 +243,6 @@
 			</a>
 		</div>
 		<div class="card-body">
-<<<<<<< HEAD:classimax-main/theme/category.php
-		    <h4 class="card-title"><a href="single.html">Combo de mesa de estudio</a></h4>
-		    <ul class="list-inline product-meta">
-		    	<li class="list-inline-item">
-		    		<a href="single.html"><i class="fa fa-folder-open-o"></i>Estanteria</a>
-		    	</li>
-		    	<li class="list-inline-item">
-		    		<a href="category.html"><i class="fa fa-calendar"></i>26 de diciembre</a>
-		    	</li>
-		    </ul>
-		    <p class="card-text">Mesa de estudio con combo de mesa de noche</p>
-=======
 		    <h4 class="card-title"><a href="single.html">Libro de negocios</a></h4>
 		    <ul class="list-inline product-meta">
 		    	<li class="list-inline-item">
@@ -342,7 +253,6 @@
 		    	</li>
 		    </ul>
 		    <p class="card-text">Descubre estrategias probadas en este libro de negocios. Obtén ideas frescas para alcanzar el éxito.</p>
->>>>>>> d1f62d5cfa4e2d14ae3bd63f13e2546151b9a78a:classimax-main/theme/productos.php
 		    <div class="product-ratings">
 		    	<ul class="list-inline">
 		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
@@ -370,18 +280,6 @@
 			</a>
 		</div>
 		<div class="card-body">
-<<<<<<< HEAD:classimax-main/theme/category.php
-		    <h4 class="card-title"><a href="single.html">Cama</a></h4>
-		    <ul class="list-inline product-meta">
-		    	<li class="list-inline-item">
-		    		<a href="single.html"><i class="fa fa-folder-open-o">Para el hogar</i></a>
-		    	</li>
-		    	<li class="list-inline-item">
-		    		<a href="category.html"><i class="fa fa-calendar"></i>26 de diciembre</a>
-		    	</li>
-		    </ul>
-		    <p class="card-text">Cama multiplexe</p>
-=======
 		    <h4 class="card-title"><a href="single.html">Bicicleta</a></h4>
 		    <ul class="list-inline product-meta">
 		    	<li class="list-inline-item">
@@ -392,7 +290,6 @@
 		    	</li>
 		    </ul>
 		    <p class="card-text">Libertad sobre ruedas: una bicicleta que combina rendimiento para explorar el mundo..</p>
->>>>>>> d1f62d5cfa4e2d14ae3bd63f13e2546151b9a78a:classimax-main/theme/productos.php
 		    <div class="product-ratings">
 		    	<ul class="list-inline">
 		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
@@ -420,18 +317,6 @@
 			</a>
 		</div>
 		<div class="card-body">
-<<<<<<< HEAD:classimax-main/theme/category.php
-		    <h4 class="card-title"><a href="single.html">Cama</a></h4>
-		    <ul class="list-inline product-meta">
-		    	<li class="list-inline-item">
-		    		<a href="single.html"><i class="fa fa-folder-open-o"></i>Para el hogar</a>
-		    	</li>
-		    	<li class="list-inline-item">
-		    		<a href="category.html"><i class="fa fa-calendar"></i>26 de diciembre</a>
-		    	</li>
-		    </ul>
-		    <p class="card-text">Cama multiplex</p>
-=======
 		    <h4 class="card-title"><a href="single.html">Computador gamer</a></h4>
 		    <ul class="list-inline product-meta">
 		    	<li class="list-inline-item">
@@ -442,7 +327,6 @@
 		    	</li>
 		    </ul>
 		    <p class="card-text">La laptop GAMER: Experimenta un rendimiento sin igual en un diseño portátil.</p>
->>>>>>> d1f62d5cfa4e2d14ae3bd63f13e2546151b9a78a:classimax-main/theme/productos.php
 		    <div class="product-ratings">
 		    	<ul class="list-inline">
 		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
@@ -470,27 +354,16 @@
 			</a>
 		</div>
 		<div class="card-body">
-<<<<<<< HEAD:classimax-main/theme/category.php
-		    <h4 class="card-title"><a href="single.html">Combo de mesa de estudio</a></h4>
-=======
 		    <h4 class="card-title"><a href="single.html">Auto</a></h4>
->>>>>>> d1f62d5cfa4e2d14ae3bd63f13e2546151b9a78a:classimax-main/theme/productos.php
 		    <ul class="list-inline product-meta">
 		    	<li class="list-inline-item">
 		    		<a href="single.html"><i class="fa fa-folder-open-o"></i>Refacciones</a>
 		    	</li>
 		    	<li class="list-inline-item">
-<<<<<<< HEAD:classimax-main/theme/category.php
-		    		<a href="category.html"><i class="fa fa-calendar"></i>26 de diciembre</a>
-		    	</li>
-		    </ul>
-		    <p class="card-text">Mesa de estudio con combo de mesa de noche</p>
-=======
 		    		<a href="category.html"><i class="fa fa-calendar"></i>26th Deciembre</a>
 		    	</li>
 		    </ul>
 		    <p class="card-text">Refacciones para automoviles y todo en refacciones para tus arreglos y mejoras</p>
->>>>>>> d1f62d5cfa4e2d14ae3bd63f13e2546151b9a78a:classimax-main/theme/productos.php
 		    <div class="product-ratings">
 		    	<ul class="list-inline">
 		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
@@ -518,18 +391,6 @@
 			</a>
 		</div>
 		<div class="card-body">
-<<<<<<< HEAD:classimax-main/theme/category.php
-		    <h4 class="card-title"><a href="single.html">Cama</a></h4>
-		    <ul class="list-inline product-meta">
-		    	<li class="list-inline-item">
-		    		<a href="single.html"><i class="fa fa-folder-open-o"></i>Para el hogar</a>
-		    	</li>
-		    	<li class="list-inline-item">
-		    		<a href="category.html"><i class="fa fa-calendar"></i>26 de diciembre</a>
-		    	</li>
-		    </ul>
-		    <p class="card-text">Cama multiplex</p>
-=======
 		    <h4 class="card-title"><a href="single.html">Cocinas</a></h4>
 		    <ul class="list-inline product-meta">
 		    	<li class="list-inline-item">
@@ -540,7 +401,6 @@
 		    	</li>
 		    </ul>
 		    <p class="card-text">Cocinas para todo tipo de hogar y espacios con cualquier diseño</p>
->>>>>>> d1f62d5cfa4e2d14ae3bd63f13e2546151b9a78a:classimax-main/theme/productos.php
 		    <div class="product-ratings">
 		    	<ul class="list-inline">
 		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
@@ -568,18 +428,6 @@
 			</a>
 		</div>
 		<div class="card-body">
-<<<<<<< HEAD:classimax-main/theme/category.php
-		    <h4 class="card-title"><a href="single.html">Cama</a></h4>
-		    <ul class="list-inline product-meta">
-		    	<li class="list-inline-item">
-		    		<a href="single.html"><i class="fa fa-folder-open-o"></i>Para el hogar</a>
-		    	</li>
-		    	<li class="list-inline-item">
-		    		<a href="category.html"><i class="fa fa-calendar"></i>26 de diciembre</a>
-		    	</li>
-		    </ul>
-		    <p class="card-text">Cama multiplex</p>
-=======
 		    <h4 class="card-title"><a href="single.html">Busos</a></h4>
 		    <ul class="list-inline product-meta">
 		    	<li class="list-inline-item">
@@ -590,7 +438,6 @@
 		    	</li>
 		    </ul>
 		    <p class="card-text">Busos de todos los colores tamaños y diseños</p>
->>>>>>> d1f62d5cfa4e2d14ae3bd63f13e2546151b9a78a:classimax-main/theme/productos.php
 		    <div class="product-ratings">
 		    	<ul class="list-inline">
 		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
@@ -618,27 +465,16 @@
 			</a>
 		</div>
 		<div class="card-body">
-<<<<<<< HEAD:classimax-main/theme/category.php
-		    <h4 class="card-title"><a href="single.html">Combo de mesa de estudio</a></h4>
-=======
 		    <h4 class="card-title"><a href="single.html">Teclado</a></h4>
->>>>>>> d1f62d5cfa4e2d14ae3bd63f13e2546151b9a78a:classimax-main/theme/productos.php
 		    <ul class="list-inline product-meta">
 		    	<li class="list-inline-item">
 		    		<a href="single.html"><i class="fa fa-folder-open-o"></i>Perifericos</a>
 		    	</li>
 		    	<li class="list-inline-item">
-<<<<<<< HEAD:classimax-main/theme/category.php
-		    		<a href="category.html"><i class="fa fa-calendar"></i>26 de diciembre</a>
-		    	</li>
-		    </ul>
-		    <p class="card-text">Mesa de estudio con combo de mesa de noche</p>
-=======
 		    		<a href="category.html"><i class="fa fa-calendar"></i>1th Enero</a>
 		    	</li>
 		    </ul>
 		    <p class="card-text">Todo tipo de teclados, como mecanicos, membrana y opticos</p>
->>>>>>> d1f62d5cfa4e2d14ae3bd63f13e2546151b9a78a:classimax-main/theme/productos.php
 		    <div class="product-ratings">
 		    	<ul class="list-inline">
 		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
@@ -666,18 +502,6 @@
 			</a>
 		</div>
 		<div class="card-body">
-<<<<<<< HEAD:classimax-main/theme/category.php
-		    <h4 class="card-title"><a href="single.html">Cama</a></h4>
-		    <ul class="list-inline product-meta">
-		    	<li class="list-inline-item">
-		    		<a href="single.html"><i class="fa fa-folder-open-o"></i>Para el hogar</a>
-		    	</li>
-		    	<li class="list-inline-item">
-		    		<a href="category.html"><i class="fa fa-calendar"></i>26 de diciembre</a>
-		    	</li>
-		    </ul>
-		    <p class="card-text">Cama multiplex</p>
-=======
 		    <h4 class="card-title"><a href="single.html">Mouse</a></h4>
 		    <ul class="list-inline product-meta">
 		    	<li class="list-inline-item">
@@ -688,7 +512,6 @@
 		    	</li>
 		    </ul>
 		    <p class="card-text">Mouse con mas 12000 dpi de sensibilidad y sensor optico</p>
->>>>>>> d1f62d5cfa4e2d14ae3bd63f13e2546151b9a78a:classimax-main/theme/productos.php
 		    <div class="product-ratings">
 		    	<ul class="list-inline">
 		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>

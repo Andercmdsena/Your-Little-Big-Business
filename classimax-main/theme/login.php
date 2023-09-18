@@ -13,7 +13,7 @@
 
   <!-- ** Basic Page Needs ** -->
   <meta charset="utf-8">
-  <title>Classimax | Classified Marketplace Template</title>
+  <title>YLBB | You Little Big Business</title>
 
   <!-- ** Mobile Specific Metas ** -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,7 +23,7 @@
   <meta name="generator" content="Themefisher Classified Marketplace Template v1.0">
 
   <!-- favicon -->
-  <link href="images/favicon.png" rel="shortcut icon">
+  <link href="images/Mi proyecto.png" rel="shortcut icon">
 
   <!-- 
   Essential stylesheets
@@ -61,7 +61,7 @@
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
 						<ul class="navbar-nav ml-auto main-nav ">
 							<li id="home" class="nav-item active">
-								<a class="nav-link" href="index.php">Home</a>
+								<a class="nav-link" href="index.php">Inicio</a>
 							</li>
 							<li class="nav-item @@pages">
 								<a class="nav-link @@about" href="about-us.php" aria-haspopup="true"
@@ -108,9 +108,9 @@
         <form class="py-4 text-center" action="../controller/iniciarSesion.php" method="post">
           <fieldset class="p-4 ">
             <input name="email" style="font-size:1.2rem; font-weight:400; font-family: 'Poiret One', cursive;"
-              class="form-control mb-3" type="text" placeholder="Username" required>
+              class="form-control mb-3" type="text" placeholder="Email" required>
             <input name="clave" style="font-size:1.2rem; font-weight:400; font-family: 'Poiret One', cursive;"
-              class="form-control mb-3" type="password" placeholder="Password" required>
+              class="form-control mb-3" type="password" placeholder="Contraseña" required>
               <div class="form-group col-md-9">
                 <label>Rol</label>
                 <select name="tipo_de_rol" id="" class="form-control">
@@ -120,7 +120,7 @@
 
                 </select>
               </div>
-            <button id="btn-ingresar" type="submit" class="btn font-weight-bold w-75 mt-3">Log in</button>
+            <button id="btn-ingresar" type="submit" class="btn font-weight-bold w-75 mt-3">Ingresar</button>
             <a style="font-family: 'Poiret One', cursive; font-size:1.2rem; font-weight:600"
               class="mt-3 d-block text-primary text-center" href="../views/administrador/page-reset-password.php">Olvidaste tu contraseña?</a>
             <a style="font-family: 'Poiret One', cursive; font-size:1.2rem; font-weight:600"

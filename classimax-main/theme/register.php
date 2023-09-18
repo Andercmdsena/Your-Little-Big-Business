@@ -63,7 +63,7 @@
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
 						<ul class="navbar-nav ml-auto main-nav ">
 							<li id="home" class="nav-item active">
-								<a class="nav-link" href="index.php">Home</a>
+								<a class="nav-link" href="index.php">Inicio</a>
 							</li>
 							<li class="nav-item @@pages">
 								<a class="nav-link @@about" href="about-us.php" aria-haspopup="true"
@@ -114,8 +114,8 @@
               <input class="form-control mb-3" type="text" name="apellido" placeholder="Apellido" required>
               <input class="form-control mb-3" type="text" name="email" placeholder="Email*" required>
               <input class="form-control mb-3" type="tel" name="telefono" placeholder="Telefono*" required>
-              <input class="form-control mb-3" type="password" name="clave" id="clave" placeholder="Password*" required>
-              <input class="form-control mb-3" type="password" id="con_clave" name="con_clave" placeholder="Confirm Password*" required>
+              <input class="form-control mb-3" type="password" name="clave" id="clave" placeholder="Contraseña" required>
+              <input class="form-control mb-3" type="password" id="con_clave" name="con_clave" placeholder="Confirmar Contraseña" required>
               <select name="rol" id="">
                 <option value="Cliente">Cliente</option>
                 <option value="Emprendedor">Emprendedor</option>

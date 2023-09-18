@@ -57,7 +57,7 @@
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
 						<ul class="navbar-nav ml-auto main-nav ">
 							<li id="home" class="nav-item active">
-								<a class="nav-link" href="index.php">Home </a>
+								<a class="nav-link" href="index.php">Inicio </a>
 							</li>
 							<li class="nav-item @@pages">
 								<a class="nav-link @@about" href="about-us.php" aria-haspopup="true"
@@ -149,10 +149,10 @@
 											</select>
 										</div>
 										<div class="form-group col-lg-3 col-md-6">
-											<input type="text" class="form-control my-2 my-lg-1" id="inputLocation4" placeholder="Location">
+											<input type="text" class="form-control my-2 my-lg-1" id="inputLocation4" placeholder="Localidad">
 										</div>
 										<div class="form-group col-xl-2 col-lg-3 col-md-6 align-self-center">
-											<button type="submit" class="btn btn-primary active w-100">Search Now</button>
+											<button type="submit" class="btn btn-primary active w-100">Buscar</button>
 										</div>
 									</div>
 								</form>
@@ -499,8 +499,8 @@
 				<div class="content-holder">
 					<h2>Empieza hoy a publicar tu emprendimiento y crecer</h2>
 					<ul class="list-inline mt-30">
-						<li class="list-inline-item"><a class="btn btn-main" href="ad-listing.html">Busca tus productos</a></li>
-						<li class="list-inline-item"><a class="btn btn-secondary" href="category.html">Busca tus servicios</a></li>
+						<li class="list-inline-item"><a class="btn btn-main" href="productos.php">Busca tus productos</a></li>
+						<li class="list-inline-item"><a class="btn btn-secondary" href="servicios.php">Busca tus servicios</a></li>
 					</ul>
 				</div>
 			</div>

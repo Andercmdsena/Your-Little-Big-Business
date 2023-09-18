@@ -16,10 +16,10 @@
   <meta name="generator" content="Themefisher Classified Marketplace Template v1.0">
   
   <!-- theme meta -->
-  <meta name="theme-name" content="classimax" />
+  
 
   <!-- favicon -->
-  <link href="images/Mi proyecto.png" rel="shortcut icon">
+  <link href="/images/Mi proyecto.png" rel="shortcut icon">
 
   <!-- 
   Essential stylesheets

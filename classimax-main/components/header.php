@@ -7,7 +7,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<nav class="navbar  navbar-expand-lg navbar-light navigation">
-					<a id="logo" class="navbar-brand" href="main_page.php">
+					<a id="logo" class="navbar-brand" href="index.php">
 						<img src="../theme/images/Mi proyecto.png" alt="" style="width: 50px ; height: 50px;">
 					</a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -18,7 +18,7 @@
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
 						<ul class="navbar-nav ml-auto main-nav ">
 							<li id="home" class="nav-item active">
-								<a class="nav-link" href="index.php">Home</a>
+								<a class="nav-link" href="index.php">Inicio</a>
 							</li>
 							<li class="nav-item @@pages">
 								<a class="nav-link @@about" href="about-us.php" aria-haspopup="true"

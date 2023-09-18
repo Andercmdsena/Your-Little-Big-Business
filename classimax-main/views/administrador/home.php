@@ -124,7 +124,6 @@ include "menu.php"
                                     <li class="breadcrumb-item">
                                         <a href="#">Administrador</a>
                                     </li>
-                                    <li class="breadcrumb-item active">UI-Blank</li>
                                 </ol>
                             </div>
                         </div>

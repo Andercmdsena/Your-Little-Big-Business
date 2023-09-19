@@ -111,6 +111,125 @@ function perfilUsuario(){
 
 }
 
+function perfilEditarUsuario2(){
+    $id=$_GET['id'];
+
+    $objConsulta = new consultas();
+    $result = $objConsulta->verPerfilUsuario($id);
+
+    foreach ($result as $f){
+        
+        echo'
+        
+        <div class="row">
+        <div class="col-lg-3">
+        <div class="card perfil-user modificar-user">
+          <img src="../'.$f['foto'].'" alt="Foto perfil">
+          <h3 class="text-center pt-5 pb-1">'.$f['Nombre'].' '.$f['Apellido'].'</h3>
+          <h4 class="text-center pb-4">'.$f['Rol'].'</h4>
+        </div>
+      </div>
+      <div class="col-lg-9 botones-activos">
+        <div class="card modificar-user">
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="home-tab" data-toggle="tab" data-target="#home"
+                type="button" role="tab" aria-controls="home" aria-selected="true">Perfil</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="profile-tab" data-toggle="tab" data-target="#profile" type="button"
+                role="tab" aria-controls="profile" aria-selected="false">Cambiar foto</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="contact-tab" data-toggle="tab" data-target="#contact" type="button"
+                role="tab" aria-controls="contact" aria-selected="false">Cambiar clave</button>
+            </li>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+
+
+            <div class="p-5 tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+              <form action="../../controller/modificarUsuario2.php" method="POST" enctype="multipart/form-data">
+                <div class="row formulario">
+                  <div class="form-group col-lg-6">
+                    <label>Identificacion</label>
+                    <input readonly type="number" class="form-control" placeholder="Ej:10000004436" requiredname="identificacion" value="'.$f['ID'].'">
+                  </div>
+
+
+                  <div class="form-group col-lg-6">
+                    <label>Nombres</label>
+                    <input type="text" class="form-control" placeholder="Ej:Diana" required name="nombre" value="'.$f['Nombre'].'">
+                  </div>
+
+                  <div class="form-group col-lg-6">
+                    <label>Apellidos</label>
+                    <input type="text" class="form-control" placeholder="Ej:Ramírez" required name="apellidos" value="'.$f['Apellido'].'">
+                  </div>
+                  <div class="form-group col-lg-6">
+                    <label>Correo</label>
+                    <input type="email" class="form-control" placeholder="Ej:Diana@gmail.com" required name="email" value="'.$f['Email'].'">
+                  </div>
+                  <div class="form-group col-lg-6">
+                    <label>teléfono</label>
+                    <input type="number" class="form-control" placeholder="Ej:3154942891" required name="telefono" value="'.$f['Telefono'].'">
+                  </div>
+                  
+                    <p>&nbsp;</p>
+                    <p><input type="hidden" name = "id_producto" value="'.$id.'"></p>
+    
+                </div>
+                <button type="submit" class="btn btn-main-sm btn-flat m-b-30 m-t-30 w-100">Actualizar datos</button>
+
+              </form>
+            </div>
+
+
+            <div class="p-5 tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            <form action="../../controller/modificarFotoUsuario.php" method="POST" enctype="multipart/form-data">
+                <div class="row formulario">
+                <div class="form-group col-lg-6">
+                 <label>Identificacion</label>
+                  <input readonly type="number" class="form-control" placeholder="Ej:10000004436" required name="identificacion" value="'.$f['ID'].'">
+                 </div>
+                 <div class="form-group col-lg-6">
+                    <label>Foto de Usuario:</label>
+                    <input type="file" class="form-control" required name="foto" accept=".jpeg, .jpg, .png, .gif">
+                 </div>
+                </div>
+                <button type="submit" class="btn btn-main-sm btn-flat m-b-30 m-t-30 w-100">Actualizar foto</button>
+
+              </form>
+            </div>
+
+
+            <div class="p-5 tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+            <form action="../../controller/modificarClaveUsuario.php" method="POST" enctype="multipart/form-data">
+                <div class="row formulario">
+                <div class="form-group col-lg-6">
+                 <label>Identificacion</label>
+                 <input readonly type="number" class="form-control" placeholder="Ej:10000004436" required name="identificacion" value="'.$f['ID'].'">
+                </div>
+                  <div class="form-group col-lg-12">
+                    <label>Nueva clave</label>
+                    <input type="password" class="form-control" placeholder="Ej:**********" required name="clave">
+                  </div>
+                  <div class="form-group col-lg-12">
+                    <label>Confirmar clave</label>
+                    <input type="password" class="form-control" placeholder="Ej:**********" required name="clave2">
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-main-sm btn-flat m-b-30 m-t-30 w-100">Actualizar Clave</button>
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+        ';
+    }
+}
 function perfilEditarUsuario(){
     $id=$_GET['id'];
 

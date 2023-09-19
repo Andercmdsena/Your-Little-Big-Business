@@ -4,6 +4,7 @@
 require_once ("../../model/conexion.php");
 require_once ("../../model/consultas.php");
 require_once ("../../model/seguridadUsuario.php");
+
 require_once ("../../controller/mostrarInfoUsuario.php");
 ?>
 

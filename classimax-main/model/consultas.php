@@ -391,6 +391,26 @@ class consultas{
         }else{
             $result -> execute();
             echo '<script> alert("Usuario actualizado exitosamente") </script>';
+            echo "<script> location.href='../views/administrador/home.php' </script>";
+        }
+        
+      }
+      public function modificarUsuario2($arg_campo, $arg_valor, $arg_id_producto){
+        $objConexion = new Conexion();
+        $conexion = $objConexion -> get_conexion();
+
+        $consulta = "UPDATE usuario set $arg_campo = :valor WHERE ID = :id_producto";
+
+        $result = $conexion ->prepare($consulta);
+
+        $result->bindParam(":valor", $arg_valor);
+        $result->bindParam(":id_producto", $arg_id_producto);
+
+        if(!$result){
+            return "Error al modificar el usuario";
+        }else{
+            $result -> execute();
+            echo '<script> alert("Usuario actualizado exitosamente") </script>';
             echo "<script> location.href='../views/administrador/usuario.php' </script>";
         }
         
@@ -645,6 +665,10 @@ class ValidarSesion
                 if ($tipo_de_rol == "administrador") {
                     echo '<script> alert("Bienvenido") </script>';
                     echo "<script> location.href='../views/administrador/home.php' </script>";
+
+                }elseif($_SESSION['estado'] == "Bloqueado"){
+                    echo '<script> alert("Su cuenta esta bloqueada") </script>';
+                    echo "<script> location.href='../theme/login.php' </script>";
                 } 
                 elseif($tipo_de_rol == "cliente"){
                     echo '<script> alert("Bienvenido") </script>';

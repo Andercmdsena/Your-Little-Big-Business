@@ -3667,9 +3667,7 @@ tbody tr td:last-child {
 }
 body {
   font-family: 'Roboto', sans-serif;
-
-  background: #BDD0FF;
-  background: #dee3ff;
+  background: #e2e2fb81;
   color: #868e96;
   font-size: 14px;
 }
@@ -3955,8 +3953,8 @@ h6.h1 {
   }
 }
 .row {
-  margin-left: -7.5px;
-  margin-right: -7.5px;
+  margin-left: -1.5px;
+  margin-right: -1.5px;
 }
 .col-lg-1,
 .col-lg-10,
@@ -4008,7 +4006,20 @@ h6.h1 {
 .col-xs-9 {
   padding-top: 7.5px;
   padding-bottom: 7.5px;
+  
 }
+.conte{
+  margin-top: 40px;
+  border: transparent #000 3px;
+  border-radius: 20px;
+  background-color: #c4c4ff;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
 @media (max-width: 667px) {
   .dt-buttons {
     margin-left: 10px;

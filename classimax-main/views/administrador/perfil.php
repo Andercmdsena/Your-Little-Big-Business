@@ -17,7 +17,7 @@ require_once ("../../controller/mostrarInfoUsuario.php");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Focus Admin Dashboard</title>
+    <title>YLBB | Administrador</title>
 
     <!-- ================= Favicon ================== -->
     <!-- Standard -->
@@ -119,9 +119,8 @@ require_once ("../../controller/mostrarInfoUsuario.php");
                             <div class="page-title">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item">
-                                        <a href="#">Dashboard</a>
+                                        <a href="#">Administrador</a>
                                     </li>
-                                    <li class="breadcrumb-item active">UI-Blank</li>
                                 </ol>
                             </div>
                         </div>

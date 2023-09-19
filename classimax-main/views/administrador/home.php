@@ -19,7 +19,7 @@ require_once ("../../controller/mostrarInfoUsuario.php");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Focus Admin Dashboard</title>
+    <title>YLBB | Administrador</title>
 
     <!-- ================= Favicon ================== -->
     <!-- Standard -->
@@ -183,6 +183,7 @@ include "menu.php"
                     </div>
                     <div class="row">
                         <div class="col-md-12 descripcion_admin">
+                            <div class="conte">
                             <p>
                             Bienvenido al Panel de Administración de Your Little Big Business. Esta vista es tu centro de control para gestionar todos los aspectos esenciales de tu plataforma. A continuación, te presentamos algunas de las poderosas funciones que encontrarás aquí:
                             </p>
@@ -199,7 +200,7 @@ include "menu.php"
 
                                 <strong>Gestión de Contenido:</strong> Agregar y actualizar contenido nunca ha sido más fácil. Aquí, podrás crear, editar y eliminar páginas, publicaciones y productos. Mantén tu plataforma fresca y atractiva para tus usuarios en todo momento.
                             </p>
-                            
+                            </div>
                         </div>
 
                     </div>    

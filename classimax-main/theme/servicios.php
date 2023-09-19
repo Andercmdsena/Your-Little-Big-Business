@@ -71,7 +71,7 @@
 							</div>
 							<div class="form-group col-xl-2 col-lg-3 col-md-6">
 
-								<button type="submit" class="btn btn-primary active w-100">Buscar</button>
+								<button type="submit" class="boton1">Buscar</button>
 							</div>
 						</div>
 					</form>

@@ -56,22 +56,20 @@
 					<form>
 						<div class="form-row align-items-center">
 							<div class="form-group col-xl-4 col-lg-3 col-md-6">
-								<input type="text" class="form-control my-2 my-lg-0" id="inputtext4" placeholder="What are you looking for">
+								<input type="text" class="form-control my-2 my-lg-0" style="color:black" id="inputtext4" placeholder="What are you looking for">
 							</div>
 							<div class="form-group col-lg-3 col-md-6">
 								<select class="w-100 form-control my-2 my-lg-0">
-									<option>Categoria</option>
+									<option>Relevancia</option>
 									<option value="1">Mas relevantes</option>
 									<option value="2">Menor precio</option>
 									<option value="4">Mayor precio</option>
 								</select>
 							</div>
-							<div class="form-group col-lg-3 col-md-6">
-								<input type="text" class="form-control my-2 my-lg-0" id="inputLocation4" placeholder="Location">
-							</div>
+							
 							<div class="form-group col-xl-2 col-lg-3 col-md-6">
 
-								<button type="submit" class="btn btn-primary active w-100">Buscar</button>
+								<button type="submit" class="boton1">Buscar</button>
 							</div>
 						</div>
 					</form>

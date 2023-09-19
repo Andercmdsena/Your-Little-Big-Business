@@ -58,7 +58,7 @@
           <p>Copyright &copy; <script>
               var CurrentYear = new Date().getFullYear()
               document.write(CurrentYear)
-            </script>. Diseñado y desarrollador por<a class="text-red" href="about-us.php"> Grupo 4</a></p>
+            </script>. Diseñado y desarrollador por</p>
         </div>
       </div>
       <div class="col-lg-6">

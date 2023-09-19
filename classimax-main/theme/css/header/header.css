@@ -164,14 +164,15 @@ body {
 
 
 .add-button {
-  background: #28a745;
-  color: #fff;
+  background: #e4bcff;
+  color: black;
   padding: 8px 20px !important;
   display: inline-block;
 }
 
+
 .add-button:hover {
-  color: #fff;
+  color: black;
 }
 
 .main-nav .nav-item .nav-link {

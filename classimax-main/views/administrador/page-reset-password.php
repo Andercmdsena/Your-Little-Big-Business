@@ -9,6 +9,8 @@
     <title>Focus Admin: Widget</title>
 
     <!-- ================= Favicon ================== -->
+    <link href="../../theme/images/Mi proyecto.png" rel="icon">
+
     <!-- Standard -->
     <link rel="shortcut icon" href="http://placehold.it/64.png/000/fff">
     <!-- Retina iPad Touch Icon-->

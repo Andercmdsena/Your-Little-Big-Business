@@ -19,9 +19,11 @@ require_once ("../../controller/mostrarInfoUsuario.php");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Focus Admin Dashboard</title>
+
 
     <!-- ================= Favicon ================== -->
+    <link href="../../theme/images/Mi proyecto.png" rel="icon">
+
     <!-- Standard -->
     <link rel="shortcut icon" href="http://placehold.it/64.png/000/fff">
     <!-- Retina iPad Touch Icon-->
@@ -72,6 +74,7 @@ require_once ("../../controller/mostrarInfoUsuario.php");
     <link href="../Dashboard/css/lib/helper.css" rel="stylesheet">
     <link href="../Dashboard/css/style.css" rel="stylesheet">
     <link href="../../theme/css/style_dash.css" rel="stylesheet">
+    <link href="../../theme/images/Mi proyecto.png" rel="icon">
 </head>
 
 <body>

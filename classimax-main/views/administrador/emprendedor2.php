@@ -183,7 +183,7 @@ require_once ("../../controller/mostrarInfoEmprendedor.php");
                     <table class="table table-hover">
                                             <tbody>
                                             <?php
-                                            perfilEditarUsuario();
+                                            perfilEditarProducto();
                                             ?>
                                         </table>
 

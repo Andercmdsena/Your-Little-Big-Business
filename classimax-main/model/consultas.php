@@ -514,6 +514,24 @@ class consultas{
 
         
       }
+      public function actualizarFotoProducto($id, $foto){
+        $objConexion = new Conexion();
+        $conexion = $objConexion -> get_conexion();
+
+        $consulta = "UPDATE productos Set foto=:foto WHERE id = :id";
+
+        $result = $conexion ->prepare($consulta);
+
+        $result->bindParam(":id", $id);
+        $result->bindParam(":foto", $foto);
+
+        $result -> execute();
+
+        echo '<script>alert("Informacion actualizada")</script>';
+        echo "<script>location.href='../views/administrador/emprendedor2.php?id=$id'</script>";
+
+        
+      }
 
 
      public function actualizarClaveAdmin($identificacion, $claveMd){

@@ -111,7 +111,7 @@ function perfilUsuario(){
 
 }
 
-function perfilEditarUsuario(){
+function perfilEditarProducto(){
     $id=$_GET['id'];
 
     $objConsulta = new consultas();
@@ -186,11 +186,11 @@ function perfilEditarUsuario(){
 
 
             <div class="p-5 tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-            <form action="../../controller/modificarFotoUsuario.php" method="POST" enctype="multipart/form-data">
+            <form action="../../controller/modificarFotoProducto.php" method="POST" enctype="multipart/form-data">
                 <div class="row formulario">
                 <div class="form-group col-lg-6">
                  <label>Identificacion</label>
-                  <input readonly type="number" class="form-control" placeholder="Ej:10000004436" required name="identificacion" value="'.$f['ID'].'">
+                  <input readonly type="number" class="form-control" placeholder="Ej:10000004436" required name="identificacion" value="'.$id.'">
                  </div>
                  <div class="form-group col-lg-6">
                     <label>Foto de Usuario:</label>

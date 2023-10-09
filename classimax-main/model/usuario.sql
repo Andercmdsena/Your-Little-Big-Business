@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generaci√≥n: 23-08-2023 a las 15:57:15
--- Versi√≥n del servidor: 10.4.28-MariaDB
--- Versi√≥n de PHP: 8.2.4
+-- Tiempo de generaciÛn: 04-10-2023 a las 18:40:08
+-- VersiÛn del servidor: 10.4.28-MariaDB
+-- VersiÛn de PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -45,10 +45,11 @@ CREATE TABLE `usuario` (
 
 INSERT INTO `usuario` (`ID`, `Nombre`, `Apellido`, `Email`, `Telefono`, `clave`, `Rol`, `foto`, `Estado`) VALUES
 (40, '2321321', '43243243', 'tovaranderson37@gmail.comhola', 4332432, '5504dcedd363eb185d101b78a479017d', 'Cliente', '../Uploads/usuarios/Men.png', 'Activo'),
-(43, 'Juan pedro', 'Avila', 'Juan37@gmail.com', 43232543645, '1156a524a775eedebba9bdccc4c1f1ee', 'Emprendedor', '../Uploads/usuarios/pexels-pixabay-220453.jpg', 'Activo');
+(43, 'Juan pedro', 'Avila', 'Juan37@gmail.com', 43232543645, '1156a524a775eedebba9bdccc4c1f1ee', 'Emprendedor', '../Uploads/usuarios/pexels-pixabay-220453.jpg', 'Activo'),
+(46, 'Anderson', 'Tovar', 'andercmdsena@gmail.com', 1234, '81dc9bdb52d04dc20036dbd8313ed055', 'Emprendedor', '../Uploads/usuarios/solucion.PNG', 'Activo');
 
 --
--- √çndices para tablas volcadas
+-- Õndices para tablas volcadas
 --
 
 --
@@ -65,7 +66,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `ID` bigint(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `ID` bigint(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

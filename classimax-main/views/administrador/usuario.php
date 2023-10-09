@@ -68,61 +68,11 @@ require_once ("../../controller/mostrarInfoUsuario.php");
 
 <body>
 
-    <div class="sidebar sidebar-hide-to-small sidebar-shrink sidebar-gestures">
-        <div class="nano ">
-            <div class="nano-content" id="panel_izq">
-                <div class="logo">
-                    <a href="index.html">
-                        <img src="../client-site/images/Mi proyecto.png" alt="" /> 
-                        
-                    </a>
-                </div>
-                <ul>
-                    
-
-                    <li class="label">Modulos</li>
-                    <li>
-                        <a>
-                            <i class="ti-home"></i>Inicio</a>
-                    </li>
-                    <li>
-                        
-                        <ul>
-                           
-                            
-                        </ul>
-                    </li>
-                    <!-- <li>
-                        <a class="sidebar-sub-toggle">
-                            <i class="ti-money"></i> Ventas
-                            <span class="sidebar-collapse-icon ti-angle-down"></span>
-                        </a>
-                        <ul>
-                            <li>
-                                <a href="chart-flot.html"><i class="ti-shopping-cart"></i> N° Ventas</a>
-                            </li>
-                            <li>
-                                <a href="chart-morris.html"> <i class="ti-eye"></i> Ver</a>
-                            </li>
-                            
-                        </ul>
-                    </li> -->
+<?php
 
 
-
-                    <?php
-
-                    perfilUsuario()
-                    ?>
-
-
-
-                    
-                  
-                </ul>
-            </div>
-        </div>
-    </div>
+include "menu_usuario.php"
+?>
     <!-- /# sidebar -->
 
 

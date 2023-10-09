@@ -1,5 +1,6 @@
 <?php include_once("../controller/Main.php")  ?>
 
+
 <!DOCTYPE html>
 
 <!--
@@ -80,7 +81,7 @@
       </div>
       <div class="col-lg-6 pt-5 pt-lg-0" >
         <div class="about-content">
-          <h3 class="font-weight-bold" id="h3_us">Introduccion</h3>
+          <h3 class="font-weight-bold" id="h3_us">Introducción</h3>
           <p>Detrás de cada línea de código, cada diseño cuidadosamente elaborado y cada función innovadora, se encuentra nuestro dedicado equipo de desarrollo en Your Little Big Business. Somos un grupo apasionado de profesionales creativos y amantes de la tecnología que se unen con un propósito: hacer que tu experiencia en nuestra plataforma sea excepcional. </p>
           <br>
           <br>
@@ -162,14 +163,17 @@
       <div class="col-lg-3 col-sm-6 my-lg-0 my-3">
         <div class="counter-content text-center bg-light py-4 rounded">
           <i class="fa fa-user-o d-block"></i>
-          <span class="counter my-2 d-block" data-count="1013">0</span>
+          
+          
+          <span class="counter my-2 d-block"><?php include_once("../controller/contarUsuarios.php")  ?></span>
           <h5>Miembros activos</h5>
+          
         </div>
       </div>
       <div class="col-lg-3 col-sm-6 my-lg-0 my-3">
         <div class="counter-content text-center bg-light py-4 rounded">
           <i class="fa fa-bookmark-o d-block"></i>
-          <span class="counter my-2 d-block" data-count="2413">0</span>
+          <span class="counter my-2 d-block"><?php include_once("../controller/contarProductos.php")  ?></span>
           <h5>Productos activos</h5>
         </div>
       </div>
@@ -178,6 +182,7 @@
           <i class="fa fa-smile-o d-block"></i>
           <span class="counter my-2 d-block" data-count="200">0</span>
           <h5>Servicios activos</h5>
+
         </div>
       </div>
     </div>

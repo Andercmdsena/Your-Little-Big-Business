@@ -29,6 +29,7 @@ class consultas{
             $result->bindParam(":clave", $claveinc);
             $result->bindParam(":rol", $rol);
 
+
             $result->execute();
             echo '<script> alert("Usuario registrado con éxito") </script>';
             echo '<script>location.href="../theme/productos.php" </script>';
@@ -353,6 +354,24 @@ class consultas{
       
       
       }
+      
+      public function eliminarProducto ($id) {
+        $objConexion = new Conexion();
+        
+        $conexion = $objConexion -> get_conexion();
+      
+        $eliminar= "DELETE from productos where id = :id";
+      
+        $result = $conexion->prepare($eliminar);
+        $result-> bindParam (":id", $id );
+        
+        $result->execute ();
+        echo '<script> alert("Producto eliminado con exito") </script>';
+        echo "<script> location.href='../Views/Administrador/verProductos.php' </script>";
+      
+      
+      
+      }
       public function cargarUsuario($arg_id_producto){
         $f=null;
  
@@ -375,6 +394,29 @@ class consultas{
  
         return $f;
       }
+      public function cargarProducto($arg_id_producto){
+        $f=null;
+ 
+ 
+         $objConexion = new Conexion();
+         $conexion = $objConexion -> get_conexion();
+ 
+         $consultar = "SELECT * FROM productos where id = :id_producto";
+ 
+         $result=$conexion->prepare($consultar);
+
+         $result->bindParam(":id_producto", $arg_id_producto);
+ 
+        $result->execute();
+        
+ 
+        while ($resultado=$result->fetch()) {
+         $f[] = $resultado;
+        }
+ 
+        return $f;
+      }
+    
       public function modificarUsuario($arg_campo, $arg_valor, $arg_id_producto){
         $objConexion = new Conexion();
         $conexion = $objConexion -> get_conexion();
@@ -393,6 +435,43 @@ class consultas{
             echo '<script> alert("Usuario actualizado exitosamente") </script>';
             echo "<script> location.href='../views/administrador/home.php' </script>";
         }
+        
+      }
+      public function modificarProducto($arg_campo, $arg_valor, $arg_id_producto){
+        $objConexion = new Conexion();
+        $conexion = $objConexion -> get_conexion();
+
+        $consulta = "UPDATE productos set $arg_campo = :valor WHERE id = :id_producto";
+
+        $result = $conexion ->prepare($consulta);
+
+        $result->bindParam(":valor", $arg_valor);
+        $result->bindParam(":id_producto", $arg_id_producto);
+
+        if(!$result){
+            return "Error al modificar el producto";
+        }else{
+            $result -> execute();
+            echo '<script> alert("Producto actualizado exitosamente") </script>';
+            echo "<script> location.href='../views/administrador/verProductos.php' </script>";
+        }
+        
+      }
+      public function modificarProductoAdmin($estado, $id_producto){
+        $objConexion = new Conexion();
+        $conexion = $objConexion -> get_conexion();
+
+        $consulta = "UPDATE productos Set Estado = :Estado WHERE id = :id";
+
+        $result = $conexion ->prepare($consulta);
+
+        $result->bindParam(":Estado", $estado);
+        $result->bindParam(":id", $id_producto);
+
+        $result -> execute();
+
+        echo'<script> alert("Producto actualizado exitosamdasente") </script>';
+        echo "<script> location.href='../views/administrador/verProductosAdmin.php' </script>";
         
       }
       public function modificarUsuario2($arg_campo, $arg_valor, $arg_id_producto){
@@ -514,11 +593,12 @@ class consultas{
 
         
       }
-      public function actualizarFotoProducto($id, $foto){
+      public function actualizarFotoEmprendedor($id, $foto){
+        
         $objConexion = new Conexion();
         $conexion = $objConexion -> get_conexion();
 
-        $consulta = "UPDATE productos Set foto=:foto WHERE id = :id";
+        $consulta = "UPDATE usuario Set foto=:foto WHERE ID = :id";
 
         $result = $conexion ->prepare($consulta);
 
@@ -529,7 +609,6 @@ class consultas{
 
         echo '<script>alert("Informacion actualizada")</script>';
         echo "<script>location.href='../views/administrador/emprendedor2.php?id=$id'</script>";
-
         
       }
 
@@ -568,12 +647,31 @@ class consultas{
         echo '<script>alert("Informacion actualizada")</script>';
         echo "<script>location.href='../views/administrador/usuario2.php?id=$identificacion'</script>";
       }
+     public function actualizarClaveEmprendedor($identificacion, $claveMd){
+        $objConexion = new Conexion();
+        $conexion = $objConexion -> get_conexion();
+
+        $consulta = "UPDATE usuario Set clave=:claveMd WHERE ID = :identificacion";
+
+        $result = $conexion ->prepare($consulta);
+
+        $result->bindParam(":identificacion", $identificacion);
+        $result->bindParam(":claveMd", $claveMd);
+
+        $result -> execute();
+
+        echo '<script>alert("Informacion actualizada")</script>';
+        echo "<script>location.href='../views/administrador/emprendedor2.php?id=$identificacion'</script>";
+      }
 
 
 
       // -------------------------------------------------Consultas emprendedor-------------------------
 
     public function insertarProducto($nombre_pro,$precio_pro,$cantidad,$categoria, $foto){
+
+        session_start();
+
         $modelo = new conexion();
         $conexion = $modelo -> get_conexion();
         $consultas = "SELECT * FROM productos WHERE id=:id";
@@ -590,7 +688,7 @@ class consultas{
             echo '<script> alert("Los datos del usuario ya se encuentra en el sistema") </script>';
             echo '<script>location.href="../theme/register.php" </script>';
         }else{
-            $insertar = "INSERT INTO productos (nombre, precio, cantidad, categoria,foto) VALUES(:nombre_pro, :precio_pro, :cantidad, :categoria,:foto)";
+            $insertar = "INSERT INTO productos (nombre, precio, cantidad, categoria,foto, id_emprendedor) VALUES(:nombre_pro, :precio_pro, :cantidad, :categoria,:foto,:id_emprendedor)";
     
             $result = $conexion->prepare($insertar);
     
@@ -599,13 +697,40 @@ class consultas{
             $result->bindParam(":cantidad", $cantidad);
             $result->bindParam(":categoria", $categoria);
             $result->bindParam(":foto", $foto);
+            $result->bindParam(":id_emprendedor", $_SESSION['id']);
     
             $result->execute();
-            echo '<script> alert("Usuario registrado con éxito") </script>';
+            echo '<script> alert("Producto registrado con éxito") </script>';
             echo '<script>location.href="../views/administrador/registroProductos.php" </script>';
         }
     }
-    public function mostrarProducto(){
+    public function mostrarProducto($arg_id_usuario = null) {
+        $f = null;
+    
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+    
+        // Consulta SQL para seleccionar todos los productos, incluyendo la posibilidad de un INNER JOIN
+        $consultar = "SELECT productos.* 
+                      FROM productos " . ($arg_id_usuario !== null ? "INNER JOIN usuario ON productos.id_emprendedor = usuario.ID WHERE usuario.ID = :id_usuario" : "") . "
+                      ORDER BY productos.nombre ASC";
+    
+        $result = $conexion->prepare($consultar);
+    
+        // Si se proporciona un ID de usuario, vincularlo en la consulta
+        if ($arg_id_usuario !== null) {
+            $result->bindParam(":id_usuario", $arg_id_usuario);
+        }
+    
+        $result->execute();
+    
+        while ($resultado = $result->fetch()) {
+            $f[] = $resultado;
+        }
+    
+        return $f;
+    }
+    public function mostrarProductoAdmin(){
 
 
         $f=null;
@@ -628,6 +753,50 @@ class consultas{
         return $f;
  
      }
+     public function contarUsuarios(){
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+    
+        $consultar = "SELECT SUM(total_registros) as total FROM (
+                        SELECT COUNT(*) as total_registros FROM usuario
+                        UNION ALL
+                        SELECT COUNT(*) as total_registros FROM user
+                     ) as combined";
+    
+        $result = $conexion->prepare($consultar);
+    
+        $result->execute();
+    
+        // Obtenemos el resultado de la consulta
+        $row = $result->fetch(PDO::FETCH_ASSOC);
+    
+        // Retornamos el valor total de usuarios
+        return $row['total'];
+    }
+
+    
+    public function contarProductos(){
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+    
+        $consultar = "SELECT COUNT(*) as total FROM productos "; // Utilizamos 'as total' para darle un alias al resultado
+    
+        $result = $conexion->prepare($consultar);
+    
+        $result->execute();
+    
+        // Obtenemos el resultado de la consulta
+        $row = $result->fetch(PDO::FETCH_ASSOC);
+    
+        // Retornamos el valor total de usuarios
+        return $row['total'];
+    }
+    
+    
+
+
+    
+    
 }
 
 

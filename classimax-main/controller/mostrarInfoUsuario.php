@@ -91,11 +91,10 @@ function perfilUsuario(){
 
         <li class="label">'.$f['Rol'].'</li>
                     <li>
-                        <a class="sidebar-sub-toggle">
-                        <img src="../'.$f['foto'].'" alt="Foto user" style="width:60px; height:60px; border-radius:50%"> '.$f['Nombre'].'
-                            <span class="badge badge-primary">2</span>
-                            <span class="sidebar-collapse-icon ti-angle-down"></span>
-                        </a>
+                    <a  href="usuario.php">
+                    <img src="../'.$f['foto'].'" alt="Foto user" style="width:60px; height:60px; border-radius:50%"> '.$f['Nombre'].'
+                        
+                    </a>
                     </li>
         
                     <li>

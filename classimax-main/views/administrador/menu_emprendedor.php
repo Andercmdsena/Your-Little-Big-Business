@@ -104,6 +104,7 @@ require_once ("../../model/seguridadEmprendedor.php");
                                 <a href="verProductos.php"> <i class="ti-eye"></i> Ver</a>
                             </li>
                             
+                            
                         </ul>
                     </li>
 

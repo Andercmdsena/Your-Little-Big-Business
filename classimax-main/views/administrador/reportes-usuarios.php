@@ -132,7 +132,7 @@ include "menu.php"
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-title">
-                                    <h4>usuarios</h4>
+                                    <h4>Reportes usuarios</h4>
                                     
                                 </div>
                                 <div class="card-body">

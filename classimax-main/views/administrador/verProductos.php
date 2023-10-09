@@ -151,6 +151,7 @@ include "menu_emprendedor.php"
                                                     <th>Nombre</th>
                                                     <th>Precio</th>
                                                     <th>Cantidad</th>
+                                                    <th>Estado</th>
                                                     <th>Categoria</th>
                                                     <th>Editar</th>
                                                     <th>Eliminar</th>

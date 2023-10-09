@@ -66,61 +66,9 @@ require_once ("../../controller/mostrarInfoEmprendedor.php");
 
 <body>
 
-    <div class="sidebar sidebar-hide-to-small sidebar-shrink sidebar-gestures">
-        <div class="nano ">
-            <div class="nano-content" id="panel_izq">
-                <div class="logo">
-                    <a href="index.html">
-                        <img src="../client-site/images/Mi proyecto.png" alt="" /> 
-                        
-                    </a>
-                </div>
-                <ul>
-                    
-
-                    <li class="label">Modulos</li>
-                    <li>
-                        <a>
-                            <i class="ti-home"></i>Inicio</a>
-                    </li>
-                    <li>
-                        
-                        <ul>
-                           
-                            
-                        </ul>
-                    </li>
-                    <!-- <li>
-                        <a class="sidebar-sub-toggle">
-                            <i class="ti-money"></i> Ventas
-                            <span class="sidebar-collapse-icon ti-angle-down"></span>
-                        </a>
-                        <ul>
-                            <li>
-                                <a href="chart-flot.html"><i class="ti-shopping-cart"></i> N° Ventas</a>
-                            </li>
-                            <li>
-                                <a href="chart-morris.html"> <i class="ti-eye"></i> Ver</a>
-                            </li>
-                            
-                        </ul>
-                    </li> -->
-
-
-
-                    <?php
-
-                    perfilUsuario()
-                    ?>
-
-
-
-                    
-                  
-                </ul>
-            </div>
-        </div>
-    </div>
+        <?php
+            include "menu_emprendedor.php"                    
+        ?>
     <!-- /# sidebar -->
 
 
@@ -165,7 +113,7 @@ require_once ("../../controller/mostrarInfoEmprendedor.php");
                     <div class="row">
                         <div class="col-md-12 descripcion_admin">
                             <p>
-                            Bienvenido a tu perfil personal, [Nombre del Usuario]. Aquí encontrarás una variedad de opciones y funciones que te permiten gestionar tu experiencia en nuestra plataforma de manera personalizada.
+                            Bienvenido a tu perfil personal. Aquí encontrarás una variedad de opciones y funciones que te permiten gestionar tu experiencia en nuestra plataforma de manera personalizada.
                             </p>
                             <p>
                             
@@ -175,7 +123,7 @@ require_once ("../../controller/mostrarInfoEmprendedor.php");
                     <table class="table table-hover">
                                             <tbody>
                                             <?php
-                                            perfilEditarProducto();
+                                            perfilEditarEmprendedor();
                                             ?>
                                         </table>
 

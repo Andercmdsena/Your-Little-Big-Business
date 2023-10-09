@@ -91,19 +91,24 @@ function perfilUsuario(){
 
         <li class="label">'.$f['Rol'].'</li>
                     <li>
-                        <a class="sidebar-sub-toggle">
+                        <a  href="emprendedor.php">
                         <img src="../'.$f['foto'].'" alt="Foto user" style="width:60px; height:60px; border-radius:50%"> '.$f['Nombre'].'
-                            <span class="badge badge-primary">2</span>
-                            <span class="sidebar-collapse-icon ti-angle-down"></span>
+                            
                         </a>
                     </li>
-        
+                    <li>
+                        <a  href="emprendedor.php">
+                            
+                        </a>
+                    </li>
                     <li>
                         <a href="../../controller/cerrarSesion.php">
                             <i class="ti-close"></i> Salir</a>
-                    </li>
         
-        ';
+
+                    
+        
+        ';;
     }
 
 
@@ -111,7 +116,7 @@ function perfilUsuario(){
 
 }
 
-function perfilEditarProducto(){
+function perfilEditarEmprendedor(){
     $id=$_GET['id'];
 
     $objConsulta = new consultas();
@@ -186,7 +191,7 @@ function perfilEditarProducto(){
 
 
             <div class="p-5 tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-            <form action="../../controller/modificarFotoProducto.php" method="POST" enctype="multipart/form-data">
+            <form action="../../controller/modificarFotoEmprendedor.php" method="POST" enctype="multipart/form-data">
                 <div class="row formulario">
                 <div class="form-group col-lg-6">
                  <label>Identificacion</label>
@@ -204,7 +209,7 @@ function perfilEditarProducto(){
 
 
             <div class="p-5 tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-            <form action="../../controller/modificarClaveAdmin.php" method="POST" enctype="multipart/form-data">
+            <form action="../../controller/modificarClaveEmprendedor.php" method="POST" enctype="multipart/form-data">
                 <div class="row formulario">
                 <div class="form-group col-lg-6">
                  <label>Identificacion</label>

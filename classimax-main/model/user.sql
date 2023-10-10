@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generaci√≥n: 23-08-2023 a las 15:56:24
--- Versi√≥n del servidor: 10.4.28-MariaDB
--- Versi√≥n de PHP: 8.2.4
+-- Tiempo de generaciÛn: 04-10-2023 a las 18:39:50
+-- VersiÛn del servidor: 10.4.28-MariaDB
+-- VersiÛn de PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -47,12 +47,12 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`Identificacion`, `Tipo_de_dato`, `Nombres`, `Apellidos`, `Email`, `telefono`, `clave`, `rol`, `estado`, `foto`, `foto2`, `foto3`) VALUES
-(1023162918, 'C.C', 'Anderson Tovar', 'Tovar Sanchez', 'adtovar81@misena.edu.co', '3021413242354325', '15c4fc57e8e99b0e90e6b2fdb635c707', 'Administrador', 'Activo', '../Uploads/usuariosjs.png', '../Uploads/usuarios', '../Uploads/usuarios'),
+(1023162918, 'C.C', 'Anderson Tovar', 'Tovar Sanchez', 'adtovar81@misena.edu.co', '3021413242354325', '81dc9bdb52d04dc20036dbd8313ed055', 'Administrador', 'Activo', '../Uploads/usuariosjs.png', '../Uploads/usuarios', '../Uploads/usuarios'),
 (218390214412, 'C.C', 'Edison Sebastian ', 'Ramirez Suarez', 'esramirez51@gmail.com', '43232543645', '01ceb8141c88907d05404162a17d9bcb', 'Administrador', 'Activo', '../Uploads/usuarios/WhatsApp Image 2023-08-22 at 8.10.46 PM.jpeg', '../Uploads/usuarios/', '../Uploads/usuarios/'),
 (321093120321, 'C.C', 'Samuel Sanchez', 'Diaz Martinez', '16samuel18@gamil.com', '43232543645', '6b50daa1c96088c65ec86940b565ae1a', 'Administrador', 'Activo', '../Uploads/usuarios/WhatsApp Image 2023-08-22 at 8.18.46 PM.jpeg', '../Uploads/usuarios/', '../Uploads/usuarios/');
 
 --
--- √çndices para tablas volcadas
+-- Õndices para tablas volcadas
 --
 
 --

@@ -49,7 +49,7 @@ function cargarProductoAdmin(){
                     <select name="estado" id="" class="form-control">
                                     <option value="'.$f['Estado_producto'].'"> <i class="ti-eye"></i> '.$f['Estado_producto'].'</option>
                                     <option value="Activo">Activo</option>
-                                    <option value="Bloquedo">Bloquedo</option>
+                                    <option value="Bloqueado">Bloqueado</option>
                                     <option value="Pendiente">Pendiente</option>
                     </select>
                     <td>&nbsp;</td>

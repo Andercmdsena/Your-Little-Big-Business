@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generaciÛn: 04-10-2023 a las 18:40:08
--- VersiÛn del servidor: 10.4.28-MariaDB
--- VersiÛn de PHP: 8.2.4
+-- Tiempo de generaci√≥n: 04-10-2023 a las 18:40:08
+-- Versi√≥n del servidor: 10.4.28-MariaDB
+-- Versi√≥n de PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -49,7 +49,7 @@ INSERT INTO `usuario` (`ID`, `Nombre`, `Apellido`, `Email`, `Telefono`, `clave`,
 (46, 'Anderson', 'Tovar', 'andercmdsena@gmail.com', 1234, '81dc9bdb52d04dc20036dbd8313ed055', 'Emprendedor', '../Uploads/usuarios/solucion.PNG', 'Activo');
 
 --
--- Õndices para tablas volcadas
+-- √çndices para tablas volcadas
 --
 
 --

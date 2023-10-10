@@ -151,6 +151,7 @@ include "menu.php"
                                                     <th>Apellidos</th>
                                                     <th>Rol</th>
                                                     <th>Email</th>
+                                                    <th>Estado</th>
                                                     <th>Editar</th>
                                                     <th>Eliminar</th>
                                                 </tr>

@@ -9,6 +9,7 @@ function seleccionar(){
         $filas = $consultas->cargarUsuario($id_producto);
 
         foreach ($filas as $fila){
+            $estado = ($fila['Estado'] == 1) ? 'Activo' : (($fila['Estado'] == 0) ? 'Bloqueado' : 'Pendiente');
             echo "
         <form action = '../../controller/modificarUsuario.php' method = 'post'>
         
@@ -30,6 +31,18 @@ function seleccionar(){
             <tr>
                 <td>Telefono</td>
                 <td><input type='text' class='form-control' name = 'telefono' value='".$fila['Telefono']."'></td>
+            </tr>
+            <tr>
+            <td>Estado</td>
+            <td>
+            <select name = 'estado'>
+                <option>".$estado."</option>
+                <option value=1>Activo</option>
+                <option value=0>Bloqueado</option>
+                <option value=2>Pendiente</option>
+            </select>
+                
+            
             </tr>
             <tr>
                 <td>&nbsp;</td>

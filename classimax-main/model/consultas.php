@@ -77,7 +77,7 @@ class consultas{
         $conexion = $objConexion -> get_conexion();
 
 
-        $consultar = "SELECT * FROM user WHERE identificacion=:identificacion or email=:email";
+        $consultar = "SELECT * FROM Administradores WHERE identificacion=:identificacion or email=:email";
 
         // PREPARAMOS TODO LO NECESARIO PARA EJECUTAR LA FUNCION ANTERIOR
         $result = $conexion->prepare($consultar);
@@ -98,7 +98,7 @@ class consultas{
 
         }else{
            // Creamos la variable que contendra la consulta a ejecutar
-           $insertar = "INSERT INTO user (identificacion, tipo_de_dato, nombres, apellidos, email, telefono, clave,rol,estado,foto, foto2, foto3) VALUES(:identificacion, :tipo_de_dato, :nombres, :apellidos, :email, :telefono, :claveMd ,:rol, :estado, :foto, :foto2, :foto3)";
+           $insertar = "INSERT INTO Administradores (identificacion, tipo_de_dato, nombres, apellidos, email, telefono, clave,rol,estado,foto, foto2, foto3) VALUES(:identificacion, :tipo_de_dato, :nombres, :apellidos, :email, :telefono, :claveMd ,:rol, :estado, :foto, :foto2, :foto3)";
 
 
            // PREPARAMOS TODO LO NECESARIO PARA EJECUTAR LA FUNCION ANTERIOR
@@ -141,7 +141,7 @@ class consultas{
          $objConexion = new Conexion();
          $conexion = $objConexion -> get_conexion();
  
-         $consultar = "SELECT * FROM user order by Nombres asc";
+         $consultar = "SELECT * FROM Administradores order by Nombres asc";
  
          $result=$conexion->prepare($consultar);
  
@@ -159,28 +159,26 @@ class consultas{
      
 
      public function mostrarUsuario(){
-
-
-        $f=null;
- 
- 
-         $objConexion = new Conexion();
-         $conexion = $objConexion -> get_conexion();
- 
-         $consultar = "SELECT * FROM usuario order by Nombre asc";
- 
-         $result=$conexion->prepare($consultar);
- 
+        $f = null;
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+    
+        // Modifica la consulta SQL para unir las tablas "usuario" y "estados"
+        $consultar = "SELECT u.*, e.estado AS NombreEstado
+                      FROM usuario AS u
+                      JOIN estados AS e ON u.Estado = e.id_estado
+                      ORDER BY u.Nombre ASC";
+    
+        $result = $conexion->prepare($consultar);
         $result->execute();
-        
- 
-        while ($resultado=$result->fetch()) {
-         $f[] = $resultado;
+    
+        while ($resultado = $result->fetch()) {
+            $f[] = $resultado;
         }
- 
+    
         return $f;
- 
-     }
+    }
+    
 
 
      public function verPerfilAdmin($id){
@@ -190,7 +188,7 @@ class consultas{
          $objConexion = new Conexion();
          $conexion = $objConexion -> get_conexion();
  
-         $consultar = "SELECT * FROM user where Identificacion=:id";
+         $consultar = "SELECT * FROM Administradores where Identificacion=:id";
  
          $result=$conexion->prepare($consultar);
 
@@ -282,7 +280,7 @@ class consultas{
          $objConexion = new Conexion();
          $conexion = $objConexion -> get_conexion();
          $nombre = "%".$arg_nombre."%";
-         $consultar = "SELECT * FROM user where Nombres like :nombre";
+         $consultar = "SELECT * FROM Administradores where Nombres like :nombre";
  
          $result=$conexion->prepare($consultar);
 
@@ -325,7 +323,7 @@ class consultas{
         
         $conexion = $objConexion -> get_conexion();
       
-        $eliminar= "DELETE from user where Identificacion = :id";
+        $eliminar= "DELETE from Administradores where Identificacion = :id";
       
         $result = $conexion->prepare($eliminar);
         $result-> bindParam (":id", $id );
@@ -461,7 +459,7 @@ class consultas{
         $objConexion = new Conexion();
         $conexion = $objConexion -> get_conexion();
 
-        $consulta = "UPDATE productos Set Estado = :Estado WHERE id = :id";
+        $consulta = "UPDATE productos Set Estado_producto = :Estado WHERE id = :id";
 
         $result = $conexion ->prepare($consulta);
 
@@ -521,7 +519,7 @@ class consultas{
          $objConexion = new Conexion();
          $conexion = $objConexion -> get_conexion();
  
-         $consultar = "SELECT * FROM user where Identificacion = :id_producto";
+         $consultar = "SELECT * FROM Administradores where Identificacion = :id_producto";
  
          $result=$conexion->prepare($consultar);
 
@@ -540,7 +538,7 @@ class consultas{
         $objConexion = new Conexion();
         $conexion = $objConexion -> get_conexion();
 
-        $consulta = "UPDATE user set $arg_campo = :valor WHERE Identificacion = :id_producto";
+        $consulta = "UPDATE Administradores set $arg_campo = :valor WHERE Identificacion = :id_producto";
 
         $result = $conexion ->prepare($consulta);
 
@@ -561,7 +559,7 @@ class consultas{
         $objConexion = new Conexion();
         $conexion = $objConexion -> get_conexion();
 
-        $consulta = "UPDATE user Set foto=:foto WHERE Identificacion = :id";
+        $consulta = "UPDATE Administradores Set foto=:foto WHERE Identificacion = :id";
 
         $result = $conexion ->prepare($consulta);
 
@@ -617,7 +615,7 @@ class consultas{
         $objConexion = new Conexion();
         $conexion = $objConexion -> get_conexion();
 
-        $consulta = "UPDATE user Set clave=:claveMd WHERE Identificacion = :identificacion";
+        $consulta = "UPDATE Administradores Set clave=:claveMd WHERE Identificacion = :identificacion";
 
         $result = $conexion ->prepare($consulta);
 
@@ -760,7 +758,7 @@ class consultas{
         $consultar = "SELECT SUM(total_registros) as total FROM (
                         SELECT COUNT(*) as total_registros FROM usuario
                         UNION ALL
-                        SELECT COUNT(*) as total_registros FROM user
+                        SELECT COUNT(*) as total_registros FROM Administradores
                      ) as combined";
     
         $result = $conexion->prepare($consultar);
@@ -817,7 +815,7 @@ class ValidarSesion
 
         // Elegimos la consulta y la tabla según el tipo_de_rol
         if ($tipo_de_rol == "administrador") {
-            $consultar .= "user WHERE email=:email";
+            $consultar .= "Administradores WHERE email=:email";
         } else {
             $consultar .= "usuario WHERE Email=:email";
         }

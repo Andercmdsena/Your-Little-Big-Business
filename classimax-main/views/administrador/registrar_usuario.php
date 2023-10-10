@@ -168,9 +168,9 @@ include "menu.php"
                                         <label>Estado</label>
                                         <select name="estado" id="" class="form-control">
                                             <option value="">Seleccione un estado</option>
-                                            <option value="Activo">Activo</option>
-                                            <option value="Pendiente">Pendiente</option>
-                                            <option value="Bloqueado">Bloqueado</option>
+                                            <option value="1">Activo</option>
+                                            <option value="2">Pendiente</option>
+                                            <option value="0">Bloqueado</option>
                                            
 
                                         </select>

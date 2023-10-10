@@ -39,6 +39,7 @@ function seleccionarProducto(){
                                             <option value=''> <i class='ti-eye'></i>".$fila['Estado']."</option>
                                             <option value='Disponible'>Disponible</option>
                                             <option value='Agotado'>Agotado</option>
+                                            <option value='Pendiente'>Pendiente</option>
                     </select>
 
             </td>

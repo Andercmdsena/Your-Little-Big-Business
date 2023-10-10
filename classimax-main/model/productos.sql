@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generaciÛn: 04-10-2023 a las 18:40:14
--- VersiÛn del servidor: 10.4.28-MariaDB
--- VersiÛn de PHP: 8.2.4
+-- Tiempo de generaci√≥n: 04-10-2023 a las 18:40:14
+-- Versi√≥n del servidor: 10.4.28-MariaDB
+-- Versi√≥n de PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -48,7 +48,7 @@ INSERT INTO `productos` (`id`, `nombre`, `precio`, `cantidad`, `categoria`, `fot
 (13, 'celular', 300000, '2', 'libros', '../Uploads/usuarios/captura.PNG', 46, 'Agotado');
 
 --
--- Õndices para tablas volcadas
+-- √çndices para tablas volcadas
 --
 
 --

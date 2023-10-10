@@ -8,6 +8,7 @@ function cargarUsuario(){
     }   else{
 
         foreach($result as $f){
+          $estado = ($f['Estado'] == 1) ? 'Activo' : (($f['Estado'] == 0) ? 'Bloqueado' : 'Pendiente');
         echo  '
             <tr>
                 <td><img src="../'.$f['foto'].'" alt="Foto user" style="width:60px; height:60px; border-radius:50%"></td>
@@ -15,6 +16,7 @@ function cargarUsuario(){
                 <td>'.$f['Apellido'].'</td>
                 <td>'.$f['Rol'].'</td>
                 <td>'.$f['Email'].'</td>
+                <td>'.$estado.'</td>
                 <td>
                     <a href="../../views/administrador/modificar.php?id='.$f['ID'].'" class="btn btn-primary"><i class="ti-marker-alt"></i>Modificar</a>
                 </td>

@@ -153,6 +153,7 @@ include "menu.php"
                                                     <th>Cantidad</th>
                                                     <th>Categoria</th>
                                                     <th>ID</th>
+                                                    <th>Disponibilidad</th>
                                                     <th>Estado</th>
                                                 </tr>
                                             </thead>

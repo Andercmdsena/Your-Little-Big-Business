@@ -43,11 +43,12 @@ function cargarProductoAdmin(){
                 <td>'.$f['cantidad'].'</td>
                 <td>'.$f['categoria'].'</td>
                 <td>'.$f['id_emprendedor'].'</td>
+                <td>'.$f['Estado'].'</td>
                 <td>
                 <form action="../../controller/modificarProductoAdmin.php" method = "post">
                     <select name="estado" id="" class="form-control">
-                                    <option value="'.$f['Estado'].'"> <i class="ti-eye"></i> '.$f['Estado'].'</option>
-                                    <option value="Bloquedo">Activo</option>
+                                    <option value="'.$f['Estado_producto'].'"> <i class="ti-eye"></i> '.$f['Estado_producto'].'</option>
+                                    <option value="Activo">Activo</option>
                                     <option value="Bloquedo">Bloquedo</option>
                                     <option value="Pendiente">Pendiente</option>
                     </select>

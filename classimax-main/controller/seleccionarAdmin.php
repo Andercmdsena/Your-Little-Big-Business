@@ -7,8 +7,9 @@ function seleccionarAdmin(){
         $consultas = new consultas();
         $id_producto = $_GET['id'];
         $filas = $consultas->cargarUsuarioAdmin($id_producto);
-
+        
         foreach ($filas as $fila){
+            $estado = ($fila['estado'] == 1) ? 'Activo' : (($fila['estado'] == 0) ? 'Bloqueado' : 'Pendiente');
             echo "
         <form action = '../../controller/modificarUsuarioAdmin.php' method = 'post'>
         
@@ -30,6 +31,19 @@ function seleccionarAdmin(){
             <tr>
                 <td>Telefono:</td>
                 <td><input type='text' class='form-control' name = 'telefono' value='".$fila['telefono']."'></td>
+            </tr>
+            <tr>
+            <td>Estado</td>
+            <td>
+            <select name = 'estado'>
+                <option>".$estado."</option>
+                <option value=1>Activo</option>
+                <option value=0>Bloqueado</option>
+                <option value=2>Pendiente</option>
+            </select>
+                
+            
+            </tr>
             </tr>
             <tr>
                 <td>&nbsp;</td>

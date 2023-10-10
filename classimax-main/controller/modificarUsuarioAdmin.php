@@ -14,6 +14,7 @@ $apellido= $_POST['apellidos'];
 $email= $_POST['email'];
 $telefono= $_POST['telefono'];
 $dato= $_POST['dato'];
+$estado= $_POST['estado'];
 $id_producto= $_POST['id_producto'];
 
 if (strlen($nombre) > 0) {
@@ -22,6 +23,7 @@ if (strlen($nombre) > 0) {
     $msj = $consultas ->modificarUsuarioAdmin("Email", $email, $id_producto);
     $msj = $consultas ->modificarUsuarioAdmin("telefono", $telefono, $id_producto);
     $msj = $consultas ->modificarUsuarioAdmin("Tipo_de_dato", $dato, $id_producto);
+    $msj = $consultas ->modificarUsuarioAdmin("estado",$estado, $id_producto);
     echo $msj;
 }else{
     echo "Error al modificar";

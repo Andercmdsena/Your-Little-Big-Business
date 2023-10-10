@@ -13,13 +13,14 @@ function cargarUsuarioAdmin(){
     }   else{
 
         foreach($result as $f){
+          $estado = ($f['estado'] == 1) ? 'Activo' : (($f['estado'] == 0) ? 'Bloqueado' : 'Pendiente');
         echo  '
             <tr>
                 <td><img src="../'.$f['foto'].'" alt="Foto user" style="width:60px; height:60px; border-radius:50%"></td>
                 <td>'.$f['Nombres'].'</td>
                 <td>'.$f['Apellidos'].'</td>
                 <td>'.$f['rol'].'</td>
-                <td>'.$f['estado'].'</td>
+                <td>'.$estado.'</td>
                 <td>
                 <a href="../../views/administrador/modificarAdmin.php?id='.$f['Identificacion'].'" class="btn btn-primary"><i class="ti-marker-alt"></i>Modificar</a>
                 </td>

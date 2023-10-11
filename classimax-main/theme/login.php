@@ -76,9 +76,9 @@
 								</a>
 								<!-- Dropdown list -->
 								<ul class="dropdown-menu">
-									<li><a class="dropdown-item @@category" href="category.php">Productos</a>
+									<li><a class="dropdown-item @@category" href="productos.php">Productos</a>
 									</li>
-									<li><a class="dropdown-item @@category" href="category.php">Servicios</a></li>
+									<li><a class="dropdown-item @@category" href="servicios.php">Servicios</a></li>
 								</ul>
 							</li>
 						</ul>

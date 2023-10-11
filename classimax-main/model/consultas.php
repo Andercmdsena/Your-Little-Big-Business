@@ -459,7 +459,7 @@ class consultas{
         $objConexion = new Conexion();
         $conexion = $objConexion -> get_conexion();
 
-        $consulta = "UPDATE productos Set Estado_producto = :Estado WHERE id = :id";
+        $consulta = "UPDATE productos Set Estado = :Estado WHERE id = :id";
 
         $result = $conexion ->prepare($consulta);
 
@@ -666,7 +666,7 @@ class consultas{
 
       // -------------------------------------------------Consultas emprendedor-------------------------
 
-    public function insertarProducto($nombre_pro,$precio_pro,$cantidad,$categoria, $foto){
+    public function insertarProducto($nombre_pro,$precio_pro,$cantidad,$categoria, $descripcion, $foto){
 
         session_start();
 
@@ -676,7 +676,7 @@ class consultas{
     
         $result = $conexion->prepare($consultas);
     
-        $result->bindParam(":id", $id); // Corrección aquí
+        $result->bindParam(":id", $id); // Corrección aquím
     
         $result->execute();
     
@@ -686,7 +686,7 @@ class consultas{
             echo '<script> alert("Los datos del usuario ya se encuentra en el sistema") </script>';
             echo '<script>location.href="../theme/register.php" </script>';
         }else{
-            $insertar = "INSERT INTO productos (nombre, precio, cantidad, categoria,foto, id_emprendedor) VALUES(:nombre_pro, :precio_pro, :cantidad, :categoria,:foto,:id_emprendedor)";
+            $insertar = "INSERT INTO productos (nombre, precio, cantidad, categoria, descripcion, foto, id_emprendedor) VALUES(:nombre_pro, :precio_pro, :cantidad, :categoria,:descripcion, :foto,:id_emprendedor)";
     
             $result = $conexion->prepare($insertar);
     
@@ -694,6 +694,7 @@ class consultas{
             $result->bindParam(":precio_pro", $precio_pro);
             $result->bindParam(":cantidad", $cantidad);
             $result->bindParam(":categoria", $categoria);
+            $result->bindParam(":descripcion", $descripcion);
             $result->bindParam(":foto", $foto);
             $result->bindParam(":id_emprendedor", $_SESSION['id']);
     
@@ -751,6 +752,33 @@ class consultas{
         return $f;
  
      }
+
+     public function mostrarPublicacion(){
+
+        $f=null;
+ 
+ 
+         $objConexion = new Conexion();
+         $conexion = $objConexion -> get_conexion();
+ 
+         $consultar = "SELECT * FROM productos order by nombre asc";
+ 
+         $result=$conexion->prepare($consultar);
+ 
+        $result->execute();
+        
+ 
+        while ($resultado=$result->fetch()) {
+         $f[] = $resultado;
+        }
+ 
+        return $f;
+
+     }
+
+
+
+
      public function contarUsuarios(){
         $objConexion = new Conexion();
         $conexion = $objConexion->get_conexion();
@@ -851,7 +879,7 @@ class ValidarSesion
                     echo '<script> alert("Bienvenido") </script>';
                     echo "<script> location.href='../views/administrador/home.php' </script>";
 
-                }elseif($_SESSION['estado'] == "Bloqueado"){
+                }elseif($_SESSION['estado'] == 0){
                     echo '<script> alert("Su cuenta esta bloqueada") </script>';
                     echo "<script> location.href='../theme/login.php' </script>";
                 } 

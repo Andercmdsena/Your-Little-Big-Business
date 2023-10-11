@@ -42,6 +42,7 @@ function cargarUsuarioAdminReportes(){
     }   else{
 
         foreach($result as $f){
+          $estado = ($f['estado'] == 1) ? 'Activo' : (($f['estado'] == 0) ? 'Bloqueado' : 'Pendiente');
         echo  '
             <tr>
                 
@@ -49,7 +50,7 @@ function cargarUsuarioAdminReportes(){
                 <td>'.$f['Apellidos'].'</td>
                 <td>'.$f['Email'].'</td>
                 <td>'.$f['rol'].'</td>
-                <td>'.$f['estado'].'</td>
+                <td>'.$estado.'</td>
             <tr>';
         }
         

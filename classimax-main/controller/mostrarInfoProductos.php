@@ -35,6 +35,7 @@ function cargarProductoAdmin(){
     }   else{
 
         foreach($result as $f){
+            $estado = ($f['Estado'] == 1) ? 'Activo' : (($f['Estado'] == 0) ? 'Bloqueado' : 'Pendiente');
         echo  '
             <tr>
                 <td><img src="../'.$f['foto'].'" alt="Foto user" style="width:60px; height:60px; border-radius:50%"></td>
@@ -43,14 +44,15 @@ function cargarProductoAdmin(){
                 <td>'.$f['cantidad'].'</td>
                 <td>'.$f['categoria'].'</td>
                 <td>'.$f['id_emprendedor'].'</td>
-                <td>'.$f['Estado'].'</td>
+                <td>'.$f['Estado_producto'].'</td>
                 <td>
                 <form action="../../controller/modificarProductoAdmin.php" method = "post">
                     <select name="estado" id="" class="form-control">
-                                    <option value="'.$f['Estado_producto'].'"> <i class="ti-eye"></i> '.$f['Estado_producto'].'</option>
-                                    <option value="Activo">Activo</option>
-                                    <option value="Bloqueado">Bloqueado</option>
-                                    <option value="Pendiente">Pendiente</option>
+
+                                    <option value="'.$estado.'"> <i class="ti-eye"></i> '.$estado.'</option>
+                                    <option value="1">Activo</option>
+                                    <option value="0">Bloqueado</option>
+                                    <option value="2">Pendiente</option>
                     </select>
                     <td>&nbsp;</td>
                     <td><input type="hidden" name = "id_producto" value='.$f['id'].'>

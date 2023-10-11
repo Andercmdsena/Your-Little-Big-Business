@@ -63,13 +63,15 @@ function reportesUsuarioPerfil(){
     }   else{
 
         foreach($result as $f){
+          $estado = ($f['Estado'] == 1) ? 'Activo' : (($f['Estado'] == 0) ? 'Bloqueado' : 'Pendiente');
+
         echo  '
             <tr>
                 <td>'.$f['Nombre'].'</td>
                 <td>'.$f['Apellido'].'</td>
                 <td>'.$f['Email'].'</td>    
                 <td>'.$f['Rol'].'</td>
-                <td>'.$f['Estado'].'</td>
+                <td>'.$estado.'</td>
             <tr>';
         }
         

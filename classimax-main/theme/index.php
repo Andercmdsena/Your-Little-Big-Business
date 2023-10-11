@@ -57,7 +57,7 @@
 					<div class="collapse navbar-collapse" id="navbarSupportedContent">
 						<ul class="navbar-nav ml-auto main-nav ">
 							<li id="home" class="nav-item active">
-								<a class="nav-link" href="index.php">Inicio </a>
+								<a class="nav-link" href="index.php">Inicioo </a>
 							</li>
 							<li class="nav-item @@pages">
 								<a class="nav-link @@about" href="about-us.php" aria-haspopup="true"

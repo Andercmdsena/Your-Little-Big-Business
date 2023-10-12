@@ -330,10 +330,11 @@ class GenerarClave{
                  
 
                     ;
+                    echo '<script> alert("Enviando correo...") </script>';
                   
 
                     $mail->send();
-                    echo '<script> alert("Mensaje enviado") </script>';
+                    echo '<script> alert("Correo enviado") </script>';
                     echo"<script> location.href='../theme/login.php'</script>";
                 } catch (Exception $e) {
                     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";

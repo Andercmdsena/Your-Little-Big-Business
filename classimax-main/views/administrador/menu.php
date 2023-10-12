@@ -118,6 +118,9 @@ require_once ("../../controller/mostrarInfoUsuario.php");
                                 <a href="ver_usuarioo.php"> <i class="ti-eye"></i> Ver Usuarios</a>
                             </li>
                             <li>
+                                <a href="ver_usuarioo.php"> <i class="ti-eye"></i> Ver emprendedores</a>
+                            </li>
+                            <li>
                                 <a href="reportes-administradores.php"> <i class="ti-download"></i>Reportes administradores</a>
                             </li>
                             <li>

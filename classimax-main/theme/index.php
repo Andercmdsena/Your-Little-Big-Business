@@ -85,7 +85,7 @@
 							<li id="signup-btn" class="nav-item d-block pt-4">
 								<a class="nav-link ingresar-btn  add-button" href="register.php">Registrate</a>
 							</li>
-							<li class="nav-item d-block pt-4 carrito_boton" ><a class="nav-link carrito-btn" href="#">Carrito</a></li>
+							<li class="nav-item d-block pt-4 carrito_boton" ><a class="nav-link carrito-btn" href="carrito.php">Carrito</a></li>
 							<li class="nav-item d-block pt-4 carrito_boton" ><a class="nav-link carrito-btn" href="pasarelapagos.php">Pasarela</a></li>
 						</ul>
 

@@ -1,3 +1,10 @@
+<?php include_once("../controller/Main.php");
+require_once("../controller/publicaciones.php");
+require_once ("../controller/mostrarInfoProductos.php");
+require_once("../model/conexion.php");
+require_once("../model/consultas.php");
+?>
+
 <!DOCTYPE html>
 
 
@@ -188,154 +195,16 @@
 				<div class="trending-ads-slide">
 					<div class="col-sm-12 col-lg-4">
 						<!-- product card -->
-<div class="product-item bg-light">
-	<div class="card">
-		<div class="thumb-content">
-			<!-- <div class="price">$200</div> -->
-			<a href="single.html">
-				<img class="card-img-top img-fluid" src="images/products/portatil.jpg" alt="Card image cap">
-			</a>
-		</div>
-		<div class="card-body">
-		    <h4 class="card-title"><a href="single.html">Computador gamer</a></h4>
-		    <ul class="list-inline product-meta">
-		    	<li class="list-inline-item">
-		    		<a href="single.html"><i class="fa fa-folder-open-o"></i>Tecnologia</a>
-		    	</li>
-		    	<li class="list-inline-item">
-		    		<a href="category.html"><i class="fa fa-calendar"></i>26 de Julion</a>
-		    	</li>
-		    </ul>
-		    <p class="card-text">La laptop GAMER: Experimenta un rendimiento sin igual en un diseño portátil.</p>
-		    <div class="product-ratings">
-		    	<ul class="list-inline">
-		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-		    		<li class="list-inline-item"><i class="fa fa-star"></i></li>
-		    	</ul>
-		    </div>
-		</div>
-	</div>
-</div>
+						<?php
+							cargarPublicacionCarrusel()
+
+							?>
 
 
 
 					</div>
-					<div class="col-sm-12 col-lg-4">
-						<!-- product card -->
-<div class="product-item bg-light">
-	<div class="card">
-		<div class="thumb-content">
-			<!-- <div class="price">$200</div> -->
-			<a href="single.html">
-				<img class="card-img-top img-fluid " src="images/products/celular.jpg" alt="Card image cap">
-			</a>
-		</div>
-		<div class="card-body">
-		    <h4 class="card-title"><a href="single.html">Celular inteligente</a></h4>
-		    <ul class="list-inline product-meta">
-		    	<li class="list-inline-item">
-		    		<a href="single.html"><i class="fa fa-folder-open-o"></i>Tecnologia</a>
-		    	</li>
-		    	<li class="list-inline-item">
-		    		<a href="category.html"><i class="fa fa-calendar"></i>11 de enero</a>
-		    	</li>
-		    </ul>
-		    <p class="card-text">Potencia y estilo en tu mano: un teléfono inteligente de calidad y para todo .</p>
-		    <div class="product-ratings">
-		    	<ul class="list-inline">
-		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-		    		<li class="list-inline-item"><i class="fa fa-star"></i></li>
-		    	</ul>
-		    </div>
-		</div>
-	</div>
-</div>
-
-
-
-					</div>
-					<div class="col-sm-12 col-lg-4">
-						<!-- product card -->
-<div class="product-item bg-light">
-	<div class="card">
-		<div class="thumb-content">
-			<!-- <div class="price">$200</div> -->
-			<a href="single.html">
-				<img class="card-img-top img-fluid" src="images/products/libro.jpg" alt="Card image cap">
-			</a>
-		</div>
-		<div class="card-body">
-		    <h4 class="card-title"><a href="single.html">Libro de negocios</a></h4>
-		    <ul class="list-inline product-meta">
-		    	<li class="list-inline-item">
-		    		<a href="single.html"><i class="fa fa-folder-open-o"></i>Libros</a>
-		    	</li>
-		    	<li class="list-inline-item">
-		    		<a href="category.html"><i class="fa fa-calendar"></i>2 de febrero</a>
-		    	</li>
-		    </ul>
-		    <p class="card-text">Descubre estrategias probadas en este libro de negocios. Obtén ideas frescas para alcanzar el éxito.</p>
-		    <div class="product-ratings">
-		    	<ul class="list-inline">
-		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-		    		<li class="list-inline-item"><i class="fa fa-star"></i></li>
-		    	</ul>
-		    </div>
-		</div>
-	</div>
-</div>
-
-
-
-					</div>
-					<div class="col-sm-12 col-lg-4">
-						<!-- product card -->
-<div class="product-item bg-light">
-	<div class="card">
-		<div class="thumb-content">
-			<!-- <div class="price">$200</div> -->
-			<a href="single.html">
-				<img class="card-img-top img-fluid" src="images/products/bicicleta.jpg" alt="Card image cap">
-			</a>
-		</div>
-		<div class="card-body">
-		    <h4 class="card-title"><a href="single.html">Bicicleta</a></h4>
-		    <ul class="list-inline product-meta">
-		    	<li class="list-inline-item">
-		    		<a href="single.html"><i class="fa fa-folder-open-o"></i>Hogar</a>
-		    	</li>
-		    	<li class="list-inline-item">
-		    		<a href="category.html"><i class="fa fa-calendar"></i>23 de agosto</a>
-		    	</li>
-		    </ul>
-		    <p class="card-text">Libertad sobre ruedas: una bicicleta que combina rendimiento para explorar el mundo..</p>
-		    <div class="product-ratings">
-		    	<ul class="list-inline">
-		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-		    		<li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-		    		<li class="list-inline-item"><i class="fa fa-star"></i></li>
-		    	</ul>
-		    </div>
-		</div>
-	</div>
-</div>
-
-
-
-					</div>
-				</div>
-			</div>
+				
+			
 		</div>
 	</div>
 </section>

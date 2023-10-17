@@ -9,7 +9,8 @@ function cargarPublicacion(){
 
         foreach($result as $f){
             $estado = ($f['Estado'] == 1) ? 'Activo' : (($f['Estado'] == 0) ? 'Bloqueado' : 'Pendiente');
-        echo  '
+            if ($f['Estado'] == 1) {
+                echo  '
         
         
         <div class="card col-md-4">
@@ -49,6 +50,9 @@ function cargarPublicacion(){
     
     
     ';
+            }
+
+        
         };
         
     };

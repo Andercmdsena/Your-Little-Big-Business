@@ -148,7 +148,7 @@ include "menu.php"
                                             <thead>
                                                 <tr>
                                                     <th>Foto</th>
-                                                    <th>Nombrge</th>
+                                                    <th>Nombre</th>
                                                     <th>Precio</th>
                                                     <th>Cantidad</th>
                                                     <th>Categoria</th>

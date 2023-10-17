@@ -42,6 +42,10 @@ function cargarPublicacion(){
                         <li class="list-inline-item"><i class="fa fa-star"></i></li>
                     </ul>
                 </div>
+                <div>
+                <button class="btn btn-light"><a href="#"> Agregar al carrito</a></button>
+                <button class="btn btn-light"><a href="#">Comprar ahora</a></button>
+                </div>
             </div>
         </div>
     </div>

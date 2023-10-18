@@ -83,7 +83,7 @@ require_once ("../../controller/mostrarInfoUsuario.php");
         <div class="nano ">
             <div class="nano-content" id="panel_izq">
                 <div class="logo">
-                    <a href="home.php">
+                    <a href="../../theme/index.php">
                         <img src="../../theme/images/Mi proyecto.png" alt="" /> 
                         
                     </a>

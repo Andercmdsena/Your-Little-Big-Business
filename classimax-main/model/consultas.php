@@ -365,7 +365,7 @@ class consultas{
         
         $result->execute ();
         echo '<script> alert("Producto eliminado con exito") </script>';
-        echo "<script> location.href='../Views/Administrador/verProductos.php' </script>";
+        echo "<script> location.href='../Views/emprendedor/verProductos.php' </script>";
       
       
       
@@ -451,7 +451,7 @@ class consultas{
         }else{
             $result -> execute();
             echo '<script> alert("Producto actualizado exitosamente") </script>';
-            echo "<script> location.href='../views/administrador/verProductos.php' </script>";
+            echo "<script> location.href='../views/emprendedor/verProductos.php' </script>";
         }
         
       }
@@ -488,7 +488,7 @@ class consultas{
         }else{
             $result -> execute();
             echo '<script> alert("Usuario actualizado exitosamente") </script>';
-            echo "<script> location.href='../views/administrador/usuario.php' </script>";
+            echo "<script> location.href='../views/cliente/usuario.php' </script>";
         }
         
       }
@@ -508,7 +508,7 @@ class consultas{
         }else{
             $result -> execute();
             echo '<script> alert("Usuario actualizado exitosamente") </script>';
-            echo "<script> location.href='../views/administrador/emprendedor.php' </script>";
+            echo "<script> location.href='../views/emprendedor/emprendedor.php' </script>";
         }
         
       }
@@ -587,7 +587,7 @@ class consultas{
         $result -> execute();
 
         echo '<script>alert("Informacion actualizada")</script>';
-        echo "<script>location.href='../views/administrador/usuario2.php?id=$id'</script>";
+        echo "<script>location.href='../views/cliente/usuario2.php?id=$id'</script>";
 
         
       }
@@ -606,7 +606,7 @@ class consultas{
         $result -> execute();
 
         echo '<script>alert("Informacion actualizada")</script>';
-        echo "<script>location.href='../views/administrador/emprendedor2.php?id=$id'</script>";
+        echo "<script>location.href='../views/emprendedor/emprendedor2.php?id=$id'</script>";
         
       }
 
@@ -643,7 +643,7 @@ class consultas{
         $result -> execute();
 
         echo '<script>alert("Informacion actualizada")</script>';
-        echo "<script>location.href='../views/administrador/usuario2.php?id=$identificacion'</script>";
+        echo "<script>location.href='../views/cliente/usuario2.php?id=$identificacion'</script>";
       }
      public function actualizarClaveEmprendedor($identificacion, $claveMd){
         $objConexion = new Conexion();
@@ -659,7 +659,7 @@ class consultas{
         $result -> execute();
 
         echo '<script>alert("Informacion actualizada")</script>';
-        echo "<script>location.href='../views/administrador/emprendedor2.php?id=$identificacion'</script>";
+        echo "<script>location.href='../views/emprendedor/emprendedor2.php?id=$identificacion'</script>";
       }
 
 
@@ -682,10 +682,7 @@ class consultas{
     
         $f = $result->fetch();
     
-        if($f){
-            echo '<script> alert("Los datos del usuario ya se encuentra en el sistema") </script>';
-            echo '<script>location.href="../theme/register.php" </script>';
-        }else{
+        
             $insertar = "INSERT INTO productos (nombre, precio, cantidad, categoria, descripcion, foto, id_emprendedor) VALUES(:nombre_pro, :precio_pro, :cantidad, :categoria,:descripcion, :foto,:id_emprendedor)";
     
             $result = $conexion->prepare($insertar);
@@ -700,8 +697,8 @@ class consultas{
     
             $result->execute();
             echo '<script> alert("Producto registrado con éxito") </script>';
-            echo '<script>location.href="../views/administrador/registroProductos.php" </script>';
-        }
+            echo '<script>location.href="../views/emprendedor/registroProductos.php" </script>';
+        
     }
     public function mostrarProducto($arg_id_usuario = null) {
         $f = null;
@@ -885,11 +882,11 @@ class ValidarSesion
                 } 
                 elseif($tipo_de_rol == "cliente"){
                     echo '<script> alert("Bienvenido") </script>';
-                    echo "<script> location.href='../Views/administrador/usuario.php' </script>";
+                    echo "<script> location.href='../Views/cliente/usuario.php' </script>";
                 } 
                 else {
                     echo '<script> alert("Bienvenido") </script>';
-                    echo "<script> location.href='../Views/administrador/emprendedor.php' </script>";
+                    echo "<script> location.href='../Views/emprendedor/emprendedor.php' </script>";
                 }
             } else {
                 echo '<script> alert("La clave no coincide intentalo de nuevo") </script>';

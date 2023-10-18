@@ -16,7 +16,7 @@ $categoria= $_POST['categoria'];
 $estado= $_POST['estado'];
 $id_producto= $_POST['id_producto'];
 
-if (strlen($estado) > 0) {
+if (strlen($estado) > 0 || strlen($nombre) || strlen($precio) || strlen($cantidad) || strlen($categoria)) {
     $msj = $consultas ->modificarProducto("nombre", $nombre, $id_producto);
     $msj = $consultas ->modificarProducto("precio", $precio, $id_producto);
     $msj = $consultas ->modificarProducto("cantidad", $cantidad, $id_producto);
@@ -25,6 +25,6 @@ if (strlen($estado) > 0) {
     echo $msj;
 }else{
     echo'<script> alert("Error al modificar, los campos deben estar completo") </script>';
-    echo "<script> location.href='../views/administrador/modificarProducto.php' </script>";
+    echo "<script> location.href='../views/emprendedor/verProductos.php' </script>";
 }
 ?>

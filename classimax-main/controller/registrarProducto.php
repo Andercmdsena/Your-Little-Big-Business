@@ -20,7 +20,7 @@ $descripcion = $_POST["descripcion"];
         $result = $objConsulta->insertarProducto($nombre,$precio, $cantidad, $categoria,$descripcion, $foto);
     } else{
     echo '<script> alert("Los campos estan incompletos") </script>';
-    echo '<script>location.href="../views/administrador/registroProductos.php" </script>';
+    echo '<script>location.href="../views/emprendedor/registroProductos.php" </script>';
 }
 
 ?>

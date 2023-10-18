@@ -73,7 +73,6 @@ function perfilAdmin(){
     foreach ($result as $f) {
         echo '
         
-
         <li class="label">'.$f['rol'].'</li>
                     <li>
                         <a  href="home.php">
@@ -81,17 +80,11 @@ function perfilAdmin(){
                             
                         </a>
                     </li>
-        
-
-                    
-        
         ';
     }
 
-
-
-
 }
+
 
 
 function perfilEditarAdmin(){

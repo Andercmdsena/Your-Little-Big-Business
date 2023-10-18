@@ -69,7 +69,7 @@
               </div>
               <hr>
               <div class="preciototal">
-                  Total: $219.000
+                  Total: $2190.000
               </div>
               <button class="botonpagar">Pagar</button>
         </div>

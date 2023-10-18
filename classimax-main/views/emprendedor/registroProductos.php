@@ -154,8 +154,12 @@ require_once ("../../model/seguridadEmprendedor.php");
                                     </div>
                                     
                                     <div class="form-group col-md-12">
-                                    <label>Foto</label>
+                                    <label>Foto 1</label>
                                     <input type="file" class="form-control" name="foto" accept=".jpg, .jpeg, .png, .gif">
+                                    <label>Foto 2</label>
+                                    <input type="file" class="form-control" name="foto2" accept=".jpg, .jpeg, .png, .gif">
+                                    <label>Foto 3</label>
+                                    <input type="file" class="form-control" name="foto3" accept=".jpg, .jpeg, .png, .gif">
                                     </div>
 
 

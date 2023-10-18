@@ -102,7 +102,7 @@ include "menu_usuario.php"
                         <div class="page-header">
                             <div class="page-title">
                                 <h1>Hola,
-                                    <span>Bienvenido a la vista de usuario</span>
+                                    <span>Bienvenido a la vista de cliente</span>
                                 </h1>
                             </div>
                         </div>

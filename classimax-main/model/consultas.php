@@ -666,7 +666,7 @@ class consultas{
 
       // -------------------------------------------------Consultas emprendedor-------------------------
 
-    public function insertarProducto($nombre_pro,$precio_pro,$cantidad,$categoria, $descripcion, $foto){
+    public function insertarProducto($nombre_pro,$precio_pro,$cantidad,$categoria, $descripcion, $foto, $foto2, $foto3){
 
         session_start();
 
@@ -683,7 +683,7 @@ class consultas{
         $f = $result->fetch();
     
         
-            $insertar = "INSERT INTO productos (nombre, precio, cantidad, categoria, descripcion, foto, id_emprendedor) VALUES(:nombre_pro, :precio_pro, :cantidad, :categoria,:descripcion, :foto,:id_emprendedor)";
+            $insertar = "INSERT INTO productos (nombre, precio, cantidad, categoria, descripcion, foto, foto2, foto3, id_emprendedor) VALUES(:nombre_pro, :precio_pro, :cantidad, :categoria,:descripcion, :foto, :foto2, :foto3 , :id_emprendedor)";
     
             $result = $conexion->prepare($insertar);
     
@@ -693,6 +693,8 @@ class consultas{
             $result->bindParam(":categoria", $categoria);
             $result->bindParam(":descripcion", $descripcion);
             $result->bindParam(":foto", $foto);
+            $result->bindParam(":foto2", $foto2);
+            $result->bindParam(":foto3", $foto3);
             $result->bindParam(":id_emprendedor", $_SESSION['id']);
     
             $result->execute();

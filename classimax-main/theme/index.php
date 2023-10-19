@@ -61,7 +61,7 @@ require_once("../model/consultas.php");
 			<div class="col-md-12">
 				<!-- Header Contetnt -->
 				<div class="content-block">
-					<h1>Encuentra todo lo que necesitas</h1>
+					<h1>Encuentra todo lop que necesitas</h1>
 					<p>Explora nuestra amplia gama de productos y servicios <br> para encontrar todo lo que necesitas</p>
 					<div class="short-popular-category-list text-center">
 						<h2>Categorias</h2>

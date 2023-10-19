@@ -101,7 +101,13 @@ require_once ("../../model/seguridadEmprendedor.php");
                                 <a href="registroProductos.php"><i class="ti-shopping-cart"></i>Registro productos</a>
                             </li>
                             <li>
-                                <a href="verProductos.php"> <i class="ti-eye"></i> Ver</a>
+                                <a href="registroServicios.php"><i class="ti-user"></i>Registro servicios</a>
+                            </li>
+                            <li>
+                                <a href="verProductos.php"> <i class="ti-eye"></i>Ver productos</a>
+                            </li>
+                            <li>
+                                <a href="verServicio.php"> <i class="ti-eye"></i>Ver servicios</a>
                             </li>
                             
                             

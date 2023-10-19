@@ -1071,6 +1071,9 @@ ul.pagination .active a {
   height: 832px;
   margin-bottom: 46px;
 }
+.product-item .cardCarrusel {
+  border: none;
+}
 .product-item .card .card-body {
   padding: 20px;
   border-bottom: 5px solid #BDD0FF;

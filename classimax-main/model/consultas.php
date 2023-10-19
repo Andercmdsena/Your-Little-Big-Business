@@ -702,6 +702,42 @@ class consultas{
             echo '<script>location.href="../views/emprendedor/registroProductos.php" </script>';
         
     }
+    public function insertarServicio($nombre_pro,$precio_pro,$duracion,$categoria, $descripcion, $foto, $foto2, $foto3){
+
+        session_start();
+
+        $modelo = new conexion();
+        $conexion = $modelo -> get_conexion();
+        $consultas = "SELECT * FROM productos WHERE id=:id";
+    
+        $result = $conexion->prepare($consultas);
+    
+        $result->bindParam(":id", $id); // Corrección aquím
+    
+        $result->execute();
+    
+        $f = $result->fetch();
+    
+        
+            $insertar = "INSERT INTO servicios (nombre, precio, duracion, categoria, descripcion, foto, foto2, foto3, id_emprendedor) VALUES(:nombre_pro, :precio_pro, :duracion, :categoria,:descripcion, :foto, :foto2, :foto3 , :id_emprendedor)";
+    
+            $result = $conexion->prepare($insertar);
+    
+            $result->bindParam(":nombre_pro", $nombre_pro);
+            $result->bindParam(":precio_pro", $precio_pro);
+            $result->bindParam(":duracion", $duracion);
+            $result->bindParam(":categoria", $categoria);
+            $result->bindParam(":descripcion", $descripcion);
+            $result->bindParam(":foto", $foto);
+            $result->bindParam(":foto2", $foto2);
+            $result->bindParam(":foto3", $foto3);
+            $result->bindParam(":id_emprendedor", $_SESSION['id']);
+    
+            $result->execute();
+            echo '<script> alert("Producto servicios con éxito") </script>';
+            echo '<script>location.href="../views/emprendedor/registroServicios.php" </script>';
+        
+    }
     public function mostrarProducto($arg_id_usuario = null) {
         $f = null;
     
@@ -712,6 +748,32 @@ class consultas{
         $consultar = "SELECT productos.* 
                       FROM productos " . ($arg_id_usuario !== null ? "INNER JOIN usuario ON productos.id_emprendedor = usuario.ID WHERE usuario.ID = :id_usuario" : "") . "
                       ORDER BY productos.nombre ASC";
+    
+        $result = $conexion->prepare($consultar);
+    
+        // Si se proporciona un ID de usuario, vincularlo en la consulta
+        if ($arg_id_usuario !== null) {
+            $result->bindParam(":id_usuario", $arg_id_usuario);
+        }
+    
+        $result->execute();
+    
+        while ($resultado = $result->fetch()) {
+            $f[] = $resultado;
+        }
+    
+        return $f;
+    }
+    public function mostrarServicio($arg_id_usuario = null) {
+        $f = null;
+    
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+    
+        // Consulta SQL para seleccionar todos los productos, incluyendo la posibilidad de un INNER JOIN
+        $consultar = "SELECT servicios.* 
+                      FROM servicios " . ($arg_id_usuario !== null ? "INNER JOIN usuario ON servicios.id_emprendedor = usuario.ID WHERE usuario.ID = :id_usuario" : "") . "
+                      ORDER BY servicios.nombre ASC";
     
         $result = $conexion->prepare($consultar);
     

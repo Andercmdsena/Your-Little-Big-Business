@@ -88,7 +88,7 @@ function cargarPublicacionCarrusel(){
         
         
                 <div class="product-item bg-light producto_catalogo">
-                <div class="card">
+                <div class="cardCarrusel">
                     <div class="thumb-content">
                         <!-- <div class="price">$200</div> -->
                         

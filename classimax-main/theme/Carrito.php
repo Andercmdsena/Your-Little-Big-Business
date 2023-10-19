@@ -1,3 +1,10 @@
+<?php
+require_once("../controller/mostrarCarrito.php");
+
+
+?>
+
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -22,56 +29,11 @@
 
     <main>
       <section class="contenidocarrito">
-            <div>
-              <p><h2>Carrito</h2></p>
-              <p class="info1">Aquí podras ver los productos en tu carrito</p>
-              <hr>
-              <div class="productosxd">
-                <img src="img/productoSugerido.png" alt="Producto 1">
-                  <div class="detallesproducto">
-                      <p class="nombreproducto">Teclado gamer</p>
-                      <p class="Descripcion">El Teclado Gamer es tu aliado perfecto para conquistar mundos virtuales. Diseñado para la máxima velocidad y precisión, este teclado ofrece teclas retroiluminadas.</p>
-                      <p class="disponible">Disponible</p>
-                      <p class="precioproducto">$19.000</p>
-                      <div class="dropdown-center">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          Cantidad
-                        </button>
-                        <ul class="dropdown-menu">
-                          <li><a class="dropdown-item" href="#">1</a></li>
-                          <li><a class="dropdown-item" href="#">2</a></li>
-                          <li><a class="dropdown-item" href="#">3</a></li>
-                        </ul>
-                        |
-                      </div>
-                  </div>
-              </div>
-              <hr>
-              <div class="productosxd">
-                <img src="img/productoSugerido2.png" alt="Producto 2">
-                <div class="detallesproducto">
-                    <p class="nombreproducto">Chasis gamer</p>
-                    <p class="Descripcion">El Chasis Gamer Corto es la elección perfecta para aquellos entusiastas de los videojuegos que buscan un diseño compacto pero potente.</p>
-                    <p class="disponible">Disponible</p>
-                    <p class="precioproducto">$200.000</p>
-                    <div class="dropdown-center">
-                      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Cantidad
-                      </button>
-                      <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">1</a></li>
-                        <li><a class="dropdown-item" href="#">2</a></li>
-                        <li><a class="dropdown-item" href="#">3</a></li>
-                      </ul>
-                      |
-                    </div>
-                </div>
-              </div>
-              <hr>
-              <div class="preciototal">
-                  Total: $2190.000
-              </div>
-              <button class="botonpagar">Pagar</button>
+              <?php
+
+              cargarProductoCarrito()
+
+              ?>
         </div>
       </section>
     </main>        

@@ -32,6 +32,8 @@ function cargarPublicacion(){
                 <div class="product-ratings">
                 <p class="card-text">Precio:'. $f['precio'] .'</p>
                 <p class="card-text">Estado:'. $f['Estado_producto'] .'</p>
+                
+                
                 <div class="product-ratings">
                 
                     <ul class="list-inline">
@@ -43,8 +45,8 @@ function cargarPublicacion(){
                     </ul>
                 </div>
                 <div>
-                <button class="btn btn-light"><a href="#"> Agregar al carrito</a></button>
-                <button class="btn btn-light"><a href="#">Comprar ahora</a></button>
+                <button class="btn btn-light"><a href="../controller/agregarCarrito.php?id_producto='. $f['id'] .'"> Agregar al carrito</a></button>
+                <button class="btn btn-light"><a href="pasarelapagos.php">Comprar ahora</a></button>
                 </div>
             </div>
         </div>

@@ -17,7 +17,7 @@ function cargarProducto() {
                     <td>' . $f['Estado'] . '</td>
                     <td>' . $f['categoria'] . '</td>
                     <td>
-                        <a href="../../views/emprendedor/modificarProducto.php?id=' . $f['id'] . '" class="btn btn-primary"><i class="ti-marker-alt"></i>Modificar</a>
+                        <a href="../../views/administrador/modificarProducto.php?id=' . $f['id'] . '" class="btn btn-primary"><i class="ti-marker-alt"></i>Modificar</a>
                     </td>
                     <td>
                         <a class="btn btn-danger" href="../../controller/eliminarProducto.php?id=' . $f['id'] . '"><i class="ti-trash"></i>Eliminar</a>

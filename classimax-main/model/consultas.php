@@ -819,8 +819,69 @@ class consultas{
     
     
 
+    //------------------------------------------Carrito--------------------------------------------
 
+    public function agregarCarrito($producto, $usuario){
+        $objConexion = new  Conexion();
+        $conexion = $objConexion->get_conexion();
+
+        $consultar = "INSERT INTO carrito (id_producto, id_usuario) values(:id_producto, :id_usuario)";
+
+        $result = $conexion->prepare($consultar);
+
+
+        $result -> bindParam(":id_producto", $producto);
+        $result -> bindParam(":id_usuario", $usuario);
+
+        $result->execute();
+        echo '<script>alert("producto agregado con exito al carrito")</script>';
+        echo '<script>location.href="../theme/Carrito.php"</script>';
+    }
     
+    public function mostrarProductoCarrito($arg_id_usuario) {
+        $f = null;
+    
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+    
+        // Consulta SQL para seleccionar los productos en el carrito de un usuario específico
+        $consultar = "SELECT productos.*, carrito.id AS id_carrito
+        FROM productos
+        INNER JOIN carrito ON productos.id = carrito.id_producto
+        WHERE carrito.id_usuario = :id_usuario
+        ";
+    
+        $result = $conexion->prepare($consultar);
+    
+        // Vincular el parámetro :id_usuario
+        $result->bindParam(":id_usuario", $arg_id_usuario);
+    
+        $result->execute();
+    
+        while ($resultado = $result->fetch()) {
+            $f[] = $resultado;
+        }
+    
+        return $f;
+    }
+
+    public function eliminarProductoCarrito ($id) {
+        $objConexion = new Conexion();
+        
+        $conexion = $objConexion -> get_conexion();
+      
+        $eliminar= "DELETE from carrito where id = :id";
+      
+        $result = $conexion->prepare($eliminar);
+        $result-> bindParam (":id", $id );
+        
+        $result->execute ();
+        echo '<script> alert("Producto eliminado del carrtio con exito") </script>';
+        echo "<script> location.href='../theme/carrito.php' </script>";
+      
+      
+      
+      }
     
 }
 

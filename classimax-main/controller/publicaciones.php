@@ -13,7 +13,7 @@ function cargarPublicacion(){
                 echo  '
         
         
-        <div class="card col-md-4 ">
+        <div class="card col-md-4 producto">
             <div class="thumb-content">
                 <!-- <div class="price">$200</div> -->
                 <img src="'.$f['foto'].'" alt="Foto user" style="width:250px; height:150px; ">
@@ -44,9 +44,16 @@ function cargarPublicacion(){
                         <li class="list-inline-item"><i class="fa fa-star"></i></li>
                     </ul>
                 </div>
-                <div>
-                <button class="btn btn-light"><a href="../controller/agregarCarrito.php?id_producto='. $f['id'] .'"> Agregar al carrito</a></button>
-                <button class="btn btn-light"><a href="pasarelapagos.php">Comprar ahora</a></button>
+                <div class="botonesCarrito">
+                ';
+                if (isset($_SESSION['id'])) {
+                    echo '<button class="btn btn-light"><a href="../controller/agregarCarrito.php?id_producto='. $f['id'] .'"> Agregar al carrito</a></button>
+                    <button class="btn btn-light"><a href="pasarelapagos.php">Comprar ahora</a></button>';
+                } else {
+                    echo '<button class="btn btn-light"><a href="../theme/login.php">Agregar al carrito</a></button>
+                    <button class="btn btn-light"><a href="../theme/login.php">Comprar ahora</a></button>';
+                }
+                echo '
                 </div>
             </div>
         </div>

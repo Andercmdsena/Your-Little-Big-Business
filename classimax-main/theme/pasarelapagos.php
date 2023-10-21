@@ -44,7 +44,7 @@
             
             <button type="submit">Pagar</button>
         </form>
-    </div>
+</div>
 </body>
 </html>
 

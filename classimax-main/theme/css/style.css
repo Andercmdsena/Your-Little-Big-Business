@@ -1044,9 +1044,9 @@ ul.pagination .active a {
   width: 35px;
   height: 35px;
   line-height: 35px;
-  background: #025fd3;
+  background: #e394ff;
   text-align: center;
-  color: #fff;
+  color: #000000;
   border-radius: 50%;
   position: absolute;
   top: 50%;
@@ -1054,12 +1054,16 @@ ul.pagination .active a {
   z-index: 2;
 }
 
+
+
 .arrow-right {
   right: -15px;
+  padding-top: 10px;
 }
 
 .arrow-left {
-  left: -15 px;
+  left: -15px;
+  padding-top: 10px;
 }
 
 .product-item {
@@ -1179,8 +1183,9 @@ ul.pagination .active a {
 }
 
 .product-slider {
-  padding: 40px 0;
+  padding: 0px 0;
 }
+
 .product-slider .carousel-indicators li {
   background: #888;
 }
@@ -1206,6 +1211,7 @@ ul.pagination .active a {
 .product-slider .slick-dots li img {
   max-width: 100%;
   height: auto;
+  margin-bottom: -40px;
 }
 
 .product-table {
@@ -1253,9 +1259,10 @@ ul.pagination .active a {
 
 .widget {
   background: #fff;
-  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 5px 5px 10px #8888889f;
   padding: 25px 30px 30px;
   margin-bottom: 30px;
+  border-radius: 10px;
 }
 .widget .widget-header {
   display: block;
@@ -1316,14 +1323,15 @@ ul.pagination .active a {
   box-shadow: none;
 }
 .widget.price {
-  background: #5672f9;
+  background: #e394ff;
+  border-radius: 20px;
 }
 .widget.price h4 {
   color: #fff;
 }
 .widget.price p {
   color: #fff;
-  font-size: 30px;
+  font-size: 20px;
   text-align: center;
   font-weight: bold;
   margin: 0;
@@ -1372,13 +1380,13 @@ ul.pagination .active a {
   width: 100%;
 }
 .widget.coupon {
-  background: #5672f9;
+  background: #e394ff;
   padding: 35px 30px 40px 30px;
 }
 .widget.coupon p {
   font-size: 20px;
   line-height: 1.4;
-  color: #fff;
+  color: #444444;
   margin-bottom: 25px;
 }
 .widget.rate .starrr {
@@ -1412,6 +1420,8 @@ ul.pagination .active a {
 }
 .widget.user {
   padding-top: 50px;
+  border-radius: 20px;
+  box-shadow: 5px 5px 10px #888888;
 }
 .widget.user .image img {
   width: 157px;
@@ -1939,9 +1949,11 @@ form textarea {
   z-index: 999556;
   cursor: pointer;
   display: none;
+  border-radius: 20px;
 }
 .scroll-top-to:hover {
-  background: #333;
+  background: #cd93fd;
+  color: #000;
 }
 @media (max-width: 768px) {
   .scroll-top-to {
@@ -2197,6 +2209,7 @@ form textarea {
   color: black;
 }
 
+
 .product-details .content p{
   font-family: 'Poiret One', cursive;
   font-size: 20px;
@@ -2214,7 +2227,7 @@ form textarea {
 .product-table tr td{
   font-family: 'Poiret One', cursive;
   font-size: 20px;
-  color: black;
+  color: rgb(0, 0, 0);
   line-height: 35px;
 }
 
@@ -2223,24 +2236,29 @@ form textarea {
   font-family: 'Poiret One', cursive;
   font-size: 20px;
   color: black;
-  line-height: 35px;
+  line-height: 25px;
   font-weight: bold;
+  margin-right:15px ;
 }
 .product-details .content .nav .nav-item .nav-link{
   background: #BDD0FF;
   font-family: 'Poiret One', cursive;
   font-size: 20px;
   color: black;
-  line-height: 35px;
+  line-height: 25px;
   font-weight: bold;
+  border-radius: 20px;
+  margin-right:15px ;
+  margin-bottom: 20px;
+  margin-top: 30px;
 }
 
 .product-details .content .nav .nav-item .nav-link:hover{
-  background: #acc3fd;
+  background: #92278b;
   font-family: 'Poiret One', cursive;
   font-size: 20px;
-  color: black;
-  line-height: 35px;
+  color: rgb(255, 255, 255);
+  line-height: 30px;
   font-weight: bold;
 }
 .boton{

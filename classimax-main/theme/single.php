@@ -53,9 +53,6 @@
 				<div class="advance-search nice-select-white">
 					<form>
 						<div class="form-row align-items-center">
-							<div class="form-group col-xl-4 col-lg-3 col-md-6">
-								<input type="text" class="form-control my-2 my-lg-0" id="inputtext4" placeholder="What are you looking for">
-							</div>
 							<div class="form-group col-lg-3 col-md-6">
 								<select class="w-100 form-control my-2 my-lg-0">
 									<option>Categoria</option>
@@ -93,7 +90,7 @@
 						<ul class="list-inline">
 							<li class="list-inline-item"><i class="fa fa-user-o"></i> Vendido por <a href="user-profile.html"></a></li>
 							<li class="list-inline-item"><i class="fa fa-folder-open-o"></i> Categoria<a href="category.html">Tecnologia</a></li>
-							<li class="list-inline-item"><i class="fa fa-location-arrow"></i> Localización<a href="category.html">..........</a></li>
+							<li class="list-inline-item"><i class="fa fa-location-arrow"></i> Localización<a href="category.html"></a></li>
 						</ul>
 					</div>
 

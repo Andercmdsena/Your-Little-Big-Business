@@ -899,6 +899,30 @@ class consultas{
         echo '<script>alert("producto agregado con exito al carrito")</script>';
         echo '<script>location.href="../theme/Carrito.php"</script>';
     }
+
+    public function productoIndividual($id){
+        $f=null;
+ 
+ 
+         $objConexion = new Conexion();
+         $conexion = $objConexion -> get_conexion();
+ 
+         $consultar = "SELECT * FROM productos where id=:id";
+ 
+         $result=$conexion->prepare($consultar);
+
+         $result->bindParam(':id', $id);
+ 
+        $result->execute();
+        
+ 
+        while ($resultado=$result->fetch()) {
+         $f[] = $resultado;
+        }
+ 
+        return $f;
+        echo '<script>location.href="../theme/single2.php"</script>';
+    }
     
     public function mostrarProductoCarrito($arg_id_usuario) {
         $f = null;

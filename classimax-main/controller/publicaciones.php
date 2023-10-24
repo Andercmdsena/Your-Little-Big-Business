@@ -19,7 +19,7 @@ function cargarPublicacion(){
                 <img src="'.$f['foto'].'" alt="Foto user" style="width:250px; height:150px; ">
             </div>
             <div class="card-body producto_catalogo">
-                <h4 class="card-title"><a href="single.html">'. $f['nombre'] .'</a></h4>
+                <h4 class="card-title"><a href="../theme/single2.php?id=' . $f['id'] . '">'. $f['nombre'] .'</a></h4>
                 <ul class="list-inline product-meta">
                     <li class="list-inline-item">
                         <a href="single.html"><i class="fa fa-folder-open-o"></i>'. $f['categoria'] .'</a>
@@ -96,7 +96,7 @@ function cargarPublicacionCarrusel(){
                         
                     </div>
                     <div class="card-body">
-                        <h4 class="card-title"><a href="single.html">'. $f['nombre'] .'</a></h4>
+                        <h4 class="card-title"><a href="single.php">'. $f['nombre'] .'</a></h4>
                         <ul class="list-inline product-meta">
                             <li class="list-inline-item">
                                 <a href="single.html"><i class="fa fa-folder-open-o"></i>'. $f['categoria'] .'</a>

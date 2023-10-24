@@ -1210,7 +1210,7 @@ ul.pagination .active a {
 }
 .product-slider .slick-dots li img {
   max-width: 100%;
-  height: auto;
+  height: 100px;
   margin-bottom: -40px;
 }
 
@@ -2363,4 +2363,10 @@ form textarea {
 .product-item .card .botonesCarrito button{
 
   margin-bottom: 20px;
+}
+.product-slider-item img{
+  height: auto !important;
+  width: 348px !important;
+  margin-left: 164px;
+  margin-top: 121px;
 }

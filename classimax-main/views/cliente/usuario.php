@@ -102,7 +102,7 @@ include "menu_usuario.php"
                         <div class="page-header">
                             <div class="page-title">
                                 <h1>Hola,
-                                    <span>Bienvenido a la vista de cliente</span>
+                                    <span>Bienvenido a la vista de usuario</span>
                                 </h1>
                             </div>
                         </div>
@@ -119,9 +119,18 @@ include "menu_usuario.php"
                             <p>
                             Bienvenido a tu perfil personal. Aquí encontrarás una variedad de opciones y funciones que te permiten gestionar tu experiencia en nuestra plataforma de manera personalizada.
                             </p>
-                            <p>
-                            
                         </div>
+
+                        <div class="row">
+                        <div class="col-md-12 datos_perfil">
+                            <h2>Datos de Cliente</h2>
+
+                            <?php
+                                include("verCliente.php")
+                            ?>
+
+                        </div>
+                    </div> 
 
                     </div>    
                     <?php

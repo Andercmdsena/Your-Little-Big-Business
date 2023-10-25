@@ -115,15 +115,21 @@ require_once ("../../controller/mostrarInfoEmprendedor.php");
                             <p>
                             Bienvenido a tu perfil personal. Aquí encontrarás una variedad de opciones y funciones que te permiten gestionar tu experiencia en nuestra plataforma de manera personalizada.
                             </p>
-                            <p>
-                            
                         </div>
+                    </div> 
 
-                    </div>    
+                    <div class="row">
+                        <div class="col-md-12 datos_perfil">
+
+                            <?php
+                                include("verEmprendedor.php")
+                            ?>
+
+                        </div>
+                    </div> 
+                       
                     <?php
                     include("editarUs.php")
-
-
                     ?>
 
                     <div class="row">

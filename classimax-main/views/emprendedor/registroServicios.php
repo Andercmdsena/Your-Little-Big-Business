@@ -150,7 +150,7 @@ require_once ("../../model/seguridadEmprendedor.php");
                                     </div>
                                     <div class="form-group col-md-12">
                                         <div>Descripción</div>
-                                        <textarea name="descripcion" id="" cols="120" rows="5"></textarea>
+                                        <textarea name="descripcion" id="" cols="50" rows="5"></textarea>
                                     </div>
                                     
                                     <div class="form-group col-md-12">

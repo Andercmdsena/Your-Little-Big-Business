@@ -1057,8 +1057,38 @@ class consultas{
       
       
       }
+      public function mostrarRecibo($arg_id_usuario) {
+        $f = null;
+    
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+    
+        // Consulta SQL para seleccionar los productos en el carrito de un usuario específico con información adicional del usuario
+        $consultar = "SELECT productos.*, carrito.id AS id_carrito, usuario.*
+        FROM productos
+        INNER JOIN carrito ON productos.id = carrito.id_producto
+        LEFT JOIN usuario ON carrito.id_usuario = usuario.ID
+        WHERE carrito.id_usuario = :id_usuario";
+    
+    
+    
+    
+        $result = $conexion->prepare($consultar);
+    
+        // Vincular el parámetro :id_usuario
+        $result->bindParam(":id_usuario", $arg_id_usuario);
+    
+        $result->execute();
+    
+        while ($resultado = $result->fetch()) {
+            $f[] = $resultado;
+        }
+    
+        return $f;
+    }
     
 }
+
 
 
 

@@ -78,6 +78,59 @@ function reportesUsuarioPerfil(){
     }
 }
 
+function verUsuario(){
+  $id = $_SESSION['id'];
+  $objConsulta = new Consultas();
+  $result = $objConsulta->verPerfilUsuario($id);
+
+  if (!isset($result)) {
+      echo '<h2>No hay usuarios registrados</h2>';
+  }   else{
+
+    foreach($result as $f){
+      echo '
+      <section id="datosEmprendedor">
+          <div class="container">
+              <h2 style="margin-bottom: 25px;">Datos de Emprendedor</h2>
+              <div class="row">
+                  <div class="col-md-4 col-sm-12 foto_perfil">
+                      <img src="../'.$f['foto'].'" alt="Foto user" style="width:250px; height:250px; border-radius:50%; margin-left: 30px; margin-top: 15px;"">
+                  </div>
+                  <div class="col-md-8">
+                      <div class="row">
+                          <div class="col-md-12">
+                              <h3 style="font-family: Poiret One, cursive;"><strong>nombre: '.$f['Nombre'].'</strong></h3>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-md-12">
+                              <h3 style="font-family: Poiret One, cursive;"><strong>Apellido: '.$f['Apellido'].'</strong></h3>
+                          </div>
+                      </div>
+                      
+                      <div class="row">
+                          <div class="col-md-12">
+                              <h3 style="font-family: Poiret One, cursive;"><strong>Email: '.$f['Email'].'</strong></h3>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-md-12">
+                              <h3 style="font-family: Poiret One, cursive;"><strong>telefono: '.$f['Telefono'].'</strong></h3>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <div class="col-md-12">
+                              <h3 style="font-family: Poiret One, cursive;"><strong>rol: '.$f['Rol'].'</strong></h3> 
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>      
+      </section>';
+  }
+}
+}
+
 // session_start();
 function perfilUsuario(){
 
@@ -388,6 +441,9 @@ function cerrarSesionPopup2()
                             <li class="nav-item">
                                 <a class="btn btn-light" href="../../controller/cerrarSesion.php" ../../controller/cerrarSesion.php>Cerrar sesion</a>
                             </li>
+                            <li class="nav-item">
+                            <a class="btn btn-light" href="../../controller/eliminarEmprendedor.php?id='.$f['ID'].'" >Eliminar cuenta</a>
+                        </li>
                             </ul>
                         </div>
                         </nav>

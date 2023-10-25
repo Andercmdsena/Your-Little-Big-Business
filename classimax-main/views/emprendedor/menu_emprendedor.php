@@ -70,11 +70,11 @@ require_once ("../../model/seguridadEmprendedor.php");
 <div class="sidebar sidebar-hide-to-small sidebar-shrink sidebar-gestures">
         <div class="nano ">
             <div class="nano-content" id="panel_izq">
-                <div class="logo">
+            <div class="logo">
                     <a href="../../theme/index.php">
-                    <img src="../../theme/images/Mi proyecto.png" alt="" /> 
-
-                    </a>
+                        <img src="../../theme/images/Mi proyecto.png" alt="" /> 
+                        
+                    </a>    
                 </div>
                 <ul>
                     
@@ -101,18 +101,23 @@ require_once ("../../model/seguridadEmprendedor.php");
                                 <a href="registroProductos.php"><i class="ti-shopping-cart"></i>Registro productos</a>
                             </li>
                             <li>
-                                <a href="registroServicios.php"><i class="ti-user"></i>Registro servicios</a>
+                                <a href="verProductos.php"> <i class="ti-eye"></i> Ver Productos</a>
                             </li>
                             <li>
-                                <a href="verProductos.php"> <i class="ti-eye"></i>Ver productos</a>
+                                <a href="registroServicios.php"><i class="ti-shopping-cart"></i>Registro servicios</a>
                             </li>
                             <li>
-                                <a href="verServicio.php"> <i class="ti-eye"></i>Ver servicios</a>
+                                <a href="verServicio.php"> <i class="ti-eye"></i> Ver Servicios</a>
                             </li>
                             
                             
                         </ul>
                     </li>
+
+
+
+
+
 
                     
                   

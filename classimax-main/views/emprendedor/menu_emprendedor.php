@@ -103,6 +103,18 @@ require_once ("../../model/seguridadEmprendedor.php");
                             <li>
                                 <a href="verProductos.php"> <i class="ti-eye"></i> Ver Productos</a>
                             </li>
+                            
+                            
+                            
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="sidebar-sub-toggle">
+                            <i class="ti-money"></i> Servicios
+                            <span class="sidebar-collapse-icon ti-angle-down"></span>
+                        </a>
+                        <ul>
+                            
                             <li>
                                 <a href="registroServicios.php"><i class="ti-shopping-cart"></i>Registro servicios</a>
                             </li>

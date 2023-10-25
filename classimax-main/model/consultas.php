@@ -362,7 +362,7 @@ class consultas{
         $result->bindParam(":id", $id);
     
         if ($result->execute()) {
-            echo '<script>alert("Usuario eliminado con éxito")</script>';
+            echo '<script>alert("Usuario eliminado con exito")</script>';
             echo '<script>location.href="../theme/index.php"</script>';
         } else {
             echo '<script>alert("Error al eliminar el usuario")</script>';

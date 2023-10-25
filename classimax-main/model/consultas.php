@@ -352,6 +352,23 @@ class consultas{
       
       
       }
+      public function eliminarEmprendedor($id) {
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+    
+        $eliminar = "UPDATE usuario SET Estado = 0 WHERE id = :id"; // Set Estado to 0
+    
+        $result = $conexion->prepare($eliminar);
+        $result->bindParam(":id", $id);
+    
+        if ($result->execute()) {
+            echo '<script>alert("Usuario eliminado con éxito")</script>';
+            echo '<script>location.href="../theme/index.php"</script>';
+        } else {
+            echo '<script>alert("Error al eliminar el usuario")</script>';
+        }
+    }
+    
       
       public function eliminarProducto ($id) {
         $objConexion = new Conexion();

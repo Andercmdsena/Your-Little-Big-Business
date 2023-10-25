@@ -44,7 +44,18 @@
             
             <button type="submit">Pagar</button>
         </form>
+
+        <div>
+            <article>
+                hello omg
+            </article>
+        </div>
+
+     
+  
 </div>
+
+
 </body>
 </html>
 

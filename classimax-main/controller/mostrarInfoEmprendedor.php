@@ -271,6 +271,9 @@ function cerrarSesionPopup2()
                             <li class="nav-item">
                                 <a class="btn btn-light" href="../../controller/cerrarSesion.php" ../../controller/cerrarSesion.php>Cerrar sesion</a>
                             </li>
+                            <li class="nav-item">
+                            <a class="btn btn-light" href="../../controller/eliminarEmprendedor.php?id='.$f['ID'].'">Eliminar cuenta</a>
+                            </li>
                             </ul>
                         </div>
                         </nav>

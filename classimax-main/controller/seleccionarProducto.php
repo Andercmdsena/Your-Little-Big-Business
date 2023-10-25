@@ -9,6 +9,7 @@ function seleccionarProducto(){
         $filas = $consultas->cargarProducto($id_producto);
 
         foreach ($filas as $fila){
+            $estado = ($fila['Estado'] == 1) ? 'Disponible' : (($fila['Estado'] == 0) ? 'Agotado' : 'Pendiente');
             echo "
         <form action = '../../controller/modificarProducto.php' method = 'post'>
         
@@ -36,10 +37,10 @@ function seleccionarProducto(){
             <td>
                 
                     <select name='estado' id='' class='form-control'>
-                                            <option value=''> <i class='ti-eye'></i>".$fila['Estado']."</option>
-                                            <option value='Disponible'>Disponible</option>
-                                            <option value='Agotado'>Agotado</option>
-                                            <option value='Pendiente'>Pendiente</option>
+                                            <option value=''> <i class='ti-eye'></i>".$estado."</option>
+                                            <option value='1'>Disponible</option>
+                                            <option value='0'>Agotado</option>
+                                            <option value='2'>Pendiente</option>
                     </select>
 
             </td>

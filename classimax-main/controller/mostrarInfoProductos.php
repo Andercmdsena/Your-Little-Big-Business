@@ -8,13 +8,14 @@ function cargarProducto() {
         echo '<h2>No hay productos registrados</h2>';
     } else {
         foreach ($result as $f) {
+            $estado = ($f['Estado'] == 1) ? 'Diponible' : (($f['Estado'] == 0) ? 'Agotado' : 'Pendiente');
             echo  '
                 <tr>
                     <td><img src="../' . $f['foto'] . '" alt="Foto user" style="width:60px; height:60px; border-radius:50%"></td>
                     <td>' . $f['nombre'] . '</td>
                     <td>' . $f['precio'] . '</td>
                     <td>' . $f['cantidad'] . '</td>
-                    <td>' . $f['Estado'] . '</td>
+                    <td>'.$estado.'</td>
                     <td>' . $f['categoria'] . '</td>
                     <td>
                         <a href="../../views/emprendedor/modificarProducto.php?id=' . $f['id'] . '" class="btn btn-primary"><i class="ti-marker-alt"></i>Modificar</a>

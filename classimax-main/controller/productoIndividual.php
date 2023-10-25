@@ -182,8 +182,8 @@ function cargarProductoIndividual(){
 					</div>
 					<!-- User Profile widget -->
 					<div class="widget user text-center">
-						<img class="rounded-circle img-fluid mb-5 px-5" src="images/user/user-thumb.jpg" alt="">
-						<h4><a href="user-profile.html">Alguin</a></h4>
+						<img class="rounded-circle img-fluid mb-5 px-5" src="'. $f['usuario_foto'] .'" alt="">
+						<h4><a href="user-profile.html">'. $f['usuario_nombre'] .'</a></h4>
 						<p class="member-time">Miembro desde Junio 27, 2017</p>
 						<a href="single.html">Ver todas publicaciones</a>
 						<ul class="list-inline mt-20">

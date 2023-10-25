@@ -20,7 +20,7 @@ require_once ("../../model/seguridadEmprendedor.php");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Perfil Emprendedor Productos</title>
+    <title>Perfil Emprendedor Servicio</title>
 
     <!-- ================= Favicon ================== -->
     <!-- Standard -->
@@ -133,7 +133,7 @@ include "menu_emprendedor.php"
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-title">
-                                    <h4>Productos</h4>
+                                    <h4>Servicio</h4>
                                     
                                 </div>
                                 <div class="card-body">

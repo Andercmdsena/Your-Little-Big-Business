@@ -370,6 +370,23 @@ class consultas{
       
       
       }
+      public function eliminarServicio ($id) {
+        $objConexion = new Conexion();
+        
+        $conexion = $objConexion -> get_conexion();
+      
+        $eliminar= "DELETE from servicios where id = :id";
+      
+        $result = $conexion->prepare($eliminar);
+        $result-> bindParam (":id", $id );
+        
+        $result->execute ();
+        echo '<script> alert("Servicio eliminado con exito") </script>';
+        echo "<script> location.href='../Views/emprendedor/verServicio.php' </script>";
+      
+      
+      
+      }
       public function cargarUsuario($arg_id_producto){
         $f=null;
  
@@ -404,6 +421,28 @@ class consultas{
          $result=$conexion->prepare($consultar);
 
          $result->bindParam(":id_producto", $arg_id_producto);
+ 
+        $result->execute();
+        
+ 
+        while ($resultado=$result->fetch()) {
+         $f[] = $resultado;
+        }
+ 
+        return $f;
+      }
+      public function cargarServicio($id_servicio){
+        $f=null;
+ 
+ 
+         $objConexion = new Conexion();
+         $conexion = $objConexion -> get_conexion();
+ 
+         $consultar = "SELECT * FROM servicios where id = :id_producto";
+ 
+         $result=$conexion->prepare($consultar);
+
+         $result->bindParam(":id_producto", $id_servicio);
  
         $result->execute();
         
@@ -452,6 +491,26 @@ class consultas{
             $result -> execute();
             echo '<script> alert("Producto actualizado exitosamente") </script>';
             echo "<script> location.href='../views/emprendedor/verProductos.php' </script>";
+        }
+        
+      }
+      public function modificarServicio($arg_campo, $arg_valor, $id_servicio){
+        $objConexion = new Conexion();
+        $conexion = $objConexion -> get_conexion();
+
+        $consulta = "UPDATE servicios set $arg_campo = :valor WHERE id = :id_servicio";
+
+        $result = $conexion ->prepare($consulta);
+
+        $result->bindParam(":valor", $arg_valor);
+        $result->bindParam(":id_servicio", $id_servicio);
+
+        if(!$result){
+            return "Error al modificar el producto";
+        }else{
+            $result -> execute();
+            echo '<script> alert("Servicio actualizado exitosamente") </script>';
+            echo "<script> location.href='../views/emprendedor/verServicio.php' </script>";
         }
         
       }
@@ -836,6 +895,28 @@ class consultas{
         return $f;
 
      }
+     public function mostrarPublicacionServicio(){
+
+        $f=null;
+ 
+ 
+         $objConexion = new Conexion();
+         $conexion = $objConexion -> get_conexion();
+ 
+         $consultar = "SELECT * FROM servicios order by nombre asc";
+ 
+         $result=$conexion->prepare($consultar);
+ 
+        $result->execute();
+        
+ 
+        while ($resultado=$result->fetch()) {
+         $f[] = $resultado;
+        }
+ 
+        return $f;
+
+     }
 
 
 
@@ -907,7 +988,15 @@ class consultas{
          $objConexion = new Conexion();
          $conexion = $objConexion -> get_conexion();
  
-         $consultar = "SELECT * FROM productos where id=:id";
+        //  $consultar = "SELECT * FROM productos where id=:id";
+
+        $consultar = "SELECT productos.*, usuario.foto AS usuario_foto, usuario.Nombre AS usuario_nombre
+        FROM productos
+        INNER JOIN usuario ON productos.id_emprendedor = usuario.ID
+        WHERE productos.id = :id";
+    
+
+
  
          $result=$conexion->prepare($consultar);
 

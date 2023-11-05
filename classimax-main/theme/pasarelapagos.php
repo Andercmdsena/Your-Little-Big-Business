@@ -8,10 +8,24 @@
     <link href="css/stylepasarela.css" rel="stylesheet">
 </head>
 <body>
+
+ <header>
+
+hello
+s
+s
+
+
+
+
+
+
+</header> 
 <a href="index.php" class="back-to-home-button">Volver al Inicio</a>
     
 
 <div class="container">
+    <article>
         <h1>Finalizar compra</h1>
         <form action="procesar_pago.php" method="POST">
             <div class="form-group">
@@ -44,7 +58,7 @@
             
             <button type="submit">Pagar</button>
         </form>
-
+        </article>
         <div>
             <article>
                 hello omg

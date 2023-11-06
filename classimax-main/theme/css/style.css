@@ -2146,7 +2146,15 @@ form textarea {
   COLOR: black;
   font-family: 'Poiret One', cursive;
   font-weight: bold;
+  margin-left: 40px;
+  padding: 3px 10px;
+  background-color: #8ca4e2;
 }
+
+.btn:not(:disabled):not(.disabled):hover{
+  background-color: #924fb4;
+}
+
 #filtro option{
   font-size: 17px;
 }
@@ -2290,11 +2298,14 @@ form textarea {
 .contenidocarrito{
   background: #dbf1ff;
   border-radius: 20px;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
-  padding: 20px 50px 20px 50px;
-  margin: 50px;
+  box-shadow: 5px 5px 10px #0000004d;
+  padding: 20px 100px 20px 100px;
+  margin: 50px 70px;
 }
 
+hr{
+  background-color: #000;
+}
 
 .info1{
   color: rgb(36, 182, 255);
@@ -2314,11 +2325,14 @@ form textarea {
 }
 
 .productosxd img{
-  max-width: 150px;
+  max-width: 300px;
   margin-right: 15px;
+  margin-top: 60px;
   border-radius: 20px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
+
+
 
 .detallesproductos{
   flex: 1;
@@ -2326,9 +2340,12 @@ form textarea {
 
 .nombreproducto {
   font-weight: bold;
-  font-size: 20px;
+  font-size: 25px;
 }
 
+.dropdown-center{
+  display: flex;
+}
 
 .precioproducto{
   color: #e47911;
@@ -2336,8 +2353,7 @@ form textarea {
 }
 
 .preciototal{
-  text-align: right;
-  margin-top: 20px;
+  margin-bottom: 50px;
   font-size: 1.2em;
   font-weight: bold;
 }
@@ -2348,6 +2364,20 @@ form textarea {
   border: none;
   padding: 10px 20px;
   border-radius: 10px;
+  font-size: 0.8em;
+  margin-right: 250px;
+  text-decoration: none;
+}
+
+.botonpagar1{
+  background-color: #2f3e8a;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 0.8em;
+  margin-left: 260px;
+  text-decoration: none;
 }
 
 .botonpagar:hover{
@@ -2356,9 +2386,17 @@ form textarea {
   border: none;
   padding: 10px 20px;
   border-radius: 10px;
+  text-decoration: none;
 }
 
-
+.botonpagar1:hover{
+  background-color: #ce5bff;
+  color: #000000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+}
 
 .product-item .card .botonesCarrito button{
 

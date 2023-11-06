@@ -20,15 +20,15 @@ function cargarProductoCarrito() {
     } else {
         foreach ($result as $f) {
             echo  '
-            <hr>
+            <br>
             <div class="productosxd">
             <img src="' . $f['foto'] . '" alt="Foto producto" style="width:120px; height:120px; border-radius:20px">
               <div class="detallesproducto">
                   <p class="nombreproducto">' . $f['nombre'] . '</p>
                   <p class="Descripcion">' . $f['descripcion'] . '</p>
                   <p class="disponible">' . $f['Estado_producto'] . '</p>
-                  <p class="precioproducto">' . $f['precio'] . '</p>
                   <div class="dropdown-center">
+                  <p class="precioproducto">' . $f['precio'] . '</p>
                     <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Cantidad
                     </button>
@@ -37,16 +37,18 @@ function cargarProductoCarrito() {
                       <li><a class="dropdown-item" href="#">2</a></li>
                       <li><a class="dropdown-item" href="#">3</a></li>
                     </ul>
-                    
+                    <a class="btn compar" href="#" role="button">Compartir</a>
                   </div>
               </div>
             </div>
             <hr>
+            
             <div class="preciototal">
-                Total: ' . $f['precio'] . '
+            <a class="botonpagar1" href="../controller/eliminarProductoCarrito.php?id=' . $f['id_carrito'] . '">Elminar del carrito</a>
+            <a class="botonpagar" href="../TCPDF-main/prueba.php">Pagar</a>
+                Total: ' . $f['precio'] . '<hr>
             </div>
-            <a class="botonpagar" href="../controller/eliminarProductoCarrito.php?id=' . $f['id_carrito'] . '">Elminar del carrito</a>
-            <a class="botonpagar" href="../TCPDF-main/prueba.php">Pagar</a>';
+            ';
         }
     }
 }

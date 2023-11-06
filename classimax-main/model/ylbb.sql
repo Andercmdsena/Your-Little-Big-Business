@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-10-2023 a las 22:53:00
+-- Tiempo de generación: 20-10-2023 a las 04:41:56
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -36,7 +36,7 @@ CREATE TABLE `administradores` (
   `telefono` varchar(200) NOT NULL,
   `clave` varchar(200) NOT NULL,
   `rol` varchar(20) NOT NULL,
-  `estado` varchar(15) NOT NULL,
+  `estado` bigint(200) NOT NULL,
   `foto` varchar(200) NOT NULL,
   `foto2` varchar(200) NOT NULL,
   `foto3` varchar(200) NOT NULL
@@ -47,9 +47,60 @@ CREATE TABLE `administradores` (
 --
 
 INSERT INTO `administradores` (`Identificacion`, `Tipo_de_dato`, `Nombres`, `Apellidos`, `Email`, `telefono`, `clave`, `rol`, `estado`, `foto`, `foto2`, `foto3`) VALUES
-(1023162918, '', 'Anderson Tovar', 'Tovar Sanchez', 'adtovar81@misena.edu.co', '3021413242354325', '81dc9bdb52d04dc20036dbd8313ed055', 'Administrador', 'Activo', '../Uploads/usuariosjs.png', '../Uploads/usuarios', '../Uploads/usuarios'),
-(218390214412, 'C.C', 'Edison Sebastian ', 'Ramirez Suarez', 'esramirez51@gmail.com', '43232543645', '01ceb8141c88907d05404162a17d9bcb', 'Administrador', 'Activo', '../Uploads/usuarios/WhatsApp Image 2023-08-22 at 8.10.46 PM.jpeg', '../Uploads/usuarios/', '../Uploads/usuarios/'),
-(321093120321, 'C.C', 'Samuel Sanchez', 'Diaz Martinez', '16samuel18@gamil.com', '43232543645', '6b50daa1c96088c65ec86940b565ae1a', 'Administrador', 'Activo', '../Uploads/usuarios/WhatsApp Image 2023-08-22 at 8.18.46 PM.jpeg', '../Uploads/usuarios/', '../Uploads/usuarios/');
+(1023162918, '', 'Anderson Tovar', 'Tovar Sanchez', 'adtovar81@misena.edu.co', '3021413242354325', '81dc9bdb52d04dc20036dbd8313ed055', 'Administrador', 1, '../Uploads/usuariosjs.png', '../Uploads/usuarios', '../Uploads/usuarios'),
+(218390214412, '', 'Edison Sebastian ', 'Ramirez Suarez', 'esramirez51@gmail.com', '43232543645', '01ceb8141c88907d05404162a17d9bcb', 'Administrador', 1, '../Uploads/usuarios/WhatsApp Image 2023-08-22 at 8.10.46 PM.jpeg', '../Uploads/usuarios/', '../Uploads/usuarios/'),
+(321093120321, '', 'Samuel Sanchez', 'Diaz Martinez', '16samuel18@gamil.com', '43232543645', '6b50daa1c96088c65ec86940b565ae1a', 'Administrador', 0, '../Uploads/usuarios/WhatsApp Image 2023-08-22 at 8.18.46 PM.jpeg', '../Uploads/usuarios/', '../Uploads/usuarios/');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `carrito`
+--
+
+CREATE TABLE `carrito` (
+  `id` bigint(200) NOT NULL,
+  `id_producto` bigint(200) NOT NULL,
+  `id_usuario` bigint(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `carrito`
+--
+
+INSERT INTO `carrito` (`id`, `id_producto`, `id_usuario`) VALUES
+(21, 29, 53),
+(22, 22, 53),
+(24, 16, 54),
+(30, 22, 1023162918),
+(37, 22, 51),
+(39, 29, 1023162918);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `categoria`
+--
+
+CREATE TABLE `categoria` (
+  `id_categoria` bigint(200) NOT NULL,
+  `categoria` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `categoria`
+--
+
+INSERT INTO `categoria` (`id_categoria`, `categoria`) VALUES
+(1, 'Tecnologia'),
+(2, 'Moda'),
+(3, 'Salud y belleza'),
+(4, 'Deportes'),
+(5, 'Bebes y juegos'),
+(6, 'Alimentos y bebidas'),
+(7, 'Oficina'),
+(8, 'Muebles y decoracion'),
+(9, 'Mascotas'),
+(10, 'Libros y medios');
 
 -- --------------------------------------------------------
 
@@ -83,9 +134,12 @@ CREATE TABLE `productos` (
   `precio` bigint(200) NOT NULL,
   `cantidad` varchar(200) NOT NULL,
   `categoria` varchar(200) NOT NULL,
+  `descripcion` varchar(200) NOT NULL,
   `foto` varchar(200) NOT NULL,
-  `id_emprendedor` bigint(255) UNSIGNED NOT NULL,
-  `Estado` varchar(200) NOT NULL DEFAULT 'Activo',
+  `foto2` varchar(200) NOT NULL,
+  `foto3` varchar(200) NOT NULL,
+  `id_emprendedor` bigint(255) NOT NULL,
+  `Estado` bigint(200) NOT NULL,
   `Estado_producto` varchar(200) NOT NULL DEFAULT 'Activo'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -93,11 +147,66 @@ CREATE TABLE `productos` (
 -- Volcado de datos para la tabla `productos`
 --
 
-INSERT INTO `productos` (`id`, `nombre`, `precio`, `cantidad`, `categoria`, `foto`, `id_emprendedor`, `Estado`, `Estado_producto`) VALUES
-(8, 'celular2ewqewqe', 0, 'ewwqe', 'tecnologia', '../Uploads/usuarios/pexels-sebastian-coman-photography-3437689.jpg', 60, 'Pendiente', 'Activo'),
-(9, 'ewqeqwewqewqeq', 0, 'eqwewqeqwe', 'hogar', '../Uploads/usuarios/pexels-pixabay-220453.jpg', 60, 'Pendiente', 'Activo'),
-(13, 'celular', 300000, '2', 'libros', '../Uploads/usuarios/captura.PNG', 46, 'Pendiente', 'Pendiente'),
-(14, 'dsa', 0, 'asd', 'tecnologia', '../Uploads/usuarios/', 46, 'Activo', 'Activo');
+INSERT INTO `productos` (`id`, `nombre`, `precio`, `cantidad`, `categoria`, `descripcion`, `foto`, `foto2`, `foto3`, `id_emprendedor`, `Estado`, `Estado_producto`) VALUES
+(13, 'celular', 300000, '2', 'libros', '', '../Uploads/usuarios/captura.PNG', '', '', 46, 0, 'Disponible'),
+(15, 'Computador', 500000, '3', 'tecnologia', 'Descubre la potencia en su máxima expresión con nuestra última oferta: la PC Con un rendimiento extraordinario y un diseño elegante, esta computadora está diseñada para satisfacer todas tus necesidade', '../Uploads/usuarios/pexels-xxss-is-back-777001.jpg', '', '', 46, 1, 'Activo'),
+(16, 'monitor                                                                                                                                                                                                 ', 12000, '3', 'tecnologia', 'Descubre la claridad y la inmersión visual con nuestro monitor [Nombre del Modelo]. Con una pantalla vibrante y de alta resolución, este monitor redefine tu experiencia visual. Ya sea para trabajo o e', '../Uploads/usuarios/pexels-designecologist-1779487.jpg', '', '', 46, 1, 'Activo'),
+(17, 'tablet de dibujo', 600000, '1', 'tecnologia', 'Explora tu creatividad sin límites con nuestra tablet para dibujar. Diseñada para artistas digitales, esta tablet combina precisión y sensibilidad en cada trazo. La pantalla táctil de alta resolución ', '../Uploads/usuarios/pexels-sasha-kim-9414330.jpg', '', '', 46, 0, 'Activo'),
+(18, 'Microfono', 150000000, '1', 'tecnologia', 'Haz que tu voz destaque con nuestro micrófono Tonor Q9. Diseñado para capturar cada matiz y tono, este micrófono ofrece una calidad de sonido excepcional.', '../Uploads/usuarios/small_tonor-q9-kit-box.jpg', '', '', 46, 0, 'Activo'),
+(20, 'trapeador', 20000, '1', 'hogar', 'Eleva la limpieza de tu hogar con nuestro trapero Kaseio. Diseñado para hacer frente a cualquier tipo de suciedad, este trapero combina eficacia y durabilidad.', '../Uploads/usuarios/pexels-pixabay-48889.jpg', '', '', 51, 0, 'Activo'),
+(21, 'sofa cama', 2000000, '3', 'hogar', 'Optimiza tu espacio con nuestro sofá cama convertible Elieser. Este elegante mueble combina comodidad y versatilidad en un solo diseño. ', '../Uploads/usuarios/pexels-rachel-claire-4857775.jpg', '', '', 51, 0, 'Activo'),
+(22, 'audiculares ', 100000, '4', 'tecnologia', 'Sumérgete en un mundo de sonido excepcional con nuestros auriculares Samsung. Diseñados para ofrecer una experiencia auditiva inigualable', '../Uploads/usuarios/pexels-soulful-pizza-3780681.jpg', '', '', 52, 1, 'Activo'),
+(23, 'portatil', 500000, '2', 'tecnologia', 'Domina el mundo digital con nuestro portátil gamer de alta potencia: Intelperl. Equipado con un procesador de última generación y una tarjeta gráfica potente, este portátil lleva tus experiencias de j', '../Uploads/usuarios/pexels-cottonbro-studio-4065876.jpg', '', '', 52, 0, 'Activo'),
+(24, 'Cuchillos de cocina', 60000, '4', 'hogar', 'Descubre la precisión culinaria con nuestro set de cuchillos ultracaroi. Diseñados para cortes impecables y durabilidad excepcional, estos cuchillos son la herramienta esencial en tu cocina. ', '../Uploads/usuarios/pexels-lukas-952366.jpg', '', '', 52, 1, 'Activo'),
+(25, 'Juego de platos', 100000, '1', 'hogar', 'Crea momentos memorables en la mesa con nuestro juego de platos Leonel. Con un diseño elegante y versátil, estos platos son la elección perfecta para cualquier ocasión. ', '../Uploads/usuarios/pexels-jamie-he-563067.jpg', '', '', 52, 1, 'Activo'),
+(27, 'dsa', 22333, '3', 'tecnologia', 'dassa', '../Uploads/usuarios/path2.png', '', '', 51, 0, 'Activo'),
+(28, 'Hola', 0, 'eqw', 'tecnologia', 'ewqewq', '../Uploads/usuarios/path2.png', '', '', 51, 0, 'Activo'),
+(29, 'REWREW', 0, 'REEWR', 'tecnologia', 'REWR', '../Uploads/productos/path2.png', '../Uploads/productos/80 proto.png', '../Uploads/productos/netflix 2.png', 51, 1, 'Activo'),
+(30, 'ewqewq', 0, 'ewwq', 'tecnologia', 'ewewqwq', '../Uploads/productos/estacion de autobuses.jpg', '../Uploads/productos/AA.png', '../Uploads/productos/caracteristicas.jpeg', 51, 0, 'Activo');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `publicacion`
+--
+
+CREATE TABLE `publicacion` (
+  `id` bigint(255) NOT NULL,
+  `id_vendedor` bigint(255) NOT NULL,
+  `id_producto` bigint(255) NOT NULL,
+  `estado` varchar(200) NOT NULL,
+  `precio` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `servicios`
+--
+
+CREATE TABLE `servicios` (
+  `id` bigint(200) NOT NULL,
+  `nombre` varchar(200) NOT NULL,
+  `precio` bigint(200) NOT NULL,
+  `duracion` varchar(200) NOT NULL,
+  `categoria` varchar(200) NOT NULL,
+  `descripcion` varchar(200) NOT NULL,
+  `foto` varchar(200) NOT NULL,
+  `foto2` varchar(200) NOT NULL,
+  `foto3` varchar(200) NOT NULL,
+  `id_emprendedor` bigint(200) NOT NULL,
+  `Estado` int(200) NOT NULL DEFAULT 1,
+  `Estado_servicio` int(200) NOT NULL DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `servicios`
+--
+
+INSERT INTO `servicios` (`id`, `nombre`, `precio`, `duracion`, `categoria`, `descripcion`, `foto`, `foto2`, `foto3`, `id_emprendedor`, `Estado`, `Estado_servicio`) VALUES
+(1, 'fsd', 0, 'erweew', 'tecnologia', 'rewrew', '../Uploads/productos/habilidades.jpeg', '../Uploads/productos/Captura linuxxxx.PNG', '../Uploads/productos/6448709.jpg', 51, 1, 1),
+(2, 'erew', 0, 'rewrwe', 'tecnologia', 'rewrew', '../Uploads/productos/SS23.PNG', '../Uploads/productos/Captura linuxxxx.PNG', '../Uploads/productos/estacion de autobuses.jpg', 51, 1, 1),
+(3, 'eqwew', 0, 'ewq', 'tecnologia', 'eqweqw', '../Uploads/productos/caracteristicas.jpeg', '../Uploads/productos/6448709.jpg', '../Uploads/productos/estacion de autobuses.jpg', 51, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -114,7 +223,7 @@ CREATE TABLE `usuario` (
   `clave` varchar(50) NOT NULL,
   `Rol` varchar(30) NOT NULL,
   `foto` varchar(200) NOT NULL,
-  `Estado` bigint(200) NOT NULL
+  `Estado` bigint(200) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -122,12 +231,12 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`ID`, `Nombre`, `Apellido`, `Email`, `Telefono`, `clave`, `Rol`, `foto`, `Estado`) VALUES
-(40, '2321321', '43243243', 'tovaranderson37@gmail.comhola', 433243265555, '5504dcedd363eb185d101b78a479017d', 'Cliente', '../Uploads/usuarios/Men.png', 1),
-(43, 'Juan pedro', 'Avila', 'Juan37@gmail.com', 43232543645, '1156a524a775eedebba9bdccc4c1f1ee', 'Emprendedor', '../Uploads/usuarios/pexels-pixabay-220453.jpg', 0),
 (46, 'Anderson', 'Tovar', 'andercmdsena@gmail.com', 1234, '81dc9bdb52d04dc20036dbd8313ed055', 'Emprendedor', '../Uploads/usuarios/solucion.PNG', 1),
-(47, 'Anderson', 'Tovar Sanchezs', 'adtovar81@misena.edu.co13221312', 3213123321, '806dafd50ea8bb78ec042210b166be90', 'Cliente', '../Uploads/usuarios/', 1),
-(48, 'Andersondasd', 'Tovar Sanchezs', 'adtovar81@misena.edu.codasdsa', 0, '0ab7bb53191d612689e8794f8fa94659', 'Emprendedor', '../Uploads/usuarios/', 1),
-(49, 'qweqwqe', 'ewwqeqw', 'adtovar81@misena.edu.coqeweqw', 0, '58b3e9332ca44e4ef9692a700a31c26b', 'Emprendedor', '../Uploads/usuarios/', 1);
+(51, 'Sam Jose', 'Dias', '16samuel18@gmail.coma', 123, '202cb962ac59075b964b07152d234b70', 'Emprendedor', '../Uploads/usuarios/dibujo.png', 1),
+(52, 'Checho', 'Patiño Putrilla', 'miguel1@hotmail.coma', 1234, '81dc9bdb52d04dc20036dbd8313ed055', 'Emprendedor', '../Uploads/usuarios/83e43f8e49a87cf144f1a4a2e9f03b67d2e1e02c_00.jpg', 1),
+(53, 'Pedro ', 'Sanchez', '16samuel18@gmail.come', 123, '202cb962ac59075b964b07152d234b70', 'Cliente', '../Uploads/usuarios/80 proto.png', 1),
+(54, 'dsa', 'tovar', '16samuel18@gmail.comi', 213213123213321, 'c20ad4d76fe97759aa27a0c99bff6710', 'Cliente', '', 1),
+(55, 'dsa', 'eewqewq', 'andercmdsena@gmail.comeqweqw', 213213123213, 'c20ad4d76fe97759aa27a0c99bff6710', 'Cliente', '', 1);
 
 --
 -- Índices para tablas volcadas
@@ -137,7 +246,20 @@ INSERT INTO `usuario` (`ID`, `Nombre`, `Apellido`, `Email`, `Telefono`, `clave`,
 -- Indices de la tabla `administradores`
 --
 ALTER TABLE `administradores`
-  ADD PRIMARY KEY (`Identificacion`);
+  ADD PRIMARY KEY (`Identificacion`),
+  ADD KEY `estado` (`estado`);
+
+--
+-- Indices de la tabla `carrito`
+--
+ALTER TABLE `carrito`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `categoria`
+--
+ALTER TABLE `categoria`
+  ADD PRIMARY KEY (`id_categoria`);
 
 --
 -- Indices de la tabla `estados`
@@ -150,7 +272,20 @@ ALTER TABLE `estados`
 --
 ALTER TABLE `productos`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `usuario_id_emprendedor_productos` (`id_emprendedor`);
+  ADD KEY `usuario_id_emprendedor_productos` (`id_emprendedor`),
+  ADD KEY `Estado` (`Estado`);
+
+--
+-- Indices de la tabla `publicacion`
+--
+ALTER TABLE `publicacion`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `servicios`
+--
+ALTER TABLE `servicios`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `usuario`
@@ -164,20 +299,57 @@ ALTER TABLE `usuario`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `carrito`
+--
+ALTER TABLE `carrito`
+  MODIFY `id` bigint(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+
+--
+-- AUTO_INCREMENT de la tabla `categoria`
+--
+ALTER TABLE `categoria`
+  MODIFY `id_categoria` bigint(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id` bigint(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` bigint(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+
+--
+-- AUTO_INCREMENT de la tabla `publicacion`
+--
+ALTER TABLE `publicacion`
+  MODIFY `id` bigint(255) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `servicios`
+--
+ALTER TABLE `servicios`
+  MODIFY `id` bigint(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `ID` bigint(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `ID` bigint(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- Restricciones para tablas volcadas
 --
+
+--
+-- Filtros para la tabla `administradores`
+--
+ALTER TABLE `administradores`
+  ADD CONSTRAINT `administradores_ibfk_1` FOREIGN KEY (`estado`) REFERENCES `estados` (`id_estado`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Filtros para la tabla `productos`
+--
+ALTER TABLE `productos`
+  ADD CONSTRAINT `productos_ibfk_1` FOREIGN KEY (`id_emprendedor`) REFERENCES `usuario` (`ID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `productos_ibfk_2` FOREIGN KEY (`Estado`) REFERENCES `estados` (`id_estado`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `usuario`

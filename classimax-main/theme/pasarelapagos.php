@@ -5,16 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YLBB | You Little Big Business</title>
     <link href="images/Mi proyecto.png" rel="shortcut icon">
-    <link href="css/stylepasarela.css" rel="stylesheet">
+    <link href="css/stylepasarela2.css" rel="stylesheet">
+    
 </head>
 <body>
 
  <header>
-
-hello
-s
-s
-
+    <div class="cabecera">
+        <img src="images/Mi proyecto.png" alt="">
+</div>
 
 
 
@@ -47,28 +46,70 @@ s
             <div class="form-group">
                  <h3>3. Metodo de pago</h3>
                  <div class="bb">
-                 <label class="form-check-label" for="exampleRadios1">
+                 <label class="form-check" >
                               Nequi
                              </label>
+                             <input class="radio" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+                             <label class="form-check">
+                              Tarjeta de credito
+                             </label>
                      <input class="radio" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked> 
-                         
+                        <div class="container2">
+                            <h4>Tarjeta de credito</h4>
+                            <input type="text" id="credit-card-input" placeholder="Número de tarjeta de crédito" oninput="detectCardBrand(this)">
+                                <img id="credit-card-image" alt="Franquicia de la Tarjeta" src="">
+
+                                <button type="submit">Pagar</button>
+                         </div>
                  </div>
             </div>
                
             
-            <button type="submit">Pagar</button>
+            
         </form>
         </article>
         <div>
             <article>
-                hello omg
+                You-little-big-business °2023
             </article>
         </div>
 
      
   
 </div>
+    <script>
+        function detectCardBrand(input) {
+            const cardNumber = input.value.replace(/\D/g, ''); // Remove non-numeric characters
+            let cardBrand = '';
 
+            if (/^4/.test(cardNumber)) {
+                cardBrand = 'visa';
+            } else if (/^5[1-5]/.test(cardNumber)) {
+                cardBrand = 'mastercard';
+            } else if (/^3[47]/.test(cardNumber)) {
+                cardBrand = 'amex';
+            } else {
+                cardBrand = 'unknown';
+            }
+
+            const cardImage = document.getElementById('credit-card-image');
+            cardImage.style.display = 'block';
+
+            switch (cardBrand) {
+                case 'visa':
+                    cardImage.src = 'images/visa-logo-2.png';
+                    break;
+                case 'mastercard':
+                    cardImage.src = 'images/mastercard.png';
+                    break;
+                case 'amex':
+                    cardImage.src = 'images/amx.png';
+                    break;
+                default:
+                    cardImage.style.display = 'none';
+            }
+        }
+    </script>
 
 </body>
 </html>

@@ -12,7 +12,7 @@ $descripcion = $_POST["descripcion"];
 
 
     if (strlen($nombre)>0 && strlen($precio)>0 && strlen($duracion)>0 && strlen($categoria)>0 && strlen($descripcion)>0) {
-        $foto = "../Uploads/productos/" .$_FILES['foto']['name'];
+        $foto = "../Uploads/servicio/" .$_FILES['foto']['name'];
         // Movemos el archivo a la carpeta uploads
         $mover=move_uploaded_file($_FILES['foto'] ['tmp_name'], $foto);
 

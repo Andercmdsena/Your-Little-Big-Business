@@ -12,6 +12,17 @@ function cargarPublicacion() {
             // Limitar la descripción a un cierto número de caracteres
             $descripcion = (strlen($f['descripcion']) > 100) ? substr($f['descripcion'], 0, 100) . "..." : $f['descripcion'];
 
+            $categoria = ($f['categoria'] == 1) ? 'Tecnologia' :
+(($f['categoria'] == 2) ? 'Moda' :
+(($f['categoria'] == 3) ? 'Salud y belleza' :
+(($f['categoria'] == 4) ? 'Deportes' :
+(($f['categoria'] == 5) ? 'Bebes y juegos' :
+(($f['categoria'] == 6) ? 'Alimentos y bebidas' :
+(($f['categoria'] == 7) ? 'Oficina' :
+(($f['categoria'] == 8) ? 'Hogar' :
+(($f['categoria'] == 9) ? 'Mascotas' :
+(($f['categoria'] == 10) ? 'Libros y medios' : 'Otro')))))))));
+
             if ($f['Estado'] == 1 && $f['Disponibilidad'] == 1) {
                 echo  '
         <div class="card col-md-4 producto">
@@ -23,7 +34,7 @@ function cargarPublicacion() {
                 <h4 class="card-title"><a href="../theme/single2.php?id=' . $f['id'] . '">' . $f['nombre'] . '</a></h4>
                 <ul class="list-inline product-meta">
                     <li class="list-inline-item">
-                        <a href="single.html"><i class="fa fa-folder-open-o"></i>' . $f['categoria'] . '</a>
+                        <a href="single.html"><i class="fa fa-folder-open-o"></i>' . $categoria. '</a>
                     </li>
                     <li class="list-inline-item">
                         <a href="category.html"><i class="fa fa-calendar"></i>11 de enero</a>

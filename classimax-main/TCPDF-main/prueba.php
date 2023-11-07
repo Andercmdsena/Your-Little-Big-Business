@@ -30,33 +30,62 @@ function cargarProductoCarrito() {
     $result = $objConsulta->mostrarRecibo($arg_id_usuario); // Utiliza la función mostrarRecibo para obtener los datos
 
     $tablaHTML = '
-    
-
     <tr class="table-dark">
         <th>Producto</th>
-        <th>Descripcion</th>
+    
         <th>Cantidad</th>
-        <th>Total</th>
+        <th>Precio</th>
         <th>Nombre del vendedor</th>
         <th>Telefono del vendedor</th>
-        
     </tr>';
 
     if (!empty($result)) {
+        $totalPrecio = 0; // Inicializamos la variable de suma en cero
         foreach ($result as $f) {
             $descripcion = (strlen($f['descripcion']) > 100) ? substr($f['descripcion'], 0, 100) . "..." : $f['descripcion'];
             $cliente = $f['nombre'];
+    
+            // Suma el valor de $f['precio'] al totalPrecio
+            $totalPrecio += $f['precio'];
+    
             $tablaHTML .= '
             <tr class="table-dark">
                 <td>' . $f['nombre'] . '</td>
-                <td>' . $descripcion. '</td>
                 <td>' . $f['cantidad'] . '</td>
                 <td>' . $f['precio'] . '</td>
                 <td>' . $f['nombre_emprendedor'] . '</td>
                 <td>' . $f['telefono_emprendedor'] . '</td>
             </tr>';
         }
-    } else {
+    
+        // Calcula el IVA (19%)
+        $iva = $totalPrecio * 0.19;
+    
+        // Agrega una fila al final de la tabla para mostrar el IVA y el total neto
+        $tablaHTML .= '
+        <tr class="table-dark">
+            <td colspan="3"></td>
+            <td><strong>Neto: ' . $totalPrecio . '</strong></td>
+            <td></td>
+            <td></td>
+        </tr>';
+        $tablaHTML .= '
+        <tr class="table-dark">
+            <td colspan="3"></td>
+            <td><strong>IVA (19%): ' . $iva . '</strong></td>
+            <td></td>
+            <td></td>
+        </tr>';
+        $tablaHTML .= '
+        <tr class="table-dark">
+            <td colspan="3"></td>
+            <td><strong>Total (con IVA): ' . ($totalPrecio + $iva) . '</strong></td>
+            <td></td>
+            <td></td>
+        </tr>';
+    }
+    
+    else {
         $tablaHTML .= '
         <tr class="table-dark">
             <td colspan="4">No hay productos registrados</td>
@@ -65,6 +94,7 @@ function cargarProductoCarrito() {
 
     return $tablaHTML;
 }
+
 function resivo() {
     global $arg_id_usuario, $pdf;
 
@@ -75,6 +105,7 @@ function resivo() {
     if (!empty($result)) {
         $numeroAleatorio = str_pad(mt_rand(1, 999999999999), 12, '0', STR_PAD_LEFT);
         foreach ($result as $f) {
+            
             $descripcion = (strlen($f['descripcion']) > 100) ? substr($f['descripcion'], 0, 100) . "..." : $f['descripcion'];
             $cliente = $f['Nombre'];
             $email = $f['Email'];

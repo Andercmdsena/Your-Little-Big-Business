@@ -52,11 +52,11 @@ body {
 }
 
 .nav-pills.with-background .nav-link:hover {
-  color: #5672f9;
+  color: #1c2a4c;
 }
 
 .nav-pills.with-background .nav-link.active {
-  background: #5672f9;
+  background: #1c2a4c;
   position: relative;
   transition: 0s;
 }
@@ -74,7 +74,7 @@ body {
   height: 0;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-  border-top: 10px solid #5672f9;
+  border-top: 10px solid #1c2a4c;
   clear: both;
   transition: all 0.2s ease-in 0s;
 }
@@ -365,7 +365,7 @@ body {
 /* ---------------Menu------------------- */
 
 header{
-  background-color: #BDD0FF;
+  background-color: #1c2a4c !important;
 }
 
 

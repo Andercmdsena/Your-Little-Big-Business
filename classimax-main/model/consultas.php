@@ -810,7 +810,7 @@ class consultas{
             $result->bindParam(":id_emprendedor", $_SESSION['id']);
     
             $result->execute();
-            echo '<script> alert("Producto servicios con éxito") </script>';
+            echo '<script> alert("Servicios registrado con éxito") </script>';
             echo '<script>location.href="../views/emprendedor/registroServicios.php" </script>';
         
     }

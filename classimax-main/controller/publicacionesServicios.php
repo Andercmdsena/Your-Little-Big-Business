@@ -8,7 +8,7 @@ function cargarPublicacionServicios(){
     }   else{
 
         foreach($result as $f){
-            $estado = ($f['Estado'] == 1) ? 'Activo' : (($f['Estado'] == 0) ? 'Bloqueado' : 'Pendiente');
+            $estado = ($f['Disponibilidad'] == 1) ? 'Disponible' : (($f['Disponibilidad'] == 0) ? 'Agotado' : 'Pendiente');
             if ($f['Estado'] == 1) {
                 echo  '
         
@@ -19,7 +19,7 @@ function cargarPublicacionServicios(){
                 <img src="'.$f['foto'].'" alt="Foto user" style="width:250px; height:150px; ">
             </div>
             <div class="card-body producto_catalogo">
-                <h4 class="card-title"><a href="../theme/single2.php?id=' . $f['id'] . '">'. $f['nombre'] .'</a></h4>
+                <h4 class="card-title"><a href="../theme/servicioIndividual.php?id=' . $f['id'] . '">'. $f['nombre'] .'</a></h4>
                 <ul class="list-inline product-meta">
                     <li class="list-inline-item">
                         <a href="single.html"><i class="fa fa-folder-open-o"></i>'. $f['categoria'] .'</a>
@@ -31,7 +31,7 @@ function cargarPublicacionServicios(){
                 <p class="card-text">'. $f['descripcion'] .'</p>
                 <div class="product-ratings">
                 <p class="card-text">Precio:'. $f['precio'] .'</p>
-                <p class="card-text">Estado:'. $f['Estado_servicio'] .'</p>
+                <p class="card-text">Estado:'. $estado.'</p>
                 
                 
                 <div class="product-ratings">

@@ -19,14 +19,17 @@ function cargarProductoCarrito() {
         echo '<h2>No hay productos registrados</h2>';
     } else {
         foreach ($result as $f) {
+          $estado = ($f['Disponibilidad'] == 1) ? 'Disponible' : (($f['Disponibilidad'] == 0) ? 'Agotado' : 'Pendiente');
             echo  '
             <br>
-            <div class="productosxd">
-            <img src="' . $f['foto'] . '" alt="Foto producto" style="width:120px; height:120px; border-radius:20px">
-              <div class="detallesproducto">
+            <div class="row justify-content-center align-items-center productosxd">
+              <div class="col-md-3">
+              <img src="' . $f['foto'] . '" alt="Foto producto" style="width:260px; height:200px; object-fit: cover; border-radius: 20px;">
+              </div>
+              <div class="col-md-9 detallesproducto">
                   <p class="nombreproducto">' . $f['nombre'] . '</p>
                   <p class="Descripcion">' . $f['descripcion'] . '</p>
-                  <p class="disponible">' . $f['Estado_producto'] . '</p>
+                  <p class="disponible">' . $estado. '</p>
                   <div class="dropdown-center">
                   <p class="precioproducto">' . $f['precio'] . '</p>
                     <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -46,8 +49,9 @@ function cargarProductoCarrito() {
             <div class="preciototal">
             <a class="botonpagar1" href="../controller/eliminarProductoCarrito.php?id=' . $f['id_carrito'] . '">Elminar del carrito</a>
             <a class="botonpagar" href="../TCPDF-main/prueba.php">Pagar</a>
-                Total: ' . $f['precio'] . '<hr>
+                Total: ' . $f['precio'] . '
             </div>
+            <hr>
             ';
         }
     }

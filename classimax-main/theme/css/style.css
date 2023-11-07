@@ -1072,11 +1072,15 @@ ul.pagination .active a {
 }
 .product-item .card {
   border: none;
-  height: 832px;
-  margin-bottom: 46px;
+  height: 720px;
+  margin-bottom: 20px;
 }
 .product-item .cardCarrusel {
   border: none;
+}
+.product-item .cardCarrusel .thumb-content img{
+  width: 500px;
+  border-radius: none;
 }
 .product-item .card .card-body {
   padding: 20px;
@@ -2321,13 +2325,13 @@ hr{
 
 .productosxd{
   display: flex;
-  margin-bottom: 10px;
+  margin-bottom: 50px;
 }
 
 .productosxd img{
-  max-width: 300px;
-  margin-right: 15px;
-  margin-top: 60px;
+  max-width: 280px;
+  max-height: 280px;
+  margin-left: 30px;
   border-radius: 20px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
@@ -2353,9 +2357,11 @@ hr{
 }
 
 .preciototal{
-  margin-bottom: 50px;
+  margin-bottom: 30px;
+  margin-top: 30px;
   font-size: 1.2em;
   font-weight: bold;
+  padding-left: 130px;
 }
 
 .botonpagar{

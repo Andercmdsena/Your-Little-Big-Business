@@ -142,8 +142,16 @@ require_once ("../../model/seguridadEmprendedor.php");
                                         <label>Categoria</label>
                                         <select name="categoria" id="" class="form-control">
                                             <option value="">Seleccione la categoria</option>
-                                            <option value="tecnologia">Tecnologia</option>
-                                            <option value="hogar">Hogar</option>
+                                            <option value="1">Tecnologia</option>
+                                            <option value="2">Moda</option>
+                                            <option value="3">Salud y belleza</option>
+                                            <option value="4">Deportes</option>
+                                            <option value="5">Bebes y juegos</option>
+                                            <option value="6">Alimentos y bebidas</option>
+                                            <option value="7">Oficina</option>
+                                            <option value="8">Hogar</option>
+                                            <option value="9">Mascotas</option>
+                                            <option value="10">Libros y medios</option>
                                            
 
                                         </select>

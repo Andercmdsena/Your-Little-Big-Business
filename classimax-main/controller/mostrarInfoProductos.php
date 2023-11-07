@@ -8,7 +8,23 @@ function cargarProducto() {
         echo '<h2>No hay productos registrados</h2>';
     } else {
         foreach ($result as $f) {
-            $estado = ($f['Estado'] == 1) ? 'Diponible' : (($f['Estado'] == 0) ? 'Agotado' : 'Pendiente');
+            
+
+
+$categoria = ($f['categoria'] == 1) ? 'Tecnologia' :
+(($f['categoria'] == 2) ? 'Moda' :
+(($f['categoria'] == 3) ? 'Salud y belleza' :
+(($f['categoria'] == 4) ? 'Deportes' :
+(($f['categoria'] == 5) ? 'Bebes y juegos' :
+(($f['categoria'] == 6) ? 'Alimentos y bebidas' :
+(($f['categoria'] == 7) ? 'Oficina' :
+(($f['categoria'] == 8) ? 'Hogar' :
+(($f['categoria'] == 9) ? 'Mascotas' :
+(($f['categoria'] == 10) ? 'Libros y medios' : 'Otro')))))))));
+
+
+
+            $estado = ($f['Disponibilidad'] == 1) ? 'Diponible' : (($f['Disponibilidad'] == 0) ? 'Agotado' : 'Pendiente');
             echo  '
                 <tr>
                     <td><img src="../' . $f['foto'] . '" alt="Foto user" style="width:60px; height:60px; border-radius:50%"></td>
@@ -16,7 +32,7 @@ function cargarProducto() {
                     <td>' . $f['precio'] . '</td>
                     <td>' . $f['cantidad'] . '</td>
                     <td>'.$estado.'</td>
-                    <td>' . $f['categoria'] . '</td>
+                    <td>' . $categoria. '</td>
                     <td>
                         <a href="../../views/emprendedor/modificarProducto.php?id=' . $f['id'] . '" class="btn btn-primary"><i class="ti-marker-alt"></i>Modificar</a>
                     </td>
@@ -36,6 +52,16 @@ function cargarProductoAdmin(){
     }   else{
 
         foreach($result as $f){
+            $categoria = ($f['categoria'] == 1) ? 'Tecnologia' :
+(($f['categoria'] == 2) ? 'Moda' :
+(($f['categoria'] == 3) ? 'Salud y belleza' :
+(($f['categoria'] == 4) ? 'Deportes' :
+(($f['categoria'] == 5) ? 'Bebes y juegos' :
+(($f['categoria'] == 6) ? 'Alimentos y bebidas' :
+(($f['categoria'] == 7) ? 'Oficina' :
+(($f['categoria'] == 8) ? 'Hogar' :
+(($f['categoria'] == 9) ? 'Mascotas' :
+(($f['categoria'] == 10) ? 'Libros y medios' : 'Otro')))))))));
             $estado = ($f['Estado'] == 1) ? 'Activo' : (($f['Estado'] == 0) ? 'Bloqueado' : 'Pendiente');
         echo  '
             <tr>
@@ -43,7 +69,7 @@ function cargarProductoAdmin(){
                 <td>'.$f['nombre'].'</td>
                 <td>'.$f['precio'].'</td>
                 <td>'.$f['cantidad'].'</td>
-                <td>'.$f['categoria'].'</td>
+                <td>'.$categoria.'</td>
                 <td>'.$f['id_emprendedor'].'</td>
                 <td>'.$f['Estado_producto'].'</td>
                 <td>

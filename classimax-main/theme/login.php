@@ -65,7 +65,7 @@
                       <option value="cliente">Cliente</option>
                       <option value="emprendedor">Emprendedor</option>
                       <option value="administrador">Administrador</option>
-
+f
                 </select>
               </div>
             <button id="btn-ingresar" type="submit" class="btn font-weight-bold w-75 mt-3">Ingresar</button>

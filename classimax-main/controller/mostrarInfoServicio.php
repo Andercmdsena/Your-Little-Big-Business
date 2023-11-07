@@ -8,7 +8,19 @@ function cargarServicio() {
         echo '<h2>No hay productos registrados</h2>';
     } else {
         foreach ($result as $f) {
-            $estado = ($f['Estado'] == 1) ? 'Activo' : (($f['Estado'] == 0) ? 'Bloqueado' : 'Pendiente');
+            $categoria = ($f['categoria'] == 11) ? 'Carpintería' :
+            (($f['categoria'] == 12) ? 'Fontanería' :
+            (($f['categoria'] == 13) ? 'Electricidad' :
+            (($f['categoria'] == 14) ? 'Pintura' :
+            (($f['categoria'] == 15) ? 'Jardinería' :
+            (($f['categoria'] == 16) ? 'Limpieza' :
+            (($f['categoria'] == 17) ? 'Reparación de electrodomésticos' :
+            (($f['categoria'] == 18) ? 'Cerrajería' :
+            (($f['categoria'] == 19) ? 'Construcción' :
+            (($f['categoria'] == 20) ? 'Mantenimiento general' : 'Otro')))))))));
+
+
+            $estado = ($f['Disponibilidad'] == 1) ? 'Disponible' : (($f['Disponibilidad'] == 0) ? 'Agotado' : 'Pendiente');
             echo  '
                 <tr>
                     <td><img src="../' . $f['foto'] . '" alt="Foto user" style="width:60px; height:60px; border-radius:50%"></td>
@@ -16,7 +28,7 @@ function cargarServicio() {
                     <td>' . $f['precio'] . '</td>
                     <td>' . $f['duracion'] . '</td>
                     <td>'. $estado.'</td>
-                    <td>' . $f['categoria'] . '</td>
+                    <td>' . $categoria. '</td>
                     <td>
                         <a href="../../views/emprendedor/modificarServicio.php?id=' . $f['id'] . '" class="btn btn-primary"><i class="ti-marker-alt"></i>Modificar</a>
                     </td>

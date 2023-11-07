@@ -102,7 +102,7 @@ include "menu_emprendedor.php"
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                                <h1>Ver productos registrados
+                                <h1>Ver servicios registrados
                                     
                                 </h1>
                                 <p>Elija la opcion que desea realiza, editar o eliminar</p>
@@ -130,7 +130,7 @@ include "menu_emprendedor.php"
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-title">
-                                    <h4>Productos</h4>
+                                    <h4>Servicios</h4>
                                     
                                 </div>
                                 <div class="card-body">

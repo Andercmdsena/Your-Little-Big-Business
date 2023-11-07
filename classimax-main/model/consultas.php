@@ -1029,6 +1029,37 @@ class consultas{
         return $f;
         echo '<script>location.href="../theme/single2.php"</script>';
     }
+    public function servicioIndividual($id){
+        $f=null;
+ 
+ 
+         $objConexion = new Conexion();
+         $conexion = $objConexion -> get_conexion();
+ 
+        //  $consultar = "SELECT * FROM productos where id=:id";
+
+        $consultar = "SELECT servicios.*, usuario.foto AS usuario_foto, usuario.Nombre AS usuario_nombre
+        FROM servicios
+        INNER JOIN usuario ON servicios.id_emprendedor = usuario.ID
+        WHERE servicios.id = :id";
+    
+
+
+ 
+         $result=$conexion->prepare($consultar);
+
+         $result->bindParam(':id', $id);
+ 
+        $result->execute();
+        
+ 
+        while ($resultado=$result->fetch()) {
+         $f[] = $resultado;
+        }
+ 
+        return $f;
+        echo '<script>location.href="../theme/single2.php"</script>';
+    }
     
     public function mostrarProductoCarrito($arg_id_usuario) {
         $f = null;
@@ -1081,11 +1112,14 @@ class consultas{
         $conexion = $objConexion->get_conexion();
     
         // Consulta SQL para seleccionar los productos en el carrito de un usuario específico con información adicional del usuario
-        $consultar = "SELECT productos.*, carrito.id AS id_carrito, usuario.*
+        $consultar = "SELECT productos.*, carrito.id AS id_carrito, usuario_cliente.*, emprendedor.nombre AS nombre_emprendedor, emprendedor.email AS email_emprendedor, 
+        emprendedor.telefono AS telefono_emprendedor
         FROM productos
         INNER JOIN carrito ON productos.id = carrito.id_producto
-        LEFT JOIN usuario ON carrito.id_usuario = usuario.ID
+        LEFT JOIN usuario AS usuario_cliente ON carrito.id_usuario = usuario_cliente.ID
+        LEFT JOIN usuario AS emprendedor ON productos.id_emprendedor = emprendedor.ID
         WHERE carrito.id_usuario = :id_usuario";
+        
     
     
     

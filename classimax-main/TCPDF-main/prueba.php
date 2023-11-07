@@ -15,9 +15,8 @@ $pdf->SetMargins(10, 10, 10);
 $pdf->AddPage();
 
 // Define el contenido del recibo
-$cliente = "Cliente de Ejemplo";
-$descripcion = "Pago de Servicio";
-$monto = "$100.00";
+date_default_timezone_set('America/Bogota');
+
 
 session_start();
 
@@ -31,27 +30,30 @@ function cargarProductoCarrito() {
     $result = $objConsulta->mostrarRecibo($arg_id_usuario); // Utiliza la función mostrarRecibo para obtener los datos
 
     $tablaHTML = '
+    
+
     <tr class="table-dark">
-        <th> Cantidad</th>
-        <th> Descripcion</th>
-        <th> precio Unitario</th>
-        <th> Total</th>
-        <th> Nombre</th>
-        <th> Email</th>
-        <th> Rol</th>
+        <th>Producto</th>
+        <th>Descripcion</th>
+        <th>Cantidad</th>
+        <th>Total</th>
+        <th>Nombre del vendedor</th>
+        <th>Telefono del vendedor</th>
+        
     </tr>';
 
     if (!empty($result)) {
         foreach ($result as $f) {
+            $descripcion = (strlen($f['descripcion']) > 100) ? substr($f['descripcion'], 0, 100) . "..." : $f['descripcion'];
+            $cliente = $f['nombre'];
             $tablaHTML .= '
             <tr class="table-dark">
                 <td>' . $f['nombre'] . '</td>
-                <td>' . $f['descripcion'] . '</td>
-                <td>' . $f['Estado_producto'] . '</td>
+                <td>' . $descripcion. '</td>
+                <td>' . $f['cantidad'] . '</td>
                 <td>' . $f['precio'] . '</td>
-                <td>'. $f['Nombre'] .'</td>
-                <td>'. $f['Email'] .'</td>
-                <td>'. $f['Rol'] .'</td>
+                <td>' . $f['nombre_emprendedor'] . '</td>
+                <td>' . $f['telefono_emprendedor'] . '</td>
             </tr>';
         }
     } else {
@@ -63,46 +65,71 @@ function cargarProductoCarrito() {
 
     return $tablaHTML;
 }
+function resivo() {
+    global $arg_id_usuario, $pdf;
 
-$contenido = '
+    $objConsulta = new Consultas();
+    $result = $objConsulta->mostrarRecibo($arg_id_usuario); // Utiliza la función mostrarRecibo para obtener los datos
+
+
+    if (!empty($result)) {
+        $numeroAleatorio = str_pad(mt_rand(1, 999999999999), 12, '0', STR_PAD_LEFT);
+        foreach ($result as $f) {
+            $descripcion = (strlen($f['descripcion']) > 100) ? substr($f['descripcion'], 0, 100) . "..." : $f['descripcion'];
+            $cliente = $f['Nombre'];
+            $email = $f['Email'];
+            $telefono = $f['Telefono'];
+            $email_emprendedor = $f['email_emprendedor'];
+            $telefono_emprendedor = $f['telefono_emprendedor'];
+            $nombre_emprendedor=  $f['nombre_emprendedor'];
+            $contenido = '
+
     <h1>Recibo</h1>
-    <p> Fecha: 24/10/2023 </p>
-    <h2 style="text-align: center;"> ID: 135486416432245 </h2>
+    <p> Fecha: '. date('d/m/Y') .' </p>
+    <p> Fecha: '. date('H:i:s') .' </p>
+    <h2 style="text-align: center;">ID: ' . $numeroAleatorio . ' </h2>
     <h2>Factura a:</h2>
     <h3>' . $cliente . '</h3>
     <p>
-        <b><i>Correo: </i></b> juankalvis27@gmail.com <br>
-        <b><i>Cel: </i></b> 3145591473
+        <b><i>Correo: </i></b>' . $email . '  <br>
+        <b><i>Cel: </i></b> ' . $telefono . '
     </p>
     <br>
     <h2>Emprendimiento:</h2>
-    <h3>menchi</h3>
     <p>
-        <b><i>Dueño: </i></b> Samuel Diaz <br>
-        <b><i>Correo: </i></b> 16samu19@gmail.com <br>
-        <b><i>Cel: </i></b> 3114550274
+        <b><i>Dueño: </i></b> ' . $nombre_emprendedor . ' <br>
+        <b><i>Correo: </i></b> ' . $email_emprendedor . ' <br>
+        <b><i>Cel: </i></b> ' . $telefono_emprendedor . '
     </p>
 
-    <table border="1" class="table table-striped">
+    <table border="1" class="table table-striped" style="padding:5px 10px">
         ' . cargarProductoCarrito() . '
     </table>
 
-    <p style="text-align: right;">
-        subtotal: ' . $monto . ' <br>
-        iva 19%: ' . number_format((floatval($monto) * 0.19), 2, '.', '') . ' <br>
-        Total a pagar: ' . number_format((floatval($monto) * 1.19), 2, '.', '') . '
-    </p>
+    
 
     <h2>Metodo de pago</h2>
     <p><strong>con tarjeta débito</strong> <br>
         <strong>Nombre del banco:</strong> bancolombia <br>
-        <strong>Nombre de la cuenta:</strong> juan alvis <br>
+        <strong>Nombre de la cuenta:</strong>' . $cliente . '<br>
         <strong>número de cuenta:</strong> *********123
     </p>
 ';
+        }
+    } else {
+        $contenido .= '
+        <tr class="table-dark">
+            <td colspan="4">No hay productos registrados</td>
+        </tr>';
+    }
+
+    return $contenido;
+}
+resivo();
+
 
 // Agrega el contenido al documento
-$pdf->writeHTML($contenido, true, false, true, false, '');
+$pdf->writeHTML(resivo(), true, false, true, false, '');
 
 // Genera el PDF y lo muestra en el navegador
 $pdf->Output('recibo.pdf', 'I');

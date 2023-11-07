@@ -141,12 +141,19 @@ require_once ("../../model/seguridadEmprendedor.php");
                                     <div class="form-group col-md-6">
                                         <label>Categoria</label>
                                         <select name="categoria" id="" class="form-control">
-                                            <option value="">Seleccione la categoria</option>
-                                            <option value="tecnologia">Carpinteria</option>
-                                            <option value="hogar">Fontanero</option>
-                                           
-
+                                            <option value="">Seleccione la categoría</option>
+                                            <option value="11">Carpintería</option>
+                                            <option value="12">Fontanería</option>
+                                            <option value="13">Electricidad</option>
+                                            <option value="14">Pintura</option>
+                                            <option value="15">Jardinería</option>
+                                            <option value="16">Limpieza</option>
+                                            <option value="17">Reparación de electrodomésticos</option>
+                                            <option value="18">Cerrajería</option>
+                                            <option value="19">Construcción</option>
+                                            <option value="20">Mantenimiento general</option>
                                         </select>
+
                                     </div>
                                     <div class="form-group col-md-12">
                                         <div>Descripción</div>

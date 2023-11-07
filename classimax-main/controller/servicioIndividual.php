@@ -1,12 +1,12 @@
 <?php
 
-function cargarProductoIndividual(){
+function cargarServicioIndividual(){
 	$id = $_GET['id'];
     $objConsulta = new Consultas();
-    $result = $objConsulta->productoIndividual($id);
+    $result = $objConsulta->servicioIndividual($id);
 
     if (!isset($result)) {
-        echo '<h2>No hay productos registrados</h2>';
+        echo '<h2>No hay servicios registrados</h2>';
     }   else{
 
         foreach($result as $f){
@@ -188,8 +188,7 @@ function cargarProductoIndividual(){
 						<a href="single.html">Ver todas publicaciones</a>
 						<ul class="list-inline mt-20">
 							<li class="list-inline-item"><a href="contact-us.html" class="btn btn-contact d-inline-block  btn-primary px-lg-5 my-1 px-md-3">Contacto</a></li>
-							<li class="list-inline-item"><a class="btn btn-offer d-inline-block btn-primary ml-n1 my-1 px-lg-4 px-md-3" href="../controller/agregarCarrito.php?id_producto=' . $f['id'] . '">Agregar al carrito</a></li>
-							
+							<li class="list-inline-item"><a href="single.html" class="btn btn-offer d-inline-block btn-primary ml-n1 my-1 px-lg-4 px-md-3">Hacer una oferta</a></li>
 						</ul>
 					</div>
 					<!-- Map Widget -->

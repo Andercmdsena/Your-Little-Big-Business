@@ -16,7 +16,7 @@ body {
 
 p, li, input, select, button {
   font-family:  'Poiret One', cursive;
-  color: #fff;
+  color: #000;
   font-size: 20px;
   font-weight: 400;
 }
@@ -24,11 +24,11 @@ p, li, input, select, button {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Varela Round', sans-serif;
   font-weight: 600;
-  color: #fff;
+  color: #000;
 }
 
 p {
-  color:#fff;
+  color:#000;
 }
 
 h1 {
@@ -151,7 +151,7 @@ figure {
 
 a {
   transition: all 0.3s ease-in 0s;
-  color: #000;
+  color: #ffffffe5  !important;
 }
 
 iframe {

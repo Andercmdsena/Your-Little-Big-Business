@@ -16,6 +16,10 @@ body {
   font-size: 1.2rem;
 }
 
+.nav-link{
+  color: #fff !important;
+}
+
 .dropdown-menu li a {
   font-family: 'Poiret One', cursive;
   font-size: 1.2rem;

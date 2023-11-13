@@ -181,10 +181,10 @@ require_once("../model/consultas.php");
 								<h4>Tecnologia</h4>
 							</div>
 							<ul class="category-list">
-								<li><a href="category.html">Computadores <span>93</span></a></li>
-								<li><a href="category.html">Celulares<span>233</span></a></li>
-								<li><a href="category.html">Licencias<span>183</span></a></li>
-								<li><a href="category.html">Pantallas<span>343</span></a></li>
+								<li><a class="juas" href="category.html">Computadores <span>93</span></a></li>
+								<li><a class="juas" href="category.html">Celulares<span>233</span></a></li>
+								<li><a class="juas" href="category.html">Licencias<span>183</span></a></li>
+								<li><a class="juas" href="category.html">Pantallas<span>343</span></a></li>
 							</ul>
 						</div>
 					</div> <!-- /Category List -->
@@ -196,10 +196,10 @@ require_once("../model/consultas.php");
 								<h4>Restaurantes</h4>
 							</div>
 							<ul class="category-list">
-								<li><a href="category.html">Comidas <span>393</span></a></li>
-								<li><a href="category.html">Bebidas <span>23</span></a></li>
-								<li><a href="category.html">Comida rapido <span>13</span></a></li>
-								<li><a href="category.html">Comida saludable<span>43</span></a></li>
+								<li><a class="juas" href="category.html">Comidas <span>393</span></a></li>
+								<li><a class="juas" href="category.html">Bebidas <span>23</span></a></li>
+								<li><a class="juas" href="category.html">Comida rapido <span>13</span></a></li>
+								<li><a class="juas" href="category.html">Comida saludable<span>43</span></a></li>
 							</ul>
 						</div>
 					</div> <!-- /Category List -->
@@ -211,10 +211,10 @@ require_once("../model/consultas.php");
 								<h4>Cosas para el hogar</h4>
 							</div>
 							<ul class="category-list">
-								<li><a href="category.html">Muebles <span>93</span></a></li>
-								<li><a href="category.html">Electrodomesticos <span>23</span></a></li>
-								<li><a href="category.html">Decoraciones <span>83</span></a></li>
-								<li><a href="category.html">Plantas <span>33</span></a></li>
+								<li><a class="juas" href="category.html">Muebles <span>93</span></a></li>
+								<li><a class="juas" href="category.html">Electrodomesticos <span>23</span></a></li>
+								<li><a class="juas" href="category.html">Decoraciones <span>83</span></a></li>
+								<li><a class="juas" href="category.html">Plantas <span>33</span></a></li>
 							</ul>
 						</div>
 					</div> <!-- /Category List -->
@@ -226,10 +226,10 @@ require_once("../model/consultas.php");
 								<h4>Infantil</h4>
 							</div>
 							<ul class="category-list">
-								<li><a href="category.html">Juguetes <span>53</span></a></li>
-								<li><a href="category.html">Ropa <span>212</span></a></li>
-								<li><a href="category.html">Libros <span>133</span></a></li>
-								<li><a href="category.html">Carros <span>143</span></a></li>
+								<li><a class="juas" href="category.html">Juguetes <span>53</span></a></li>
+								<li><a class="juas" href="category.html">Ropa <span>212</span></a></li>
+								<li><a class="juas" href="category.html">Libros <span>133</span></a></li>
+								<li><a class="juas" href="category.html">Carros <span>143</span></a></li>
 							</ul>
 						</div>
 					</div> <!-- /Category List -->
@@ -241,10 +241,10 @@ require_once("../model/consultas.php");
 								<h4>Trabajo</h4>
 							</div>
 							<ul class="category-list">
-								<li><a href="category.html">Archivo <span>93</span></a></li>
-								<li><a href="category.html">Carpetas <span>233</span></a></li>
-								<li><a href="category.html">Boligrafos <span>183</span></a></li>
-								<li><a href="category.html">Oficina <span>343</span></a></li>
+								<li><a class="juas" href="category.html">Archivo <span>93</span></a></li>
+								<li><a class="juas" href="category.html">Carpetas <span>233</span></a></li>
+								<li><a class="juas" href="category.html">Boligrafos <span>183</span></a></li>
+								<li><a class="juas" href="category.html">Oficina <span>343</span></a></li>
 							</ul>
 						</div>
 					</div> <!-- /Category List -->
@@ -256,10 +256,10 @@ require_once("../model/consultas.php");
 								<h4>Vehiculos</h4>
 							</div>
 							<ul class="category-list">
-								<li><a href="category.html">Refacciones <span>193</span></a></li>
-								<li><a href="category.html">Aceite <span>23</span></a></li>
-								<li><a href="category.html">Faros <span>33</span></a></li>
-								<li><a href="category.html">Retrovispres <span>73</span></a></li>
+								<li><a class="juas" href="category.html">Refacciones <span>193</span></a></li>
+								<li><a class="juas" href="category.html">Aceite <span>23</span></a></li>
+								<li><a class="juas" href="category.html">Faros <span>33</span></a></li>
+								<li><a class="juas" href="category.html">Retrovispres <span>73</span></a></li>
 							</ul>
 						</div>
 					</div> <!-- /Category List -->
@@ -271,10 +271,10 @@ require_once("../model/consultas.php");
 								<h4>Mascotas</h4>
 							</div>
 							<ul class="category-list">
-								<li><a href="category.html">Gatos <span>65</span></a></li>
-								<li><a href="category.html">Perros <span>23</span></a></li>
-								<li><a href="category.html">Aves <span>113</span></a></li>
-								<li><a href="category.html">Otros <span>43</span></a></li>
+								<li><a class="juas" href="category.html">Gatos <span>65</span></a></li>
+								<li><a class="juas" href="category.html">Perros <span>23</span></a></li>
+								<li><a class="juas" href="category.html">Aves <span>113</span></a></li>
+								<li><a class="juas" href="category.html">Otros <span>43</span></a></li>
 							</ul>
 						</div>
 					</div> <!-- /Category List -->
@@ -287,10 +287,10 @@ require_once("../model/consultas.php");
 								<h4>Servicios</h4>
 							</div>
 							<ul class="category-list">
-								<li><a href="category.html">Limpieza <span>93</span></a></li>
-								<li><a href="category.html">Cocina <span>233</span></a></li>
-								<li><a href="category.html">Asesoramiento legal <span>183</span></a></li>
-								<li><a href="category.html">Otros <span>343</span></a></li>
+								<li ><a class="juas" href="category.html">Limpieza <span>93</span></a></li>
+								<li ><a class="juas" href="category.html">Cocina <span>233</span></a></li>
+								<li ><a class="juas" href="category.html">Asesoramiento legal <span>183</span></a></li>
+								<li ><a class="juas" href="category.html">Otros <span>343</span></a></li>
 							</ul>
 						</div>
 					</div> <!-- /Category List -->
@@ -316,8 +316,8 @@ require_once("../model/consultas.php");
 				<div class="content-holder">
 					<h2>Empieza hoy a publicar tu emprendimiento y crecer</h2>
 					<ul class="list-inline mt-30">
-						<li class="list-inline-item"><a class="boton" href="productos.php">Busca tus productos</a></li>
-						<li class="list-inline-item"><a class="boton" href="servicios.php">Busca tus servicios</a></li>
+						<li class="list-inline-item"><a class="botons" href="productos.php">Busca tus productos</a></li>
+						<li class="list-inline-item"><a class="botons" href="servicios.php">Busca tus servicios</a></li>
 					</ul>
 				</div>
 			</div>

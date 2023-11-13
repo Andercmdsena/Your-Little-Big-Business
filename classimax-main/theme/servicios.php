@@ -21,7 +21,7 @@ require_once("../model/consultas.php");
 
   <!-- ** Basic Page Needs ** -->
   <meta charset="utf-8">
-  <title>YLBB | You little big business</title>
+  <title>YLBB | Servicios</title>
 
   <!-- ** Mobile Specific Metas ** -->
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -103,22 +103,22 @@ require_once("../model/consultas.php");
 					<div class="widget category-list categorias">
 	<h4 class="widget-header">Todas</h4>
 	<ul class="category-list">
-		<li><a href="category.html">Mecanicos <span>93</span></a></li>
-		<li><a href="category.html">Albañiles <span>233</span></a></li>
-		<li><a href="category.html">Carpintero  <span>183</span></a></li>
-		<li><a href="category.html">Pintor <span>343</span></a></li>
+		<li><a class="juas" href="category.html">Mecanicos <span>93</span></a></li>
+		<li><a class="juas" href="category.html">Albañiles <span>233</span></a></li>
+		<li><a class="juas" href="category.html">Carpintero  <span>183</span></a></li>
+		<li><a class="juas" href="category.html">Pintor <span>343</span></a></li>
 	</ul>
 </div>
 
 <div class="widget category-list">
 	<h4 class="widget-header">Lugares</h4>
 	<ul class="category-list">
-		<li><a href="category.html">Kennedy <span>93</span></a></li>
-		<li><a href="category.html">Patio bonito <span>233</span></a></li>
-		<li><a href="category.html">Santa fe  <span>183</span></a></li>
-		<li><a href="category.html">Suba <span>120</span></a></li>
-		<li><a href="category.html">Barrios unidos <span>40</span></a></li>
-		<li><a href="category.html">12 de octubre <span>81</span></a></li>
+		<li><a class="juas" href="category.html">Kennedy <span>93</span></a></li>
+		<li><a class="juas" href="category.html">Patio bonito <span>233</span></a></li>
+		<li><a class="juas" href="category.html">Santa fe  <span>183</span></a></li>
+		<li><a class="juas" href="category.html">Suba <span>120</span></a></li>
+		<li><a class="juas" href="category.html">Barrios unidos <span>40</span></a></li>
+		<li><a class="juas" href="category.html">12 de octubre <span>81</span></a></li>
 	</ul>
 </div>
 

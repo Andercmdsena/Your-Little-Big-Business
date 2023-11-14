@@ -138,34 +138,71 @@ function cargarProductoIndividual(){
 											<div class="date">
 												<p>Marzo 20, 2018</p>
 											</div>
+
+
 											<div class="review-comment">
-												<p>
-												Mi experiencia con este portátil ha sido impresionante. Su rendimiento es excepcional gracias a su potente CPU y una generosa cantidad de RAM, lo que facilita la multitarea sin problemas. La pantalla Full HD ofrece colores vibrantes y detalles nítidos, perfecta para ver películas o trabajar en proyectos creativos
-												</p>
+												
+												<?php
+												include("../../controller/recibircomentario.php")
+												?>
+												
 											</div>
+
+											
 										</div>
 									</div>
 									<div class="review-submission">
-										<h3 class="tab-title">Enviar tu reseña</h3>
+										<h3 class="tab-title">Envia tu comentario</h3>
 										<!-- Rate -->
 										<div class="rate">
 											<div class="starrr"></div>
 										</div>
 										<div class="review-submit">
-											<form action="#" method="POST" class="row">
+
+
+											<form id="formulario" action="enviarcomentario.php" method="POST">
 												<div class="col-lg-6 mb-3">
-													<input type="text" name="name" id="name" class="form-control" placeholder="Nombre" required>
-												</div>
-												<div class="col-lg-6 mb-3">
-													<input type="email" name="email" id="email" class="form-control" placeholder="Correo" required>
+													<input type="text" name="nombre" id="nombre" class="form-control" placeholder="Nombre" required/>
 												</div>
 												<div class="col-12 mb-3">
-													<textarea name="review" id="review" rows="6" class="form-control" placeholder="Mensaje" required></textarea>
+													<textarea name="comentario" id="comentario" rows="6" class="form-control" placeholder="Mensaje" required></textarea>
 												</div>
 												<div class="col-12">
-													<button type="submit" class="btn btn-main">Enviar</button>
+													<input  id="enviar" type="submit" value="Comentar..."/>
 												</div>
 											</form>
+
+
+
+
+
+											<script>
+    
+											$("#enviar").click(function(){
+												var nombre = $("#nombre").val();
+												var comentario = $("#comentario").val();
+
+												if (nombre=="")
+												{
+													alert("debe escribir un nombre");
+													return;
+												}
+
+												if (comentario=="")
+												{
+													alert("debe escribir un comentario");
+													return;
+												}
+											
+												$("#formulario").submit();
+
+												})
+											</script>
+
+
+
+
+
 										</div>
 									</div>
 								</div>
@@ -247,3 +284,4 @@ function cargarProductoIndividual(){
 
 
 ?>
+

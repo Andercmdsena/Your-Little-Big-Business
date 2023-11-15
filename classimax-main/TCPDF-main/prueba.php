@@ -64,25 +64,13 @@ function cargarProductoCarrito() {
         // Agrega una fila al final de la tabla para mostrar el IVA y el total neto
         $tablaHTML .= '
         <tr class="table-dark">
-            <td colspan="3"></td>
-            <td><strong>Neto: ' . $totalPrecio . '</strong></td>
-            <td></td>
-            <td></td>
+            <td colspan="2"></td>
+            <td><strong>Neto: ' . number_format($totalPrecio, 2, ',', '.') . '</strong></td>
+            <td><strong>IVA (19%): ' . number_format($iva, 2, ',', '.') . '</strong></td>
+            <td><strong>Total (con IVA): ' . number_format(($totalPrecio + $iva), 2, ',', '.') . '</strong></td>
         </tr>';
-        $tablaHTML .= '
-        <tr class="table-dark">
-            <td colspan="3"></td>
-            <td><strong>IVA (19%): ' . $iva . '</strong></td>
-            <td></td>
-            <td></td>
-        </tr>';
-        $tablaHTML .= '
-        <tr class="table-dark">
-            <td colspan="3"></td>
-            <td><strong>Total (con IVA): ' . ($totalPrecio + $iva) . '</strong></td>
-            <td></td>
-            <td></td>
-        </tr>';
+        
+
     }
     
     else {
@@ -106,7 +94,7 @@ function resivo() {
         $numeroAleatorio = str_pad(mt_rand(1, 999999999999), 12, '0', STR_PAD_LEFT);
         foreach ($result as $f) {
             
-            $descripcion = (strlen($f['descripcion']) > 100) ? substr($f['descripcion'], 0, 100) . "..." : $f['descripcion'];
+
             $cliente = $f['Nombre'];
             $email = $f['Email'];
             $telefono = $f['Telefono'];
@@ -126,13 +114,8 @@ function resivo() {
         <b><i>Cel: </i></b> ' . $telefono . '
     </p>
     <br>
-    <h2>Emprendimiento:</h2>
-    <p>
-        <b><i>Dueño: </i></b> ' . $nombre_emprendedor . ' <br>
-        <b><i>Correo: </i></b> ' . $email_emprendedor . ' <br>
-        <b><i>Cel: </i></b> ' . $telefono_emprendedor . '
-    </p>
-
+    
+    
     <table border="1" class="table table-striped" style="padding:5px 10px">
         ' . cargarProductoCarrito() . '
     </table>
@@ -146,6 +129,7 @@ function resivo() {
         <strong>número de cuenta:</strong> *********123
     </p>
 ';
+
         }
     } else {
         $contenido .= '

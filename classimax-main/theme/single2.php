@@ -3,6 +3,7 @@ require_once("../controller/productoIndividual.php");
 require_once ("../controller/mostrarInfoProductos.php");
 require_once("../model/conexion.php");
 require_once("../model/consultas.php");
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -13,6 +14,7 @@ require_once("../model/consultas.php");
  // FACEBOOK: https://www.facebook.com/themefisher
  // GITHUB: https://github.com/themefisher/
 -->
+
 
 <html lang="en">
 <head>

@@ -1,5 +1,5 @@
 <?php
-
+require_once("mostrarCalificacionProductos.php");
 function cargarProductoIndividual(){
 	$id = $_GET['id'];
     $objConsulta = new Consultas();
@@ -66,6 +66,39 @@ function cargarProductoIndividual(){
 								
 
 							</div>
+							<div class="widget rate">
+						<!-- Heading -->
+						<h5 class="widget-header text-center">Como calificarías 
+							<br>
+							este producto</h5>
+						<!-- Rate -->
+						<div class="starrr"></div>
+						<div id="producto">
+    						<!-- Contenido del producto -->
+    						<form id="formularioCalificacion" action="../controller/calificacionProductos.php?id='. $f['id'] .'" method="post">
+        						<p>Califica el producto:</p>
+        						<input type="checkbox" name="calificacion" value="1" id="estrella1"><label for="estrella1">&#9733;</label>
+        						<input type="checkbox" name="calificacion" value="2" id="estrella2"><label for="estrella2">&#9733;&#9733;</label>
+        						<input type="checkbox" name="calificacion" value="3" id="estrella3"><label for="estrella3">&#9733;&#9733;&#9733;</label>
+        						<input type="checkbox" name="calificacion" value="4" id="estrella4"><label for="estrella4">&#9733;&#9733;&#9733;</label>
+        						<input type="checkbox" name="calificacion" value="5" id="estrella5"><label for="estrella5">&#9733;&#9733;&#9733;&#9733;&#9733;</label>
+        						<button type="submit">Enviar Calificación</button>
+								</form>
+								
+						</div>
+						<div id="producto">
+    						<!-- Contenido del producto -->
+    						hola
+							
+								
+						</div>
+						</div>
+								
+								
+								
+								<div>
+								</div>
+			
 							<div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
 								<h3 class="tab-title">Product Specifications</h3>
 								<table class="table table-bordered product-table">
@@ -235,33 +268,7 @@ function cargarProductoIndividual(){
 							<div id="map" data-latitude="51.507351" data-longitude="-0.127758"></div>
 						</div>
 					</div>
-					<!-- Rate Widget -->
-					<div class="widget rate">
-						<!-- Heading -->
-						<h5 class="widget-header text-center">Como calificarías 
-							<br>
-							este producto</h5>
-						<!-- Rate -->
-						<div class="starrr"></div>
-					</div>
-					<!-- Safety tips widget -->
-					<div class="widget disclaimer">
-						<h5 class="widget-header">Consejo seguros</h5>
-						<ul>
-							<li>Reunete con el vendedor enn un lugar publico</li>
-							<li>Revisa el producto antes de comprarlo</li>
-							<li>Pagar despues de adquirir el producto</li>
-						
-						</ul>
-					</div>
-					<!-- Coupon Widget -->
-					<div class="widget coupon text-center">
-						<!-- Coupon description -->
-						<p>Tienes un prodcuto para publicar, compartelo con tus usuarios.
-						</p>
-						<!-- Submii button -->
-						<a href="single.html" class="btn btn-transparent-white">Enviar listado</a>
-					</div>
+					
 
 				</div>
 			</div>
@@ -273,6 +280,10 @@ function cargarProductoIndividual(){
   
 
     ';
+	echo '<div style="width: 80%; margin: auto; text-align: center; padding: 10px; margin-top: 20px;">';
+echo cargarCalificacion($id);
+echo '</div>';
+
             }
 
         

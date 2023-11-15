@@ -935,6 +935,59 @@ class consultas{
 
      }
 
+     public function calificacionProductos($calificacion, $usuario, $id_producto){
+
+
+        $objConexion = new  Conexion();
+        $conexion = $objConexion->get_conexion();
+
+        $consultar = "INSERT INTO calificacion (calificacion, id_usuario, id_producto) values(:calificacion, :id_usuario, :id_producto)";
+
+        $result = $conexion->prepare($consultar);
+
+
+        $result -> bindParam(":calificacion", $calificacion);
+        $result -> bindParam(":id_usuario", $usuario);
+        $result -> bindParam(":id_producto", $id_producto);
+
+        $result->execute();
+        echo '<script>alert("calificacion registrada con exito")</script>';
+        echo '<script>location.href="../theme/single2.php?id=' . $id_producto . '"</script>';
+    }
+    
+
+    public function mostrarCalificacion($id) {
+        $f = null;
+    
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+    
+        // Consulta con LEFT JOIN a la tabla usuario y administradores
+        $consultar = "SELECT calificacion.*, usuario.foto as foto_usuario, usuario.*, administradores.foto as foto_administrador, administradores.*
+                      FROM calificacion 
+                      LEFT JOIN usuario ON calificacion.id_usuario = usuario.id
+                      LEFT JOIN administradores ON calificacion.id_usuario = administradores.Identificacion
+                      WHERE calificacion.id_producto = :id_producto";
+    
+        $result = $conexion->prepare($consultar);
+    
+        // Asigna el valor del parámetro antes de ejecutar la consulta
+        $result->bindParam(':id_producto', $id, PDO::PARAM_INT);
+    
+        $result->execute();
+    
+        while ($resultado = $result->fetch()) {
+            $f[] = $resultado;
+        }
+    
+        return $f;
+    }
+    
+    
+    
+    
+        
+    
 
 
 

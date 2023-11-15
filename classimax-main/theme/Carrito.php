@@ -34,8 +34,13 @@ require_once("../controller/mostrarCarrito.php");
               <?php
 
               cargarProductoCarrito()
-
+            
               ?>
+              <br>
+              <a style="font-size: 25px; font-weight: bold; padding: 15px 20px;" class="botonpagar" href="../theme/pasarelapagos.php">Pagar</a>
+              <br>
+              <br>
+              <br>
         </div>
       </section>
     </main>        

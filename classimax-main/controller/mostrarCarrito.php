@@ -24,15 +24,18 @@ function cargarProductoCarrito() {
             <br>
             <div class="row justify-content-center align-items-center productosxd">
               <div class="col-md-3">
-              <img src="' . $f['foto'] . '" alt="Foto producto" style="width:260px; height:200px; object-fit: cover; border-radius: 20px;">
+              <img src="' . $f['foto'] . '" alt="Foto producto" style="width:260px; height:200; margin-right: 20px;
+              object-fit: cover; border-radius: 20px;">
               </div>
-              <div class="col-md-9 detallesproducto">
+              <div style="padding-left: 20px;" class="col-md-9 detallesproducto">
                   <p class="nombreproducto">' . $f['nombre'] . '</p>
                   <p class="Descripcion">' . $f['descripcion'] . '</p>
                   <p class="disponible">' . $estado. '</p>
                   <div class="dropdown-center">
-                  <p class="precioproducto">' . $f['precio'] . '</p>
-                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <p class="precioproducto" style="margin-right: 10px;
+                  margin-bottom: 10px;">' . $f['precio'] . '</p>
+                    <button style="margin-right: 10px;
+                    margin-bottom: 10px;" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Cantidad
                     </button>
                     <ul class="dropdown-menu">
@@ -40,7 +43,8 @@ function cargarProductoCarrito() {
                       <li><a class="dropdown-item" href="#">2</a></li>
                       <li><a class="dropdown-item" href="#">3</a></li>
                     </ul>
-                    <a class="btn compar" href="#" role="button">Compartir</a>
+                    <a style="margin-right: 10px;
+                    margin-bottom: 9px;" class="btn compar" href="#" role="button">Compartir</a>
                   </div>
               </div>
             </div>

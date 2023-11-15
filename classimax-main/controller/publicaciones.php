@@ -25,19 +25,19 @@ function cargarPublicacion() {
 
             if ($f['Estado'] == 1 && $f['Disponibilidad'] == 1) {
                 echo  '
-        <div class="card col-md-4 producto">
+        <div style="padding: 0 18px;" class="card col-md-4 producto">
             <div class="thumb-content">
                 <!-- <div class="price">$200</div> -->
                 <img src="' . $f['foto'] . '" alt="Foto user" style="width:250px; height:150px; ">
             </div>
             <div class="card-body producto_catalogo">
-                <h4 class="card-title"><a id="tit" style="color: black" href="../theme/single2.php?id=' . $f['id'] . '">' . $f['nombre'] . '</a></h4>
+                <h4 class="card-title"><a href="../theme/single2.php?id=' . $f['id'] . '">' . $f['nombre'] . '</a></h4>
                 <ul class="list-inline product-meta">
                     <li class="list-inline-item">
-                        <a id="cat" href="single.html"><i class="fa fa-folder-open-o"></i>' . $categoria. '</a>
+                        <a href="single.html"><i class="fa fa-folder-open-o"></i>' . $categoria. '</a>
                     </li>
                     <li class="list-inline-item">
-                        <a id="calen" href="category.html"><i class="fa fa-calendar"></i>11 de enero</a>
+                        <a href="category.html"><i class="fa fa-calendar"></i>11 de enero</a>
                     </li>
                 </ul>
                 <p class="card-text">' . $descripcion . '</p>

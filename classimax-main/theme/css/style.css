@@ -79,22 +79,6 @@ ul.pagination .active a {
   border-color: transparent !important;
 }
 
-#comp{
-  color: #000 !important;
-}
-
-#agre{
-  color: #000 !important;
-}
-
-#compra{
-  color: #000 !important;
-}
-
-#agrega{
-  color: #000 !important;
-}
-
 ul.social-circle-icons li {
   margin-right: 7px;
 }
@@ -1108,24 +1092,11 @@ ul.pagination .active a {
   border-radius: 10px;
 }
 .product-item .card .card-body .card-title {
-  font-size: 23px;
+  font-size: 18px;
   margin-bottom: 5px;
   font-weight: 600;
+
 }
-
-#tit{
-  color: #000 !important;
-}
-
-
-#cat{
-  color: #000 !important;
-}
-
-#calen{
-  color: #000 !important;
-}
-
 .product-item .card .card-body .card-text {
   color: #777; 
 }
@@ -2114,7 +2085,7 @@ form textarea {
 }
 .card-title {
   margin-bottom: 0.75rem;
-  color: black !important;
+  color: black;
   font-family: 'Poiret One', cursive;
   font-weight: bold;
   font-size: 25px;
@@ -2164,7 +2135,6 @@ form textarea {
   color: black;
   font-family: 'Poiret One', cursive;
   font-weight: bold;
-  font-size: 18px;
 }
 
 .product-item .product-meta li a {
@@ -2373,6 +2343,7 @@ hr{
 
 .detallesproductos{
   flex: 1;
+  margin-left: 20px;
 }
 
 .nombreproducto {
@@ -2385,7 +2356,7 @@ hr{
 }
 
 .precioproducto{
-  color: #e47911;
+  color: #c76a0e;
   font-size: 18px;
 }
 
@@ -2404,7 +2375,7 @@ hr{
   padding: 10px 20px;
   border-radius: 10px;
   font-size: 0.8em;
-  margin-right: 250px;
+  float: right;
   text-decoration: none;
 }
 
@@ -2416,6 +2387,7 @@ hr{
   border-radius: 10px;
   font-size: 0.8em;
   margin-left: 260px;
+  margin-right: 250px;
   text-decoration: none;
 }
 

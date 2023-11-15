@@ -59,7 +59,7 @@
                             <input type="text" id="credit-card-input" placeholder="Número de tarjeta de crédito" oninput="detectCardBrand(this)">
                                 <img id="credit-card-image" alt="Franquicia de la Tarjeta" src="">
 
-                                <button type="submit"><a class="botonpagar" href="../TCPDF-main/prueba.php" target="_blank">Pagar</a></button>
+                                <button class="botonpagar" type="submit"><a href="../TCPDF-main/prueba.php" target="_blank">Pagar</a></button>
                          </div>
                  </div>
             </div>

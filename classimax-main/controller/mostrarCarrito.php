@@ -43,8 +43,7 @@ function cargarProductoCarrito() {
                       <li><a class="dropdown-item" href="#">2</a></li>
                       <li><a class="dropdown-item" href="#">3</a></li>
                     </ul>
-                    <a style="margin-right: 10px;
-                    margin-bottom: 9px;" class="btn compar" href="#" role="button">Compartir</a>
+                    <a style="margin-right: 10px; margin-bottom: 9px; color: #000000 !important;" class="btn compar" href="#" role="button">Compartir</a>
                   </div>
               </div>
             </div>

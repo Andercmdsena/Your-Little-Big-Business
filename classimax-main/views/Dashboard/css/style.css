@@ -4011,13 +4011,13 @@ h6.h1 {
 .conte{
   margin-top: 40px;
   border: transparent #000 3px;
-  border-radius: 20px;
-  background-color: #c4c4ff;
+  border-radius: 0px;
+  background-color: #fff;
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
-  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+
 }
 
 @media (max-width: 667px) {

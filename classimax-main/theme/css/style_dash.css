@@ -36,7 +36,7 @@ tbody tr td {
     font-size: 25px;
     border-radius: 10px;
     color: black;
-    background-color: #f5e2ff !important;
+    background-color: #ffffff !important;
     box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
 .card input{
@@ -153,7 +153,7 @@ tbody tr td{
 }
 
 .sidebar .nano-content>ul li.label{
-    color: black;
+    color: rgb(255, 255, 255);
     font-family: 'Poiret One', cursive;
     font-weight: bold; 
 

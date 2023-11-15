@@ -56,11 +56,11 @@ function cargarPublicacion() {
                 </div>
                 <div class="botonesCarrito">';
                 if (isset($_SESSION['id'])) {
-                    echo '<button class="btn btn-light"><a href="../controller/agregarCarrito.php?id_producto=' . $f['id'] . '"> Agregar al carrito</a></button>
-                    <button class="btn btn-light"><a href="pasarelapagos.php">Comprar ahora</a></button>';
+                    echo '<button class="btn btn-light"><a id="agre" href="../controller/agregarCarrito.php?id_producto=' . $f['id'] . '"> Agregar al carrito</a></button>
+                    <button class="btn btn-light"><a id="comp" href="pasarelapagos.php">Comprar ahora</a></button>';
                 } else {
-                    echo '<button class="btn btn-light"><a href="../theme/login.php">Agregar al carrito</a></button>
-                    <button class="btn btn-light"><a href="../theme/login.php">Comprar ahora</a></button>';
+                    echo '<button class="btn btn-light"><a id="agre" href="../theme/login.php">Agregar al carrito</a></button>
+                    <button class="btn btn-light"><a id="comp" href="../theme/login.php">Comprar ahora</a></button>';
                 }
                 echo '
                 </div>

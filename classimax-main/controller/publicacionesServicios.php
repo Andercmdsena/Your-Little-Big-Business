@@ -116,13 +116,13 @@ function cargarPublicacionCarrusel(){
                         
                     </div>
                     <div class="card-body">
-                        <h4 class="card-title"><a href="single.php">'. $f['nombre'] .'</a></h4>
+                        <h4 class="card-title"><a id="tit" href="single.php">'. $f['nombre'] .'</a></h4>
                         <ul class="list-inline product-meta">
                             <li class="list-inline-item">
-                                <a href="single.html"><i class="fa fa-folder-open-o"></i>'. $categoria .'</a>
+                                <a id="cat" href="single.html"><i class="fa fa-folder-open-o"></i>'. $categoria .'</a>
                             </li>
                             <li class="list-inline-item">
-                                <a href="category.html"><i class="fa fa-calendar"></i>26 de Julion</a>
+                                <a id="calen" href="category.html"><i class="fa fa-calendar"></i>26 de Julion</a>
                             </li>
                         </ul>
                         <p class="card-text">'. $f['descripcion'] .'</p>

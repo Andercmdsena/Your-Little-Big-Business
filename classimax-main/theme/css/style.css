@@ -79,11 +79,19 @@ ul.pagination .active a {
   border-color: transparent !important;
 }
 
-.fa{
+#comp{
   color: #000 !important;
 }
 
-.fa-calendar{
+#agre{
+  color: #000 !important;
+}
+
+#compra{
+  color: #000 !important;
+}
+
+#agrega{
   color: #000 !important;
 }
 

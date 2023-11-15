@@ -55,22 +55,22 @@ if (isset($_SESSION['AUTENTICADO'])) {
                                 </li>
                             </ul>
                             <ul class="navbar-nav ml-auto mt-10">
+                                <li class="nav-item d-block pt-4 carrito_boton"> </img><a class="nav-link carrito-btn"
+                                        href="carrito.php"><img style="width: 28px; height: 28px; margin-right: 10px; margin-bottom: 10px; margin-right:10px;" src="../Uploads/iconos/carrito-de-compras.png">Carrito</a> </li>
                                 <li class="nav-item d-block pt-4 carrito_boton"><a class="nav-link carrito-btn"
-                                        href="carrito.php">Carrito</a></li>
-                                <li class="nav-item d-block pt-4 carrito_boton"><a class="nav-link carrito-btn"
-                                        href="pasarelapagos.php">Pasarela</a></li>';
+                                        href="pasarelapagos.php"><img style="width: 28px; height: 28px; margin-right: 10px; margin-bottom: 10px;  margin-right:10px;" src="../Uploads/iconos/dinero.png">Pasarela</a></li>';
 
     if ($_SESSION['rol'] === 'Administrador') {
         echo '<li class="nav-item d-block pt-4 carrito_boton"><a class="nav-link carrito-btn"
-                                    href="../views/administrador/home.php">Cuenta</a></li>';
+                                    href="../views/administrador/home.php"><img style="width: 28px; height: 28px; margin-right: 10px; margin-bottom: 10px;  margin-right:10px;" src="../Uploads/iconos/usuario.png">Cuenta</a></li>';
     } elseif ($_SESSION['rol'] === 'Cliente') {
         // Agrega más casos según los diferentes roles que puedas tener
         echo '<li class="nav-item d-block pt-4 carrito_boton"><a class="nav-link carrito-btn"
-                                    href="../views/cliente/usuario.php">Cuenta</a></li>';
+                                    href="../views/cliente/usuario.php"><img style="width: 28px; height: 28px; margin-right: 10px; margin-bottom: 10px;  margin-right:10px;" src="../Uploads/iconos/usuario.png">Cuenta</a></li>';
     } else {
         // Redirección por defecto
         echo '<li class="nav-item d-block pt-4 carrito_boton"><a class="nav-link carrito-btn"
-                                    href="../views/emprendedor/emprendedor.php">Cuenta</a></li>';
+                                    href="../views/emprendedor/emprendedor.php"><img style="width: 28px; height: 28px; margin-right: 10px; margin-bottom: 10px;  margin-right:10px;" src="../Uploads/iconos/usuario.png">Cuenta</a></li>'; 
     }
 
     echo '</ul>

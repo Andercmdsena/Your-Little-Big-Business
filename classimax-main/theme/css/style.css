@@ -1447,7 +1447,10 @@ ul.pagination .active a {
   color: #5672f9;
 }
 .widget.user {
-  padding-top: 50px;
+  border-radius: 20px;
+  box-shadow: 5px 5px 10px #888888;
+}
+.widget.boton.list-inline{
   border-radius: 20px;
   box-shadow: 5px 5px 10px #888888;
 }
@@ -2438,4 +2441,8 @@ hr{
   width: 348px !important;
   margin-left: 164px;
   margin-top: 121px;
+}
+
+.botones_productos{
+  color: black;
 }

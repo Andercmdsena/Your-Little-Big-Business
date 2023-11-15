@@ -11,6 +11,16 @@ function cargarProductoIndividual(){
 
         foreach($result as $f){
             $estado = ($f['Estado'] == 1) ? 'Activo' : (($f['Estado'] == 0) ? 'Bloqueado' : 'Pendiente');
+			$categoria = ($f['categoria'] == 1) ? 'Tecnologia' :
+			(($f['categoria'] == 2) ? 'Moda' :
+			(($f['categoria'] == 3) ? 'Salud y belleza' :
+			(($f['categoria'] == 4) ? 'Deportes' :
+			(($f['categoria'] == 5) ? 'Bebes y juegos' :
+			(($f['categoria'] == 6) ? 'Alimentos y bebidas' :
+			(($f['categoria'] == 7) ? 'Oficina' :
+			(($f['categoria'] == 8) ? 'Hogar' :
+			(($f['categoria'] == 9) ? 'Mascotas' :
+			(($f['categoria'] == 10) ? 'Libros y medios' : 'Otro')))))))));
             if ($f['Estado'] == 1) {
                 echo  '
                 <section class="section bg-gray">
@@ -23,8 +33,8 @@ function cargarProductoIndividual(){
 					<h1 class="product-title">'. $f['nombre'] .'</h1>
 					<div class="product-meta">
 						<ul class="list-inline">
-							<li class="list-inline-item"><i class="fa fa-user-o"></i> Vendido por <a href="user-profile.html"></a></li>
-							<li class="list-inline-item"><i class="fa fa-folder-open-o"></i><a href="#">'. $f['categoria'] .'</a></li>
+							<li class="list-inline-item"><i class="fa fa-user-o"></i> Vendido por '. $f['usuario_nombre'] .'<a href="user-profile.html"></a></li>
+							<li class="list-inline-item"><i class="fa fa-folder-open-o"></i>'. $categoria .'</li>
 							<li class="list-inline-item"><i class="fa fa-location-arrow"></i> Localización<a href="#"></a></li>
 						</ul>
 					</div>
@@ -366,11 +376,13 @@ function cargarProductoIndividual(){
 						<img class="rounded-circle img-fluid mb-5 px-5" src="'. $f['usuario_foto'] .'" alt="">
 						<h4><a href="user-profile.html">'. $f['usuario_nombre'] .'</a></h4>
 						<p class="member-time">Miembro desde Junio 27, 2017</p>
-						<a href="single.html">Ver todas publicaciones</a>
-						<ul class="list-inline mt-20">
-							<li class="list-inline-item"><a href="contact-us.html" class="btn btn-contact d-inline-block  btn-primary px-lg-5 my-1 px-md-3">Contacto</a></li>
+						
+		
+					</div>
+					<div class="widget boton text-center">
+						<ul class="list-inline">
+							<li class="list-inline-item botones_productos"><a href="contact-us.html" class="btn btn-contact d-inline-block  btn-primary px-lg-5 my-1 px-md-3">Contacto</a></li>
 							<li class="list-inline-item"><a class="btn btn-offer d-inline-block btn-primary ml-n1 my-1 px-lg-4 px-md-3" href="../controller/agregarCarrito.php?id_producto=' . $f['id'] . '">Agregar al carrito</a></li>
-							
 						</ul>
 					</div>
 					<!-- Map Widget -->

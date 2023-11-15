@@ -79,6 +79,14 @@ ul.pagination .active a {
   border-color: transparent !important;
 }
 
+.fa{
+  color: #000 !important;
+}
+
+.fa-calendar{
+  color: #000 !important;
+}
+
 ul.social-circle-icons li {
   margin-right: 7px;
 }
@@ -1092,11 +1100,24 @@ ul.pagination .active a {
   border-radius: 10px;
 }
 .product-item .card .card-body .card-title {
-  font-size: 18px;
+  font-size: 23px;
   margin-bottom: 5px;
   font-weight: 600;
-
 }
+
+#tit{
+  color: #000 !important;
+}
+
+
+#cat{
+  color: #000 !important;
+}
+
+#calen{
+  color: #000 !important;
+}
+
 .product-item .card .card-body .card-text {
   color: #777; 
 }
@@ -2085,7 +2106,7 @@ form textarea {
 }
 .card-title {
   margin-bottom: 0.75rem;
-  color: black;
+  color: black !important;
   font-family: 'Poiret One', cursive;
   font-weight: bold;
   font-size: 25px;
@@ -2135,6 +2156,7 @@ form textarea {
   color: black;
   font-family: 'Poiret One', cursive;
   font-weight: bold;
+  font-size: 18px;
 }
 
 .product-item .product-meta li a {

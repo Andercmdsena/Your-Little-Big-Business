@@ -50,8 +50,8 @@ function cargarProductoCarrito() {
             <hr>
             
             <div class="preciototal">
-            <a class="botonpagar1" href="../controller/eliminarProductoCarrito.php?id=' . $f['id_carrito'] . '">Elminar del carrito</a>
-            <a class="botonpagar" href="../theme/pasarelapagos.php">Pagar</a>
+            <a   class="botonpagar1" href="../controller/eliminarProductoCarrito.php?id=' . $f['id_carrito'] . '">Elminar del carrito</a>
+            
             
                 Total: ' . $f['precio'] . '
             </div>

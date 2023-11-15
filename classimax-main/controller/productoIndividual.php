@@ -72,23 +72,134 @@ function cargarProductoIndividual(){
 							<br>
 							este producto</h5>
 						<!-- Rate -->
-						<div class="starrr"></div>
+						
 						<div id="producto">
-    						<!-- Contenido del producto -->
-    						<form id="formularioCalificacion" action="../controller/calificacionProductos.php?id='. $f['id'] .'" method="post">
-        						<p>Califica el producto:</p>
-        						<input type="checkbox" name="calificacion" value="1" id="estrella1"><label for="estrella1">&#9733;</label>
-        						<input type="checkbox" name="calificacion" value="2" id="estrella2"><label for="estrella2">&#9733;&#9733;</label>
-        						<input type="checkbox" name="calificacion" value="3" id="estrella3"><label for="estrella3">&#9733;&#9733;&#9733;</label>
-        						<input type="checkbox" name="calificacion" value="4" id="estrella4"><label for="estrella4">&#9733;&#9733;&#9733;</label>
-        						<input type="checkbox" name="calificacion" value="5" id="estrella5"><label for="estrella5">&#9733;&#9733;&#9733;&#9733;&#9733;</label>
-        						<button type="submit">Enviar Calificación</button>
-								</form>
-								
+						<style>
+						/* Estilos generales para las estrellas y el formulario */
+						#producto {
+							text-align: center;
+							margin-top: 20px;
+						}
+					
+						input[type="checkbox"] {
+							display: none; /* Ocultar los checkboxes originales */
+						}
+					
+						label {
+							font-size: 24px; /* Tamaño de la fuente de las estrellas */
+							color: #ccc; /* Color de las estrellas inactivas */
+							cursor: pointer;
+							display: block; /* Hace que las estrellas aparezcan una debajo de la otra */
+							margin-bottom: 5px; /* Espaciado entre las estrellas */
+						}
+					
+						/* Estilos para las estrellas activas */
+						input[type="checkbox"]:checked + label {
+							color: #ffd700; /* Color de las estrellas activas */
+						}
+					
+						/* Estilos adicionales para resaltar las estrellas */
+						label:hover {
+							transform: scale(1.2); /* Aumentar el tamaño al pasar el ratón por encima */
+							transition: transform 0.2s ease-in-out;
+						}
+					
+						/* Estilos para el área de comentario y el botón */
+						#comentario {
+							resize: none;
+							width: 100%;
+							box-sizing: border-box;
+							margin-top: 10px;
+							padding: 10px;
+						}
+					
+						button {
+							margin-top: 10px;
+							background-color: #555; /* Cambiado el color del botón */
+							color: #fff; /* Texto del botón en blanco */
+							padding: 10px;
+							cursor: pointer;
+							border: none;
+							border-radius: 5px;
+						}
+					
+						button:hover {
+							background-color: #333; /* Cambiado el color del botón al pasar el ratón por encima */
+						}
+					</style>
+					
+					<style>
+    /* Estilos generales para las estrellas y el formulario */
+    #producto {
+        text-align: left; /* Alineado a la izquierda */
+        margin-top: 20px;
+    }
+
+    input[type="checkbox"] {
+        display: none; /* Ocultar los checkboxes originales */
+    }
+
+    label {
+        font-size: 24px; /* Tamaño de la fuente de las estrellas */
+        color: #ccc; /* Color de las estrellas inactivas */
+        cursor: pointer;
+        display: block; /* Hace que las estrellas aparezcan una debajo de la otra */
+        margin-bottom: 5px; /* Espaciado entre las estrellas */
+    }
+
+    /* Estilos para las estrellas activas */
+    input[type="checkbox"]:checked + label {
+        color: #ffd700; /* Color de las estrellas activas */
+    }
+
+    /* Estilos adicionales para resaltar las estrellas */
+    label:hover {
+        transform: scale(1.2); /* Aumentar el tamaño al pasar el ratón por encima */
+        transition: transform 0.2s ease-in-out;
+    }
+
+    /* Estilos para el área de comentario y el botón */
+    #comentario {
+        resize: none;
+        width: 100%;
+        box-sizing: border-box;
+        margin-top: 10px;
+        padding: 10px;
+    }
+
+    button {
+        margin-top: 10px;
+        background-color: #555; /* Cambiado el color del botón */
+        color: #fff; /* Texto del botón en blanco */
+        padding: 10px;
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+    }
+
+    button:hover {
+        background-color: #333; /* Cambiado el color del botón al pasar el ratón por encima */
+    }
+</style>
+
+<div id="producto">
+	<form id="formularioCalificacion" action="../controller/calificacionProductos.php?id='. $f['id'] .'" method="post">
+    
+        <input type="checkbox" name="calificacion" value="1" id="estrella1"><label for="estrella1">&#9733; |</label>
+        <input type="checkbox" name="calificacion" value="2" id="estrella2"><label for="estrella2">&#9733;&#9733; |</label>
+        <input type="checkbox" name="calificacion" value="3" id="estrella3"><label for="estrella3">&#9733;&#9733;&#9733; |</label>
+        <input type="checkbox" name="calificacion" value="4" id="estrella4"><label for="estrella4">&#9733;&#9733;&#9733; |</label>
+        <input type="checkbox" name="calificacion" value="5" id="estrella5"><label for="estrella5">&#9733;&#9733;&#9733;&#9733;&#9733; </label>
+        <textarea name="comentario" id="comentario" placeholder="Comentario..." maxlength="100"></textarea>
+        <button style="margin-top:15px;" type="submit">Enviar Calificación</button>
+    </form>
+</div>
+
+						
+						
 						</div>
 						<div id="producto">
-    						<!-- Contenido del producto -->
-    						hola
+						<!-- Contenido del producto -->
 							
 								
 						</div>
@@ -280,9 +391,11 @@ function cargarProductoIndividual(){
   
 
     ';
-	echo '<div style="width: 80%; margin: auto; text-align: center; padding: 10px; margin-top: 20px;">';
+	echo '
+	<div class="bg-gray">
+	<div style="width: 80%; margin: auto; text-align: center; padding: 10px; margin-top: -80px;">';
 echo cargarCalificacion($id);
-echo '</div>';
+echo '</div> </div>';
 
             }
 

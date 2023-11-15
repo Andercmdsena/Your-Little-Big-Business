@@ -935,18 +935,19 @@ class consultas{
 
      }
 
-     public function calificacionProductos($calificacion, $usuario, $id_producto){
+     public function calificacionProductos($calificacion, $usuario, $id_producto, $comentarios){
 
 
         $objConexion = new  Conexion();
         $conexion = $objConexion->get_conexion();
 
-        $consultar = "INSERT INTO calificacion (calificacion, id_usuario, id_producto) values(:calificacion, :id_usuario, :id_producto)";
+        $consultar = "INSERT INTO calificacion (calificacion, id_usuario, id_producto,  comentarios) values(:calificacion, :id_usuario, :id_producto , :comentarios)";
 
         $result = $conexion->prepare($consultar);
 
 
         $result -> bindParam(":calificacion", $calificacion);
+        $result -> bindParam(":comentarios", $comentarios);
         $result -> bindParam(":id_usuario", $usuario);
         $result -> bindParam(":id_producto", $id_producto);
 

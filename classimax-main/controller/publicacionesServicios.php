@@ -91,16 +91,16 @@ function cargarPublicacionCarrusel(){
 
         foreach($result as $f){
             $estado = ($f['Estado'] == 1) ? 'Activo' : (($f['Estado'] == 0) ? 'Bloqueado' : 'Pendiente');
-            $categoria = ($fila['categoria'] == 11) ? 'Carpintería' :
-            (($fila['categoria'] == 12) ? 'Fontanería' :
-            (($fila['categoria'] == 13) ? 'Electricidad' :
-            (($fila['categoria'] == 14) ? 'Pintura' :
-            (($fila['categoria'] == 15) ? 'Jardinería' :
-            (($fila['categoria'] == 16) ? 'Limpieza' :
-            (($fila['categoria'] == 17) ? 'Reparación de electrodomésticos' :
-            (($fila['categoria'] == 18) ? 'Cerrajería' :
-            (($fila['categoria'] == 19) ? 'Construcción' :
-            (($fila['categoria'] == 20) ? 'Mantenimiento general' : 'Otro')))))))));
+            $categoria = ($f['categoria'] == 11) ? 'Carpintería' :
+            (($f['categoria'] == 12) ? 'Fontanería' :
+            (($f['categoria'] == 13) ? 'Electricidad' :
+            (($f['categoria'] == 14) ? 'Pintura' :
+            (($f['categoria'] == 15) ? 'Jardinería' :
+            (($f['categoria'] == 16) ? 'Limpieza' :
+            (($f['categoria'] == 17) ? 'Reparación de electrodomésticos' :
+            (($f['categoria'] == 18) ? 'Cerrajería' :
+            (($f['categoria'] == 19) ? 'Construcción' :
+            (($f['categoria'] == 20) ? 'Mantenimiento general' : 'Otro')))))))));
         
             if ($f['Estado'] == 1){
                 echo  '

@@ -19,6 +19,7 @@ function cargarPublicacionServicios(){
             (($f['categoria'] == 19) ? 'Construcción' :
             (($f['categoria'] == 20) ? 'Mantenimiento general' : 'Otro')))))))));
             $estado = ($f['Disponibilidad'] == 1) ? 'Disponible' : (($f['Disponibilidad'] == 0) ? 'Agotado' : 'Pendiente');
+            $descripcion = (strlen($f['descripcion']) > 100) ? substr($f['descripcion'], 0, 100) . "..." : $f['descripcion'];
             if ($f['Estado'] == 1) {
                 echo  '
         
@@ -38,7 +39,7 @@ function cargarPublicacionServicios(){
                         <a id="calen" href="category.html"><i class="fa fa-calendar"></i>11 de enero</a>
                     </li>
                 </ul>
-                <p class="card-text">'. $f['descripcion'] .'</p>
+                <p class="card-text">'. $descripcion .'</p>
                 <div class="product-ratings">
                 <p class="card-text">Precio:'. $f['precio'] .'</p>
                 <p class="card-text">Estado:'. $estado.'</p>
@@ -101,7 +102,8 @@ function cargarPublicacionCarrusel(){
             (($f['categoria'] == 18) ? 'Cerrajería' :
             (($f['categoria'] == 19) ? 'Construcción' :
             (($f['categoria'] == 20) ? 'Mantenimiento general' : 'Otro')))))))));
-        
+            $descripcion = (strlen($f['descripcion']) > 100) ? substr($f['descripcion'], 0, 100) . "..." : $f['descripcion'];
+            
             if ($f['Estado'] == 1){
                 echo  '
         
@@ -125,7 +127,7 @@ function cargarPublicacionCarrusel(){
                                 <a id="calen" href="category.html"><i class="fa fa-calendar"></i>26 de Julion</a>
                             </li>
                         </ul>
-                        <p class="card-text">'. $f['descripcion'] .'</p>
+                        <p class="card-text">'. $descripcion .'</p>
                         <div class="product-ratings">
                             <ul class="list-inline">
                                 <li class="list-inline-item selected"><i class="fa fa-star"></i></li>

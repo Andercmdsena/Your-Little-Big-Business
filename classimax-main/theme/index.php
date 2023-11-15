@@ -64,7 +64,7 @@ require_once("../model/consultas.php");
 					<h1>Encuentra todo lo que necesitas</h1>
 					<p>Explora nuestra amplia gama de productos y servicios <br> para encontrar todo lo que necesitas</p>
 					<div class="short-popular-category-list text-center">
-						<h2>Categorias</h2>
+						<h2>Categorías</h2>
 						<ul class="list-inline"> 
 							<li class="list-inline-item">
 								<a href="productos.php"><i class="fa fa-bed"></i>Libros</a></li>
@@ -97,7 +97,7 @@ require_once("../model/consultas.php");
 										</div>
 										<div class="form-group col-lg-3 col-md-6">
 											<select class="w-100 form-control mt-lg-1 mt-md-2">
-												<option>Categoria</option>
+												<option>Categoría</option>
 												<option value="1">Cocina y hogar</option>
 												<option value="2">Tecnologia</option>
 												<option value="4">libros</option>
@@ -131,7 +131,7 @@ require_once("../model/consultas.php");
 		<div class="row">
 			<div class="col-md-12">
 				<div class="section-title">
-					<h2>Los mejores productos</h2>
+					<h2>Productos recien agregados</h2>
 					<p>Vez algo que te guste o te llame la atención?</p>
 				</div>
 			</div>
@@ -169,7 +169,7 @@ require_once("../model/consultas.php");
 			<div class="col-12">
 				<!-- Section title -->
 				<div class="section-title">
-					<h2>Todas las categorias</h2>
+					<h2>Todas las categorías</h2>
 					<p>Todo lo que buscas y necesitas en la palma de tu mano, a un solo click</p>
 				</div>
 				<div class="row">
@@ -178,7 +178,7 @@ require_once("../model/consultas.php");
 						<div class="category-block cat_item ">
 							<div class="header">
 								<i class="fa fa-laptop icon-bg-1"></i>
-								<h4>Tecnologia</h4>
+								<h4>Tecnología</h4>
 							</div>
 							<ul class="category-list">
 								<li><a class="juas" href="productos.php">Computadores <span>93</span></a></li>

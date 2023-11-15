@@ -12,10 +12,10 @@
 
 
 #panel_izq a{
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     font-family: 'Poiret One', cursive;
     font-weight: bold;
-    background: #BDD0FF;
+    background: #1c2a4c;
 }
 
 
@@ -131,7 +131,7 @@ tbody tr td{
 }
 
 .sidebar{
-    background: #BDD0FF;
+    background: #1c2a4c;
 }
 
 .sidebar .nano-content>ul li>a{

@@ -101,7 +101,7 @@ require_once ("../../controller/mostrarInfoUsuario.php");
                     </li>
                     <li>
                         <a class="sidebar-sub-toggle">
-                            <i class="ti-user"></i> usuarios
+                            <i class="ti-user"></i> Usuarios
                             <span class="sidebar-collapse-icon ti-angle-down"></span>
                         </a>
                         <ul>
@@ -117,15 +117,33 @@ require_once ("../../controller/mostrarInfoUsuario.php");
                             <li>
                                 <a href="ver_usuarioo.php"> <i class="ti-eye"></i> Ver Usuarios</a>
                             </li>
-                            <li>
-                                <a href="ver_usuarioo.php"> <i class="ti-eye"></i> Ver emprendedores</a>
-                            </li>
+                            
+                           
+                            
+                        </ul>
+                        <li>
+                    <li>
+                        <a class="sidebar-sub-toggle">
+                            <i class="ti-files"></i> Reportes
+                            <span class="sidebar-collapse-icon ti-angle-down"></span>
+                        </a>
+                        <ul>
                             <li>
                                 <a href="reportes-administradores.php"> <i class="ti-download"></i>Reportes administradores</a>
                             </li>
                             <li>
                                 <a href="reportes-usuarios.php"> <i class="ti-download"></i>Reportes usuarios</a>
                             </li>
+                           
+                            
+                        </ul>
+                        <li>
+                    <li>
+                        <a class="sidebar-sub-toggle">
+                            <i class="ti-shopping-cart"></i> Productos
+                            <span class="sidebar-collapse-icon ti-angle-down"></span>
+                        </a>
+                        <ul>
                             <li>
                                 <a href="verProductosAdmin.php"> <i class="ti-eye"></i>Ver productos</a>
                             </li>

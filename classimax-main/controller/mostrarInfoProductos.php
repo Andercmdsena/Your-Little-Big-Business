@@ -71,7 +71,7 @@ function cargarProductoAdmin(){
                 <td>'.$f['cantidad'].'</td>
                 <td>'.$categoria.'</td>
                 <td>'.$f['id_emprendedor'].'</td>
-                <td>'.$f['Estado_producto'].'</td>
+                <td>'.$estado.'</td>
                 <td>
                 <form action="../../controller/modificarProductoAdmin.php" method = "post">
                     <select name="estado" id="" class="form-control">

@@ -12,7 +12,7 @@ function cargarPublicacion() {
             // Limitar la descripción a un cierto número de caracteres
             $descripcion = (strlen($f['descripcion']) > 100) ? substr($f['descripcion'], 0, 100) . "..." : $f['descripcion'];
 
-            $categoria = ($f['categoria'] == 1) ? 'Tecnologia' :
+            $categoria = ($f['categoria'] == 1) ? 'Tecnologia' :    
 (($f['categoria'] == 2) ? 'Moda' :
 (($f['categoria'] == 3) ? 'Salud y belleza' :
 (($f['categoria'] == 4) ? 'Deportes' :
@@ -28,7 +28,7 @@ function cargarPublicacion() {
         <div style="padding: 0 18px;" class="card col-md-4 producto">
             <div class="thumb-content">
                 <!-- <div class="price">$200</div> -->
-                <img src="' . $f['foto'] . '" alt="Foto user" style="width:250px; height:150px; ">
+                <img src="' . $f['foto'] . '" alt="Foto user" style="width:250px; height:120px; ">
             </div>
             <div class="card-body producto_catalogo">
                 <h4 class="card-title"><a id="tit" href="../theme/single2.php?id=' . $f['id'] . '">' . $f['nombre'] . '</a></h4>

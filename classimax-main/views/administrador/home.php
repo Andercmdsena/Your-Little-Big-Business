@@ -134,7 +134,8 @@ include "menu.php"
                                     </div>
                                     <div class="stat-content dib">
                                         <div class="stat-text">Productos registrados</div>
-                                        <div class="stat-digit">1,012</div>
+                                        <div class="stat-digit"><span class="counter my-2 d-block"><?php include_once("../../controller/contarProductos2.php")  ?></span></div>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -145,8 +146,8 @@ include "menu.php"
                                     <div class="stat-icon dib"><i class="ti-user color-primary border-primary"></i>
                                     </div>
                                     <div class="stat-content dib">
-                                        <div class="stat-text">Nuevos usuarios</div>
-                                        <div class="stat-digit">961</div>
+                                        <div class="stat-text">Usuarios registrados</div>
+                                        <div class="stat-digit"><span class="counter my-2 d-block"><?php include_once("../../controller/contarUsuarios2.php")  ?></span></div>
                                     </div>
                                 </div>
                             </div>

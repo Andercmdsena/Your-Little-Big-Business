@@ -185,10 +185,10 @@ function cargarProductoIndividual(){
 <div id="producto">
 	<form id="formularioCalificacion" action="../controller/calificacionProductos.php?id='. $f['id'] .'" method="post">
     
-        <input type="checkbox" name="calificacion" value="1" id="estrella1"><label for="estrella1">&#9733; |</label>
-        <input type="checkbox" name="calificacion" value="2" id="estrella2"><label for="estrella2">&#9733;&#9733; |</label>
-        <input type="checkbox" name="calificacion" value="3" id="estrella3"><label for="estrella3">&#9733;&#9733;&#9733; |</label>
-        <input type="checkbox" name="calificacion" value="4" id="estrella4"><label for="estrella4">&#9733;&#9733;&#9733; |</label>
+        <input type="checkbox" name="calificacion" value="1" id="estrella1"><label for="estrella1">&#9733; </label> 	 |
+        <input type="checkbox" name="calificacion" value="2" id="estrella2"><label for="estrella2">&#9733;&#9733; </label> 	 |
+        <input type="checkbox" name="calificacion" value="3" id="estrella3"><label for="estrella3">&#9733;&#9733;&#9733; </label> 	 |
+        <input type="checkbox" name="calificacion" value="4" id="estrella4"><label for="estrella4">&#9733;&#9733;&#9733;&#9733 </label> 	 |
         <input type="checkbox" name="calificacion" value="5" id="estrella5"><label for="estrella5">&#9733;&#9733;&#9733;&#9733;&#9733; </label>
         <textarea name="comentario" id="comentario" placeholder="Comentario..." maxlength="100"></textarea>
         <button style="margin-top:15px;" type="submit">Enviar Calificación</button>

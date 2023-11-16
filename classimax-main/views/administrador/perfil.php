@@ -125,13 +125,13 @@ require_once ("../../controller/mostrarInfoUsuario.php");
 
                 <div class="row">
                         <div class="col-lg-12">
-                            <div class="card">
+                           
                                 <div class="card-title">
                                     <h4>Editar perfil</h4>
                                     
                                 </div>
                                 <div class="card-body">
-                                <div class="table-responsive">
+                            
                                     
                                         <table class="table table-hover">
                                             <tbody>
@@ -139,9 +139,9 @@ require_once ("../../controller/mostrarInfoUsuario.php");
                                             perfilEditarAdmin();
                                             ?>
                                         </table>
-                                    </div>
+                                    
                                 </div>
-                            </div>
+                            
                         </div>
                         <!-- /# column -->
                         

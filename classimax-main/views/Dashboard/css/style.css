@@ -97,7 +97,7 @@
 }
 .card-title h4 {
   display: inline-block;
-  font-weight: 400;
+  font-weight: 300;
   font-size: 18px;
 }
 .card-title p {
@@ -897,7 +897,7 @@ a.dt-button.active:not(.disabled) {
 }
 .main .page-header .breadcrumb li a {
   font-size: 14px;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Varela Round', cursive;
   display: block;
 }
 .dropdown-task .progress {
@@ -4006,8 +4006,9 @@ h6.h1 {
 .col-xs-9 {
   padding-top: 7.5px;
   padding-bottom: 7.5px;
-  
+  padding-right: 40px !important;  
 }
+
 .conte{
   margin-top: 40px;
   border: transparent #000 3px;

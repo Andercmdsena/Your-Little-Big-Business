@@ -2446,3 +2446,7 @@ hr{
 .botones_productos{
   color: black;
 }
+
+.botones_productos a{
+  color: black;
+}

@@ -102,14 +102,14 @@ function perfilEditarAdmin(){
         <div class="card perfil-user modificar-user">
           <img src="../'.$f['foto'].'" alt="Foto perfil">
           <h3 class="text-center pt-5 pb-1">'.$f['Nombres'].' '.$f['Apellidos'].'</h3>
-          <h4 class="text-center pb-4">'.$f['rol'].'</h4>
+          <h4 class="text-center pb-4 adm">'.$f['rol'].'</h4>
         </div>
       </div>
       <div class="col-lg-9 botones-activos">
         <div class="card modificar-user">
           <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
-              <button class="nav-link active" id="home-tab" data-toggle="tab" data-target="#home"
+              <button class="nav-link" id="home-tab" data-toggle="tab" data-target="#home"
                 type="button" role="tab" aria-controls="home" aria-selected="true">Perfil</button>
             </li>
             <li class="nav-item" role="presentation">

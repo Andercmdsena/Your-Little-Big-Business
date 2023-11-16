@@ -195,14 +195,7 @@ include "menu.php"
                                     <label>Foto</label>
                                     <input type="file" class="form-control"name="foto" accept="jpg. , jpeg., png. , gif.">
                                     </div>
-                                    <div class="form-group col-md-12">
-                                    <label>Foto2</label>
-                                    <input type="file" class="form-control" name="foto2" accept=".jpg, .jpeg, .png, .gif">
-                                    </div>
-                                    <div class="form-group col-md-12">
-                                    <label>Foto2</label>
-                                    <input type="file" class="form-control" name="foto3" accept=".jpg, .jpeg, .png, .gif">
-                                    </div>
+                                    
 
                                 </div>
                                 

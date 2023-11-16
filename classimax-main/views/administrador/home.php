@@ -128,7 +128,7 @@ include "menu.php"
                 <section id="main-content">
                     <div class="row">
                         <div class="col-lg-3">
-                            <div class="card">
+                            <div class="card tajetas">
                                 <div class="stat-widget-one">
                                     <div class="stat-icon dib"><i class="ti-money color-success border-success"></i>
                                     </div>

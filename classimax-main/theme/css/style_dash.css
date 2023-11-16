@@ -111,6 +111,7 @@ tbody tr td {
     color: black;
     background-color: #BDD0FF;
     transition: 0.5s;
+    margin-left: 20px;
 }
 .btn:not(:disabled):not(.disabled):hover{
     background-color: #a0bbff;
@@ -119,6 +120,14 @@ tbody tr td {
     border-radius: 20px;
 }
 
+
+.card.perfil-user.modificar-user{
+    padding: 20px;
+}
+
+.card.tarjetas{
+    padding: 20px;
+}
 
 .modificar-user{
     border: none;

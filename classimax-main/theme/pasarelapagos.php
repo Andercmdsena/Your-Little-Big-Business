@@ -59,7 +59,7 @@
                             <input type="text" id="credit-card-input" placeholder="Número de tarjeta de crédito" oninput="detectCardBrand(this)">
                                 <img id="credit-card-image" alt="Franquicia de la Tarjeta" src="">
 
-                                <button class="botonpagar" type="submit"><a href="../TCPDF-main/prueba.php" target="_blank">Pagar</a></button>
+                                <button class="botonpagar" id="pagar" type="submit"><a href="../TCPDF-main/prueba.php" target="_blank">Pagar</a></button>
                          </div>
                  </div>
             </div>
@@ -112,6 +112,35 @@
     </script>
 
 </body>
+
+    <script>
+
+
+const pagarBtn = document.querySelector('#pagar');
+
+pagarBtn.addEventListener('click', () => {
+    Notification.requestPermission().then(resultado => {
+        console.log('Respuesta: ', resultado);
+    })
+})
+
+const notificacionPagar = document.querySelector('#pagar');
+    
+const notificacionPagar = document.querySelector('#pagar');
+notificacionPagar.addEventListener('click', () => {
+    if (Notification.permission === 'granted'){
+        new Notification('Tienda YLBB',{
+          icon: 'images/Mi proyecto.png',
+          body: 'Has realizado el pago de un producto de nuestra tienda, Ve y chequea el carrito de compras para ver con mas detalle tu producto'
+        });
+
+
+        pagar.onclick = function(){
+            window.open('http://google.com');
+        }
+    }
+})
+</script>
 </html>
 
 

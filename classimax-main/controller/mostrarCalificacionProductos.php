@@ -42,8 +42,10 @@ function cargarCalificacion($id){
             echo '</div>';
 
             // Agrega el botón de eliminar con estilos
-            if($usuario = $f['id_usuario']){
-                echo '<button onclick="eliminarComentario(' . $f['id'] . ')" style="position: absolute; top: 80px; left: 115px; margin: 10px 0; padding: 10px; font-weight: bold; background-color: #d9534f; color: white; border: none; cursor: pointer; transition: opacity 0.3s;" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1">Eliminar</button>';
+            if($usuario){
+                echo '<a href="../controller/eliminarCalificacion.php?id=' . $f['id'] . '&id_producto=' . $f['id_producto'] . '" style="position: absolute; top: 80px; left: 115px; margin: 10px 0; padding: 10px; font-weight: bold; background-color: #d9534f; color: white; border: none; cursor: pointer; transition: opacity 0.3s; text-decoration: none;" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1">Eliminar</a>';
+
+;
 
             }
 

@@ -335,6 +335,24 @@ class consultas{
       
       
       }
+     public function eliminarCalificacion ($id, $id_producto) {
+        $objConexion = new Conexion();
+        
+        $conexion = $objConexion -> get_conexion();
+      
+        $eliminar= "DELETE from calificacion where id = :id";
+      
+        $result = $conexion->prepare($eliminar);
+        $result-> bindParam (":id", $id );
+        
+        $result->execute ();
+        echo '<script> alert("Calificacion eliminada con exito") </script>';
+        echo "<script> location.href='../theme/single2.php?id=" . $id_producto . "' </script>";
+
+      
+      
+      
+      }
       public function eliminarUsuario ($id) {
         $objConexion = new Conexion();
         

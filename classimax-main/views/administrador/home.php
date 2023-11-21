@@ -19,7 +19,7 @@ require_once ("../../controller/mostrarInfoUsuario.php");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>YLBB | Reportes usuarios administrador</title>
+    <title>YLBB | Perfil administrador</title>
 
     <!-- ================= Favicon ================== -->
     <link href="../../theme/images/Mi proyecto.png" rel="icon">
@@ -178,7 +178,7 @@ include "menu.php"
                     </div>
                     <div class="row">
                         <div class="col-md-12 descripcion_admin">
-                            <div class="conte">
+                            <div class="contenido4">
                             <p>
                             Bienvenido al Panel de Administración de Your Little Big Business. Esta vista es tu centro de control para gestionar todos los aspectos esenciales de tu plataforma. A continuación, te presentamos algunas de las poderosas funciones que encontrarás aquí:
                             </p>

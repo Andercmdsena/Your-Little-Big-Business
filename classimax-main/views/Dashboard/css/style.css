@@ -4012,6 +4012,10 @@ h6.h1 {
   padding-right: 40px !important;  
 }
 
+.contenido{
+  background: #000;
+}
+
 .conte{
   margin-top: 40px;
   border: transparent #000 3px;
@@ -4021,8 +4025,9 @@ h6.h1 {
   padding-right: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
-
 }
+
+
 
 @media (max-width: 667px) {
   .dt-buttons {

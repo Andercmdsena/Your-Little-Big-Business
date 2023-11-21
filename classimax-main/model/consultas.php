@@ -842,124 +842,164 @@ class consultas{
     }
     public function mostrarServicio($arg_id_usuario = null) {
         $f = null;
-    
+        
         $objConexion = new Conexion();
         $conexion = $objConexion->get_conexion();
-    
+        
         // Consulta SQL para seleccionar todos los productos, incluyendo la posibilidad de un INNER JOIN
         $consultar = "SELECT servicios.* 
                       FROM servicios " . ($arg_id_usuario !== null ? "INNER JOIN usuario ON servicios.id_emprendedor = usuario.ID WHERE usuario.ID = :id_usuario" : "") . "
                       ORDER BY servicios.nombre ASC";
-    
-        $result = $conexion->prepare($consultar);
-    
-        // Si se proporciona un ID de usuario, vincularlo en la consulta
-        if ($arg_id_usuario !== null) {
-            $result->bindParam(":id_usuario", $arg_id_usuario);
+                      
+                      $result = $conexion->prepare($consultar);
+                      
+                      // Si se proporciona un ID de usuario, vincularlo en la consulta
+                      if ($arg_id_usuario !== null) {
+                          $result->bindParam(":id_usuario", $arg_id_usuario);
+                        }
+                        
+                        $result->execute();
+                        
+                        while ($resultado = $result->fetch()) {
+                            $f[] = $resultado;
+                        }
+                        
+                        return $f;
+                    }
+                    public function mostrarProductoAdmin(){
+                        
+                        
+                        $f=null;
+                        
+                        
+                        $objConexion = new Conexion();
+                        $conexion = $objConexion -> get_conexion();
+                        
+                        $consultar = "SELECT * FROM productos order by nombre asc";
+                        
+                        $result=$conexion->prepare($consultar);
+                        
+                        $result->execute();
+                        
+                        
+                        while ($resultado=$result->fetch()) {
+                            $f[] = $resultado;
+                        }
+                        
+                        return $f;
+                        
+                    }
+                    
+                    public function mostrarPublicacion(){
+                        
+                        $f=null;
+                        
+                        
+                        $objConexion = new Conexion();
+                        $conexion = $objConexion -> get_conexion();
+                        
+                        $consultar = "SELECT * FROM productos order by nombre asc";
+                        
+                        $result=$conexion->prepare($consultar);
+                        
+                        $result->execute();
+                        
+                        
+                        while ($resultado=$result->fetch()) {
+                            $f[] = $resultado;
         }
-    
+ 
+        return $f;
+        
+    }
+    public function mostrarPublicacionServicio(){
+        
+        $f=null;
+        
+        
+        $objConexion = new Conexion();
+        $conexion = $objConexion -> get_conexion();
+        
+        $consultar = "SELECT * FROM servicios order by nombre asc";
+        
+        $result=$conexion->prepare($consultar);
+        
         $result->execute();
-    
-        while ($resultado = $result->fetch()) {
+        
+        
+        while ($resultado=$result->fetch()) {
             $f[] = $resultado;
         }
-    
+        
         return $f;
+        
     }
-    public function mostrarProductoAdmin(){
-
-
-        $f=null;
- 
- 
-         $objConexion = new Conexion();
-         $conexion = $objConexion -> get_conexion();
- 
-         $consultar = "SELECT * FROM productos order by nombre asc";
- 
-         $result=$conexion->prepare($consultar);
- 
-        $result->execute();
+    
+    public function calificacionProductos($calificacion, $usuario, $id_producto, $comentarios){
         
- 
-        while ($resultado=$result->fetch()) {
-         $f[] = $resultado;
-        }
- 
-        return $f;
- 
-     }
-
-     public function mostrarPublicacion(){
-
-        $f=null;
- 
- 
-         $objConexion = new Conexion();
-         $conexion = $objConexion -> get_conexion();
- 
-         $consultar = "SELECT * FROM productos order by nombre asc";
- 
-         $result=$conexion->prepare($consultar);
- 
-        $result->execute();
         
- 
-        while ($resultado=$result->fetch()) {
-         $f[] = $resultado;
-        }
- 
-        return $f;
-
-     }
-     public function mostrarPublicacionServicio(){
-
-        $f=null;
- 
- 
-         $objConexion = new Conexion();
-         $conexion = $objConexion -> get_conexion();
- 
-         $consultar = "SELECT * FROM servicios order by nombre asc";
- 
-         $result=$conexion->prepare($consultar);
- 
-        $result->execute();
-        
- 
-        while ($resultado=$result->fetch()) {
-         $f[] = $resultado;
-        }
- 
-        return $f;
-
-     }
-
-     public function calificacionProductos($calificacion, $usuario, $id_producto, $comentarios){
-
-
         $objConexion = new  Conexion();
         $conexion = $objConexion->get_conexion();
-
+        
         $consultar = "INSERT INTO calificacion (calificacion, id_usuario, id_producto,  comentarios) values(:calificacion, :id_usuario, :id_producto , :comentarios)";
-
+        
         $result = $conexion->prepare($consultar);
-
-
+        
+        
         $result -> bindParam(":calificacion", $calificacion);
         $result -> bindParam(":comentarios", $comentarios);
         $result -> bindParam(":id_usuario", $usuario);
         $result -> bindParam(":id_producto", $id_producto);
-
+        
         $result->execute();
         echo '<script>alert("calificacion registrada con exito")</script>';
         echo '<script>location.href="../theme/single2.php?id=' . $id_producto . '"</script>';
     }
+    public function insertarDetallesProductos($id_pedido, $id_producto){
+        
+        
+        $objConexion = new  Conexion();
+        $conexion = $objConexion->get_conexion();
+        
+        $consultar = "INSERT INTO detalles_pedido (id_pedido, id_producto) values(:id_pedido, :id_producto)";
+        
+        $result = $conexion->prepare($consultar);
+        
+        
+        $result -> bindParam(":id_pedido", $id_pedido);
+        $result -> bindParam(":id_producto", $id_producto);
+        
+        $result->execute();
+        echo '<script>alert("todo correcto")</script>';
+    }
     
-
+    public function pedido($id_usuario, $id_emprendedor, $fecha_pedido) {
+        $objConexion = new  Conexion();
+        $conexion = $objConexion->get_conexion();
+        
+        $consultar = "INSERT INTO pedidos (id_usuario, id_emprendedor, fecha_pedido) VALUES (:id_usuario, :id_emprendedor, :fecha_pedido)";
+        
+        $result = $conexion->prepare($consultar);
+        
+        $result->bindParam(":id_usuario", $id_usuario);
+        $result->bindParam(":id_emprendedor", $id_emprendedor);
+        $result->bindParam(":fecha_pedido", $fecha_pedido);
+        
+        $result->execute();
+        echo '<script>alert("Pedido realizado con éxito")</script>';
+        
+        // Agrega un retardo de 2 segundos
+        sleep(2);
+    
+        echo '<script>location.href="../TCPDF-main/prueba.php"</script>';
+    }
+    
+    
+    
+    
     public function mostrarCalificacion($id) {
         $f = null;
-    
+        
         $objConexion = new Conexion();
         $conexion = $objConexion->get_conexion();
     
@@ -1141,6 +1181,108 @@ class consultas{
     
         return $f;
     }
+    public function mostrarDetalles($arg_id_usuario) {
+        $f = null;
+        
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+        
+        // Consulta SQL para seleccionar todos los detalles de pedidos de un usuario específico
+        $consultar = "SELECT * FROM pedidos WHERE id_usuario = :id_usuario";
+        
+        $result = $conexion->prepare($consultar);
+        
+        // Vincular el parámetro :id_usuario
+        $result->bindParam(":id_usuario", $arg_id_usuario);
+        
+        $result->execute();
+        
+        while ($resultado = $result->fetch()) {
+            $f[] = $resultado;
+        }
+        
+        return $f;
+    }
+    
+    public function obtenerId($arg_id_usuario) {
+        $f = null;
+    
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+    
+        // Consulta SQL para seleccionar los productos en el carrito de un usuario específico
+        $consultar = "SELECT productos.*, carrito.*
+        FROM productos
+        INNER JOIN carrito ON productos.id = carrito.id_producto
+        WHERE carrito.id_usuario = :id_usuario
+        ";
+    
+        $result = $conexion->prepare($consultar);
+    
+        // Vincular el parámetro :id_usuario
+        $result->bindParam(":id_usuario", $arg_id_usuario);
+    
+        $result->execute();
+    
+        while ($resultado = $result->fetch()) {
+            $f[] = $resultado;
+        }
+    
+        return $f;
+    }
+    public function obtenerIdEmprendedor($producto) {
+        $f = null;
+    
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+    
+        // Consulta SQL para seleccionar los productos en el carrito de un usuario específico
+        $consultar = "SELECT id_emprendedor FROM productos WHERE id = :id_producto";
+
+    $result = $conexion->prepare($consultar);
+
+    // Vincular el parámetro :id_producto
+    $result->bindParam(":id_producto", $producto);
+
+    $result->execute();
+
+    while ($resultado = $result->fetch()) {
+        $f[] = $resultado;
+    }
+
+    return $f;
+    }
+
+
+    public function mostrarPedido($arg_id_usuario) {
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+    
+        $consultar = "SELECT
+                        CASE
+                            WHEN usuario.Rol = 'Cliente' THEN usuario.ID
+                            ELSE NULL
+                        END AS id_cliente,
+                        CASE
+                            WHEN usuario.Rol = 'Emprendedor' THEN usuario.ID
+                            ELSE NULL
+                        END AS id_emprendedor
+                    FROM usuario
+                    WHERE usuario.ID = :id_usuario";
+    
+        $result = $conexion->prepare($consultar);
+        $result->bindParam(":id_usuario", $arg_id_usuario);
+        $result->execute();
+    
+        // Utilizar fetchColumn para obtener el valor directamente
+        $id_cliente = $result->fetchColumn();
+        
+        // Si no hay resultados, $id_cliente será NULL
+        return $id_cliente;
+    }
+    
+    
+    
 
     public function eliminarProductoCarrito ($id) {
         $objConexion = new Conexion();

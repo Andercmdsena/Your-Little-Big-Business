@@ -10,10 +10,10 @@ $arg_id_usuario = $_SESSION['id'];
 
 
 
-function cargarProductoCarrito() {
+function cargarPedidos() {
     $arg_id_usuario = $_SESSION['id'];
     $objConsulta = new Consultas();
-    $result = $objConsulta->mostrarProductoCarrito($arg_id_usuario);
+    $result = $objConsulta->mostrarPedido($arg_id_usuario);
 
     if (!isset($result)) {
         echo '<h2>Tu carrito esta vacio</h2>';

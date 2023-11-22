@@ -1100,9 +1100,8 @@ ul.pagination .active a {
 }
 .product-item .card {
   border: none;
-  height: 720px;
-  margin-bottom: 20px;
-
+  height: 750px;
+  background: #ffffff;
 }
 .product-item .cardCarrusel {
   border: none;
@@ -1114,7 +1113,9 @@ ul.pagination .active a {
 .product-item .card .card-body {
   padding: 20px;
   border-bottom: 5px solid #25304d;
-  border-radius: 10px;
+  border-radius: 0px 0px 10px 10px;
+  background-color: #edf2ff;
+  margin-bottom: 20px;
 }
 .product-item .card .card-body .card-title {
   font-size: 23px;
@@ -2190,7 +2191,8 @@ form textarea {
 }
 
 .btn:not(:disabled):not(.disabled):hover{
-  background-color: #924fb4;
+  background-color: #eeccff;
+  text-decoration: none !important;
 }
 
 #filtro option{

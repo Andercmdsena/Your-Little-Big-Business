@@ -21,7 +21,7 @@
 
 
 </header> 
-<a href="index.php" class="back-to-home-button">Volver al Inicio</a>
+<a href="index.php" class="back-to-home-button">Volver al inicio</a>
     
 
 <div class="container">
@@ -29,15 +29,15 @@
         <h1>Finalizar compra</h1>
         <form action="../controller/pedido.php" method="POST">
             <div class="form-group">
-                <h3>1. Informacion de contacto</h3>
+                <h3>1. Información de contacto</h3>
                 <label for="nombre">Email</label>
                 <input type="text" id="nombre" name="nombre" required>
-                <label for="nombre">Telefono</label>
+                <label for="nombre">Télefono</label>
                 <input type="text" id="telefono" name="nombre" required>
             </div>
             <div class="form-group">
-                 <h3>2. Informacion del envio</h3>
-                    <label for="nombre">Direccion <img class="logon" src="images/casa.png" alt=""></label>
+                 <h3>2. Información del envío</h3>
+                    <label for="nombre">Dirección <img class="logon" src="images/casa.png" alt=""></label>
                     <input type="text" id="nombre" name="nombre" required>
                     <label for="nombre">Localidad</label>
                     <input type="text" id="telefono" name="nombre" required>
@@ -45,7 +45,7 @@
                     <input type="text" id="telefono" name="nombre" required>
             </div>
             <div class="form-group">
-                 <h3>3. Metodo de pago</h3>
+                 <h3>3. Método de pago</h3>
                  <div class="bb">
                  <label class="form-check" > 
                               <img class="logone" src="images/nequi.png" alt=""> 

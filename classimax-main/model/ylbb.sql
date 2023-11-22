@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-11-2023 a las 01:59:52
+-- Tiempo de generación: 22-11-2023 a las 03:24:23
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -54,6 +54,20 @@ INSERT INTO `administradores` (`Identificacion`, `Tipo_de_dato`, `Nombres`, `Ape
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `calificacion`
+--
+
+CREATE TABLE `calificacion` (
+  `id` bigint(200) NOT NULL,
+  `calificacion` int(200) NOT NULL,
+  `comentarios` varchar(200) NOT NULL,
+  `id_usuario` bigint(200) NOT NULL,
+  `id_producto` bigint(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `carrito`
 --
 
@@ -80,7 +94,15 @@ INSERT INTO `carrito` (`id`, `id_producto`, `id_usuario`) VALUES
 (48, 16, 51),
 (49, 20, 51),
 (50, 15, 51),
-(51, 16, 51);
+(51, 16, 51),
+(53, 32, 1023162918),
+(55, 35, 51),
+(56, 35, 46),
+(57, 35, 46),
+(58, 34, 46),
+(59, 34, 1023162918),
+(60, 36, 52),
+(64, 33, 52);
 
 -- --------------------------------------------------------
 
@@ -122,6 +144,32 @@ INSERT INTO `categoria` (`id_categoria`, `categoria`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `detalles_pedido`
+--
+
+CREATE TABLE `detalles_pedido` (
+  `id` bigint(200) NOT NULL,
+  `id_pedido` bigint(200) NOT NULL,
+  `id_producto` bigint(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `detalles_pedido`
+--
+
+INSERT INTO `detalles_pedido` (`id`, `id_pedido`, `id_producto`) VALUES
+(723, 267, 36),
+(724, 267, 33),
+(725, 268, 36),
+(726, 268, 33),
+(727, 269, 36),
+(728, 269, 33),
+(729, 270, 36),
+(730, 270, 33);
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `estados`
 --
 
@@ -138,6 +186,29 @@ INSERT INTO `estados` (`id_estado`, `estado`) VALUES
 (0, 'Bloqueado'),
 (1, 'Activo'),
 (2, 'Pendiente');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `pedidos`
+--
+
+CREATE TABLE `pedidos` (
+  `id` bigint(200) NOT NULL,
+  `id_usuario` varchar(200) NOT NULL,
+  `id_emprendedor` varchar(200) NOT NULL,
+  `fecha_pedido` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `pedidos`
+--
+
+INSERT INTO `pedidos` (`id`, `id_usuario`, `id_emprendedor`, `fecha_pedido`) VALUES
+(267, '52', '52', '2023-11-21 20:01:57'),
+(268, '52', '51', '2023-11-21 20:01:57'),
+(269, '52', '52', '2023-11-21 20:10:23'),
+(270, '52', '51', '2023-11-21 20:10:23');
 
 -- --------------------------------------------------------
 
@@ -165,17 +236,12 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`id`, `nombre`, `precio`, `cantidad`, `descripcion`, `foto`, `foto2`, `foto3`, `id_emprendedor`, `Estado`, `Disponibilidad`, `categoria`) VALUES
-(15, 'Computador', 500000, '3', 'Descubre la potencia en su máxima expresión con nuestra última oferta: la PC Con un rendimiento extraordinario y un diseño elegante, esta computadora está diseñada para satisfacer todas tus necesidade', '../Uploads/usuarios/pexels-xxss-is-back-777001.jpg', '', '', 46, 1, '1', 1),
-(16, 'monitor                                                                                                                                                                                                 ', 12000, '3', 'Descubre la claridad y la inmersión visual con nuestro monitor [Nombre del Modelo]. Con una pantalla vibrante y de alta resolución, este monitor redefine tu experiencia visual. Ya sea para trabajo o e', '../Uploads/usuarios/pexels-designecologist-1779487.jpg', '', '', 46, 1, '1', 2),
-(17, 'tablet de dibujo', 600000, '1', 'Explora tu creatividad sin límites con nuestra tablet para dibujar. Diseñada para artistas digitales, esta tablet combina precisión y sensibilidad en cada trazo. La pantalla táctil de alta resolución ', '../Uploads/usuarios/pexels-sasha-kim-9414330.jpg', '', '', 46, 1, '1', 1),
-(18, 'Microfono', 150000000, '1', 'Haz que tu voz destaque con nuestro micrófono Tonor Q9. Diseñado para capturar cada matiz y tono, este micrófono ofrece una calidad de sonido excepcional.', '../Uploads/usuarios/small_tonor-q9-kit-box.jpg', '', '', 46, 1, '1', 3),
-(20, 'trapeador', 20000, '1', 'Eleva la limpieza de tu hogar con nuestro trapero Kaseio. Diseñado para hacer frente a cualquier tipo de suciedad, este trapero combina eficacia y durabilidad.', '../Uploads/usuarios/pexels-pixabay-48889.jpg', '', '', 51, 1, '1', 2),
-(21, 'sofa cama', 3000000, '2', '                                                                                                                      Optimiza tu espacio con nuestro sofá cama convertible Elieser. Este elegante muebl', '../Uploads/usuarios/pexels-rachel-claire-4857775.jpg', '', '', 51, 1, '1', 8),
-(22, 'audiculares ', 100000, '4', 'Sumérgete en un mundo de sonido excepcional con nuestros auriculares Samsung. Diseñados para ofrecer una experiencia auditiva inigualable', '../Uploads/usuarios/pexels-soulful-pizza-3780681.jpg', '', '', 52, 1, '1', 2),
-(23, 'portatil', 500000, '2', 'Domina el mundo digital con nuestro portátil gamer de alta potencia: Intelperl. Equipado con un procesador de última generación y una tarjeta gráfica potente, este portátil lleva tus experiencias de j', '../Uploads/usuarios/pexels-cottonbro-studio-4065876.jpg', '', '', 52, 1, '1', 1),
-(24, 'Cuchillos de cocina', 60000, '4', 'Descubre la precisión culinaria con nuestro set de cuchillos ultracaroi. Diseñados para cortes impecables y durabilidad excepcional, estos cuchillos son la herramienta esencial en tu cocina. ', '../Uploads/usuarios/pexels-lukas-952366.jpg', '', '', 52, 1, '1', 2),
-(25, 'Juego de platos', 100000, '1', 'Crea momentos memorables en la mesa con nuestro juego de platos Leonel. Con un diseño elegante y versátil, estos platos son la elección perfecta para cualquier ocasión. ', '../Uploads/usuarios/pexels-jamie-he-563067.jpg', '', '', 52, 1, '1', 2),
-(31, 'prueba', 21221212, '1', 'wqe', '../Uploads/productos/dibujo-2.png', '../Uploads/productos/', '../Uploads/productos/', 51, 1, '1', 5);
+(31, 'prueba', 21221212, '1', 'wqe', '../Uploads/productos/dibujo-2.png', '../Uploads/productos/', '../Uploads/productos/', 51, 1, '1', 5),
+(32, 'Camisas', 50000, '1', 'ofrecen estilo moderno y fresco para adolescentes y adultos jóvenes. Descubre una variedad de colores vibrantes, patrones a la moda y cortes contemporáneos que reflejan las últimas tendencias.', '../Uploads/productos/pexels-polina-tankilevitch-3735641.jpg', '../Uploads/productos/pexels-dom-j-45982.jpg', '../Uploads/productos/pexels-francesco-paggiaro-2294342.jpg', 51, 1, '1', 2),
+(33, 'Juguetes para mascotas', 30000, '1', 'Explora nuestra colección de juguetes para mascotas en nuestra tienda, diseñados para entretener y satisfacer las necesidades de tus amigos peludos. Desde pelotas masticables hasta juguetes interactiv', '../Uploads/productos/pexels-arina-krasnikova-7726315.jpg', '../Uploads/productos/pexels-helena-jankovičová-kováčová-16395147.jpg', '../Uploads/productos/pexels-josh-sorenson-1739093.jpg', 51, 1, '1', 9),
+(34, 'Comidas rapidas', 35000, '1', 'nuestra selección de deliciosas comidas rápidas en nuestra tienda. Desde sabrosas hamburguesas y crujientes papas fritas hasta opciones más ligeras como ensaladas frescas y wraps llenos de sabor', '../Uploads/productos/pexels-spencer-davis-4393021.jpg', '../Uploads/productos/pexels-audy-of-course-19034914.jpg', '../Uploads/productos/pexels-audy-of-course-19055025.jpg', 51, 1, '1', 6),
+(35, 'Cuadernos', 25000, '1', 'Descubre la elegancia y funcionalidad en nuestros cuadernos de alta calidad. Con tapas duraderas y páginas resistentes, estos cuadernos son ideales para plasmar tus pensamientos, ideas y apuntes.', '../Uploads/productos/pexels-hermaion-205414.jpg', '../Uploads/productos/pexels-pixabay-159682.jpg', '../Uploads/productos/pexels-pixabay-159865.jpg', 51, 1, '1', 10),
+(36, 'prueba', 21221212, '1', '321213qwew', '../Uploads/productos/calabaza.png', '../Uploads/productos/', '../Uploads/productos/', 52, 1, '1', 1);
 
 -- --------------------------------------------------------
 
@@ -217,9 +283,10 @@ CREATE TABLE `servicios` (
 --
 
 INSERT INTO `servicios` (`id`, `nombre`, `precio`, `duracion`, `categoria`, `descripcion`, `foto`, `foto2`, `foto3`, `id_emprendedor`, `Estado`, `Disponibilidad`) VALUES
-(1, 'Fontanero a domicilio', 300000, '2', 12, 'Fontanero y ruso\r\n                \r\n                \r\n                ', '../Uploads/productos/habilidades.jpeg', '../Uploads/productos/Captura linuxxxx.PNG', '../Uploads/productos/6448709.jpg', 51, 1, 1),
-(2, 'PINTURA', 0, 'rewrwe', 14, '                                                rewrew\r\n                \r\n                \r\n                ', '../Uploads/productos/SS23.PNG', '../Uploads/productos/Captura linuxxxx.PNG', '../Uploads/productos/estacion de autobuses.jpg', 51, 1, 1),
-(3, 'prueba categoria', 0, 'ewq', 3, '                eqweqw\r\n                ', '../Uploads/productos/caracteristicas.jpeg', '../Uploads/productos/6448709.jpg', '../Uploads/productos/estacion de autobuses.jpg', 51, 1, 1);
+(4, 'Limpieza', 50000, '1 hora', 16, 'Experimenta la comodidad y calidad con nuestro servicio de limpieza. Ofrecemos soluciones profesionales y personalizadas para mantener tu espacio impecable y libre de preocupaciones. Nuestro equipo al', '../Uploads/servicio/pexels-polina-tankilevitch-4440533.jpg', '../Uploads/productos/pexels-matilda-wormwood-4099471.jpg', '../Uploads/productos/pexels-karolina-grabowska-4239031.jpg', 51, 1, 1),
+(5, 'Pintor', 5000, '4 horas', 14, 'Transforma tu espacio con nuestro servicio de pintura profesional. Nuestro equipo experto en pintura se encargará de dar vida a tus ideas, ofreciendo una amplia gama de colores y acabados de alta cali', '../Uploads/servicio/pexels-kaboompics-com-6368.jpg', '../Uploads/productos/pexels-malte-luk-1669754.jpg', '../Uploads/productos/pexels-cassidy-muir-2065971.jpg', 51, 1, 1),
+(6, 'obrero', 60000, '8 horas', 19, 'Experimenta la excelencia en construcción con nuestro servicio especializado. Desde la planificación hasta la entrega, nuestro equipo profesional se encarga de cada detalle para hacer realidad tu proy', '../Uploads/servicio/pexels-thijs-van-der-weide-1094767.jpg', '../Uploads/productos/pexels-anamul-rezwan-1216589.jpg', '../Uploads/productos/pexels-bidvine-1249611.jpg', 51, 1, 1),
+(7, 'jardinero', 50000, '6 horas', 15, 'Embellece tu entorno con nuestro servicio de jardinería especializado. Nos dedicamos a crear espacios verdes vibrantes y acogedores para tu tienda. Desde el diseño paisajístico hasta el mantenimiento ', '../Uploads/servicio/pexels-dương-bá-thành-3833591.jpg', '../Uploads/productos/pexels-karolina-grabowska-4207908.jpg', '../Uploads/productos/pexels-pixabay-162564.jpg', 51, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -275,10 +342,22 @@ ALTER TABLE `categoria`
   ADD PRIMARY KEY (`id_categoria`);
 
 --
+-- Indices de la tabla `detalles_pedido`
+--
+ALTER TABLE `detalles_pedido`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `estados`
 --
 ALTER TABLE `estados`
   ADD PRIMARY KEY (`id_estado`);
+
+--
+-- Indices de la tabla `pedidos`
+--
+ALTER TABLE `pedidos`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `productos`
@@ -320,7 +399,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `carrito`
 --
 ALTER TABLE `carrito`
-  MODIFY `id` bigint(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `id` bigint(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 
 --
 -- AUTO_INCREMENT de la tabla `categoria`
@@ -329,10 +408,22 @@ ALTER TABLE `categoria`
   MODIFY `id_categoria` bigint(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
+-- AUTO_INCREMENT de la tabla `detalles_pedido`
+--
+ALTER TABLE `detalles_pedido`
+  MODIFY `id` bigint(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=731;
+
+--
+-- AUTO_INCREMENT de la tabla `pedidos`
+--
+ALTER TABLE `pedidos`
+  MODIFY `id` bigint(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=271;
+
+--
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id` bigint(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` bigint(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT de la tabla `publicacion`
@@ -344,7 +435,7 @@ ALTER TABLE `publicacion`
 -- AUTO_INCREMENT de la tabla `servicios`
 --
 ALTER TABLE `servicios`
-  MODIFY `id` bigint(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`

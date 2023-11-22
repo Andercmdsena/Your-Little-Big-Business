@@ -20,10 +20,9 @@
         <div class="block" id="listas">
           <h4 style="color: white; font-size: 20px;">Cosas de interés</h4>
           <ul>
-            <li><a href="dashboard-my-ads.html">Preferencia</a></li>
             <li><a href="dashboard-favourite-ads.html">Artículos favoritos</a></li>
             <li><a href="dashboard-archived-ads.html">Servicios favoritos</a></li>
-            <li><a href="dashboard-pending-ads.html">Sobre nosotro</a></li>
+            <li><a href="about-us.php">Sobre nosotros</a></li>
             <li><a href="terms-condition.html">Términos y condiciones</a></li>
           </ul>
         </div>
@@ -33,12 +32,8 @@
         <div class="block" id="listas2">
           <h4 style="color: white; font-size: 20px;">Páginas</h4>
           <ul>
-            <li><a href="category.html">Categorias</a></li>
-            <li><a href="single.html">Servicios</a></li>
-            <li><a href="store.html">Productos</a></li>
-            <li><a href="single-blog.html">metodos de pago</a>
-            </li>
-            <li><a href="blog.html">Blog</a></li>
+            <li><a href="servicios.php">Servicios</a></li>
+            <li><a href="productos.php">Productos</a></li>
           </ul>
         </div>
       </div>

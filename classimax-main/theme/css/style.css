@@ -21,6 +21,7 @@ p, li, input, select, button {
   font-weight: 400;
 }
 
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Varela Round', sans-serif;
   font-weight: 600;
@@ -1101,9 +1102,8 @@ ul.pagination .active a {
 }
 .product-item .card {
   border: none;
-  height: 720px;
-  margin-bottom: 20px;
-
+  height: 750px;
+  background: #ffffff;
 }
 .product-item .cardCarrusel {
   border: none;
@@ -1115,7 +1115,9 @@ ul.pagination .active a {
 .product-item .card .card-body {
   padding: 20px;
   border-bottom: 5px solid #25304d;
-  border-radius: 10px;
+  border-radius: 0px 0px 10px 10px;
+  background-color: #edf2ff;
+  margin-bottom: 20px;
 }
 .product-item .card .card-body .card-title {
   font-size: 23px;
@@ -2192,7 +2194,8 @@ form textarea {
 }
 
 .btn:not(:disabled):not(.disabled):hover{
-  background-color: #924fb4;
+  background-color: #eeccff;
+  text-decoration: none !important;
 }
 
 #filtro option{
@@ -2469,4 +2472,39 @@ hr{
 
 .botones_productos a{
   color: black;
+}
+.text-center a {
+
+  font-weight: bolder;
+  color: #000 !important;
+  font-size: 20px;
+  text-decoration: none !important;
+  list-style: none;
+  border-radius: 1px solid;
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 8px;
+}
+.text-center a:hover {
+
+  font-weight: bolder;
+  background-color: #ddd !important;
+  
+  text-decoration: none !important;
+  list-style: none;
+  
+}
+.text-center p {
+
+  font-weight: bolder;
+  color: #000 !important;
+  font-size: 20px;
+  text-decoration: none !important;
+  list-style: none;
+  border-radius: 1px solid
+  ;
+}
+
+.copyright p {
+  color: white !important;
 }

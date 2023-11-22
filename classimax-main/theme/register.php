@@ -60,6 +60,16 @@
           <h3 class="bg-gray p-4" style="border-top-left-radius: 20px; border-top-right-radius: 20px; background-color: #BDD0FF; text-align: center;">Registrate</h3>
           <form action="../controller/insertarUs.php" method="post">
             <fieldset class="p-4">
+<<<<<<< HEAD
+              <input class="form-control mb-3" type="text" name="nombre" placeholder="Nombre" required>
+              <input class="form-control mb-3" type="text" name="apellido" placeholder="Apellido" required>
+              <input class="form-control mb-3" type="text" id="correo" name="email" placeholder="Email*" required>
+              <p id="mensajeError" style="color: red; display: none; font-size:1.2rem; font-weight:600; font-family: 'Poiret One', curs   ive;;">¡Falta una dirrecion de correo!</p>
+              <input class="form-control mb-3" type="tel" name="telefono" placeholder="Telefono*" required>
+              <input class="form-control mb-3" type="password" name="clave" id="clave" placeholder="Contraseña" required>
+              <input class="form-control mb-3" type="password" id="con_clave" name="con_clave" placeholder="Confirmar Contraseña" required>
+              <select name="rol" id="">
+=======
               <input class="form-control mb-3 font-weight-bold" type="text" name="nombre" placeholder="Nombre" required>
               <input class="form-control mb-3 font-weight-bold" type="text" name="apellido" placeholder="Apellido" required>
               <input class="form-control mb-3 font-weight-bold" type="text" name="email" placeholder="Email*" required>
@@ -67,6 +77,7 @@
               <input class="form-control mb-3 font-weight-bold" type="password" name="clave" id="clave" placeholder="Contraseña" required>
               <input class="form-control mb-3 font-weight-bold" type="password" id="con_clave" name="con_clave" placeholder="Confirmar Contraseña" required>
               <select name="rol" id="" class="font-weight-bold">
+>>>>>>> 402eca34c6dd3516ba5b7bba3ba5a48e64d7a4d7
                 <option value="Cliente">Cliente</option>
                 <option value="Emprendedor">Emprendedor</option>
               </select>
@@ -106,6 +117,36 @@
       ver2.type = "password"
     }
   });
+
+  let formulario = document.getElementsByClassName("formulario_registro")[0];
+let correoInput = document.getElementById('correo');
+let mensajeError = document.getElementById('mensajeError');
+
+correoInput.addEventListener('input', function(event) {
+    // Realiza la validación en tiempo real
+    let correo = correoInput.value;
+    let regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!regexCorreo.test(correo)) {
+        mensajeError.style.display = 'block';
+    } else {
+        mensajeError.style.display = 'none';
+    }
+});
+
+formulario.addEventListener('submit', function(event) {
+    // Realiza la validación antes de enviar el formulario
+    let correo = correoInput.value;
+    let regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!regexCorreo.test(correo)) {
+        mensajeError.style.display = 'block';
+        event.preventDefault(); // Detiene el envío del formulario si la validación no pasa
+    } else {
+        mensajeError.style.display = 'none';
+        // Continúa con el envío del formulario si la validación es exitosa
+    }
+});
 </script>
     
 <!-- 

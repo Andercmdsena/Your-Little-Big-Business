@@ -93,13 +93,13 @@ require_once("../model/consultas.php");
 									<div class="form-row">
 										<div class="form-group col-xl-4 col-lg-3 col-md-6">
 											<input type="text" class="form-control my-2 my-lg-1" id="inputtext4"
-												placeholder="Que estas buscando?">
+												placeholder="¿Qué estas buscando?">
 										</div>
 										<div class="form-group col-lg-3 col-md-6">
 											<select class="w-100 form-control mt-lg-1 mt-md-2">
 												<option>Categoría</option>
 												<option value="1">Cocina y hogar</option>
-												<option value="2">Tecnologia</option>
+												<option value="2">Tecnología</option>
 												<option value="4">libros</option>
 											</select>
 										</div>
@@ -131,7 +131,7 @@ require_once("../model/consultas.php");
 		<div class="row">
 			<div class="col-md-12">
 				<div class="section-title">
-					<h2>Productos recien agregados</h2>
+					<h2>Productos recién agregados</h2>
 					<p>Vez algo que te guste o te llame la atención?</p>
 				</div>
 			</div>
@@ -170,7 +170,7 @@ require_once("../model/consultas.php");
 				<!-- Section title -->
 				<div class="section-title">
 					<h2>Todas las categorías</h2>
-					<p>Todo lo que buscas y necesitas en la palma de tu mano, a un solo click</p>
+					<p>Todo lo que buscas y necesitas en la palma de tu mano, a un solo clic</p>
 				</div>
 				<div class="row">
 					<!-- Category list -->
@@ -253,7 +253,7 @@ require_once("../model/consultas.php");
 						<div class="category-block cat_item">
 							<div class="header">
 								<i class="fa fa-car icon-bg-6"></i>
-								<h4>Vehiculos</h4>
+								<h4>Vehículos</h4>
 							</div>
 							<ul class="category-list">
 								<li><a class="juas" href="productos.php">Refacciones <span>193</span></a></li>

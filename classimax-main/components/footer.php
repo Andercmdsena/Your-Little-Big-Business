@@ -10,7 +10,7 @@
         <!-- About -->
         <div class="block about">
           <!-- footer logo -->
-          <img src="images/Mi proyecto.png" alt="logo">
+          <img style="margin-left: 50px;" src="images/Mi proyecto.png" alt="logo">
           <!-- description -->
           <p class="alt-color parrafos" style="color:white;font-weight:bold; font-family: 'Poiret One', cursive; font-size: 20px;">Your Little Big Business es una plataforma en línea que potencia tus sueños emprendedores. Te ofrecemos un espacio para presentar y vender tus productos</p>
         </div>
@@ -20,11 +20,11 @@
         <div class="block" id="listas">
           <h4 style="color: white; font-size: 20px;">Cosas de interés</h4>
           <ul>
-            <li><a href="dashboard-my-ads.html">Preferencia</a></li>
-            <li><a href="dashboard-favourite-ads.html">Artículos favoritos</a></li>
-            <li><a href="dashboard-archived-ads.html">Servicios favoritos</a></li>
-            <li><a href="dashboard-pending-ads.html">Sobre nosotro</a></li>
-            <li><a href="terms-condition.html">Términos y condiciones</a></li>
+            <li><a style="color: white; font-size: 18px;" href="dashboard-my-ads.html">Preferencia</a></li>
+            <li><a style="color: white; font-size: 18px;" href="dashboard-favourite-ads.html">Artículos favoritos</a></li>
+            <li><a style="color: white; font-size: 18px;" href="dashboard-archived-ads.html">Servicios favoritos</a></li>
+            <li><a style="color: white; font-size: 18px;" href="dashboard-pending-ads.html">Sobre nosotro</a></li>
+            <li><a style="color: white; font-size: 18px;" href="terms-condition.html">Términos y condiciones</a></li>
           </ul>
         </div>
       </div>
@@ -33,12 +33,12 @@
         <div class="block" id="listas2">
           <h4 style="color: white; font-size: 20px;">Páginas</h4>
           <ul>
-            <li><a href="category.html">Categorias</a></li>
-            <li><a href="single.html">Servicios</a></li>
-            <li><a href="store.html">Productos</a></li>
-            <li><a href="single-blog.html">metodos de pago</a>
+            <li><a style="color: white; font-size: 18px;" href="category.html">Categorias</a></li>
+            <li><a style="color: white; font-size: 18px;" href="single.html">Servicios</a></li>
+            <li><a style="color: white; font-size: 18px;" href="store.html">Productos</a></li>
+            <li><a style="color: white; font-size: 18px;" href="single-blog.html">metodos de pago</a>
             </li>
-            <li><a href="blog.html">Blog</a></li>
+            <li><a style="color: white; font-size: 18px;" href="blog.html">Blog</a></li>
           </ul>
         </div>
       </div>

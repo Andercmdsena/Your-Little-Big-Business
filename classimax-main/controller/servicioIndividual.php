@@ -23,8 +23,8 @@ function cargarServicioIndividual(){
 					<h1 class="product-title">'. $f['nombre'] .'</h1>
 					<div class="product-meta">
 						<ul class="list-inline">
-							<li class="list-inline-item"><i class="fa fa-user-o"></i> Vendido por <a href="user-profile.html"></a></li>
-							<li class="list-inline-item"><i class="fa fa-folder-open-o"></i><a href="#">'. $f['categoria'] .'</a></li>
+							<li class="list-inline-item"><i class="fa fa-user-o"></i> Vendido por '. $f['usuario_nombre'] .'<a href="user-profile.html"></a></li>
+							<li class="list-inline-item"><i class="fa fa-folder-open-o"></i><a style="margin-left: 10px; color: #000000;" href="#">'. $f['categoria'] .'</a></li>
 							<li class="list-inline-item"><i class="fa fa-location-arrow"></i> Localización<a href="#"></a></li>
 						</ul>
 					</div>
@@ -46,15 +46,15 @@ function cargarServicioIndividual(){
 					<div class="content mt-5 pt-5">
 						<ul class="nav nav-pills  justify-content-center" id="pills-tab" role="tablist">
 							<li class="nav-item">
-								<a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home"
-								 aria-selected="true">	<datagrid>Detalle del producto</datagrid></a>
+								<a style="color: #000 !important;" class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home"
+								 aria-selected="true">	<datagrid>Detalles del Servicio</datagrid></a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile"
+								<a style="color: #000 !important;" class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile"
 								 aria-selected="false">Especificaciones</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact"
+								<a style="color: #000 !important;" class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact"
 								 aria-selected="false">Reseñas</a>
 							</li>
 						</ul>
@@ -62,8 +62,6 @@ function cargarServicioIndividual(){
 							<div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
 								<h3 class="tab-title">Descripción del producto</h3>
 								<p>'. $f['descripcion'] .'</p>
-
-								
 
 							</div>
 							<div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
@@ -202,7 +200,7 @@ function cargarServicioIndividual(){
 						<!-- Heading -->
 						<h5 class="widget-header text-center">Como calificarías 
 							<br>
-							este producto</h5>
+							este Servicio</h5>
 						<!-- Rate -->
 						<div class="starrr"></div>
 					</div>
@@ -222,7 +220,7 @@ function cargarServicioIndividual(){
 						<p>Tienes un prodcuto para publicar, compartelo con tus usuarios.
 						</p>
 						<!-- Submii button -->
-						<a href="single.html" class="btn btn-transparent-white">Enviar listado</a>
+						<a href="single.php" class="btn btn-transparent-white">Enviar listado</a>
 					</div>
 
 				</div>

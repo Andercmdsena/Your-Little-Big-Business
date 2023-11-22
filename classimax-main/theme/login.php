@@ -53,7 +53,7 @@
         <h3 style="background-color: #bdd0ff; font-family: 'Poiret One', cursive;font-size: 1.5rem;"
           class="p-4 text-center w-100">Ingresar</h3>
 
-        <form class="py-4 text-center" action="../controller/iniciarSesion.php" method="post">
+        <form class="py-4 text-center formulario_registro" action="../controller/iniciarSesion.php" method="post">
           <fieldset class="p-4 ">
             <input name="email" id="correo" onkeyup="validarCorreo()" style="font-size:1.2rem; font-weight:400; font-family: 'Poiret One', cursive;"
               class="form-control mb-3" type="text" placeholder="Email" required>
@@ -105,19 +105,28 @@ Essential Scripts
 
 
 <script>
+let formulario = document.getElementsByClassName("formulario_registro")[0];
 
-function validarCorreo() {
+formulario.addEventListener('submit', function(event) {
+    // Realiza tus validaciones aquí
     let correoInput = document.getElementById('correo');
     let correo = correoInput.value;
 
     let mensajeError = document.getElementById('mensajeError');
 
-    if (correo.includes('@')) {
-        mensajeError.style.display = 'none';
-    } else {
+    // Expresión regular para validar el formato del correo electrónico
+    let regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!regexCorreo.test(correo)) {
         mensajeError.style.display = 'block';
+        event.preventDefault(); // Detiene el envío del formulario si la validación no pasa
+    } else {
+        mensajeError.style.display = 'none';
+        // Continúa con el envío del formulario si la validación es exitosa
     }
-}
+});
+
+
     
 
       

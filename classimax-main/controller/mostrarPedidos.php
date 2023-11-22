@@ -19,13 +19,10 @@ function mostrarPedido($usuario){
                     <td>'.$f['nombre'].'</td>
                     <td>'.$f['precio'].'</td>
                     <td>2</td>
-                    <td>
+                    <td style="text-align: center;">
                         <!-- Botón Cancelar Pedido -->
-                        <button style="background-color: #ff3333; color: #fff; padding: 5px 10px; border: none; border-radius: 5px;">Cancelar Pedido</button>
-                    </td>
-                    <td>
-                        <!-- Botón Enviar Pedido -->
-                        <button style="background-color: #4caf50; color: #fff; padding: 5px 10px; border: none; border-radius: 5px;">Enviar Pedido</button>
+                        <button class="boton-cancelar" style="background-color: #ff3333; color: #fff; padding: 5px 10px; border: none; border-radius: 5px; margin-bottom: 5px;">Cancelar Pedido</button>
+                        <button class="boton-enviar" style="background-color: #4caf50; color: #fff; padding: 5px 10px; border: none; border-radius: 5px;">Enviar Pedido</button>
                     </td>
                 </tr>';
         }        

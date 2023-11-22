@@ -160,9 +160,20 @@ include "menu_emprendedor.php"
 
     th, td {
         text-align: center; /* Centra el texto horizontalmente */
-        padding: 10px; /* Agrega espaciado interno */
+        padding: 10px; /* Agrega espaciado interno */   
         border: 1px solid #ddd; /* Agrega bordes a las celdas */
+
     }
+    /* Aplica el estilo a todos los td que no son el primer hijo */
+td:not(:first-child) {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    position: relative;
+    top: 35px;
+    
+}
+
 
     thead th {
         background-color: #f2f2f2; /* Color de fondo para los encabezados */
@@ -175,7 +186,7 @@ include "menu_emprendedor.php"
                                                     <th>Nombre</th>
                                                     <th>Precio</th>
                                                     <th>Cantidad</th>
-                                                    <th>Cantidad</th>
+                                                   
                                                     <th></th>
 
                                             

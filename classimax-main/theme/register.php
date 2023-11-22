@@ -57,9 +57,10 @@
       <div class="col-lg-5 col-md-8 align-item-center">
         <div class="border border" style="border-radius: 20px;">
           
-          <h3 class="bg-gray p-4" style="border-top-left-radius: 20px; border-top-right-radius: 20px; background-color: #BDD0FF;">Registrate</h3>
+          <h3 class="bg-gray p-4" style="border-top-left-radius: 20px; border-top-right-radius: 20px; background-color: #BDD0FF; text-align: center;">Registrate</h3>
           <form action="../controller/insertarUs.php" method="post">
             <fieldset class="p-4">
+<<<<<<< HEAD
               <input class="form-control mb-3" type="text" name="nombre" placeholder="Nombre" required>
               <input class="form-control mb-3" type="text" name="apellido" placeholder="Apellido" required>
               <input class="form-control mb-3" type="text" id="correo" name="email" placeholder="Email*" required>
@@ -68,16 +69,25 @@
               <input class="form-control mb-3" type="password" name="clave" id="clave" placeholder="Contraseña" required>
               <input class="form-control mb-3" type="password" id="con_clave" name="con_clave" placeholder="Confirmar Contraseña" required>
               <select name="rol" id="">
+=======
+              <input class="form-control mb-3 font-weight-bold" type="text" name="nombre" placeholder="Nombre" required>
+              <input class="form-control mb-3 font-weight-bold" type="text" name="apellido" placeholder="Apellido" required>
+              <input class="form-control mb-3 font-weight-bold" type="text" name="email" placeholder="Email*" required>
+              <input class="form-control mb-3 font-weight-bold" type="tel" name="telefono" placeholder="Telefono*" required>
+              <input class="form-control mb-3 font-weight-bold" type="password" name="clave" id="clave" placeholder="Contraseña" required>
+              <input class="form-control mb-3 font-weight-bold" type="password" id="con_clave" name="con_clave" placeholder="Confirmar Contraseña" required>
+              <select name="rol" id="" class="font-weight-bold">
+>>>>>>> 402eca34c6dd3516ba5b7bba3ba5a48e64d7a4d7
                 <option value="Cliente">Cliente</option>
                 <option value="Emprendedor">Emprendedor</option>
               </select>
               <div class="loggedin-forgot d-inline-flex my-3">
                 <input type="checkbox" id="mostrar_contraseña">
-                <label for="">Mostrar  contraseña</label>
+                <label style="margin-left: 5px; font-weight: bold;" for="">Mostrar  contraseña</label>
                 <input type="checkbox" id="registering" class="mt-1">
-                <label for="registering" class="px-2">Al registrate acepta nuestros <a class="text-primary font-weight-bold" href="terms-condition.html">Terminos y condiciones</a></label>
+                <label for="registering" class="px-2 font-weight-bold">Al registrate acepta nuestros <a class="text-primary font-weight-bold" href="terms-condition.html">Terminos y condiciones</a></label>
               </div>
-              <button type="submit" class="btn btn-primary font-weight-bold mt-3">Registrate ahora</button>
+              <button style="border-color: #8ca4e2;" type="submit" class="btn btn-primary font-weight-bold mt-3">Registrate ahora</button>
             </fieldset>
           </form>
         </div>

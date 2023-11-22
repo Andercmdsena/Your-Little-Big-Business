@@ -988,11 +988,11 @@ class consultas{
         $result -> bindParam(":id_producto", $id_producto);
         
         $result->execute();
-        echo '<script>alert("todo correcto")</script>';
     }
     
+    
     public function pedido($id_usuario, $id_emprendedor, $fecha_pedido) {
-        $objConexion = new  Conexion();
+        $objConexion = new Conexion();
         $conexion = $objConexion->get_conexion();
         
         $consultar = "INSERT INTO pedidos (id_usuario, id_emprendedor, fecha_pedido) VALUES (:id_usuario, :id_emprendedor, :fecha_pedido)";
@@ -1004,13 +1004,11 @@ class consultas{
         $result->bindParam(":fecha_pedido", $fecha_pedido);
         
         $result->execute();
-        echo '<script>alert("Pedido realizado con éxito")</script>';
         
-        // Agrega un retardo de 2 segundos
-        sleep(2);
-    
-        echo '<script>location.href="../TCPDF-main/prueba.php"</script>';
+        // Retornar el resultado de la ejecución para que el código que llama a la función pueda manejar la redirección
+        return $result;
     }
+    
     
     
     
@@ -1041,6 +1039,8 @@ class consultas{
     
         return $f;
     }
+    
+    
     
     
     
@@ -1199,6 +1199,91 @@ class consultas{
     
         return $f;
     }
+    public function mostrarPedido3($arg_id_usuario) {
+        $f = null;
+    
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+    
+        // Consulta SQL para seleccionar los productos en el carrito de un usuario específico
+        $consultar = "SELECT productos.*, carrito.id AS id_carrito, pedidos.id AS id_pedido, carrito.id_producto AS id_producto_carrito
+        FROM productos
+        INNER JOIN carrito ON productos.id = carrito.id_producto
+        LEFT JOIN pedidos ON carrito.id_usuario = pedidos.id_usuario
+        WHERE carrito.id_usuario = :id_usuario AND productos.id = carrito.id_producto";
+    
+        $result = $conexion->prepare($consultar);
+    
+        // Vincular el parámetro :id_usuario
+        $result->bindParam(":id_usuario", $arg_id_usuario);
+    
+        $result->execute();
+    
+        while ($resultado = $result->fetch()) {
+            $f[] = $resultado;
+        }
+    
+        return $f;
+    }
+    public function recorrerPedidos() {
+        $pedidos = null;
+    
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+    
+        // Consulta SQL para seleccionar todos los pedidos
+        $consultar = "SELECT *
+            FROM detalles_pedido";
+    
+        $result = $conexion->prepare($consultar);
+        $result->execute();
+    
+        while ($resultado = $result->fetch()) {
+            $pedidos[] = $resultado;
+        }
+    
+        return $pedidos;
+    }
+    
+        
+       // ... Otros métodos de la clase ...
+    
+        public function verificarEntradaExistente($idPedido, $idProducto) {
+            // Aquí deberías implementar la lógica para verificar si ya existe una entrada
+            // con el mismo id_pedido e id_producto en la tabla de detalles de productos.
+            // Deberías realizar una consulta SQL para realizar esta verificación.
+            // Retorna true si existe, false si no existe.
+    
+            $objConexion = new Conexion();
+            $conexion = $objConexion->get_conexion();
+    
+            $consulta = "SELECT COUNT(*) as count FROM detalles_pedido WHERE id_pedido = :id_pedido AND id_producto = :id_producto";
+            $result = $conexion->prepare($consulta);
+            $result->bindParam(':id_pedido', $idPedido, PDO::PARAM_INT);
+            $result->bindParam(':id_producto', $idProducto, PDO::PARAM_INT);
+            $result->execute();
+    
+            $count = $result->fetch(PDO::FETCH_ASSOC)['count'];
+    
+            return $count > 0;
+        }
+        
+        public function obtenerUltimoIdPedido() {
+            $objConexion = new Conexion();
+            $conexion = $objConexion->get_conexion();
+    
+            $consultar = "SELECT MAX(id) as id_pedido FROM pedidos";
+    
+            $result = $conexion->prepare($consultar);
+            $result->execute();
+    
+            $row = $result->fetch(PDO::FETCH_ASSOC);
+    
+            return $row['id_pedido'];
+        }
+        
+        
+    
     public function mostrarDetalles($arg_id_usuario) {
         $f = null;
         
@@ -1272,32 +1357,39 @@ class consultas{
     }
 
 
-    public function mostrarPedido($arg_id_usuario) {
+    public function mostrarPedido() {
+        $f=null;
+ 
+ 
         $objConexion = new Conexion();
-        $conexion = $objConexion->get_conexion();
-    
-        $consultar = "SELECT
-                        CASE
-                            WHEN usuario.Rol = 'Cliente' THEN usuario.ID
-                            ELSE NULL
-                        END AS id_cliente,
-                        CASE
-                            WHEN usuario.Rol = 'Emprendedor' THEN usuario.ID
-                            ELSE NULL
-                        END AS id_emprendedor
-                    FROM usuario
-                    WHERE usuario.ID = :id_usuario";
-    
-        $result = $conexion->prepare($consultar);
-        $result->bindParam(":id_usuario", $arg_id_usuario);
-        $result->execute();
-    
-        // Utilizar fetchColumn para obtener el valor directamente
-        $id_cliente = $result->fetchColumn();
+        $conexion = $objConexion -> get_conexion();
+
+        $consultar = "SELECT *
+        FROM productos
+        JOIN pedidos ON productos.id_emprendedor = pedidos.id_emprendedor
+        JOIN detalles_pedido ON pedidos.id = detalles_pedido.id_pedido
+        ORDER BY productos.id_emprendedor, pedidos.id;
         
-        // Si no hay resultados, $id_cliente será NULL
-        return $id_cliente;
+        
+        
+        
+        
+    
+        ";
+
+        $result=$conexion->prepare($consultar);
+
+       $result->execute();
+       
+
+       while ($resultado=$result->fetch()) {
+        $f[] = $resultado;
+       }
+
+       return $f;
+
     }
+    
     
     
     

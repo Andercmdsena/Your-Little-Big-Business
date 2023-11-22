@@ -133,7 +133,7 @@ require_once ("../../model/seguridadEmprendedor.php");
                         <ul>
                             
                             <li>
-                                <a href="registroServicios.php"><i class="ti-shopping-cart"></i>Pedidos pendientes</a>
+                                <a href="verPedidos.php"><i class="ti-shopping-cart"></i>Pedidos pendientes</a>
                             </li>
                             
                             

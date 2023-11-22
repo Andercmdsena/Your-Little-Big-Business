@@ -53,16 +53,16 @@
         <h3 style="background-color: #bdd0ff; font-family: 'Poiret One', cursive;font-size: 1.5rem; font-weight: 600;"
           class="p-4 text-center w-100">Ingresar</h3>
 
-        <form class="py-4 text-center" action="../controller/iniciarSesion.php" method="post">
+        <form class="py-4 text-center formulario_registro" action="../controller/iniciarSesion.php" method="post">
           <fieldset class="p-4 ">
             <input name="email" id="correo" onkeyup="validarCorreo()" style="font-size:1.2rem; font-weight:600; font-family: 'Poiret One', cursive;"
               class="form-control mb-3" type="text" placeholder="Email" required>
-              <p id="mensajeError" style="color: red; display: none;">¡El correo está mal digitado!</p>
+              <p id="mensajeError" style="color: red; display: none; font-size:1.2rem; font-weight:600; font-family: 'Poiret One', curs   ive;;">¡Falta una dirreción de correo!</p>
             <input name="clave" style="font-size:1.2rem; font-weight:600; font-family: 'Poiret One', cursive;"
               class="form-control mb-3" type="password" placeholder="Contraseña" required>
               <div class="form-group col-md-9">
                 <label style="font-weight:600;">Rol</label>
-                <select name="tipo_de_rol" id="" class="form-control">
+                <select name="tipo_de_rol" id="" class="form-control font-weight-bold">
                       <option value="cliente">Cliente</option>
                       <option value="emprendedor">Emprendedor</option>
                       <option value="administrador">Administrador</option>
@@ -105,19 +105,38 @@ Essential Scripts
 
 
 <script>
+let formulario = document.getElementsByClassName("formulario_registro")[0];
+let correoInput = document.getElementById('correo');
+let mensajeError = document.getElementById('mensajeError');
 
-function validarCorreo() {
-    let correoInput = document.getElementById('correo');
+correoInput.addEventListener('input', function(event) {
+    // Realiza la validación en tiempo real
     let correo = correoInput.value;
+    let regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    let mensajeError = document.getElementById('mensajeError');
-
-    if (correo.includes('@')) {
-        mensajeError.style.display = 'none';
-    } else {
+    if (!regexCorreo.test(correo)) {
         mensajeError.style.display = 'block';
+    } else {
+        mensajeError.style.display = 'none';
     }
-}
+});
+
+formulario.addEventListener('submit', function(event) {
+    // Realiza la validación antes de enviar el formulario
+    let correo = correoInput.value;
+    let regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!regexCorreo.test(correo)) {
+        mensajeError.style.display = 'block';
+        event.preventDefault(); // Detiene el envío del formulario si la validación no pasa
+    } else {
+        mensajeError.style.display = 'none';
+        // Continúa con el envío del formulario si la validación es exitosa
+    }
+});
+
+
+
     
 
       

@@ -105,7 +105,8 @@
           <img class="card-img-top personas" src="images/admins/personas.png" class="img-fluid w-100" alt="Card image cap">
           <div class="card-body bg-gray text-center">
             <h5 class="card-title">Anderson Tovar</h5>
-            <p class="card-text">Fundador/desarollador</p>
+            <p class="card-text">Fundador/Desarollador</p>
+            <a href="#">Portafolio</a>
           </div>
         </div>
       </div>
@@ -114,7 +115,8 @@
           <img class="card-img-top personas" src="images/admins/personas.png  " class="img-fluid w-100" alt="Card image cap">
           <div class="card-body bg-gray text-center">
             <h5 class="card-title">Juan Alvis</h5>
-            <p class="card-text">Fundador/desarollador</p>
+            <p class="card-text">Fundador/Desarollador</p>
+            <a href="#" >Portafolio</a>
           </div>
         </div>
       </div>
@@ -123,7 +125,8 @@
           <img class="card-img-top personas" src="images/admins/samuel.jpeg" class="img-fluid w-100" alt="Card image cap">
           <div class="card-body bg-gray text-center">
             <h5 class="card-title">Samuel Diaz</h5>
-            <p class="card-text">Fundador/desarollador</p>
+            <p class="card-text">Fundador/Desarollador</p>
+            <a href="#">Portafolio</a>
           </div>
         </div>
       </div>
@@ -132,7 +135,8 @@
           <img class="card-img-top personas" src="images/admins/simon.jpg" class="img-fluid w-100" alt="Card image cap">
           <div class="card-body bg-gray text-center">
             <h5 class="card-title">Simon Peralta</h5>
-            <p class="card-text">Fundador/desarollador</p>
+            <p class="card-text">Fundador/Desarollador</p>
+            <a href="#">Portafolio</a>
           </div>
         </div>
       </div>
@@ -141,7 +145,8 @@
           <img class="card-img-top personas" src="images/admins/edison.jpeg" class="img-fluid w-100 separacion" alt="Card image cap">
           <div class="card-body bg-gray text-center">
             <h5 class="card-title">Edison Ramirez</h5>
-            <p class="card-text">Fundador/desarollador</p>
+            <p class="card-text">Fundador/Desarollador</p>
+            <a href="#">Portafolio</a>
           </div>
         </div>
       </div>

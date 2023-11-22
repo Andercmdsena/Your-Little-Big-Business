@@ -1,5 +1,3 @@
-
-
 <?php
 
 
@@ -9,10 +7,8 @@ require_once ("../../model/seguridadAdmin.php");
 
 require_once ("../../controller/mostraInfoAdmin.php");
 require_once ("../../controller/mostrarInfoUsuario.php");
+require_once ("../../controller/mostrarInfoProductos.php");
 ?>
-
-;
-
 
 
 
@@ -24,7 +20,7 @@ require_once ("../../controller/mostrarInfoUsuario.php");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>YLBB | Reportes usuarios administradores</title>
+    <title>YLBB | Reportes Productos</title>
 
     <!-- ================= Favicon ================== -->
     <!-- Standard -->
@@ -94,7 +90,7 @@ include "menu.php"
                             <span class="line"></span>
                         </div>
                     </div>
-                   
+                    
                 </div>
             </div>
         </div>
@@ -109,7 +105,7 @@ include "menu.php"
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                                <h1>Ver usuario registrados
+                                <h1>Ver Productos registrados
                                     
                                 </h1>
                                 <p>Elija la opcion que desea realiza, editar o eliminar</p>
@@ -137,7 +133,7 @@ include "menu.php"
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-title">
-                                    <h4>usuarios</h4>
+                                    <h4>Reportes Productos</h4>
                                     
                                 </div>
                                 <div class="card-body">
@@ -152,16 +148,16 @@ include "menu.php"
                                             <thead>
                                                 <tr>
                                                     
-                                                    <th>Nombres</th>
-                                                    <th>Apellidos</th>
-                                                    <th>Email</th>
-                                                    <th>Rol</th>
+                                                    <th>Nombre</th>
+                                                    <th>Precio</th>
+                                                    <th>Cantidad</th>
+                                                    <th>Nombre Emprendedor</th>
                                                     <th>Estado</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <?php
-                                                cargarUsuarioAdminReportes()
+                                                reportesProductos()
                                               ?>
                                             </tbody>
                                         </table>

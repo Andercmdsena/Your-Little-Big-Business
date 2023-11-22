@@ -128,13 +128,13 @@ require_once ("../../controller/mostrarInfoUsuario.php");
                             <span class="sidebar-collapse-icon ti-angle-down"></span>
                         </a>
                         <ul>
-                            <li>
-                                <a href="reportes-administradores.php"> <i class="ti-download"></i>Reportes administradores</a>
-                            </li>
+                            
                             <li>
                                 <a href="reportes-usuarios.php"> <i class="ti-download"></i>Reportes usuarios</a>
                             </li>
-                           
+                           <li>
+                                <a href="reportes-productos.php"> <i class="ti-download"></i>Reportes productos</a>
+                            </li>
                             
                         </ul>
                         <li>

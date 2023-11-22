@@ -20,18 +20,11 @@
         <div class="block" id="listas">
           <h4 style="color: white; font-size: 20px;">Cosas de interés</h4>
           <ul>
-<<<<<<< HEAD
-            <li><a style="color: white; font-size: 18px;" href="dashboard-my-ads.html">Preferencia</a></li>
-            <li><a style="color: white; font-size: 18px;" href="dashboard-favourite-ads.html">Artículos favoritos</a></li>
-            <li><a style="color: white; font-size: 18px;" href="dashboard-archived-ads.html">Servicios favoritos</a></li>
-            <li><a style="color: white; font-size: 18px;" href="dashboard-pending-ads.html">Sobre nosotro</a></li>
-            <li><a style="color: white; font-size: 18px;" href="terms-condition.html">Términos y condiciones</a></li>
-=======
             <li><a href="dashboard-favourite-ads.html">Artículos favoritos</a></li>
             <li><a href="dashboard-archived-ads.html">Servicios favoritos</a></li>
             <li><a href="about-us.php">Sobre nosotros</a></li>
             <li><a href="terms-condition.html">Términos y condiciones</a></li>
->>>>>>> 429ea876fc933623ff05e64c9b7f3e0191fb8983
+
           </ul>
         </div>
       </div>

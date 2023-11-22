@@ -124,7 +124,7 @@ if (isset($_SESSION['AUTENTICADO'])) {
                                 <a class="nav-link login-button" href="login.php">Ingresar</a>
                             </li>
                             <li id="signup-btn" class="nav-item d-block pt-4">
-                                <a class="nav-link ingresar-btn add-button" href="register.php">Registrate</a>
+                                <a style="color: #000 !important;" class="nav-link ingresar-btn add-button" href="register.php">Registrate</a>
                             </li>
                             
                         </ul>

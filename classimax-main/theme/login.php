@@ -57,7 +57,7 @@
           <fieldset class="p-4 ">
             <input name="email" id="correo" onkeyup="validarCorreo()" style="font-size:1.2rem; font-weight:600; font-family: 'Poiret One', cursive;"
               class="form-control mb-3" type="text" placeholder="Email" required>
-              <p id="mensajeError" style="color: red; display: none;">¡El correo está mal digitado!</p>
+              <p id="mensajeError" style="color: red; display: none; font-size:1.2rem; font-weight:600; font-family: 'Poiret One', curs   ive;;">¡Falta una dirreción de correo!</p>
             <input name="clave" style="font-size:1.2rem; font-weight:600; font-family: 'Poiret One', cursive;"
               class="form-control mb-3" type="password" placeholder="Contraseña" required>
               <div class="form-group col-md-9">
@@ -106,15 +106,24 @@ Essential Scripts
 
 <script>
 let formulario = document.getElementsByClassName("formulario_registro")[0];
+let correoInput = document.getElementById('correo');
+let mensajeError = document.getElementById('mensajeError');
+
+correoInput.addEventListener('input', function(event) {
+    // Realiza la validación en tiempo real
+    let correo = correoInput.value;
+    let regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!regexCorreo.test(correo)) {
+        mensajeError.style.display = 'block';
+    } else {
+        mensajeError.style.display = 'none';
+    }
+});
 
 formulario.addEventListener('submit', function(event) {
-    // Realiza tus validaciones aquí
-    let correoInput = document.getElementById('correo');
+    // Realiza la validación antes de enviar el formulario
     let correo = correoInput.value;
-
-    let mensajeError = document.getElementById('mensajeError');
-
-    // Expresión regular para validar el formato del correo electrónico
     let regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!regexCorreo.test(correo)) {
@@ -125,6 +134,7 @@ formulario.addEventListener('submit', function(event) {
         // Continúa con el envío del formulario si la validación es exitosa
     }
 });
+
 
 
     

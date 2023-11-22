@@ -176,7 +176,8 @@ figure {
 
 a {
   transition: all 0.3s ease-in 0s;
-  color: #d3d2d2e5  !important;
+  color: #d3d2d2e5;
+  text-decoration: none;
 }
 
 iframe {
@@ -2138,6 +2139,7 @@ form textarea {
 
 .division{
   margin-top: 10px;
+
 }
 
 /* -----------------------Todas las categorias index.php-------------------- */

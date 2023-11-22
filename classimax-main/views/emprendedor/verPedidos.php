@@ -3,11 +3,12 @@
 
 require_once ("../../model/conexion.php");
 require_once ("../../model/consultas.php");
-require_once ("../../model/seguridadAdmin.php");
+require_once ("../../controller/mostrarInfoEmprendedor.php");
+require_once ("../../controller/mostrarPedidos.php");
+require_once ("../../model/seguridadEmprendedor.php");
 
-require_once ("../../controller/mostraInfoAdmin.php");
-require_once ("../../controller/mostrarInfoUsuario.php");
 ?>
+
 
 
 
@@ -19,13 +20,11 @@ require_once ("../../controller/mostrarInfoUsuario.php");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>YLBB | Perfil administrador</title>
+    <title>Perfil Emprendedor Productos</title>
 
     <!-- ================= Favicon ================== -->
-    <link href="../../theme/images/Mi proyecto.png" rel="icon">
-
     <!-- Standard -->
-    
+    <link href="../../theme/images/Mi proyecto.png" rel="icon">
 
     <!-- Toastr -->
     <link href="../Dashboard/css/lib/toastr/toastr.min.css" rel="stylesheet">
@@ -66,14 +65,15 @@ require_once ("../../controller/mostrarInfoUsuario.php");
     <link href="../Dashboard/css/lib/helper.css" rel="stylesheet">
     <link href="../Dashboard/css/style.css" rel="stylesheet">
     <link href="../../theme/css/style_dash.css" rel="stylesheet">
+
 </head>
 
 <body>
 
 <?php
 
- 
-include "menu.php"
+
+include "menu_emprendedor.php"
 ?>
     <!-- /# sidebar -->
 
@@ -104,9 +104,10 @@ include "menu.php"
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                                <h1>Hola,
-                                    <span>Bienvenido a la vista de administrador</span>
+                                <h1>Ver productos registrados
+                                    
                                 </h1>
+                                <p>Elija la opcion que desea realizar, editar o eliminar</p>
                             </div>
                         </div>
                     </div>
@@ -116,8 +117,9 @@ include "menu.php"
                             <div class="page-title">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item">
-                                        <a href="#">Administrador</a>
+                                        
                                     </li>
+                                    
                                 </ol>
                             </div>
                         </div>
@@ -126,79 +128,40 @@ include "menu.php"
                 </div>
                 <!-- /# row -->
                 <section id="main-content">
-                    <div class="row">
-                        <div class="col-lg-3">
-                            <div class="card tajetas">
-                                <div class="stat-widget-one">
-                                    <div class="stat-icon dib"><i class="ti-money color-success border-success"></i>
-                                    </div>
-                                    <div class="stat-content dib">
-                                        <div class="stat-text">Productos registrados</div>
-                                        <div class="stat-digit"><span class="counter my-2 d-block"><?php include_once("../../controller/contarProductos2.php")  ?></span></div>
+
+                <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-title">
+                                    <h4>Pedidos</h4>
+                                    
+                                </div>
+                                <div class="card-body">
+                                    <div>
                                         
+                                        <th>Foto</th>
+                                        <th>Producto</th>
+                                        <th>Precio</th>
+                                    </div>
+                                    <tbody>
+                                    <?php
+                                        mostrarPedido()
+                                        
+                                        ?>
+                                    </tbody>
+                                <div class="table-responsive">
+                                        <table class="table table-hover">
+                                            
+                                        </table>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3">
-                            <div class="card">
-                                <div class="stat-widget-one">
-                                    <div class="stat-icon dib"><i class="ti-user color-primary border-primary"></i>
-                                    </div>
-                                    <div class="stat-content dib">
-                                        <div class="stat-text">Usuarios registrados</div>
-                                        <div class="stat-digit"><span class="counter my-2 d-block"><?php include_once("../../controller/contarUsuarios2.php")  ?></span></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3">
-                            <div class="card">
-                                <div class="stat-widget-one">
-                                    <div class="stat-icon dib"><i class="ti-layout-grid2 color-pink border-pink"></i>
-                                    </div>
-                                    <div class="stat-content dib">
-                                        <div class="stat-text">Publicaciones</div>
-                                        <div class="stat-digit">770</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3">
-                            <div class="card">
-                                <div class="stat-widget-one">
-                                    <div class="stat-icon dib"><i class="ti-link color-danger border-danger"></i></div>
-                                    <div class="stat-content dib">
-                                        <div class="stat-text">Servicios registrados</div>
-                                        <div class="stat-digit">2,781</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <!-- /# column -->
+                        
+                        <!-- /# column -->
                     </div>
-                    <div class="row">
-                        <div class="col-md-12 descripcion_admin">
-                            <div class="contenido4">
-                            <p>
-                            Bienvenido al Panel de Administración de Your Little Big Business. Esta vista es tu centro de control para gestionar todos los aspectos esenciales de tu plataforma. A continuación, te presentamos algunas de las poderosas funciones que encontrarás aquí:
-                            </p>
-                            <p>
-
-                                <strong>Gestión de Usuarios: </strong>Tendrás la capacidad de ver y administrar todos los usuarios registrados en tu plataforma. Puedes acceder a sus perfiles, revisar su actividad y editar información según sea necesario. Además, podrás crear nuevos perfiles de usuario para mantener tu comunidad en crecimiento.
-                            </p>
-                            <p>
-
-                                <strong>Estadísticas Relevantes:</strong> Obtén una visión completa del rendimiento de tu plataforma con estadísticas detalladas. Visualiza métricas clave como el tráfico del sitio, la tasa de conversión y las tendencias de ventas. Estas estadísticas te ayudarán a tomar decisiones informadas para optimizar tu plataforma.
-                            </p>
-
-                            <p>
-
-                                <strong>Gestión de Contenido:</strong> Agregar y actualizar contenido nunca ha sido más fácil. Aquí, podrás crear, editar y eliminar páginas, publicaciones y productos. Mantén tu plataforma fresca y atractiva para tus usuarios en todo momento.
-                            </p>
-                            </div>
-                        </div>
-
-                    </div>    
+                    
 
                     <div class="row">
                         <div class="col-lg-12">
@@ -207,12 +170,10 @@ include "menu.php"
                             </div>
                         </div>
                     </div>
+
                 </section>
             </div>
         </div>
-        <?php
-            include("editar.php");
-        ?>
     </div>
 
 

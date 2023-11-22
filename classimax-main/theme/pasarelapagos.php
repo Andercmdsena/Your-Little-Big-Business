@@ -27,7 +27,7 @@
 <div class="container">
     <article>
         <h1>Finalizar compra</h1>
-        <form action="procesar_pago.php" method="POST">
+        <form action="../controller/pedido.php" method="POST">
             <div class="form-group">
                 <h3>1. Informacion de contacto</h3>
                 <label for="nombre">Email</label>
@@ -60,7 +60,10 @@
                             <input type="text" id="credit-card-input" placeholder="Número de tarjeta de crédito" oninput="detectCardBrand(this)">
                                 <img id="credit-card-image" alt="Franquicia de la Tarjeta" src="">
 
-                                <button class="botonpagar" id="pagar" type="submit"><a href="../TCPDF-main/prueba.php" target="_blank">Pagar</a></button>
+
+                                <button class="botonpagar" id="pagar" type="submit">Pagar</button>
+
+                                
                          </div>
                  </div>
             </div>
@@ -80,6 +83,8 @@
   
 </div>
     <script>
+
+       
         function detectCardBrand(input) {
             const cardNumber = input.value.replace(/\D/g, ''); 
 

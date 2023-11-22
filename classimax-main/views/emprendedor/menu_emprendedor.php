@@ -125,6 +125,20 @@ require_once ("../../model/seguridadEmprendedor.php");
                             
                         </ul>
                     </li>
+                    <li>
+                        <a class="sidebar-sub-toggle">
+                            <i class="ti-time"></i> Pedidos
+                            <span class="sidebar-collapse-icon ti-angle-down"></span>
+                        </a>
+                        <ul>
+                            
+                            <li>
+                                <a href="verPedidos.php"><i class="ti-shopping-cart"></i>Pedidos pendientes</a>
+                            </li>
+                            
+                            
+                        </ul>
+                    </li>
 
 
 

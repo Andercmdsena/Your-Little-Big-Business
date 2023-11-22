@@ -62,7 +62,7 @@
               class="form-control mb-3" type="password" placeholder="Contraseña" required>
               <div class="form-group col-md-9">
                 <label style="font-weight:600;">Rol</label>
-                <select name="tipo_de_rol" id="" class="form-control">
+                <select name="tipo_de_rol" id="" class="form-control font-weight-bold">
                       <option value="cliente">Cliente</option>
                       <option value="emprendedor">Emprendedor</option>
                       <option value="administrador">Administrador</option>

@@ -50,18 +50,18 @@
   <section id="content-main" class="login container w-100 p-4 mt-4">
     <div class="row m-auto w-100 p-4">
       <div class="col-lg-5 border p-0">
-        <h3 style="background-color: #bdd0ff; font-family: 'Poiret One', cursive;font-size: 1.5rem;"
+        <h3 style="background-color: #bdd0ff; font-family: 'Poiret One', cursive;font-size: 1.5rem; font-weight: 600;"
           class="p-4 text-center w-100">Ingresar</h3>
 
         <form class="py-4 text-center" action="../controller/iniciarSesion.php" method="post">
           <fieldset class="p-4 ">
-            <input name="email" id="correo" onkeyup="validarCorreo()" style="font-size:1.2rem; font-weight:400; font-family: 'Poiret One', cursive;"
+            <input name="email" id="correo" onkeyup="validarCorreo()" style="font-size:1.2rem; font-weight:600; font-family: 'Poiret One', cursive;"
               class="form-control mb-3" type="text" placeholder="Email" required>
               <p id="mensajeError" style="color: red; display: none;">¡El correo está mal digitado!</p>
-            <input name="clave" style="font-size:1.2rem; font-weight:400; font-family: 'Poiret One', cursive;"
+            <input name="clave" style="font-size:1.2rem; font-weight:600; font-family: 'Poiret One', cursive;"
               class="form-control mb-3" type="password" placeholder="Contraseña" required>
               <div class="form-group col-md-9">
-                <label>Rol</label>
+                <label style="font-weight:600;">Rol</label>
                 <select name="tipo_de_rol" id="" class="form-control">
                       <option value="cliente">Cliente</option>
                       <option value="emprendedor">Emprendedor</option>

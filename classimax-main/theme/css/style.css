@@ -2134,6 +2134,9 @@ form textarea {
   
 }
 
+.division{
+  margin-top: 10px;
+}
 
 /* -----------------------Todas las categorias index.php-------------------- */
 .search-result h2{
@@ -2193,9 +2196,11 @@ form textarea {
 #filtro option{
   font-size: 17px;
 }
+
 .personas{
   height: 300px;
 }
+
 
 /* --------------------------Perfil usuario---------------------- */
 

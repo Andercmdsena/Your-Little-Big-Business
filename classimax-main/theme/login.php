@@ -55,8 +55,9 @@
 
         <form class="py-4 text-center" action="../controller/iniciarSesion.php" method="post">
           <fieldset class="p-4 ">
-            <input name="email" style="font-size:1.2rem; font-weight:400; font-family: 'Poiret One', cursive;"
+            <input name="email" id="correo" onkeyup="validarCorreo()" style="font-size:1.2rem; font-weight:400; font-family: 'Poiret One', cursive;"
               class="form-control mb-3" type="text" placeholder="Email" required>
+              <p id="mensajeError" style="color: red; display: none;">¡El correo está mal digitado!</p>
             <input name="clave" style="font-size:1.2rem; font-weight:400; font-family: 'Poiret One', cursive;"
               class="form-control mb-3" type="password" placeholder="Contraseña" required>
               <div class="form-group col-md-9">
@@ -68,7 +69,7 @@
 f
                 </select>
               </div>
-            <button id="btn-ingresar" type="submit" class="btn font-weight-bold w-75 mt-3">Ingresar</button>
+            <button id="btn-ingresar"  type="submit" class="btn font-weight-bold w-75 mt-3"  >Ingresar</button>
             <a style="font-family: 'Poiret One', cursive; font-size:1.2rem; font-weight:600"
               class="mt-3 d-block text-primary text-center" href="../views/administrador/page-reset-password.php">Olvidaste tu contraseña?</a>
             <a style="font-family: 'Poiret One', cursive; font-size:1.2rem; font-weight:600"
@@ -101,6 +102,44 @@ f
   <!-- 
 Essential Scripts
 =====================================-->
+
+
+<script>
+
+function validarCorreo() {
+    let correoInput = document.getElementById('correo');
+    let correo = correoInput.value;
+
+    let mensajeError = document.getElementById('mensajeError');
+
+    if (correo.includes('@')) {
+        mensajeError.style.display = 'none';
+    } else {
+        mensajeError.style.display = 'block';
+    }
+}
+    
+
+      
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   <script src="plugins/jquery/jquery.min.js"></script>
   <script src="plugins/bootstrap/popper.min.js"></script>
   <script src="plugins/bootstrap/bootstrap.min.js"></script>

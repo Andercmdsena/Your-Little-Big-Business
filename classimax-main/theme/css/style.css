@@ -52,6 +52,10 @@ p {
   color: #000;
 }
 
+p.Descripcion{
+  font-weight: bold;
+}
+
 label {
   font-size: 14px;
   letter-spacing: 0;
@@ -1098,6 +1102,7 @@ ul.pagination .active a {
   border: none;
   height: 720px;
   margin-bottom: 20px;
+
 }
 .product-item .cardCarrusel {
   border: none;
@@ -1108,7 +1113,7 @@ ul.pagination .active a {
 }
 .product-item .card .card-body {
   padding: 20px;
-  border-bottom: 5px solid #BDD0FF;
+  border-bottom: 5px solid #25304d;
   border-radius: 10px;
 }
 .product-item .card .card-body .card-title {
@@ -2330,7 +2335,7 @@ form textarea {
   border-radius: 20px;
   box-shadow: 5px 5px 10px #0000004d;
   padding: 20px 100px 20px 100px;
-  margin: 50px 70px;
+  margin: 50px 200px;
 }
 
 hr{
@@ -2347,6 +2352,7 @@ hr{
 
 .disponible{
   color: rgb(22, 168, 24);
+  font-weight: bold;
 }
 
 .productosxd{
@@ -2367,6 +2373,11 @@ hr{
 .detallesproductos{
   flex: 1;
   margin-left: 20px;
+  font-weight: bold;
+}
+
+.prod.Descripcion  p{
+  font-weight: bold;
 }
 
 .nombreproducto {
@@ -2381,6 +2392,7 @@ hr{
 .precioproducto{
   color: #c76a0e;
   font-size: 18px;
+  font-weight: bold;
 }
 
 .preciototal{
@@ -2389,6 +2401,7 @@ hr{
   font-size: 1.2em;
   font-weight: bold;
   padding-left: 130px;
+  font-weight: bold;
 }
 
 .botonpagar{

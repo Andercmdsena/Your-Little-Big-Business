@@ -1,3 +1,6 @@
+
+
+
 <!-- este archivo resive todas las consultas del modelo para mostrar informacion al administrador -->
 <!-- esta funcion es la que se llama en la vista -->
 

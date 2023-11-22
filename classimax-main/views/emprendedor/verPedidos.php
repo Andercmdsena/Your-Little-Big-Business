@@ -1,6 +1,13 @@
 <?php
 
 
+// Inicia la sesión
+
+
+// Asigna el valor de la variable de sesión 'id' a la variable $usuario
+
+// Resto del código...
+
 require_once ("../../model/conexion.php");
 require_once ("../../model/consultas.php");
 require_once ("../../controller/mostrarInfoEmprendedor.php");
@@ -14,18 +21,18 @@ require_once ("../../model/seguridadEmprendedor.php");
 
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
     <title>Perfil Emprendedor Productos</title>
-
+    
     <!-- ================= Favicon ================== -->
     <!-- Standard -->
     <link href="../../theme/images/Mi proyecto.png" rel="icon">
-
+    
     <!-- Toastr -->
     <link href="../Dashboard/css/lib/toastr/toastr.min.css" rel="stylesheet">
     <!-- Sweet Alert -->
@@ -56,7 +63,7 @@ require_once ("../../model/seguridadEmprendedor.php");
     <link href="../Dashboard/css/lib/chartist/chartist.min.css" rel="stylesheet">
     <!-- Calender -->
     <link href="../Dashboard/css/lib/calendar/fullcalendar.css" rel="stylesheet" />
-
+    
     <!-- Common -->
     <link href="../Dashboard/css/lib/font-awesome.min.css" rel="stylesheet">
     <link href="../Dashboard/css/lib/themify-icons.css" rel="stylesheet">
@@ -65,19 +72,19 @@ require_once ("../../model/seguridadEmprendedor.php");
     <link href="../Dashboard/css/lib/helper.css" rel="stylesheet">
     <link href="../Dashboard/css/style.css" rel="stylesheet">
     <link href="../../theme/css/style_dash.css" rel="stylesheet">
-
+    
 </head>
 
 <body>
-
-<?php
+    
+    <?php
 
 
 include "menu_emprendedor.php"
 ?>
     <!-- /# sidebar -->
-
-
+    
+    
     <div class="header">
         <div class="container-fluid">
             <div class="row">
@@ -94,9 +101,9 @@ include "menu_emprendedor.php"
             </div>
         </div>
     </div>
-
-
-
+    
+    
+    
     <div class="content-wrap">
         <div class="main">
             <div class="container-fluid">
@@ -118,9 +125,9 @@ include "menu_emprendedor.php"
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item">
                                         
-                                    </li>
-                                    
-                                </ol>
+                                        </li>
+                                        
+                                    </ol>
                             </div>
                         </div>
                     </div>
@@ -128,8 +135,8 @@ include "menu_emprendedor.php"
                 </div>
                 <!-- /# row -->
                 <section id="main-content">
-
-                <div class="row">
+                    
+                    <div class="row">
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-title">
@@ -137,25 +144,53 @@ include "menu_emprendedor.php"
                                     
                                 </div>
                                 <div class="card-body">
-                                    <div>
-                                        
-                                        <th>Foto</th>
-                                        <th>Producto</th>
-                                        <th>Precio</th>
-                                    </div>
                                     <tbody>
-                                    <?php
-                                        mostrarPedido()
+                                        <?php
+                                        $usuario = $_SESSION['id'];
                                         
                                         ?>
                                     </tbody>
-                                <div class="table-responsive">
+                                    <div class="table-responsive">
                                         <table class="table table-hover">
+                                        <style>
+    table {
+        width: 100%; /* Opcional: Hace que la tabla ocupe todo el ancho disponible */
+        border-collapse: collapse; /* Combina los bordes de las celdas */
+    }
+
+    th, td {
+        text-align: center; /* Centra el texto horizontalmente */
+        padding: 10px; /* Agrega espaciado interno */
+        border: 1px solid #ddd; /* Agrega bordes a las celdas */
+    }
+
+    thead th {
+        background-color: #f2f2f2; /* Color de fondo para los encabezados */
+    }
+</style>
+                                            <thead>
+                                                <tr>
+                                                    <th>Foto</th>
+                                                    <th>ID pedido</th>
+                                                    <th>Nombre</th>
+                                                    <th>Precio</th>
+                                                    <th>Cantidad</th>
+                                                    <th>Cantidad</th>
+                                                    <th></th>
+
                                             
-                                        </table>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php
+                                        
+                                              mostrarPedido($usuario)
+                                              ?>
+                                            </tbody>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
                         </div>
                         <!-- /# column -->
                         

@@ -1357,38 +1357,37 @@ class consultas{
     }
 
 
-    public function mostrarPedido() {
-        $f=null;
- 
- 
+    public function mostrarPedido($usuario) {
+        $f = null;
+    
         $objConexion = new Conexion();
-        $conexion = $objConexion -> get_conexion();
-
-        $consultar = "SELECT *
+        $conexion = $objConexion->get_conexion();
+    
+        $consultar = "
+        SELECT *
         FROM productos
-        JOIN pedidos ON productos.id_emprendedor = pedidos.id_emprendedor
-        JOIN detalles_pedido ON pedidos.id = detalles_pedido.id_pedido
+        JOIN detalles_pedido ON productos.id = detalles_pedido.id_producto
+        JOIN pedidos ON detalles_pedido.id_pedido = pedidos.id
+        WHERE productos.id_emprendedor = :usuario
+            AND pedidos.id_emprendedor = :usuario
         ORDER BY productos.id_emprendedor, pedidos.id;
         
-        
-        
-        
-        
-    
         ";
-
-        $result=$conexion->prepare($consultar);
-
-       $result->execute();
-       
-
-       while ($resultado=$result->fetch()) {
-        $f[] = $resultado;
-       }
-
-       return $f;
-
+    
+        $result = $conexion->prepare($consultar);
+    
+        // Enlaza el parámetro :usuario
+        $result->bindParam(':usuario', $usuario, PDO::PARAM_INT);
+    
+        $result->execute();
+    
+        while ($resultado = $result->fetch()) {
+            $f[] = $resultado;
+        }
+    
+        return $f;
     }
+    
     
     
     

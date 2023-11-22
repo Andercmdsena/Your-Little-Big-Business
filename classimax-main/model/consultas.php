@@ -858,6 +858,33 @@ class consultas{
     
         return $f;
     }
+
+    public function mostrarProducto_usuario($arg_id_usuario = null) {
+        $f = null;
+    
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+    
+        // Consulta SQL para seleccionar todos los productos, incluyendo la posibilidad de un INNER JOIN
+        $consultar = "SELECT productos.*, usuario.* FROM productos INNER JOIN usuario ON productos.id_emprendedor = usuario.ID WHERE usuario.ID = usuario.ID ORDER BY productos.nombre ASC";
+    
+        $result = $conexion->prepare($consultar);
+    
+        // Si se proporciona un ID de usuario, vincularlo en la consulta
+        if ($arg_id_usuario !== null) {
+            $result->bindParam(":id_usuario", $arg_id_usuario);
+        }
+    
+        $result->execute();
+    
+        while ($resultado = $result->fetch()) {
+            $f[] = $resultado;
+        }
+    
+        return $f;
+    }
+
+    
     public function mostrarServicio($arg_id_usuario = null) {
         $f = null;
     

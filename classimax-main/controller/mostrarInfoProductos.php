@@ -95,5 +95,28 @@ function cargarProductoAdmin(){
         
     }
 }
+function reportesProductos(){
+    $objConsulta = new Consultas();
+    $result = $objConsulta->mostrarProducto_usuario();
+
+    if (!isset($result)) {
+        echo '<h2>No hay productos registrados</h2>';
+    }   else{
+
+        foreach($result as $f){
+          $estado = ($f['Estado'] == 1) ? 'Activo' : (($f['Estado'] == 0) ? 'Bloqueado' : 'Pendiente');
+
+        echo  '
+            <tr>
+                <td>'.$f['nombre'].'</td>
+                <td>'.$f['precio'].'</td>
+                <td>'.$f['cantidad'].'</td>    
+                <td>'.$f['Nombre'].'</td>
+                <td>'.$estado.'</td>
+            <tr>';
+        }
+        
+    }
+}
 
 ?>

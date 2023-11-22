@@ -31,7 +31,7 @@ session_start();
   <meta name="generator" content="Themefisher Classified Marketplace Template v1.0">
 
   <!-- favicon -->
-  <link href="images/favicon.png" rel="shortcut icon">
+  <link href="images/Mi proyecto.png" rel="shortcut icon">
 
   <!-- 
   Essential stylesheets

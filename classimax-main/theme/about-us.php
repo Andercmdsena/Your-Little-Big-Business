@@ -48,7 +48,43 @@
 
 <body class="body-wrapper">
 
+<style>
+  .text-center a {
 
+font-weight: bolder;
+color: #000 !important;
+font-size: 20px;
+text-decoration: none !important;
+list-style: none;
+border-radius: 1px solid;
+border: 1px solid black;
+border-radius: 20px;
+padding: 8px;
+}
+.text-center a:hover {
+
+font-weight: bolder;
+background-color: #ddd !important;
+
+text-decoration: none !important;
+list-style: none;
+
+}
+.text-center p {
+
+font-weight: bolder;
+color: #000 !important;
+font-size: 20px;
+text-decoration: none !important;
+list-style: none;
+border-radius: 1px solid
+;
+}
+
+.copyright p {
+color: white !important;
+}
+</style>
 <?php include("../components/header.php") ?>
     <!-- capturar nombre de usuario -->
     <script>

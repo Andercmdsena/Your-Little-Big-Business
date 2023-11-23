@@ -135,8 +135,24 @@ require_once ("../../model/seguridadEmprendedor.php");
                                         <input type="text" class="form-control" placeholder="200000" name="precio_pro">
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label>Cantidad</label>
-                                        <input type="text" class="form-control" placeholder="1, 2, 3" name="cantidad">
+                                    <label>Cantidad</label>
+<select class="form-control" name="cantidad" id="cantidadSelect" onchange="checkIfTenPlus()">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+  <option value="8">8</option>
+  <option value="9">9</option>
+  <option value="10">10+</option>
+</select>
+
+<!-- Campo de entrada adicional para "10+" -->
+<input type="number" class="form-control" placeholder="Ingrese cantidad" name="cantidad_input" step="any" pattern="[0-9]*" maxlength="4" id="cantidadInput" style="display: none;">
+
+
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label>Categoria</label>
@@ -152,13 +168,14 @@ require_once ("../../model/seguridadEmprendedor.php");
                                             <option value="8">Hogar</option>
                                             <option value="9">Mascotas</option>
                                             <option value="10">Libros y medios</option>
+                                            <option value="11">Otra</option>
                                            
 
                                         </select>
                                     </div>
                                     <div class="form-group col-md-12">
                                         <div>Descripción</div>
-                                        <textarea name="descripcion" id="" cols="50" rows="5"></textarea>
+                                        <textarea name="descripcion" id="" cols="100" rows="5"></textarea>
                                     </div>
                                     
                                     <div class="form-group col-md-12">
@@ -202,7 +219,18 @@ require_once ("../../model/seguridadEmprendedor.php");
     </div>
 
 
+    <script>
+  function checkIfTenPlus() {
+    var selectElement = document.getElementById("cantidadSelect");
+    var inputElement = document.getElementById("cantidadInput");
 
+    if (selectElement.value === "10") {
+      inputElement.style.display = "block";
+    } else {
+      inputElement.style.display = "none";
+    }
+  }
+</script>
 
     <!-- Common -->
     <script src="../Dashboard/js/lib/jquery.min.js"></script>

@@ -51,7 +51,7 @@ function cargarProductoCarrito() {
             $tablaHTML .= '
             <tr class="table-dark">
                 <td>' . $f['nombre'] . '</td>
-                <td>' . $f['cantidad'] . '</td>
+                <td>' . $f['cantidad_carrito'] . '</td>
                 <td>' . $f['precio'] . '</td>
                 <td>' . $f['nombre_emprendedor'] . '</td>
                 <td>' . $f['telefono_emprendedor'] . '</td>

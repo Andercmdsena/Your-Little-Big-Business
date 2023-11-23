@@ -4,6 +4,7 @@ function cargarProductoIndividual(){
 	$id = $_GET['id'];
     $objConsulta = new Consultas();
     $result = $objConsulta->productoIndividual($id);
+	$usuario = "hola";
 
     if (!isset($result)) {
         echo '<h2>No hay productos registrados</h2>';
@@ -201,7 +202,7 @@ function cargarProductoIndividual(){
         <input type="checkbox" name="calificacion" value="4" id="estrella4"><label for="estrella4">&#9733;&#9733;&#9733;&#9733 </label> 	 |
         <input type="checkbox" name="calificacion" value="5" id="estrella5"><label for="estrella5">&#9733;&#9733;&#9733;&#9733;&#9733; </label>
         <textarea name="comentario" id="comentario" placeholder="Comentario..." maxlength="100"></textarea>
-        <button style="margin-top:15px;" type="submit">Enviar Calificación</button>
+		<button id="botoncalificacion" style="margin-top:15px;" type="submit">Enviar Calificación</button>
     </form>
 </div>
 

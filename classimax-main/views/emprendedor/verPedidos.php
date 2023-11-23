@@ -170,7 +170,6 @@ td:not(:first-child) {
     padding: 10px;
     border: 1px solid #ddd;
     position: relative;
-    top: 35px;
     
 }
 

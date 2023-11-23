@@ -386,6 +386,24 @@ class consultas{
             echo '<script>alert("Error al eliminar el usuario")</script>';
         }
     }
+    public function cantidadCarrito($id, $cantidad) {
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+    
+        $actualizar = "UPDATE carrito SET cantidad = :cantidad WHERE id = :id"; // Actualizar cantidad
+    
+        $result = $conexion->prepare($actualizar);
+        $result->bindParam(":id", $id);
+        $result->bindParam(":cantidad", $cantidad, PDO::PARAM_INT); // Asegurar que la cantidad es tratada como entero
+    
+        if ($result->execute()) {
+            echo '<script>alert("Cantidad actualizada con éxito")</script>';
+            echo '<script>location.href="../theme/carrito.php"</script>';
+        } else {
+            echo '<script>alert("Error al actualizar la cantidad")</script>';
+        }
+    }
+    
     
       
       public function eliminarProducto ($id) {
@@ -1015,6 +1033,8 @@ class consultas{
         $result -> bindParam(":id_producto", $id_producto);
         
         $result->execute();
+        echo '<script>location.href="../TCPDF-main/prueba.php"</script>';
+
     }
     
     
@@ -1207,10 +1227,11 @@ class consultas{
         $conexion = $objConexion->get_conexion();
     
         // Consulta SQL para seleccionar los productos en el carrito de un usuario específico
-        $consultar = "SELECT productos.*, carrito.id AS id_carrito
+        $consultar = "SELECT productos.*, carrito.id AS id_carrito, carrito.cantidad AS cantidad_carrito
         FROM productos
         INNER JOIN carrito ON productos.id = carrito.id_producto
         WHERE carrito.id_usuario = :id_usuario
+        
         ";
     
         $result = $conexion->prepare($consultar);
@@ -1444,13 +1465,25 @@ class consultas{
         $conexion = $objConexion->get_conexion();
     
         // Consulta SQL para seleccionar los productos en el carrito de un usuario específico con información adicional del usuario
-        $consultar = "SELECT productos.*, carrito.id AS id_carrito, usuario_cliente.*, emprendedor.nombre AS nombre_emprendedor, emprendedor.email AS email_emprendedor, 
-        emprendedor.telefono AS telefono_emprendedor
-        FROM productos
-        INNER JOIN carrito ON productos.id = carrito.id_producto
-        LEFT JOIN usuario AS usuario_cliente ON carrito.id_usuario = usuario_cliente.ID
-        LEFT JOIN usuario AS emprendedor ON productos.id_emprendedor = emprendedor.ID
-        WHERE carrito.id_usuario = :id_usuario";
+        $consultar = "SELECT 
+        productos.*, 
+        carrito.id AS id_carrito, 
+        usuario_cliente.*, 
+        emprendedor.nombre AS nombre_emprendedor, 
+        emprendedor.email AS email_emprendedor, 
+        emprendedor.telefono AS telefono_emprendedor,
+        carrito.cantidad AS cantidad_carrito
+    FROM 
+        productos
+    INNER JOIN 
+        carrito ON productos.id = carrito.id_producto
+    LEFT JOIN 
+        usuario AS usuario_cliente ON carrito.id_usuario = usuario_cliente.ID
+    LEFT JOIN 
+        usuario AS emprendedor ON productos.id_emprendedor = emprendedor.ID
+    WHERE 
+        carrito.id_usuario = :id_usuario
+    ";
         
     
     

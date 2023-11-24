@@ -131,7 +131,7 @@ require_once("../model/consultas.php");
 		<div class="row">
 			<div class="col-md-12">
 				<div class="section-title">
-					<h2>Productos recién agregados</h2>
+					<h2>Productos mas destacados</h2>
 					<p>Vez algo que te guste o te llame la atención?</p>
 				</div>
 			</div>

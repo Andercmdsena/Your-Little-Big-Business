@@ -46,12 +46,9 @@ function cargarPublicacion() {
                 <p class="card-text">Estado:' . $estado. '</p>
                 
                 <div class="product-ratings">
-                    <ul class="list-inline">
-                        <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                        <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                        <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                        <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                    <ul class="list-inline">';
+                            
+                    echo'    
                     </ul>
                 </div>
                 <div class="botonesCarrito">';
@@ -78,7 +75,7 @@ function cargarPublicacion() {
 
 function cargarPublicacionCarrusel() {
     $objConsulta = new Consultas();
-    $result = $objConsulta->mostrarPublicacion();
+    $result = $objConsulta->mostrarPublicacionCarrusel();
 
     if (!isset($result)) {
         echo '<h2>No hay productos registrados</h2>';
@@ -111,11 +108,6 @@ function cargarPublicacionCarrusel() {
                             <p class="card-text">'. $descripcion .'</p>
                         <div class="product-ratings">
                             <ul class="list-inline">
-                                <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                                <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                                <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                                <li class="list-inline-item selected"><i class="fa fa-star"></i></li>
-                                <li class="list-inline-item"><i class="fa fa-star"></i></li>
                             </ul>
                         </div>
                     </div>

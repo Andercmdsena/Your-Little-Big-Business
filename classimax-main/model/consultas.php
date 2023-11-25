@@ -484,10 +484,10 @@ class consultas{
         if ($result->execute()) {
             echo '<script> 
             swal.fire({
-                icon: "error",
+                icon: "success",
                 title: "¡Elminiación exitosa!",
                 text: "Usuario usuario con exito.",
-                confirmButtonText: "Ir a carrito"
+                confirmButtonText: "Ir al carrito"
             }).then(function() {
                 window.location = "../theme/carrito.php";
             });</script>';
@@ -497,7 +497,7 @@ class consultas{
                 icon: "error",
                 title: "¡Erorr!",
                 text: "Error al actualizar la cantidad.",
-                confirmButtonText: "Ir a carrito"
+                confirmButtonText: "Ir al carrito"
             }).then(function() {
                 window.location = "../theme/carrito.php";
             });</script>';
@@ -517,8 +517,15 @@ class consultas{
         $result-> bindParam (":id", $id );
         
         $result->execute ();
-        echo '<script> alert("Producto eliminado con exito") </script>';
-        echo "<script> location.href='../Views/emprendedor/verProductos.php' </script>";
+        echo '<script> 
+        swal.fire({
+            icon: "success",
+            title: "¡Producto eliminado con exito.!",
+            text: "Producto eliminado con exito.",
+            confirmButtonText: "Ir al carrito"
+        }).then(function() {
+            window.location = "../Views/emprendedor/verProductos.php";
+        });</script>';
       
       
       
@@ -534,8 +541,15 @@ class consultas{
         $result-> bindParam (":id", $id );
         
         $result->execute ();
-        echo '<script> alert("Servicio eliminado con exito") </script>';
-        echo "<script> location.href='../Views/emprendedor/verServicio.php' </script>";
+        echo '<script> 
+        swal.fire({
+            icon: "success",
+            title: "¡Servicios eliminado con exito.!",
+            text: "Servicios eliminado con exito.",
+            confirmButtonText: "Ir al carrito"
+        }).then(function() {
+            window.location = "../Views/emprendedor/verServicio.php";
+        });</script>';
       
       
       
@@ -622,8 +636,15 @@ class consultas{
             return "Error al modificar el usuario";
         }else{
             $result -> execute();
-            echo '<script> alert("Usuario actualizado exitosamente") </script>';
-            echo "<script> location.href='../views/administrador/home.php' </script>";
+            echo '<script> 
+            swal.fire({
+                icon: "success",
+                title: "¡Usuario actualizado con exito.!",
+                text: "Usuario actualizado con exito.",
+                confirmButtonText: "Ir al menu"
+            }).then(function() {
+                window.location = "../views/administrador/home.php";
+            });</script>';
         }
         
       }
@@ -642,8 +663,15 @@ class consultas{
             return "Error al modificar el producto";
         }else{
             $result -> execute();
-            echo '<script> alert("Producto actualizado exitosamente") </script>';
-            echo "<script> location.href='../views/emprendedor/verProductos.php' </script>";
+            echo '<script> 
+            swal.fire({
+                icon: "success",
+                title: "¡Producto actualizado con exito.!",
+                text: "Producto actualizado con exito.",
+                confirmButtonText: "Ir al menu"
+            }).then(function() {
+                window.location = "../views/emprendedor/verProductos.php";
+            });</script>';
         }
         
       }
@@ -662,8 +690,15 @@ class consultas{
             return "Error al modificar el producto";
         }else{
             $result -> execute();
-            echo '<script> alert("Servicio actualizado exitosamente") </script>';
-            echo "<script> location.href='../views/emprendedor/verServicio.php' </script>";
+            echo '<script> 
+            swal.fire({
+                icon: "success",
+                title: "¡Servicio actualizado con exito.!",
+                text: "Servicio actualizado con exito.",
+                confirmButtonText: "Ir al menu"
+            }).then(function() {
+                window.location = "../views/emprendedor/verServicio.php";
+            });</script>';
         }
         
       }
@@ -680,8 +715,15 @@ class consultas{
 
         $result -> execute();
 
-        echo'<script> alert("Producto actualizado exitosamdasente") </script>';
-        echo "<script> location.href='../views/administrador/verProductosAdmin.php' </script>";
+        echo'<script> 
+        swal.fire({
+            icon: "success",
+            title: "¡Producto actualizado con exito.!",
+            text: "Producto actualizado con exito.",
+            confirmButtonText: "Ir al menu"
+        }).then(function() {
+            window.location = "../views/administrador/verProductosAdmin.php";
+        });</script>';
         
       }
       public function modificarUsuario2($arg_campo, $arg_valor, $arg_id_producto){
@@ -699,8 +741,15 @@ class consultas{
             return "Error al modificar el usuario";
         }else{
             $result -> execute();
-            echo '<script> alert("Usuario actualizado exitosamente") </script>';
-            echo "<script> location.href='../views/cliente/usuario.php' </script>";
+            echo '<script> 
+            swal.fire({
+                icon: "success",
+                title: "¡Usuario actualizado con exito.!",
+                text: "Usuario actualizado con exito.",
+                confirmButtonText: "Ir al menu"
+            }).then(function() {
+                window.location = "../views/cliente/usuario.php";
+            });</script>';
         }
         
       }
@@ -719,8 +768,15 @@ class consultas{
             return "Error al modificar el usuario";
         }else{
             $result -> execute();
-            echo '<script> alert("Usuario actualizado exitosamente") </script>';
-            echo "<script> location.href='../views/emprendedor/emprendedor.php' </script>";
+            echo '<script> 
+            swal.fire({
+                icon: "success",
+                title: "¡Usuario actualizado con exito.!",
+                text: "Usuario actualizado con exito.",
+                confirmButtonText: "Ir al menu"
+            }).then(function() {
+                window.location = "../views/emprendedor/emprendedor.php";
+            });</script>';
         }
         
       }
@@ -761,8 +817,15 @@ class consultas{
             return "Error al actualizar el usuario";
         }else{
             $result -> execute();
-            echo '<script> alert("Usuario actualizado exitosamente") </script>';
-            echo "<script> location.href='../views/administrador/home.php' </script>";
+            echo '<script> 
+            swal.fire({
+                icon: "success",
+                title: "¡Usuario actualizado con exito.!",
+                text: "Usuario actualizado con exito.",
+                confirmButtonText: "Ir al menu"
+            }).then(function() {
+                window.location = "../views/administrador/home.php";
+            });</script>';
         }
         
       }
@@ -780,8 +843,29 @@ class consultas{
 
         $result -> execute();
 
-        echo '<script>alert("Informacion actualizada")</script>';
-        echo "<script>location.href='../views/administrador/perfil.php?id=$id'</script>";
+        echo "<script>
+    swal.fire({
+        icon: 'success',
+        title: '¡Usuario actualizado con éxito!',
+        text: 'Usuario actualizado con éxito.',
+        confirmButtonText: 'Ir al menú',
+        willClose: function() {
+            // Redirección al hacer clic en el botón de confirmación
+            location.href='../views/administrador/perfil.php?id=$id';
+        }
+    });
+
+    // Agrega un retraso de 2000 milisegundos (2 segundos) antes de ejecutar la siguiente función
+    setTimeout(function() {
+        // Llamada a la segunda función con el retraso de 3 segundos
+        setTimeout(function() {
+            location.href='../views/administrador/perfil.php?id=$id';
+        }, 6000);
+    }, 6000);
+</script>";
+
+
+
 
         
       }
@@ -798,8 +882,26 @@ class consultas{
 
         $result -> execute();
 
-        echo '<script>alert("Informacion actualizada")</script>';
-        echo "<script>location.href='../views/cliente/usuario2.php?id=$id'</script>";
+        echo "<script>
+        swal.fire({
+            icon: 'success',
+            title: '¡Informacion actualizada con éxito!',
+            text: 'Informacion actualizada con éxito.',
+            confirmButtonText: 'Ir al menú',
+            willClose: function() {
+                // Redirección al hacer clic en el botón de confirmación
+                location.href='../views/cliente/usuario2.php?id=$id';
+            }
+        });
+    
+        // Agrega un retraso de 2000 milisegundos (2 segundos) antes de ejecutar la siguiente función
+        setTimeout(function() {
+            // Llamada a la segunda función con el retraso de 3 segundos
+            setTimeout(function() {
+                location.href='../views/cliente/usuario2.php?id=$id';
+            }, 6000);
+        }, 6000);
+    </script>";
 
         
       }
@@ -817,8 +919,26 @@ class consultas{
 
         $result -> execute();
 
-        echo '<script>alert("Informacion actualizada")</script>';
-        echo "<script>location.href='../views/emprendedor/emprendedor2.php?id=$id'</script>";
+        echo "<script>
+        swal.fire({
+            icon: 'success',
+            title: '¡Informacion actualizada con éxito!',
+            text: 'Informacion actualizada con éxito.',
+            confirmButtonText: 'Ir al menú',
+            willClose: function() {
+                // Redirección al hacer clic en el botón de confirmación
+                location.href='../views/emprendedor/emprendedor2.php?id=$id';
+            }
+        });
+    
+        // Agrega un retraso de 2000 milisegundos (2 segundos) antes de ejecutar la siguiente función
+        setTimeout(function() {
+            // Llamada a la segunda función con el retraso de 3 segundos
+            setTimeout(function() {
+                location.href='../views/emprendedor/emprendedor2.php?id=$id';
+            }, 6000);
+        }, 6000);
+    </script>";
         
       }
 
@@ -836,8 +956,26 @@ class consultas{
 
         $result -> execute();
 
-        echo '<script>alert("Informacion actualizada")</script>';
-        echo "<script>location.href='../views/administrador/perfil.php?id=$identificacion'</script>";
+        echo "<script>
+        swal.fire({
+            icon: 'success',
+            title: '¡Informacion actualizada con éxito!',
+            text: 'Informacion actualizada con éxito.',
+            confirmButtonText: 'Ir al menú',
+            willClose: function() {
+                // Redirección al hacer clic en el botón de confirmación
+                location.href='../views/administrador/perfil.php?id=$identificacion';
+            }
+        });
+    
+        // Agrega un retraso de 2000 milisegundos (2 segundos) antes de ejecutar la siguiente función
+        setTimeout(function() {
+            // Llamada a la segunda función con el retraso de 3 segundos
+            setTimeout(function() {
+                location.href='../views/administrador/perfil.php?id=$identificacion';
+            }, 6000);
+        }, 6000);
+    </script>";
       }
 
 
@@ -854,8 +992,27 @@ class consultas{
 
         $result -> execute();
 
-        echo '<script>alert("Informacion actualizada")</script>';
-        echo "<script>location.href='../views/cliente/usuario2.php?id=$identificacion'</script>";
+        echo "<script>
+        swal.fire({
+            icon: 'success',
+            title: '¡Informacion actualizada con éxito!',
+            text: 'Informacion actualizada con éxito.',
+            confirmButtonText: 'Ir al menú',
+            willClose: function() {
+                // Redirección al hacer clic en el botón de confirmación
+                location.href='../views/cliente/usuario2.php?id=$identificacion';
+            }
+        });
+    
+        // Agrega un retraso de 2000 milisegundos (2 segundos) antes de ejecutar la siguiente función
+        setTimeout(function() {
+            // Llamada a la segunda función con el retraso de 3 segundos
+            setTimeout(function() {
+                location.href='../views/cliente/usuario2.php?id=$identificacion';
+            }, 6000);
+        }, 6000);
+    </script>";
+
       }
      public function actualizarClaveEmprendedor($identificacion, $claveMd){
         $objConexion = new Conexion();
@@ -870,8 +1027,26 @@ class consultas{
 
         $result -> execute();
 
-        echo '<script>alert("Informacion actualizada")</script>';
-        echo "<script>location.href='../views/emprendedor/emprendedor2.php?id=$identificacion'</script>";
+        echo "<script>
+        swal.fire({
+            icon: 'success',
+            title: '¡Informacion actualizada con éxito!',
+            text: 'Informacion actualizada con éxito.',
+            confirmButtonText: 'Ir al menú',
+            willClose: function() {
+                // Redirección al hacer clic en el botón de confirmación
+                location.href='../views/emprendedor/emprendedor2.php?id=$identificacion';
+            }
+        });
+    
+        // Agrega un retraso de 2000 milisegundos (2 segundos) antes de ejecutar la siguiente función
+        setTimeout(function() {
+            // Llamada a la segunda función con el retraso de 3 segundos
+            setTimeout(function() {
+                location.href='../views/emprendedor/emprendedor2.php?id=$identificacion';
+            }, 6000);
+        }, 6000);
+    </script>";
       }
 
 
@@ -910,8 +1085,15 @@ class consultas{
             $result->bindParam(":id_emprendedor", $_SESSION['id']);
     
             $result->execute();
-            echo '<script> alert("Producto registrado con éxito") </script>';
-            echo '<script>location.href="../views/emprendedor/registroProductos.php" </script>';
+            echo '<script> 
+            swal.fire({
+                icon: "success",
+                title: "¡Producto registrado con exito.!",
+                text: "Producto registrado con exito.",
+                confirmButtonText: "Ir al menu"
+            }).then(function() {
+                window.location = "../views/emprendedor/registroProductos.php";
+            });</script>';
         
     }
     public function insertarServicio($nombre_pro,$precio_pro,$duracion,$categoria, $descripcion, $foto, $foto2, $foto3){
@@ -946,8 +1128,15 @@ class consultas{
             $result->bindParam(":id_emprendedor", $_SESSION['id']);
     
             $result->execute();
-            echo '<script> alert("Servicios registrado con éxito") </script>';
-            echo '<script>location.href="../views/emprendedor/registroServicios.php" </script>';
+            echo '<script> 
+            swal.fire({
+                icon: "success",
+                title: "¡Servicio registrado con exito.!",
+                text: "Servicio registrado con exito.",
+                confirmButtonText: "Ir al menu"
+            }).then(function() {
+                window.location = "../views/emprendedor/registroServicios.php";
+            });</script>';
         
     }
     public function mostrarProducto($arg_id_usuario = null) {

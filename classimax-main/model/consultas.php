@@ -409,8 +409,26 @@ class consultas{
         $result-> bindParam (":id", $id );
         
         $result->execute ();
-        echo '<script> alert("Calificacion eliminada con exito") </script>';
-        echo "<script> location.href='../theme/single2.php?id=" . $id_producto . "' </script>";
+        echo "<script>
+        swal.fire({
+            icon: 'error',
+            title: '¡Calificacion eliminada con éxito!',
+            text: 'Calificacion eliminada con éxito.',
+            confirmButtonText: 'Ir al menú',
+            willClose: function() {
+                // Redirección al hacer clic en el botón de confirmación
+                location.href='../theme/single2.php?id=" . $id_producto . "';
+            }
+        });
+    
+        // Agrega un retraso de 2000 milisegundos (2 segundos) antes de ejecutar la siguiente función
+        setTimeout(function() {
+            // Llamada a la segunda función con el retraso de 3 segundos
+            setTimeout(function() {
+                location.href='../theme/single2.php?id=" . $id_producto . "';
+            }, 6000);
+        }, 6000);
+    </script>";
 
       
       
@@ -1329,8 +1347,26 @@ class consultas{
         $result -> bindParam(":id_producto", $id_producto);
         
         $result->execute();
-        echo '<script>alert("calificacion registrada con exito")</script>';
-        echo '<script>location.href="../theme/single2.php?id=' . $id_producto . '"</script>';
+        echo "<script>
+        swal.fire({
+            icon: 'success',
+            title: '¡Comentario registrado con éxito!',
+            text: 'Comentario registrado con éxito.',
+            confirmButtonText: 'Ir al menú',
+            willClose: function() {
+                // Redirección al hacer clic en el botón de confirmación
+                location.href='../theme/single2.php?id=" . $id_producto . "';
+            }
+        });
+    
+        // Agrega un retraso de 2000 milisegundos (2 segundos) antes de ejecutar la siguiente función
+        setTimeout(function() {
+            // Llamada a la segunda función con el retraso de 3 segundos
+            setTimeout(function() {
+                location.href='../theme/single2.php?id=" . $id_producto . "';
+            }, 6000);
+        }, 6000);
+    </script>";
     }
     public function insertarDetallesProductos($id_pedido, $id_producto){
         
@@ -1467,8 +1503,15 @@ class consultas{
         $result -> bindParam(":id_usuario", $usuario);
 
         $result->execute();
-        echo '<script>alert("producto agregado con exito al carrito")</script>';
-        echo '<script>location.href="../theme/Carrito.php"</script>';
+        echo '<script> 
+            swal.fire({
+                icon: "success",
+                title: "¡Producto agregado al carrito.!",
+                text: "Producto agregado al carrito.",
+                confirmButtonText: "Ir al menu"
+            }).then(function() {
+                window.location = "../theme/Carrito.php";
+            });</script>';
     }
 
     public function productoIndividual($id){
@@ -1929,28 +1972,70 @@ class ValidarSesion
                 // Redirigimos al usuario según el tipo_de_rol
                 
                 if ($tipo_de_rol == "administrador") {
-                    echo '<script> alert("Bienvenido") </script>';
-                    echo "<script> location.href='../views/administrador/home.php' </script>";
+                    echo '<script> 
+            swal.fire({
+                icon: "success",
+                title: "¡Bienvenido.!",
+                text: "Bienvenido.",
+                confirmButtonText: "Ir al menu"
+            }).then(function() {
+                window.location = "../views/administrador/home.php";
+            });</script>';
 
                 }elseif($_SESSION['estado'] == 0){
-                    echo '<script> alert("Su cuenta esta bloqueada") </script>';
-                    echo "<script> location.href='../theme/login.php' </script>";
+                    echo '<script> 
+                    swal.fire({
+                        icon: "success",
+                        title: "¡Su cuenta esta bloqueda.!",
+                        text: "Su cuenta esta bloqueda.",
+                        confirmButtonText: "Ir al menu"
+                    }).then(function() {
+                        window.location = "../theme/login.php";
+                    });</script>';
                 } 
                 elseif($tipo_de_rol == "cliente"){
-                    echo '<script> alert("Bienvenido") </script>';
-                    echo "<script> location.href='../Views/cliente/usuario.php' </script>";
+                    echo '<script> 
+                    swal.fire({
+                        icon: "success",
+                        title: "¡Bienvenido cliente.!",
+                        text: "Bienvenido cliente.",
+                        confirmButtonText: "Ir al menu"
+                    }).then(function() {
+                        window.location = "../Views/cliente/usuario.php";
+                    });</script>';
                 } 
                 else {
-                    echo '<script> alert("Bienvenido") </script>';
-                    echo "<script> location.href='../Views/emprendedor/emprendedor.php' </script>";
+                    echo '<script> 
+                    swal.fire({
+                        icon: "success",
+                        title: "¡Bienvenido.!",
+                        text: "Bienvenido.",
+                        confirmButtonText: "Ir al menu"
+                    }).then(function() {
+                        window.location = "../Views/emprendedor/emprendedor.php";
+                    });</script';
                 }
             } else {
-                echo '<script> alert("La clave no coincide intentalo de nuevo") </script>';
-                echo "<script> location.href='../theme/login.php' </script>";
+                echo '<script> 
+                swal.fire({
+                    icon: "error",
+                    title: "¡La clave no coincide intetalo de nuevo.!",
+                    text: "La clave no coincide intetalo de nuevo.",
+                    confirmButtonText: "Ir al menu"
+                }).then(function() {
+                    window.location = "../theme/login.php";
+                });</script';
             }
         } else {
-            echo '<script> alert("Verifica que tu correo esté bien diligenciado o regístrate si no tienes cuenta") </script>';
-            echo "<script> location.href='../theme/login.php' </script>";
+            echo '<script> 
+            swal.fire({
+                icon: "error",
+                title: "¡La clave no coincide intetalo de nuevo.!",
+                text: "La clave no coincide intetalo de nuevo.",
+                confirmButtonText: "Ir al menu"
+            }).then(function() {
+                window.location = "../theme/login.php";
+            });</script';
         }
     }
 
@@ -1958,7 +2043,7 @@ class ValidarSesion
     {
         session_start();
         session_destroy();
-
+        
         echo '<script> location.href="../theme/login.php" </script>';
     }
 }

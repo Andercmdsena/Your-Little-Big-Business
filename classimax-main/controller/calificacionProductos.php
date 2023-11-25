@@ -21,9 +21,7 @@ if (isset($_SESSION['id'])) {
         if ($result) {
             echo '<script>alert("Calificación enviada correctamente.");</script>';
             echo '<script>location.href="../theme/single2.php?id=' . $id_producto . '";</script>';
-        } else {
-            echo '<script>alert("Error al enviar la calificación.");</script>';
-        }
+        } 
     } else {
         echo '<script>alert("Error: Datos de entrada no válidos.");</script>';
     }

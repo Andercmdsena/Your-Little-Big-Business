@@ -295,6 +295,31 @@ class consultas{
  
         return $f;
      }
+
+     public function buscarProducto($arg_nombre){
+        $f=null;
+ 
+ 
+         $objConexion = new Conexion();
+         $conexion = $objConexion -> get_conexion();
+         $nombre = "%".$arg_nombre."%";
+         $consultar = "SELECT * FROM productos where nombre like :nombre";
+ 
+         $result=$conexion->prepare($consultar);
+
+         $result->bindParam(":nombre", $nombre);
+ 
+        $result->execute();
+        
+ 
+        while ($resultado=$result->fetch()) {
+         $f[] = $resultado;
+        }
+ 
+        return $f;
+     }
+
+
      public function buscarUsuario($arg_nombre){
         $f=null;
  

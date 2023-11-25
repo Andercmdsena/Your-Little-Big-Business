@@ -62,9 +62,6 @@ require_once("../model/consultas.php");
 				<div class="advance-search nice-select-white">
 					<form>
 						<div class="form-row align-items-center">
-							<div class="form-group col-xl-4 col-lg-3 col-md-6">
-								<input type="text" class="form-control my-2 my-lg-0" style="color:black" id="inputtext4" placeholder="What are you looking for">
-							</div>
 							<div class="form-group col-lg-3 col-md-6">
 								<select class="w-100 form-control my-2 my-lg-0">
 									<option>Relevancia</option>
@@ -73,11 +70,13 @@ require_once("../model/consultas.php");
 									<option value="4">Mayor precio</option>
 								</select>
 							</div>
-							
-							<div class="form-group col-xl-2 col-lg-3 col-md-6">
 
-								<button type="submit" class="boton1">Buscar</button>
+							
 							</div>
+							<form metho="get">
+                                <input type="text" name="buscar">
+                                <input type="submit" value="Buscar">
+                            </form>
 						</div>
 					</form>
 				</div>
@@ -95,6 +94,7 @@ require_once("../model/consultas.php");
 				</div>
 			</div>
 		</div>
+		
 		<div class="row">
 			<div class="col-lg-3 col-md-4">
 				<div class="category-sidebar">
@@ -202,7 +202,13 @@ require_once("../model/consultas.php");
 				<div class="row product-item bg-light">
 				
 							<?php
-							cargarPublicacion()
+							
+							if(isset($_GET['buscar'])){
+								buscarProducto($_GET['buscar']);
+							  }else{
+								cargarPublicacion();
+
+							  }
 
 							?>
 				

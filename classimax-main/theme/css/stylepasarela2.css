@@ -1,3 +1,12 @@
+body {
+    background-color: #f5f5f5; /* Color de fondo */
+    background-image: linear-gradient(45deg, #eaeaea 25%, transparent 25%, transparent 75%, #eaeaea 75%, #eaeaea), linear-gradient(45deg, #eaeaea 25%, transparent 25%, transparent 75%, #eaeaea 75%, #eaeaea);
+    background-size: 60px 60px; /* Tamaño del patrón */
+    background-position: 0 0, 30px 30px; /* Posición del patrón */
+  }
+
+
+
 a, p, li, label, input, select, button {
     font-family:  'Poiret One', cursive;
     color: #000;
@@ -15,13 +24,13 @@ a, p, li, label, input, select, button {
     text-align: left;
   }
 .logone {
-    width: 50px;
-    height: 15px;
+    width: 50px !important;
+    height: 15px !important;
 }
 
-.logon {
-    width: 10px;
-    height: 10px;
+.logona {
+    width: 12px !important;
+    height: 12px !important;
 }
 .cabecera {
     background-color: #5672f9;

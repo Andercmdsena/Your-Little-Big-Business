@@ -30,18 +30,18 @@
         <form action="../controller/pedido.php" method="POST">
             <div class="form-group">
                 <h3>1. Información de contacto</h3>
-                <label for="nombre">Email</label>
+                <label for="nombre">Email <img class="logona"src="images/email.png" alt=""></label>
                 <input type="text" id="nombre" name="nombre" required>
-                <label for="nombre">Télefono</label>
+                <label for="nombre">Télefono    <img class="logona"src="images/phone.png" alt=""></label>
                 <input type="text" id="telefono" name="nombre" required>
             </div>
             <div class="form-group">
                  <h3>2. Información del envío</h3>
-                    <label for="nombre">Dirección <img class="logon" src="images/casa.png" alt=""></label>
+                    <label for="nombre">Dirección <img class="logona" src="images/casa.png" alt=""></label>
                     <input type="text" id="nombre" name="nombre" required>
-                    <label for="nombre">Localidad</label>
+                    <label for="nombre">Localidad <img class="logona" src="images/castle.png" alt=""></label>
                     <input type="text" id="telefono" name="nombre" required>
-                    <label for="nombre">Barrio</label>
+                    <label for="nombre">Barrio <img class="logona" src="images/barrio.png" alt=""></label>
                     <input type="text" id="telefono" name="nombre" required>
             </div>
             <div class="form-group">
@@ -109,7 +109,7 @@
                     cardImage.src = 'images/mastercard.png';
                     break;
                 case 'amex':
-                    cardImage.src = 'images/amx.png';
+                    cardImage.src = 'images/american.jpg';
                     break;
                 default:
                     cardImage.style.display = 'none';

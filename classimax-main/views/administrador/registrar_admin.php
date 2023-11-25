@@ -170,16 +170,6 @@ include "menu.php"
                                         <input type="email" class="form-control" placeholder="pepito@gnail.com" name="email">
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label>Rol</label>
-                                        <select name="rol" id="" class="form-control">
-                                            <option value="">Seleccione un rol</option>
-                                            <option value="Administrador">Administrador</option>
-                                            
-                                           
-
-                                        </select>
-                                    </div>
-                                    <div class="form-group col-md-6">
                                         <label>Estado</label>
                                         <select name="estado" id="" class="form-control">
                                             <option value="">Seleccione un estado</option>

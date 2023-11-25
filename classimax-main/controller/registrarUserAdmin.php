@@ -13,7 +13,6 @@
     $apellidos=$_POST["apellidos"];
     $telefono=$_POST["telefono"];
     $email=$_POST["email"];
-    $rol = $_POST["rol"];
     $estado= $_POST["estado"];
     $clave = $_POST["identificacion"];
 
@@ -25,7 +24,7 @@
 
 
     
-if (strlen($identificacion)>0 && strlen($tipo_de_dato)>0 && strlen($nombres)>0 && strlen($apellidos)>0 && strlen($email)>0 && strlen($telefono)>0 && strlen($clave)>0 && strlen($rol)>0 && strlen($estado)>0 ){
+if (strlen($identificacion)>0 && strlen($tipo_de_dato)>0 && strlen($nombres)>0 && strlen($apellidos)>0 && strlen($email)>0 && strlen($telefono)>0 && strlen($clave)>0 && strlen($estado)>0 ){
 
         // incriptmos la clave
         $claveMd = md5($clave);
@@ -37,16 +36,9 @@ if (strlen($identificacion)>0 && strlen($tipo_de_dato)>0 && strlen($nombres)>0 &
         // Movemos el archivo a la carpeta uploads
         $mover=move_uploaded_file($_FILES['foto'] ['tmp_name'], $foto);
 
-        $foto2 = "../Uploads/usuarios/" .$_FILES['foto2']['name'];
-        // Movemos el archivo a la carpeta uploads
-        $mover2=move_uploaded_file($_FILES['foto2'] ['tmp_name'], $foto2);
-
-        $foto3 = "../Uploads/usuarios/" .$_FILES['foto3']['name'];
-        // Movemos el archivo a la carpeta uploads
-        $mover3=move_uploaded_file($_FILES['foto3'] ['tmp_name'], $foto3);
         
         $objConsultas = new Consultas();
-        $result = $objConsultas -> insertarUserAdmin($identificacion, $tipo_de_dato, $nombres, $apellidos, $email, $telefono, $claveMd ,$rol, $estado, $foto, $foto2, $foto3);
+        $result = $objConsultas -> insertarUserAdmin($identificacion, $tipo_de_dato, $nombres, $apellidos, $email, $telefono, $claveMd , $estado, $foto);
 
 
 

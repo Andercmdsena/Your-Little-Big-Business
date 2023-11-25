@@ -1,3 +1,9 @@
+<html>
+    <head>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script> -->
+    </head>
+
 <?php
 
 class consultas{
@@ -31,8 +37,15 @@ class consultas{
 
 
             $result->execute();
-            echo '<script> alert("Usuario registrado con éxito") </script>';
-            echo '<script>location.href="../theme/productos.php" </script>';
+            echo '<script> 
+            swal.fire({
+                icon: "success",
+                title: "¡Registro Exitoso!",
+                text: "El usuario se registró con éxito.",
+                confirmButtonText: "Ir al login"
+            }).then(function() {
+                window.location = "../theme/login.php";
+            });</script>';
         }
     }
     public function insertarUsuariodesdeAdmin($nombre,$apellido,$email,$telefono, $claveinc, $rol, $estado, $foto){
@@ -66,11 +79,18 @@ class consultas{
             $result->bindParam(":foto", $foto);
 
             $result->execute();
-            echo '<script> alert("Usuario registrado con éxito") </script>';
-            echo '<script>location.href="../views/administrador/registrar_Usuario.php" </script>';
+            echo '<script> 
+            swal.fire({
+                icon: "success",
+                title: "¡Registro Exitoso!",
+                text: "El usuario se registró con éxito.",
+                confirmButtonText: "Ir al menu"
+            }).then(function() {
+                window.location = "../views/administrador/registrar_Usuario.php";
+            });</script>';
         }
     }
-    public function insertarUserAdmin($identificacion, $tipo_de_dato, $nombres, $apellidos, $email, $telefono, $claveMd ,$rol, $estado, $foto, $foto2, $foto3){
+    public function insertarUserAdmin($identificacion, $tipo_de_dato, $nombres, $apellidos, $email, $telefono, $claveMd , $estado, $foto){
 
 
         $objConexion = new Conexion();
@@ -92,13 +112,20 @@ class consultas{
         $f = $result->fetch();
 
         if($f){
-           echo '<script> alert("Los datos del usuario ya se encuentra en el sistema") </script>';
-           echo "<script> location.href='../views/administrador/registrar_admin.php'</script>";
+           echo '<script> 
+           swal.fire({
+               icon: "error",
+               title: "¡Registro fallido!",
+               text: "Los datos del usuario ya se encuentran en el sistema.",
+               confirmButtonText: "Ir al menu"
+           }).then(function() {
+               window.location = "../views/administrador/registrar_admin.php";
+           });</script>';
            
 
         }else{
            // Creamos la variable que contendra la consulta a ejecutar
-           $insertar = "INSERT INTO Administradores (identificacion, tipo_de_dato, nombres, apellidos, email, telefono, clave,rol,estado,foto, foto2, foto3) VALUES(:identificacion, :tipo_de_dato, :nombres, :apellidos, :email, :telefono, :claveMd ,:rol, :estado, :foto, :foto2, :foto3)";
+           $insertar = "INSERT INTO Administradores (identificacion, tipo_de_dato, nombres, apellidos, email, telefono, clave, estado,foto) VALUES(:identificacion, :tipo_de_dato, :nombres, :apellidos, :email, :telefono, :claveMd , :estado, :foto)";
 
 
            // PREPARAMOS TODO LO NECESARIO PARA EJECUTAR LA FUNCION ANTERIOR
@@ -115,18 +142,22 @@ class consultas{
            $result->bindParam(":email", $email);
            $result->bindParam(":telefono", $telefono);
            $result->bindParam(":claveMd", $claveMd);
-           $result->bindParam(":rol", $rol);
            $result->bindParam(":estado", $estado);
            $result->bindParam(":foto", $foto);
-           $result->bindParam(":foto2", $foto2);
-           $result->bindParam(":foto3", $foto3); 
 
            // ejecutamos el insert
 
            $result->execute();
 
-           echo '<script> alert("Usuarios registrado con exito") </script>';
-           echo "<script> location.href='../views/administrador/registrar_admin.php'</script>";
+           echo '<script> 
+           swal.fire({
+               icon: "success",
+               title: "¡Registro Exitoso!",
+               text: "Usuario registrado con exito.",
+               confirmButtonText: "Ir al menu"
+           }).then(function() {
+               window.location = "../views/administrador/registrar_admin.php";
+           });</script>';
 
        }
 
@@ -354,8 +385,15 @@ class consultas{
         $result-> bindParam (":id", $id );
         
         $result->execute ();
-        echo '<script> alert("Usuario eliminado con exito") </script>';
-        echo "<script> location.href='../Views/Administrador/ver_usuario_admin.php' </script>";
+        echo '<script> 
+        swal.fire({
+            icon: "error",
+            title: "¡Eliminación exitosa!",
+            text: "Usuario eleminado con exito.",
+            confirmButtonText: "Ir al menu"
+        }).then(function() {
+            window.location = "../Views/Administrador/ver_usuario_admin.php";
+        });</script>';
       
       
       
@@ -389,8 +427,15 @@ class consultas{
         $result-> bindParam (":id", $id );
         
         $result->execute ();
-        echo '<script> alert("Usuario eliminado con exito") </script>';
-        echo "<script> location.href='../Views/Administrador/ver_usuarioo.php' </script>";
+        echo '<script> 
+        swal.fire({
+            icon: "error",
+            title: "¡Elminiación exitosa!",
+            text: "Usuario usuario con exito.",
+            confirmButtonText: "Ir al menu"
+        }).then(function() {
+            window.location = "../Views/Administrador/ver_usuarioo.php";
+        });</script>';
       
       
       
@@ -405,10 +450,25 @@ class consultas{
         $result->bindParam(":id", $id);
     
         if ($result->execute()) {
-            echo '<script>alert("Usuario eliminado con exito")</script>';
-            echo '<script>location.href="../theme/index.php"</script>';
+            echo '<script> 
+        swal.fire({
+            icon: "success",
+            title: "¡Elminiación exitosa!",
+            text: "Usuario usuario con exito.",
+            confirmButtonText: "Ir al login"
+        }).then(function() {
+            window.location = "../theme/index.php";
+        });</script>';
         } else {
-            echo '<script>alert("Error al eliminar el usuario")</script>';
+            echo '<script> 
+            swal.fire({
+                icon: "error",
+                title: "¡Elminiación exitosa!",
+                text: "Usuario usuario con exito.",
+                confirmButtonText: "Ir al registro"
+            }).then(function() {
+                window.location = "../theme/register.php";
+            });</script>';
         }
     }
     public function cantidadCarrito($id, $cantidad) {
@@ -422,10 +482,25 @@ class consultas{
         $result->bindParam(":cantidad", $cantidad, PDO::PARAM_INT); // Asegurar que la cantidad es tratada como entero
     
         if ($result->execute()) {
-            echo '<script>alert("Cantidad actualizada con éxito")</script>';
-            echo '<script>location.href="../theme/carrito.php"</script>';
+            echo '<script> 
+            swal.fire({
+                icon: "error",
+                title: "¡Elminiación exitosa!",
+                text: "Usuario usuario con exito.",
+                confirmButtonText: "Ir a carrito"
+            }).then(function() {
+                window.location = "../theme/carrito.php";
+            });</script>';
         } else {
-            echo '<script>alert("Error al actualizar la cantidad")</script>';
+            echo '<script> 
+            swal.fire({
+                icon: "error",
+                title: "¡Erorr!",
+                text: "Error al actualizar la cantidad.",
+                confirmButtonText: "Ir a carrito"
+            }).then(function() {
+                window.location = "../theme/carrito.php";
+            });</script>';
         }
     }
     
@@ -1700,3 +1775,5 @@ class ValidarSesion
 }
 
 ?>
+
+</html>

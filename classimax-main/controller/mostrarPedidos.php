@@ -9,7 +9,7 @@ function mostrarPedido($usuario){
     $result = $objConsulta->mostrarPedido($usuario);
 
     if (!isset($result)) {
-        echo '<h2>No hay usuarios registrados</h2>';
+        echo '<h2>No ahí pedidos</h2>';
     } else {
         foreach($result as $f) {
             echo  '
@@ -18,7 +18,7 @@ function mostrarPedido($usuario){
                     <td>'.$f['id_pedido'].'</td>
                     <td>'.$f['nombre'].'</td>
                     <td>'.$f['precio'].'</td>
-                    <td>'.$f['cantidad'].'</td>
+                    <td>'.$f['cantidad_en_carrito'].'</td>
                     <td style="text-align: center;">
                         <!-- Botón Cancelar Pedido -->
                         <button class="boton-cancelar" style="background-color: #ff3333; color: #fff; padding: 5px 10px; border: none; border-radius: 5px; margin-bottom: 5px;">Cancelar Pedido</button>

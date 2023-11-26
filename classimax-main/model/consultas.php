@@ -668,58 +668,64 @@ class consultas{
       }
       public function modificarProducto($arg_campo, $arg_valor, $arg_id_producto){
         $objConexion = new Conexion();
-        $conexion = $objConexion -> get_conexion();
-
-        $consulta = "UPDATE productos set $arg_campo = :valor WHERE id = :id_producto";
-
-        $result = $conexion ->prepare($consulta);
-
-        $result->bindParam(":valor", $arg_valor);
-        $result->bindParam(":id_producto", $arg_id_producto);
-
-        if(!$result){
-            return "Error al modificar el producto";
-        }else{
-            $result -> execute();
+        $conexion = $objConexion->get_conexion();
+    
+        try {
+            $consulta = "UPDATE productos SET $arg_campo = :valor WHERE id = :id_producto";
+    
+            $result = $conexion->prepare($consulta);
+            $result->bindParam(":valor", $arg_valor);
+            $result->bindParam(":id_producto", $arg_id_producto);
+    
+            if (!$result->execute()) {
+                throw new Exception("Error al modificar el producto");
+            }
+    
             echo '<script> 
-            swal.fire({
-                icon: "success",
-                title: "¡Producto actualizado con exito.!",
-                text: "Producto actualizado con exito.",
-                confirmButtonText: "Ir al menu"
-            }).then(function() {
-                window.location = "../views/emprendedor/verProductos.php";
-            });</script>';
+                swal.fire({
+                    icon: "success",
+                    title: "¡Producto actualizado con éxito!",
+                    text: "Producto actualizado con éxito.",
+                    confirmButtonText: "Ir al menú"
+                }).then(function() {
+                    window.location = "../views/emprendedor/verProductos.php";
+                });</script>';
+        } catch (Exception $e) {
+            // Manejar el error de manera adecuada, por ejemplo, mostrar un mensaje al usuario.
+            
         }
-        
-      }
-      public function modificarServicio($arg_campo, $arg_valor, $id_servicio){
+    }
+    
+    public function modificarServicio($arg_campo, $arg_valor, $id_servicio){
         $objConexion = new Conexion();
-        $conexion = $objConexion -> get_conexion();
-
-        $consulta = "UPDATE servicios set $arg_campo = :valor WHERE id = :id_servicio";
-
-        $result = $conexion ->prepare($consulta);
-
-        $result->bindParam(":valor", $arg_valor);
-        $result->bindParam(":id_servicio", $id_servicio);
-
-        if(!$result){
-            return "Error al modificar el producto";
-        }else{
-            $result -> execute();
+        $conexion = $objConexion->get_conexion();
+    
+        try {
+            $consulta = "UPDATE servicios SET $arg_campo = :valor WHERE id = :id_servicio";
+    
+            $result = $conexion->prepare($consulta);
+            $result->bindParam(":valor", $arg_valor);
+            $result->bindParam(":id_servicio", $id_servicio);
+    
+            if (!$result->execute()) {
+                throw new Exception("Error al modificar el servicio");
+            }
+    
             echo '<script> 
-            swal.fire({
-                icon: "success",
-                title: "¡Servicio actualizado con exito.!",
-                text: "Servicio actualizado con exito.",
-                confirmButtonText: "Ir al menu"
-            }).then(function() {
-                window.location = "../views/emprendedor/verServicio.php";
-            });</script>';
+                swal.fire({
+                    icon: "success",
+                    title: "¡Servicio actualizado con éxito!",
+                    text: "Servicio actualizado con éxito.",
+                    confirmButtonText: "Ir al menú"
+                }).then(function() {
+                    window.location = "../views/emprendedor/verServicio.php";
+                });</script>';
+        } catch (Exception $e) {
+            // Manejar el error de manera adecuada, por ejemplo, mostrar un mensaje al usuario.
+            
         }
-        
-      }
+    }
+    
       public function modificarProductoAdmin($estado, $id_producto){
         $objConexion = new Conexion();
         $conexion = $objConexion -> get_conexion();

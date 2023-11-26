@@ -97,7 +97,7 @@ function cargarPublicacionCarrusel() {
                             <img src="' . $f['foto'] . '" alt="Foto usuario" style="width:340px; height:150px; object-fit: cover;">
                         </div>
                         <div class="card-body">
-                            <h4 class="card-title"><a id="tit" href="../theme/single2.php?id=' . $f['id'] . '">' . $f['nombre'] . '</a></h4>
+                            <h4 class="card-title"><a style="color:black" id="tit" href="../theme/single2.php?id=' . $f['id'] . '">' . $f['nombre'] . '</a></h4>
                             <ul class="list-inline product-meta">
                                 <li class="list-inline-item">
                                     <a id="cat" href="single.html"><i class="fa fa-folder-open-o"></i>' . $f['categoria'] . '</a>

@@ -1368,6 +1368,9 @@ class consultas{
         }, 6000);
     </script>";
     }
+
+
+
     public function insertarDetallesProductos($id_pedido, $id_producto){
         
         
@@ -2008,34 +2011,27 @@ class ValidarSesion
                     echo '<script> 
                     swal.fire({
                         icon: "success",
-                        title: "¡Bienvenido.!",
-                        text: "Bienvenido.",
+                        title: "¡Bienvenido Emprendedor.!",
+                        text: "Bienvenido Emprendedor.",
                         confirmButtonText: "Ir al menu"
                     }).then(function() {
                         window.location = "../Views/emprendedor/emprendedor.php";
-                    });</script';
+                    });</script>';
                 }
             } else {
                 echo '<script> 
                 swal.fire({
                     icon: "error",
-                    title: "¡La clave no coincide intetalo de nuevo.!",
-                    text: "La clave no coincide intetalo de nuevo.",
+                    title: "¡La clave no coincide.!",
+                    text: "La clave no coincide.",
                     confirmButtonText: "Ir al menu"
                 }).then(function() {
                     window.location = "../theme/login.php";
-                });</script';
+                });</script>';
             }
         } else {
-            echo '<script> 
-            swal.fire({
-                icon: "error",
-                title: "¡La clave no coincide intetalo de nuevo.!",
-                text: "La clave no coincide intetalo de nuevo.",
-                confirmButtonText: "Ir al menu"
-            }).then(function() {
-                window.location = "../theme/login.php";
-            });</script';
+            echo '<script> alert("Verifica que tu correo esté bien diligenciado o regístrate si no tienes cuenta") </script>';
+            echo "<script> location.href='../theme/login.php' </script>";
         }
     }
 
@@ -2043,8 +2039,15 @@ class ValidarSesion
     {
         session_start();
         session_destroy();
-        
-        echo '<script> location.href="../theme/login.php" </script>';
+        echo '<script> 
+                swal.fire({
+                    icon: "error",
+                    title: "¡Sesion cerrada.!",
+                    text: "Sesion cerrada.",
+                    confirmButtonText: "Ir al menu"
+                }).then(function() {
+                    window.location = "../theme/login.php";
+                });</script>';
     }
 }
 

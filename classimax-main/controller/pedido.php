@@ -4,7 +4,9 @@ require_once("../model/conexion.php");
 require_once("../model/consultas.php");
 
 // Establecer la zona horaria a Colombia
+
 date_default_timezone_set('America/Bogota');
+
 
 session_start();
 
@@ -15,7 +17,6 @@ global $arg_id_usuario, $pdf;
 
 $objConsulta = new Consultas();
 $resultProductos = $objConsulta->obtenerId($arg_id_usuario);
-
 $fecha_pedido = date("Y-m-d H:i:s"); // Inicializamos la variable $fecha_pedido
 
 $usuario = null;

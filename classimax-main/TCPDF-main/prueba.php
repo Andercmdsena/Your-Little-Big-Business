@@ -144,8 +144,9 @@ resivo();
 
 
 // Agrega el contenido al documento
-$pdf->writeHTML(resivo(), true, false, true, false, '');
 
 // Genera el PDF y lo muestra en el navegador
+$pdf->writeHTML(resivo(), true, false, true, false, '');
+ob_end_clean(); // Desactiva el búfer de salida
 $pdf->Output('recibo.pdf', 'I');
 ?>

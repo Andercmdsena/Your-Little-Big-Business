@@ -56,21 +56,12 @@ function cargarProductoIndividual(){
 				
 				<div class="content mt-5 pt-5">
 				<ul class="nav nav-pills  justify-content-center" id="pills-tab" role="tablist">
-				<li class="nav-item">
-				<a style="color: #000 !important;" class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home"
-				aria-selected="true">	<datagrid>Detalles del producto</datagrid></a>
-				</li>
-				<li class="nav-item">
-				<a style="color: #000 !important;" class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile"
-				aria-selected="false">Especificaciones</a>
-				</li>
-				<li class="nav-item">
-				<a style="color: #000 !important;" class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact"
-				aria-selected="false">Reseñas</a>
-				</li>
+				
+				
+				
 				</ul>
-				<div class="tab-content" id="pills-tabContent">
-				<div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+				<div class="tab-content" style="margin-top: 50px; margin-bottom:140px" id="pills-tabContent">
+				<div  class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
 				<h3 class="tab-title">Descripción del producto</h3>
 				<p>'. $f['descripcion'] .'</p>
 				

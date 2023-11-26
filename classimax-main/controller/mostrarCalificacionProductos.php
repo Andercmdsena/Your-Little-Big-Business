@@ -8,7 +8,7 @@ function cargarCalificacion($id){
     $result = $objConsulta->mostrarCalificacion($id);
 
     if (!isset($result)) {
-        echo '<h2>No calificaciones para este producto</h2>';
+        echo '<h2 style="margin-bottom:0px">No hay calificaciones para este producto</h2>';
     } else {
         $comentariosMostrados = 0;
 

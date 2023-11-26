@@ -9,7 +9,7 @@
     <link href="css/stylepasarela2.css" rel="stylesheet">
     
 </head>
-<body>
+<body style="margin:0px; padding:0px;">
 
  <header>
     <div class="cabecera">
@@ -21,7 +21,7 @@
 
 
 </header> 
-<a href="index.php" class="back-to-home-button">Volver al inicio</a>
+<a href="index.php" style="margin-left:20px" class="back-to-home-button">Volver al inicio</a>
     
 
 <div class="container">

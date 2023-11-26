@@ -86,10 +86,10 @@
     float: right;
 }
 
-.slick-slide img
-{
+.slick-slide img {
     display: block;
-    border-radius: 40px !important;
+    border-top-left-radius: 23px;
+    border-top-right-radius: 23px;
 }
 
 .slick-slide.slick-loading img

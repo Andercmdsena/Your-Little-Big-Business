@@ -66,8 +66,8 @@ img {
     margin: 0 auto;
     padding: 20px;
     background-color: #f8f8f8;
-    border: 1px solid #5672f9;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 2px solid #5672f9;
+    box-shadow: 1px #5672f9;
 }
 
 article {

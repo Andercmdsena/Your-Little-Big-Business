@@ -36,16 +36,14 @@
   <link href="plugins/jquery-nice-select/css/nice-select.css" rel="stylesheet">
   
 
-  <link href="css/style.css" rel="stylesheet">
+  <link href="../css/style.css" rel="stylesheet">
   <link rel="stylesheet" href="css/header/header.css">
 
 
 </head>
 
 <body class="body-wrapper">
-
-
-<?php include("../components/header.php") ?>
+  <?php include("../components/header.php") ?>
 
   <section id="content-main" class="login container w-100 p-4 mt-4">
     <div class="row m-auto w-100 p-4">
@@ -86,7 +84,8 @@ f
         </form>
       </div>
       <div class="col-lg-7 d-none d-lg-flex align-items-center">
-        <img id="ilustracion_login" class="img-fluid" src="images/login/Team meeting_Monochromatic 2.png" alt="">
+        
+   <img id="ilustracion_login" class="img-fluid" src="images/login/Team meeting_Monochromatic 2.png" alt=""> 
       </div>
     </div>
 

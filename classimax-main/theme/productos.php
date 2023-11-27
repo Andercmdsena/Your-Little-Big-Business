@@ -124,7 +124,7 @@ require_once("../model/consultas.php");
 	<h4 class="widget-header">Mostrar productos</h4>
 	<select>
 		<option>Populares</option>
-		<option value="1">Top ventas</option>
+		<option value="1">Top Ventas</option>
 		<option value="2">Precio mas bajo</option>
 		<option value="4">Precio mas alto</option>
 	</select>

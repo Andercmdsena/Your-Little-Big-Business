@@ -36,8 +36,7 @@ function mostrarPedido($usuario) {
                     <td>'.$f['precio'].'</td>
                     <td style="text-align:center;">'.$cantidad.'</td> <!-- Utilizar la cantidad obtenida -->
                     <td>
-                        <button class="boton-enviar" style="background-color: red;text-align:center; font-weight: bold; color: #000;margin-rigth:20px; padding: 5px 10px; border: none; border-radius: 5px;">Cancelar pedido</button>
-                    </td>
+                    <a href="../../controller/cancelarPedido.php?id_pedido='.$f['id'].'&id_producto='.$f['id_producto'].'&id='.$f['ID'].'" class="boton-enviar" style="background-color: red; text-align:center; font-weight: bold; color: #000; margin-right:20px; padding: 5px 10px; border: none; border-radius: 5px; text-decoration: none;">Cancelar pedido</a>
                 </tr>';
         }
     }

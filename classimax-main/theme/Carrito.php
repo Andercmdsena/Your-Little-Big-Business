@@ -30,6 +30,7 @@ require_once("../controller/mostrarCarrito.php");
 
 
     <main>
+      <div >
       <section class="contenidocarrito">
               <?php
 
@@ -43,6 +44,7 @@ require_once("../controller/mostrarCarrito.php");
               <br>
         </div>
       </section>
+      </div>
     </main>        
     
 

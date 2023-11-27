@@ -398,6 +398,54 @@ class consultas{
       
       
       }
+
+
+      public function cancelarPedido($id_pedido, $id_producto,$id) {
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+    
+        // Utiliza una sentencia DELETE para eliminar la fila en detalles_pedido
+        $eliminar = "DELETE FROM detalles_pedido WHERE id_pedido = :id_pedido AND id_producto = :id_producto AND ID = :id";
+    
+        // Prepara la consulta
+        $result = $conexion->prepare($eliminar);
+    
+        // Enlaza los parámetros
+        $result->bindParam(":id_pedido", $id_pedido, PDO::PARAM_INT);
+        $result->bindParam(":id_producto", $id_producto, PDO::PARAM_INT);
+        $result->bindParam(":id", $id, PDO::PARAM_INT);
+    
+        try {
+            // Ejecuta la consulta
+            $result->execute();
+    
+            // Muestra un mensaje de éxito
+            echo '<script> 
+                swal.fire({
+                    icon: "success",
+                    title: "Eliminación exitosa",
+                    text: "Pedido eliminado con éxito.",
+                    confirmButtonText: "Ir al menú"
+                }).then(function() {
+                    window.location = "../Views/cliente/pedidos.php";
+                });
+            </script>';
+        } catch (PDOException $e) {
+            // Muestra un mensaje de error en caso de excepción
+            echo '<script> 
+                swal.fire({
+                    icon: "error",
+                    title: "Error en la eliminación",
+                    text: "Ocurrió un error al intentar eliminar el pedido.",
+                    confirmButtonText: "Volver"
+                }).then(function() {
+                    window.history.back();
+                });
+            </script>';
+        }
+    }
+    
+    
      public function eliminarCalificacion ($id, $id_producto) {
         $objConexion = new Conexion();
         
@@ -2067,7 +2115,7 @@ class ValidarSesion
                         }).then(function() {
                             window.location = "../Views/cliente/usuario.php";
                         });</script>';
-                } elseif ($tipo_de_rol == "Emprendedor") {
+                } else{
                     echo '<script> 
                         swal.fire({
                             icon: "success",
@@ -2077,6 +2125,7 @@ class ValidarSesion
                         }).then(function() {
                             window.location = "../Views/emprendedor/emprendedor.php";
                         });</script>';
+
                 }
             } else {
                 echo '<script> 

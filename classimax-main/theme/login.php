@@ -36,7 +36,7 @@
   <link href="plugins/jquery-nice-select/css/nice-select.css" rel="stylesheet">
   
 
-  <link href="../css/style.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
   <link rel="stylesheet" href="css/header/header.css">
 
 
@@ -64,7 +64,7 @@
                       <option value="cliente">Cliente</option>
                       <option value="emprendedor">Emprendedor</option>
                       <option value="administrador">Administrador</option>
-f
+
                 </select>
               </div>
             <button id="btn-ingresar"  type="submit" class="btn font-weight-bold w-75 mt-3"  >Ingresar</button>
@@ -85,7 +85,7 @@ f
       </div>
       <div class="col-lg-7 d-none d-lg-flex align-items-center">
         
-   <img id="ilustracion_login" class="img-fluid" src="images/login/Team meeting_Monochromatic 2.png" alt=""> 
+      <img id="ilustracion_login" class="img-fluid" src="images/login/Team meeting_Monochromatic 2.png" alt="">
       </div>
     </div>
 

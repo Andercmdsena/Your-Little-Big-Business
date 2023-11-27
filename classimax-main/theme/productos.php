@@ -65,10 +65,14 @@ require_once("../model/consultas.php");
 							<div class="form-group col-lg-3 col-md-6">
 								<select class="w-100 form-control my-2 my-lg-0">
 									<option>Relevancia</option>
-									<option onclick="filtrar('menor')" value="2">Menor precio</option>
-									<option onclick="filtrar('menor')" value="4">Mayor precio</option>
+									<option value="1">Mas relevantes</option>
+									<option value="2">Menor precio</option>
+									<option value="4">Mayor precio</option>
 								</select>
+							</div>
 
+
+							</div>	
 							<form metho="get">
                                 <input class="busqueda" type="text" name="buscar">
                                 <input class="busqueda" type="submit" value="Buscar">
@@ -124,7 +128,7 @@ require_once("../model/consultas.php");
 	<h4 class="widget-header">Mostrar productos</h4>
 	<select>
 		<option>Populares</option>
-		<option value="1">Top Ventas</option>
+		<option value="1">Mas popular</option>
 		<option value="2">Precio mas bajo</option>
 		<option value="4">Precio mas alto</option>
 	</select>
@@ -181,42 +185,10 @@ require_once("../model/consultas.php");
 								<option value="2">Menor precio</option>
 								<option value="4">Mayor precio</option>
 							</select>
-							<form method="post">
-								<button type="submit" name="menor">Menor Precio</button>
-								<button type="submit" name="mayor">Mayor Precio</button>
-    						</form>
+							
 
 
-						<?php
-							$conexion = new mysqli("localhost", "root", "", "ylbb");
-
-							// Verificar la conexión
-							if ($conexion->connect_error) {
-								die("Error de conexión: " . $conexion->connect_error);
-							}
-
-							if (isset($_POST['menor'])) {
-								$consulta = "SELECT * FROM productos ORDER BY precio ASC";
-							} elseif (isset($_POST['mayor'])) {
-								$consulta = "SELECT * FROM productos ORDER BY precio DESC";
-							} else {
-								$consulta = "SELECT * FROM productos";
-							}
-
-							// Ejecutar la consulta
-							$resultados = $conexion->query($consulta);
-
-							// Mostrar los resultados
-							if ($resultados->num_rows > 0) {
-								while ($fila = $resultados->fetch_assoc()) {
-									echo "<p>{$fila['nombre']} - {$fila['precio']}</p>";
-								}
-							} else {
-								echo "<p>No hay productos disponibles.</p>";
-							}
-
-							$conexion->close();
-						?>
+						
 
 <!--
 

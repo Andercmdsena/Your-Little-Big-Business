@@ -41,9 +41,9 @@
 
 
 </head>
+<?php include("../components/header.php") ?>
 
 <body class="body-wrapper">
-  <?php include("../components/header.php") ?>
 
   <section id="content-main" class="login container w-100 p-4 mt-4">
     <div class="row m-auto w-100 p-4">

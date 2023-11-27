@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-11-2023 a las 17:36:12
+-- Tiempo de generación: 27-11-2023 a las 03:57:17
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -47,10 +47,9 @@ CREATE TABLE `administradores` (
 --
 
 INSERT INTO `administradores` (`Identificacion`, `Tipo_de_dato`, `Nombres`, `Apellidos`, `Email`, `telefono`, `clave`, `rol`, `estado`, `foto`, `foto2`, `foto3`) VALUES
-(321, 'C.C', 'wqewqwqeewq', 'ewqwewqwqe', 'dsasad@esadfdsdsadassdewqwqewqe', 'weqwqewwq', 'caf1a3dfb505ffed0d024130f58c5cfa', 'Administrador', 0, '../Uploads/usuarios/gtaV.jpg', '../Uploads/usuarios/', '../Uploads/usuarios/'),
-(1023162918, '', 'Anderson Tovar', 'Tovar Sanchez', 'adtovar81@misena.edu.co', '3021413242354325', '81dc9bdb52d04dc20036dbd8313ed055', 'Administrador', 1, '../Uploads/usuariosjs.png', '../Uploads/usuarios', '../Uploads/usuarios'),
+(1023162918, 'CC', 'Anderson Tovar', 'Tovar Sanchez', 'adtovar81@misena.edu.co', '3021413242354325', '81dc9bdb52d04dc20036dbd8313ed055', 'Administrador', 1, '../Uploads/usuariosjs.png', '../Uploads/usuarios', '../Uploads/usuarios'),
 (218390214412, '', 'Edison Sebastian ', 'Ramirez Suarez', 'esramirez51@gmail.com', '43232543645', '01ceb8141c88907d05404162a17d9bcb', 'Administrador', 1, '../Uploads/usuarios/WhatsApp Image 2023-08-22 at 8.10.46 PM.jpeg', '../Uploads/usuarios/', '../Uploads/usuarios/'),
-(321093120321, '', 'Samuel Sanchez', 'Diaz Martinez', '16samuel18@gamil.com', '43232543645', '6b50daa1c96088c65ec86940b565ae1a', 'Administrador', 0, '../Uploads/usuarios/WhatsApp Image 2023-08-22 at 8.18.46 PM.jpeg', '../Uploads/usuarios/', '../Uploads/usuarios/');
+(321093120321, '', 'Samuel Sanchez', 'Diaz Martinez', '16samuel18@gamil.com', '43232543645', '6b50daa1c96088c65ec86940b565ae1a', 'Administrador', 1, '../Uploads/usuarios/WhatsApp Image 2023-08-22 at 8.18.46 PM.jpeg', '../Uploads/usuarios/', '../Uploads/usuarios/');
 
 -- --------------------------------------------------------
 
@@ -112,9 +111,11 @@ INSERT INTO `carrito` (`id`, `id_producto`, `id_usuario`, `cantidad`) VALUES
 (58, 34, 46, 0),
 (60, 36, 52, 0),
 (64, 33, 52, 0),
-(73, 33, 51, 2),
-(75, 34, 1023162918, 1),
-(77, 34, 51, 1);
+(86, 35, 51, 3),
+(87, 36, 51, 8),
+(88, 35, 1023162918, 3),
+(89, 33, 1023162918, 5),
+(94, 36, 53, 9);
 
 -- --------------------------------------------------------
 
@@ -160,7 +161,7 @@ INSERT INTO `categoria` (`id_categoria`, `categoria`) VALUES
 --
 
 CREATE TABLE `detalles_pedido` (
-  `id` bigint(200) NOT NULL,
+  `ID` bigint(200) NOT NULL,
   `id_pedido` bigint(200) NOT NULL,
   `id_producto` bigint(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -169,12 +170,19 @@ CREATE TABLE `detalles_pedido` (
 -- Volcado de datos para la tabla `detalles_pedido`
 --
 
-INSERT INTO `detalles_pedido` (`id`, `id_pedido`, `id_producto`) VALUES
-(759, 288, 33),
-(760, 289, 33),
-(761, 289, 36),
-(762, 290, 33),
-(763, 290, 36);
+INSERT INTO `detalles_pedido` (`ID`, `id_pedido`, `id_producto`) VALUES
+(878, 342, 33),
+(879, 342, 35),
+(880, 343, 34),
+(881, 343, 35),
+(885, 344, 34),
+(887, 345, 34),
+(888, 345, 32),
+(890, 344, 33),
+(891, 345, 33),
+(892, 346, 33),
+(895, 347, 36),
+(896, 348, 36);
 
 -- --------------------------------------------------------
 
@@ -214,9 +222,13 @@ CREATE TABLE `pedidos` (
 --
 
 INSERT INTO `pedidos` (`id`, `id_usuario`, `id_emprendedor`, `fecha_pedido`) VALUES
-(288, '51', '51', '2023-11-23 15:33:06'),
-(289, '1023162918', '51', '2023-11-23 15:33:42'),
-(290, '1023162918', '52', '2023-11-23 15:33:42');
+(342, '1023162918', '51', '2023-11-26 14:13:09'),
+(343, '53', '51', '2023-11-26 19:33:33'),
+(344, '53', '52', '2023-11-26 19:34:14'),
+(345, '53', '51', '2023-11-26 19:34:57'),
+(346, '53', '51', '2023-11-26 19:41:08'),
+(347, '53', '52', '2023-11-26 19:41:34'),
+(348, '53', '52', '2023-11-26 19:46:29');
 
 -- --------------------------------------------------------
 
@@ -244,25 +256,13 @@ CREATE TABLE `productos` (
 --
 
 INSERT INTO `productos` (`id`, `nombre`, `precio`, `cantidad`, `descripcion`, `foto`, `foto2`, `foto3`, `id_emprendedor`, `Estado`, `Disponibilidad`, `categoria`) VALUES
-(32, 'Camisas', 50000, '1', '                    ofrecen estilo moderno y fresco para adolescentes y adultos jóvenes. Descubre una variedad de colores vibrantes, patrones a la moda y cortes contemporáneos que reflejan las últimas', '../Uploads/productos/pexels-polina-tankilevitch-3735641.jpg', '../Uploads/productos/pexels-dom-j-45982.jpg', '../Uploads/productos/pexels-francesco-paggiaro-2294342.jpg', 51, 1, '', 2),
+(32, 'Camisas', 50000, '1', 'Descubre la elegancia en cada detalle con nuestra nueva colección de camisas de manga larga para hombres. Diseñadas con un equilibrio perfecto entre estilo y comodidad, estas camisas son ideales para ', '../Uploads/productos/pexels-polina-tankilevitch-3735641.jpg', '../Uploads/productos/pexels-dom-j-45982.jpg', '../Uploads/productos/pexels-francesco-paggiaro-2294342.jpg', 51, 1, '1', 2),
 (33, 'Juguetes para mascotas', 30000, '1', 'Explora nuestra colección de juguetes para mascotas en nuestra tienda, diseñados para entretener y satisfacer las necesidades de tus amigos peludos. Desde pelotas masticables hasta juguetes interactiv', '../Uploads/productos/pexels-arina-krasnikova-7726315.jpg', '../Uploads/productos/pexels-helena-jankovičová-kováčová-16395147.jpg', '../Uploads/productos/pexels-josh-sorenson-1739093.jpg', 51, 1, '1', 9),
 (34, 'Comidas rapidas', 35000, '1', 'nuestra selección de deliciosas comidas rápidas en nuestra tienda. Desde sabrosas hamburguesas y crujientes papas fritas hasta opciones más ligeras como ensaladas frescas y wraps llenos de sabor', '../Uploads/productos/pexels-spencer-davis-4393021.jpg', '../Uploads/productos/pexels-audy-of-course-19034914.jpg', '../Uploads/productos/pexels-audy-of-course-19055025.jpg', 51, 1, '1', 6),
-(35, 'Cuadernos', 25000, '1', 'Descubre la elegancia y funcionalidad en nuestros cuadernos de alta calidad. Con tapas duraderas y páginas resistentes, estos cuadernos son ideales para plasmar tus pensamientos, ideas y apuntes.', '../Uploads/productos/pexels-hermaion-205414.jpg', '../Uploads/productos/pexels-pixabay-159682.jpg', '../Uploads/productos/pexels-pixabay-159865.jpg', 51, 1, '1', 10),
-(36, 'prueba', 21221212, '1', '321213qwew', '../Uploads/productos/calabaza.png', '../Uploads/productos/', '../Uploads/productos/', 52, 1, '1', 1);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `publicacion`
---
-
-CREATE TABLE `publicacion` (
-  `id` bigint(255) NOT NULL,
-  `id_vendedor` bigint(255) NOT NULL,
-  `id_producto` bigint(255) NOT NULL,
-  `estado` varchar(200) NOT NULL,
-  `precio` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+(35, 'Cuadernos', 25000, '2', 'Descubre la elegancia y funcionalidad en nuestros cuadernos de alta calidad. Con tapas duraderas y páginas resistentes, estos cuadernos son ideales para plasmar tus pensamientos, ideas y apuntes.', '../Uploads/productos/pexels-hermaion-205414.jpg', '../Uploads/productos/pexels-pixabay-159682.jpg', '../Uploads/productos/pexels-pixabay-159865.jpg', 51, 1, '1', 10),
+(36, 'prueba', 21221212, '1', 'Descubre la elegancia en cada detalle con nuestra nueva colección de camisas de manga larga para hombres. Diseñadas con un equilibrio perfecto entre estilo y comodidad, estas camisas son ideales para ', '../Uploads/productos/calabaza.png', '../Uploads/productos/', '../Uploads/productos/', 52, 1, '1', 1),
+(40, 'prueba', 0, '4', '                    Descubre la elegancia en cada detalle con nuestra nueva colección de camisas de manga larga para hombres. Diseñadas con un equilibrio perfecto entre estilo y comodidad, estas camis', '../Uploads/productos/dibujo.png', '../Uploads/productos/202-2029841_spider-web-png-download-telaraa-en-una-esquina.png', '../Uploads/productos/gtaV.jpg', 52, 1, '1', 1),
+(41, 'prueba', 0, '3', 'Descubre la elegancia en cada detalle con nuestra nueva colección de camisas de manga larga para hombres. Diseñadas con un equilibrio perfecto entre estilo y comodidad, estas camisas son ideales para ', '../Uploads/productos/Grand_Theft_Auto_Online_Logo.svg.png', '../Uploads/productos/bitmap.png', '../Uploads/productos/gtaV.jpg', 52, 1, '1', 1);
 
 -- --------------------------------------------------------
 
@@ -290,10 +290,10 @@ CREATE TABLE `servicios` (
 --
 
 INSERT INTO `servicios` (`id`, `nombre`, `precio`, `duracion`, `categoria`, `descripcion`, `foto`, `foto2`, `foto3`, `id_emprendedor`, `Estado`, `Disponibilidad`) VALUES
-(4, 'Limpieza', 50000, '1 hora', 16, 'Experimenta la comodidad y calidad con nuestro servicio de limpieza. Ofrecemos soluciones profesionales y personalizadas para mantener tu espacio impecable y libre de preocupaciones. Nuestro equipo al', '../Uploads/servicio/pexels-polina-tankilevitch-4440533.jpg', '../Uploads/productos/pexels-matilda-wormwood-4099471.jpg', '../Uploads/productos/pexels-karolina-grabowska-4239031.jpg', 51, 1, 1),
+(4, 'Limpieza', 50000, '1 hora', 16, 'Experimenta la comodidad y calidad con nuestro servicio de limpieza. Ofrecemos soluciones profesionales y personalizadas para mantener tu espacio impecable y libre de preocupaciones. Nuestro equipo al', '../Uploads/servicio/pexels-polina-tankilevitch-4440533.jpg', '../Uploads/productos/pexels-matilda-wormwood-4099471.jpg', '../Uploads/productos/pexels-karolina-grabowska-4239031.jpg', 51, 1, 0),
 (5, 'Pintor', 5000, '4 horas', 14, 'Transforma tu espacio con nuestro servicio de pintura profesional. Nuestro equipo experto en pintura se encargará de dar vida a tus ideas, ofreciendo una amplia gama de colores y acabados de alta cali', '../Uploads/servicio/pexels-kaboompics-com-6368.jpg', '../Uploads/productos/pexels-malte-luk-1669754.jpg', '../Uploads/productos/pexels-cassidy-muir-2065971.jpg', 51, 1, 1),
 (6, 'obrero', 60000, '8 horas', 19, 'Experimenta la excelencia en construcción con nuestro servicio especializado. Desde la planificación hasta la entrega, nuestro equipo profesional se encarga de cada detalle para hacer realidad tu proy', '../Uploads/servicio/pexels-thijs-van-der-weide-1094767.jpg', '../Uploads/productos/pexels-anamul-rezwan-1216589.jpg', '../Uploads/productos/pexels-bidvine-1249611.jpg', 51, 1, 1),
-(7, 'jardinero', 50000, '6 horas', 15, 'Embellece tu entorno con nuestro servicio de jardinería especializado. Nos dedicamos a crear espacios verdes vibrantes y acogedores para tu tienda. Desde el diseño paisajístico hasta el mantenimiento ', '../Uploads/servicio/pexels-dương-bá-thành-3833591.jpg', '../Uploads/productos/pexels-karolina-grabowska-4207908.jpg', '../Uploads/productos/pexels-pixabay-162564.jpg', 51, 1, 1);
+(7, 'jardinero', 50000, '6 horas', 15, '                    Embellece tu entorno con nuestro servicio de jardinería especializado. Nos dedicamos a crear espacios verdes vibrantes y acogedores para tu tienda. Desde el diseño paisajístico has', '../Uploads/servicio/pexels-dương-bá-thành-3833591.jpg', '../Uploads/productos/pexels-karolina-grabowska-4207908.jpg', '../Uploads/productos/pexels-pixabay-162564.jpg', 51, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -359,7 +359,7 @@ ALTER TABLE `categoria`
 -- Indices de la tabla `detalles_pedido`
 --
 ALTER TABLE `detalles_pedido`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`ID`);
 
 --
 -- Indices de la tabla `estados`
@@ -381,12 +381,6 @@ ALTER TABLE `productos`
   ADD KEY `usuario_id_emprendedor_productos` (`id_emprendedor`),
   ADD KEY `Estado` (`Estado`),
   ADD KEY `categoria` (`categoria`);
-
---
--- Indices de la tabla `publicacion`
---
-ALTER TABLE `publicacion`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `servicios`
@@ -413,13 +407,13 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `calificacion`
 --
 ALTER TABLE `calificacion`
-  MODIFY `id` bigint(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `carrito`
 --
 ALTER TABLE `carrito`
-  MODIFY `id` bigint(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
+  MODIFY `id` bigint(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=95;
 
 --
 -- AUTO_INCREMENT de la tabla `categoria`
@@ -431,25 +425,19 @@ ALTER TABLE `categoria`
 -- AUTO_INCREMENT de la tabla `detalles_pedido`
 --
 ALTER TABLE `detalles_pedido`
-  MODIFY `id` bigint(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=764;
+  MODIFY `ID` bigint(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=897;
 
 --
 -- AUTO_INCREMENT de la tabla `pedidos`
 --
 ALTER TABLE `pedidos`
-  MODIFY `id` bigint(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=291;
+  MODIFY `id` bigint(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=349;
 
 --
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id` bigint(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
-
---
--- AUTO_INCREMENT de la tabla `publicacion`
---
-ALTER TABLE `publicacion`
-  MODIFY `id` bigint(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT de la tabla `servicios`

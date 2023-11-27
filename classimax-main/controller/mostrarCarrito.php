@@ -19,6 +19,8 @@ function cargarProductoCarrito() {
             $estado = ($f['Disponibilidad'] == 1) ? 'Disponible' : (($f['Disponibilidad'] == 0) ? 'Agotado' : 'Pendiente');
             echo  '
             <br>
+            <br>
+            <br>
             <div class="row justify-content-center align-items-center productosxd">
                 <div class="col-md-3">
                     <img src="' . $f['foto'] . '" alt="Foto producto" style="width:260px; height:200; margin-right: 20px;
@@ -31,7 +33,7 @@ function cargarProductoCarrito() {
                     <p class="disponible">' . $estado . '</p>
                     <div class="dropdown-center">
                         <p class="precioproducto" style="margin-right: 10px; margin-bottom: 10px;">' . $f['precio'] . '</p> <br>
-                        <label for="cantidad">Cantidad</label>
+                        <label id="cantidades" for="cantidad">Cantidad</label>
                         <select name="cantidad" id="cantidad' . $f['id_carrito'] . '" class="form-select btn compar" style="margin-right: 10px; margin-bottom: 10px; width: 100px;">
                             <option value="' . $f['cantidad_carrito'] . '">' . $f['cantidad_carrito'] . '</option>
                             <option value="1">1</option>

@@ -56,9 +56,7 @@ if (isset($_SESSION['AUTENTICADO'])) {
                             </ul>
                             <ul class="navbar-nav ml-auto mt-10">
                                 <li class="nav-item d-block pt-4 carrito_boton"> </img><a class="nav-link carrito-btn"
-                                        href="carrito.php"><img style="width: 28px; height: 28px; margin-right: 10px; margin-bottom: 10px; margin-right:10px;" src="../Uploads/iconos/carrito-de-compras.png">Carrito</a> </li>
-                                <li class="nav-item d-block pt-4 carrito_boton"><a class="nav-link carrito-btn"
-                                        href="pasarelapagos.php"><img style="width: 28px; height: 28px; margin-right: 10px; margin-bottom: 10px;  margin-right:10px;" src="../Uploads/iconos/dinero.png">Pasarela</a></li>';
+                                        href="carrito.php"><img style="width: 28px; height: 28px; margin-right: 10px; margin-bottom: 10px; margin-right:10px;" src="../Uploads/iconos/carrito-de-compras.png">Carrito</a> </li>';
 
     if ($_SESSION['rol'] === 'Administrador') {
         echo '<li class="nav-item d-block pt-4 carrito_boton"><a class="nav-link carrito-btn"

@@ -2007,49 +2007,46 @@ class ValidarSesion
 
                 // Redirigimos al usuario según el tipo_de_rol
                 
-                if ($tipo_de_rol == "administrador") {
+                if ($_SESSION['estado'] == 0) {
                     echo '<script> 
-            swal.fire({
-                icon: "success",
-                title: "¡Bienvenido.!",
-                text: "Bienvenido.",
-                confirmButtonText: "Ir al menu"
-            }).then(function() {
-                window.location = "../views/administrador/home.php";
-            });</script>';
-
-                }elseif($_SESSION['estado'] == 0){
+                        swal.fire({
+                            icon: "success",
+                            title: "¡Su cuenta está bloqueada!",
+                            text: "Su cuenta está bloqueada.",
+                            confirmButtonText: "Ir al menú"
+                        }).then(function() {
+                            window.location = "../theme/login.php";
+                        });</script>';
+                } elseif ($tipo_de_rol == "administrador") {
                     echo '<script> 
-                    swal.fire({
-                        icon: "success",
-                        title: "¡Su cuenta esta bloqueda.!",
-                        text: "Su cuenta esta bloqueda.",
-                        confirmButtonText: "Ir al menu"
-                    }).then(function() {
-                        window.location = "../theme/login.php";
-                    });</script>';
-                } 
-                elseif($tipo_de_rol == "cliente"){
+                        swal.fire({
+                            icon: "success",
+                            title: "¡Bienvenido!",
+                            text: "Que bueno volverte a ver.",
+                            confirmButtonText: "Ir al menú"
+                        }).then(function() {
+                            window.location = "../views/administrador/home.php";
+                        });</script>';
+                } elseif ($tipo_de_rol == "cliente") {
                     echo '<script> 
-                    swal.fire({
-                        icon: "success",
-                        title: "¡Bienvenido cliente.!",
-                        text: "Bienvenido cliente.",
-                        confirmButtonText: "Ir al menu"
-                    }).then(function() {
-                        window.location = "../Views/cliente/usuario.php";
-                    });</script>';
-                } 
-                else {
+                        swal.fire({
+                            icon: "success",
+                            title: "¡Bienvenido cliente!",
+                            text: "Que bueno volverte a ver.",
+                            confirmButtonText: "Ir al menú"
+                        }).then(function() {
+                            window.location = "../Views/cliente/usuario.php";
+                        });</script>';
+                } elseif ($tipo_de_rol == "Emprendedor") {
                     echo '<script> 
-                    swal.fire({
-                        icon: "success",
-                        title: "¡Bienvenido Emprendedor.!",
-                        text: "Bienvenido Emprendedor.",
-                        confirmButtonText: "Ir al menu"
-                    }).then(function() {
-                        window.location = "../Views/emprendedor/emprendedor.php";
-                    });</script>';
+                        swal.fire({
+                            icon: "success",
+                            title: "¡Bienvenido Emprendedor!",
+                            text: "Que bueno volverte a ver.",
+                            confirmButtonText: "Ir al menú"
+                        }).then(function() {
+                            window.location = "../Views/emprendedor/emprendedor.php";
+                        });</script>';
                 }
             } else {
                 echo '<script> 
@@ -2063,8 +2060,15 @@ class ValidarSesion
                 });</script>';
             }
         } else {
-            echo '<script> alert("Verifica que tu correo esté bien diligenciado o regístrate si no tienes cuenta") </script>';
-            echo "<script> location.href='../theme/login.php' </script>";
+            echo '<script> 
+            swal.fire({
+                icon: "error",
+                title: "¡Error.!",
+                text: "Verifica que tu correo esté bien diligenciado o regístrate si no tienes cuenta.",
+                confirmButtonText: "Ir al menu"
+            }).then(function() {
+                window.location = "../theme/login.php";
+            });</script>';
         }
     }
 
@@ -2076,7 +2080,7 @@ class ValidarSesion
                 swal.fire({
                     icon: "error",
                     title: "¡Sesion cerrada.!",
-                    text: "Sesion cerrada.",
+                    text: "Nos vemos pronto.",
                     confirmButtonText: "Ir al menu"
                 }).then(function() {
                     window.location = "../theme/login.php";

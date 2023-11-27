@@ -1,4 +1,4 @@
-<?php include_once("../controller/Main.php");
+	<?php include_once("../controller/Main.php");
 require_once("../controller/publicaciones.php");
 require_once ("../controller/mostrarInfoProductos.php");
 require_once("../model/conexion.php");
@@ -62,6 +62,7 @@ require_once("../model/consultas.php");
 				<div class="advance-search nice-select-white">
 					<form>
 						<div class="form-row align-items-center">
+							<div class="xds">
 							<div class="form-group col-lg-3 col-md-6">
 								<select class="w-100 form-control my-2 my-lg-0">
 									<option>Relevancia</option>
@@ -74,11 +75,11 @@ require_once("../model/consultas.php");
 
 							</div>	
 							<form metho="get">
-                                <input class="busqueda" type="text" name="buscar">
+                                <input class="busquedas" type="text" name="buscar">
                                 <input class="busqueda" type="submit" value="Buscar">
                             </form>
 							</div>
-								
+							</div>	
 							
 							</div>
 						</div>
@@ -124,54 +125,11 @@ require_once("../model/consultas.php");
 	</ul>
 </div>
 
-<div class="widget filter">
-	<h4 class="widget-header">Mostrar productos</h4>
-	<select>
-		<option>Populares</option>
-		<option value="1">Mas popular</option>
-		<option value="2">Precio mas bajo</option>
-		<option value="4">Precio mas alto</option>
-	</select>
-</div>
 
-<div class="widget price-range w-100">
-	<h4 class="widget-header">Rango de precio</h4>
-	<div class="block">
-						<input class="range-track w-100" type="text" data-slider-min="0" data-slider-max="1.000.000" data-slider-step="#"
-						data-slider-value="[0,1.000.000]">
-				<div class="d-flex justify-content-between mt-2">
-						<span class="value">$0 - $1.000.000</span>
-				</div>
-	</div>
-</div>
 
-<div class="widget product-shorting">
-	<h4 class="widget-header">Condiciones</h4>
-	<div class="form-check">
-	  <label class="form-check-label">
-	    <input class="form-check-input" type="checkbox" value="">
-	    Nuevo
-	  </label>
-	</div>
-	<div class="form-check">
-	  <label class="form-check-label">
-	    <input class="form-check-input" type="checkbox" value="">
-	    Usado
-	  </label>
-	</div>
-	<div class="form-check">
-	  <label class="form-check-label">
-	    <input class="form-check-input" type="checkbox" value="">
-	    Poco uso
-	  </label>
-	</div>
-	<div class="form-check">
-	  <label class="form-check-label">
-	    <input class="form-check-input" type="checkbox" value="">
-	    Casi nuevo
-	  </label>
-	</div>
-</div>
+
+
+
 
 				</div>
 			</div>

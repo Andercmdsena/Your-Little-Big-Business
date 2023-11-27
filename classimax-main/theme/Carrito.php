@@ -28,6 +28,7 @@ require_once("../controller/mostrarCarrito.php");
     </header>
 
 
+    <h1 style="font-size: 25px; font-weight: bold; padding: 15px 20px;" class="nombreCarrito">CARRITO</h1>
 
     <main>
       <div >

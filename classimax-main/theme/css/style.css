@@ -107,6 +107,13 @@ ul.social-circle-icons li a:hover {
   background: #5672f9;
 }
 
+.xds{
+  display: flex;
+  margin-left: 260px;
+  border-style: none;
+  border-width: 0;
+}
+
 #agre{
   color: #000 !important;
 }
@@ -555,9 +562,38 @@ ul.pagination .active a {
   margin-bottom: 0;
 }
 
+.busquedas{
+  padding-left: 120px;
+  border-radius: 10px 0px 0px 10px;
+  text-decoration: none;
+  border-width: 0px;
+  border: solid #000 2px;
+}
+
+.busqueda{
+  background: #8ca4e2;
+  color: #000000;
+  font-weight: bold;
+  border-width: 0px;
+  border: solid #000 2px;
+  border-radius: 0px 10px 10px 0px;
+}
+
+.busqueda:hover{
+  background: #bb8ce2;
+  color: #000000;
+  font-weight: bold;
+  border-width: 0px;
+  border: solid #000 2px;
+  border-radius: 0px 10px 10px 0px;
+}
+
+
 .page-search .advance-search .form-control {
   border: 0px solid #fff;
   color: #000000;
+  padding-left: 30px;
+  padding-right: 100px; 
 }
 .page-search .advance-search ::-webkit-input-placeholder {
   /* Chrome/Opera/Safari */
@@ -2356,6 +2392,10 @@ form textarea {
   box-shadow: 5px 5px 10px #0000004d;
   padding: 20px 100px 20px 100px;
   margin: 50px 200px;
+}
+
+.nombreCarrito{
+  margin-top: 80px;
 }
 
 hr{

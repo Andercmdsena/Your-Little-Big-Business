@@ -27,7 +27,7 @@ require_once ("../../model/seguridadEmprendedor.php");
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
-    <title>Perfil Emprendedor Productos</title>
+    <title>Perfil Emprendedor Pedidos</title>
     
     <!-- ================= Favicon ================== -->
     <!-- Standard -->
@@ -111,10 +111,9 @@ include "menu_emprendedor.php"
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                                <h1>Ver productos registrados
-                                    
+                                <h1>Ver predidos
                                 </h1>
-                                <p>Elija la opcion que desea realizar, editar o eliminar</p>
+                                <p>Mira los pedidos que te han hecho</p>
                             </div>
                         </div>
                     </div>

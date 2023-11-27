@@ -58,6 +58,7 @@ function cargarPublicacion() {
                     ';
                 } else {
                     echo '<button class="btn btn-light"><a id="agre" href="../theme/login.php">Agregar al carrito</a></button>
+                    <button class="btn btn-light"><a id="tit" href="../theme/single2.php?id=' . $f['id'] . '"> Ver producto</a></button>
                     ';
                 }
                 echo '
@@ -97,7 +98,7 @@ function cargarPublicacionCarrusel() {
                             <img src="' . $f['foto'] . '" alt="Foto usuario" style="width:340px; height:150px; object-fit: cover;">
                         </div>
                         <div class="card-body">
-                            <h4 class="card-title"><a style="color:black" id="tit" href="../theme/single2.php?id=' . $f['id'] . '">' . $f['nombre'] . '</a></h4>
+                            <h4 class="card-title"><a id="tit" href="../theme/single2.php?id=' . $f['id'] . '">' . $f['nombre'] . '</a></h4>
                             <ul class="list-inline product-meta">
                                 <li class="list-inline-item">
                                     <a id="cat" href="single.html"><i class="fa fa-folder-open-o"></i>' . $f['categoria'] . '</a>
@@ -114,10 +115,19 @@ function cargarPublicacionCarrusel() {
                     </div>
                 </div>
             </div>
-
+            
+            
+            
                                 </div>
                                 <div class="col-sm-12 col-lg-4">
-
+        
+        
+        
+                            
+        
+            
+            
+            
             ';
                 };
             }

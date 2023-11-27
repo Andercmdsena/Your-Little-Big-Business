@@ -156,7 +156,7 @@ require_once ("../../model/seguridadEmprendedor.php");
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label>Categoria</label>
-                                        <select name="categoria" id="" class="form-control">
+                                        <select name="categoria" id="categoria" class="form-control" onchange="checkCategoria()">
                                             <option value="">Seleccione la categoria</option>
                                             <option value="1">Tecnologia</option>
                                             <option value="2">Moda</option>
@@ -172,6 +172,8 @@ require_once ("../../model/seguridadEmprendedor.php");
                                            
 
                                         </select>
+                                        <input type="text" class="form-control" placeholder="Ingrese categoria" name="categoriaInput" step="any" id="categoriaInput" style="display: none;">
+
                                     </div>
                                     <div class="form-group col-md-12">
                                         <div>Descripción</div>
@@ -226,6 +228,18 @@ require_once ("../../model/seguridadEmprendedor.php");
 
     if (selectElement.value === "10") {
       inputElement.style.display = "block";
+      inputElement.style.marginTop = "15px";
+    } else {
+      inputElement.style.display = "none";
+    }
+  }
+  function checkCategoria() {
+    var selectElement = document.getElementById("categoria");
+    var inputElement = document.getElementById("categoriaInput");
+
+    if (selectElement.value === "11") {
+      inputElement.style.display = "block";
+      inputElement.style.marginTop = "15px";
     } else {
       inputElement.style.display = "none";
     }

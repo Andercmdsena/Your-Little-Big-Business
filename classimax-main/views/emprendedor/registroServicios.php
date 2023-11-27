@@ -140,7 +140,7 @@ require_once ("../../model/seguridadEmprendedor.php");
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label>Categoria</label>
-                                        <select name="categoria" id="" class="form-control">
+                                        <select name="categoria" id="categoria" class="form-control" onchange="checkCategoria()">
                                             <option value="">Seleccione la categoría</option>
                                             <option value="11">Carpintería</option>
                                             <option value="12">Fontanería</option>
@@ -152,12 +152,15 @@ require_once ("../../model/seguridadEmprendedor.php");
                                             <option value="18">Cerrajería</option>
                                             <option value="19">Construcción</option>
                                             <option value="20">Mantenimiento general</option>
+                                            <option value="otra">Otra</option>
                                         </select>
+                                        <input type="text" class="form-control" placeholder="Ingrese categoria" name="categoriaInput" step="any"id="categoriaInput" style="display: none;">
+
 
                                     </div>
                                     <div class="form-group col-md-12">
                                         <div>Descripción</div>
-                                        <textarea name="descripcion" id="" cols="50" rows="5"></textarea>
+                                        <textarea name="descripcion" id="" cols="100" rows="5"></textarea>
                                     </div>
                                     
                                     <div class="form-group col-md-12">
@@ -199,6 +202,19 @@ require_once ("../../model/seguridadEmprendedor.php");
             </div>
         </div>
     </div>
+    <script>
+  function checkCategoria() {
+    var selectElement = document.getElementById("categoria");
+    var inputElement = document.getElementById("categoriaInput");
+
+    if (selectElement.value === "otra") {
+      inputElement.style.display = "block";
+      inputElement.style.marginTop = "15px";
+    } else {
+      inputElement.style.display = "none";
+    }
+  }
+</script>
 
 
 

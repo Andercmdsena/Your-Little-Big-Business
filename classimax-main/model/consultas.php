@@ -1824,6 +1824,33 @@ class consultas{
       
       
       }
+      public function verCantidad($id_producto, $id_usuario) {
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+    
+        $consulta = "SELECT cantidad FROM carrito WHERE id_producto = :id_producto AND id_usuario = :id_usuario";
+        
+        $result = $conexion->prepare($consulta);
+        $result->bindParam(":id_producto", $id_producto);
+        $result->bindParam(":id_usuario", $id_usuario);
+    
+        $result->execute();
+    
+        // Verificar si hay coincidencias
+        if ($result->rowCount() > 0) {
+            // Obtener el valor de la cantidad
+            $fila = $result->fetch(PDO::FETCH_ASSOC);
+            $cantidad = $fila['cantidad'];
+    
+            // Devolver la cantidad
+            return $cantidad;
+        } else {
+            // Devolver un valor predeterminado o lanzar una excepción según tus necesidades
+            return 0; // Por ejemplo, si el producto no se encuentra en el carrito
+        }
+    }
+    
+    
       public function promedioCalificacion($id) {
         $objConexion = new Conexion();
         $conexion = $objConexion->get_conexion();

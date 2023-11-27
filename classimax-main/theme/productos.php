@@ -65,18 +65,18 @@ require_once("../model/consultas.php");
 							<div class="form-group col-lg-3 col-md-6">
 								<select class="w-100 form-control my-2 my-lg-0">
 									<option>Relevancia</option>
-									<option value="1">Mas relevantes</option>
-									<option value="2">Menor precio</option>
-									<option value="4">Mayor precio</option>
+									<option onclick="filtrar('menor')" value="2">Menor precio</option>
+									<option onclick="filtrar('menor')" value="4">Mayor precio</option>
 								</select>
-							</div>
 
+							<form metho="get">
+                                <input class="busqueda" type="text" name="buscar">
+                                <input class="busqueda" type="submit" value="Buscar">
+                            </form>
+							</div>
+								
 							
 							</div>
-							<form metho="get">
-                                <input type="text" name="buscar">
-                                <input type="submit" value="Buscar">
-                            </form>
 						</div>
 					</form>
 				</div>
@@ -178,10 +178,76 @@ require_once("../model/consultas.php");
 							<strong>Filtro</strong>
 							<select>
 								<option>Mas reciente</option>
-								<option value="1">Mas popular</option>
 								<option value="2">Menor precio</option>
 								<option value="4">Mayor precio</option>
 							</select>
+							<form method="post">
+								<button type="submit" name="menor">Menor Precio</button>
+								<button type="submit" name="mayor">Mayor Precio</button>
+    						</form>
+
+
+						<?php
+							$conexion = new mysqli("localhost", "root", "", "ylbb");
+
+							// Verificar la conexión
+							if ($conexion->connect_error) {
+								die("Error de conexión: " . $conexion->connect_error);
+							}
+
+							if (isset($_POST['menor'])) {
+								$consulta = "SELECT * FROM productos ORDER BY precio ASC";
+							} elseif (isset($_POST['mayor'])) {
+								$consulta = "SELECT * FROM productos ORDER BY precio DESC";
+							} else {
+								$consulta = "SELECT * FROM productos";
+							}
+
+							// Ejecutar la consulta
+							$resultados = $conexion->query($consulta);
+
+							// Mostrar los resultados
+							if ($resultados->num_rows > 0) {
+								while ($fila = $resultados->fetch_assoc()) {
+									echo "<p>{$fila['nombre']} - {$fila['precio']}</p>";
+								}
+							} else {
+								echo "<p>No hay productos disponibles.</p>";
+							}
+
+							$conexion->close();
+						?>
+
+<!--
+
+// Verificar si se hizo clic en alguno de los botones
+if (isset($_POST['filtrar_menor'])) {
+    // Obtener los valores de precio mínimo y máximo
+    $precioMin = isset($_POST['precio_min']) ? $_POST['precio_min'] : null;
+    $precioMax = isset($_POST['precio_max']) ? $_POST['precio_max'] : null;
+
+    // Llamar a la función cargarPublicacion con el filtro de precio para Menor Precio
+    cargarPublicacion($precioMin, $precioMax, 'menor');
+} elseif (isset($_POST['filtrar_mayor'])) {
+    // Obtener los valores de precio mínimo y máximo
+    $precioMin = isset($_POST['precio_min']) ? $_POST['precio_min'] : null;
+    $precioMax = isset($_POST['precio_max']) ? $_POST['precio_max'] : null;
+
+    // Llamar a la función cargarPublicacion con el filtro de precio para Mayor Precio
+    cargarPublicacion($precioMin, $precioMax, 'mayor');
+} elseif (isset($_POST['menor'])) {
+    // Llamar a la función cargarPublicacion con el filtro de precio para Menor Precio sin valores específicos
+    cargarPublicacion(null, null, 'menor');
+} elseif (isset($_POST['mayor'])) {
+    // Llamar a la función cargarPublicacion con el filtro de precio para Mayor Precio sin valores específicos
+    cargarPublicacion(null, null, 'mayor');
+} else {
+    // Si no se hizo clic en ningún botón de filtro, mostrar todos los productos
+    cargarPublicacion();
+}
+
+ -->
+
 						</div>
 						<div class="col-md-6 text-center text-md-right mt-2 mt-md-0">
 							<div class="view">
@@ -211,7 +277,7 @@ require_once("../model/consultas.php");
 							  }
 
 							?>
-				
+			
 			
 				</div>
 							<!-- product card -->
@@ -255,6 +321,7 @@ require_once("../model/consultas.php");
 <!-- 
 Essential Scripts
 =====================================-->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="plugins/jquery/jquery.min.js"></script>
 <script src="plugins/bootstrap/popper.min.js"></script>
 <script src="plugins/bootstrap/bootstrap.min.js"></script>

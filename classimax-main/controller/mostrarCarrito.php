@@ -27,12 +27,13 @@ function cargarProductoCarrito() {
                 <div style="padding-left: 20px;" class="col-md-9 detallesproducto">
                     <p class="nombreproducto">' . $f['nombre'] . '</p>
                     <p class="Descripcion">' . $f['descripcion'] . '</p>
+                    
                     <p class="disponible">' . $estado . '</p>
                     <div class="dropdown-center">
                         <p class="precioproducto" style="margin-right: 10px; margin-bottom: 10px;">' . $f['precio'] . '</p> <br>
                         <label for="cantidad">Cantidad</label>
-                        <select name="cantidad" id="cantidad" class="form-select btn compar" style="margin-right: 10px; margin-bottom: 10px; width: 100px;">
-                            <option value="1">' . $f['cantidad_carrito'] . '</option>
+                        <select name="cantidad" id="cantidad' . $f['id_carrito'] . '" class="form-select btn compar" style="margin-right: 10px; margin-bottom: 10px; width: 100px;">
+                            <option value="' . $f['cantidad_carrito'] . '">' . $f['cantidad_carrito'] . '</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -44,12 +45,12 @@ function cargarProductoCarrito() {
                             <option value="9">9</option>
                         </select>
 
-                        <a id="guardarLink" class="btn compar" style="margin-right: 10px; margin-bottom: 9px; color: #000000 !important;">Guardar</a>
+                        <a id="guardarLink' . $f['id_carrito'] . '" class="btn compar" style="margin-right: 10px; margin-bottom: 9px; color: #000000 !important;">Guardar</a>
 
                         <script>
                             // Script para construir la URL con el valor seleccionado del elemento select
-                            document.getElementById("guardarLink").addEventListener("click", function() {
-                                var cantidadSeleccionada = document.getElementById("cantidad").value;
+                            document.getElementById("guardarLink' . $f['id_carrito'] . '").addEventListener("click", function() {
+                                var cantidadSeleccionada = document.getElementById("cantidad' . $f['id_carrito'] . '").value;
                                 var url = "../controller/guardarProductoCarrito.php?id=' . $f['id_carrito'] . '&cantidad=" + cantidadSeleccionada;
                                 window.location.href = url;
                             });

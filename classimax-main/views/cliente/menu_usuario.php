@@ -85,6 +85,11 @@ require_once ("../../controller/mostrarInfoUsuario.php");
                         <a href="../../theme/index.php">
                             <i class="ti-home"></i>Inicio</a>
                     </li>
+                    <li>
+                        <a href="pedidos.php">
+                            <i class="ti-file"></i>Pedidos</a>
+                    </li>
+                    
                     
                     <?php
 

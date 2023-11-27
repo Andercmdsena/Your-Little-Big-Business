@@ -75,7 +75,7 @@ function seleccionarProducto(){
             <td>
                 
                     <select name='estado' id='' class='form-control'>
-                        <option value=''> <i class='ti-eye'></i>".$estado."</option>
+                        <option value='1'> <i class='ti-eye'></i>".$estado."</option>
                         <option value='1'>Disponible</option>
                         <option value='0'>Agotado</option>
                         <option value='2'>Pendiente</option>

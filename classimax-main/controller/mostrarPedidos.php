@@ -4,24 +4,29 @@
 
 <?php
 
-function mostrarPedido($usuario){
+function mostrarPedido($usuario) {
     $objConsulta = new Consultas();
-    $result = $objConsulta->mostrarPedido($usuario);
+    $resultPedido = $objConsulta->mostrarPedido($usuario);
 
-    if (!isset($result)) {
-        echo '<h2>No hay usuarios registrados</h2>';
+    if (!isset($resultPedido)) {
+        echo '<h2>No pedidos pendientes</h2>';
     } else {
-        foreach($result as $f) {
+        foreach($resultPedido as $f) {
+            $objConsultaCantidad = new Consultas();
+            $cantidad = $objConsultaCantidad->verCantidad($f['id_producto'], $f['id_usuario']);
+
             echo  '
                 <tr>
                     <td><img src="../'.$f['foto'].'" alt="Foto user" style="width:120px; height:120px; border-radius:20px"></td>
                     <td>'.$f['id_pedido'].'</td>
                     <td>'.$f['nombre'].'</td>
                     <td>'.$f['precio'].'</td>
-                    <td>'.$f['cantidad'].'</td>
+                    <td>'.$cantidad.'</td> <!-- Utilizar la cantidad obtenida -->
                     <td style="text-align: center;">
                         <!-- Botón Cancelar Pedido -->
                         <button class="boton-cancelar" style="background-color: #ff3333; color: #fff; padding: 5px 10px; border: none; border-radius: 5px; margin-bottom: 5px;">Cancelar Pedido</button>
+                        </td>
+                    <td>
                         <button class="boton-enviar" style="background-color: #4caf50; color: #fff; padding: 5px 10px; border: none; border-radius: 5px;">Enviar Pedido</button>
                     </td>
                 </tr>';

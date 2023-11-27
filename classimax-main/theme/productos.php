@@ -71,12 +71,16 @@ require_once("../model/consultas.php");
 								</select>
 							</div>
 
+
+							</div>	
+							<form metho="get">
+                                <input class="busqueda" type="text" name="buscar">
+                                <input class="busqueda" type="submit" value="Buscar">
+                            </form>
+							</div>
+								
 							
 							</div>
-							<form metho="get">
-                                <input type="text" name="buscar">
-                                <input type="submit" value="Buscar">
-                            </form>
 						</div>
 					</form>
 				</div>
@@ -124,7 +128,7 @@ require_once("../model/consultas.php");
 	<h4 class="widget-header">Mostrar productos</h4>
 	<select>
 		<option>Populares</option>
-		<option value="1">Top ventas</option>
+		<option value="1">Mas popular</option>
 		<option value="2">Precio mas bajo</option>
 		<option value="4">Precio mas alto</option>
 	</select>
@@ -178,10 +182,44 @@ require_once("../model/consultas.php");
 							<strong>Filtro</strong>
 							<select>
 								<option>Mas reciente</option>
-								<option value="1">Mas popular</option>
 								<option value="2">Menor precio</option>
 								<option value="4">Mayor precio</option>
 							</select>
+							
+
+
+						
+
+<!--
+
+// Verificar si se hizo clic en alguno de los botones
+if (isset($_POST['filtrar_menor'])) {
+    // Obtener los valores de precio mínimo y máximo
+    $precioMin = isset($_POST['precio_min']) ? $_POST['precio_min'] : null;
+    $precioMax = isset($_POST['precio_max']) ? $_POST['precio_max'] : null;
+
+    // Llamar a la función cargarPublicacion con el filtro de precio para Menor Precio
+    cargarPublicacion($precioMin, $precioMax, 'menor');
+} elseif (isset($_POST['filtrar_mayor'])) {
+    // Obtener los valores de precio mínimo y máximo
+    $precioMin = isset($_POST['precio_min']) ? $_POST['precio_min'] : null;
+    $precioMax = isset($_POST['precio_max']) ? $_POST['precio_max'] : null;
+
+    // Llamar a la función cargarPublicacion con el filtro de precio para Mayor Precio
+    cargarPublicacion($precioMin, $precioMax, 'mayor');
+} elseif (isset($_POST['menor'])) {
+    // Llamar a la función cargarPublicacion con el filtro de precio para Menor Precio sin valores específicos
+    cargarPublicacion(null, null, 'menor');
+} elseif (isset($_POST['mayor'])) {
+    // Llamar a la función cargarPublicacion con el filtro de precio para Mayor Precio sin valores específicos
+    cargarPublicacion(null, null, 'mayor');
+} else {
+    // Si no se hizo clic en ningún botón de filtro, mostrar todos los productos
+    cargarPublicacion();
+}
+
+ -->
+
 						</div>
 						<div class="col-md-6 text-center text-md-right mt-2 mt-md-0">
 							<div class="view">
@@ -211,7 +249,7 @@ require_once("../model/consultas.php");
 							  }
 
 							?>
-				
+			
 			
 				</div>
 							<!-- product card -->
@@ -255,6 +293,7 @@ require_once("../model/consultas.php");
 <!-- 
 Essential Scripts
 =====================================-->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script src="plugins/jquery/jquery.min.js"></script>
 <script src="plugins/bootstrap/popper.min.js"></script>
 <script src="plugins/bootstrap/bootstrap.min.js"></script>

@@ -78,7 +78,7 @@
 {
     display: none;
     float: left;
-    height: 100% !important;
+    height: 30% !important;
     min-height: 2px;
 }
 [dir='rtl'] .slick-slide
@@ -86,10 +86,10 @@
     float: right;
 }
 
-.slick-slide img {
+.slick-slide img
+{
     display: block;
-    border-top-left-radius: 23px;
-    border-top-right-radius: 23px;
+    border-radius: 40px !important;
 }
 
 .slick-slide.slick-loading img

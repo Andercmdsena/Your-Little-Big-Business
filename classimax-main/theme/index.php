@@ -146,12 +146,7 @@ require_once("../model/consultas.php");
 							cargarPublicacionCarrusel()
 
 							?>
-
-
-
-					</div>
-				
-			
+					</div >
 		</div>
 	</div>
 </section>

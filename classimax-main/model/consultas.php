@@ -398,6 +398,54 @@ class consultas{
       
       
       }
+
+
+      public function cancelarPedido($id_pedido, $id_producto,$id) {
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+    
+        // Utiliza una sentencia DELETE para eliminar la fila en detalles_pedido
+        $eliminar = "DELETE FROM detalles_pedido WHERE id_pedido = :id_pedido AND id_producto = :id_producto AND ID = :id";
+    
+        // Prepara la consulta
+        $result = $conexion->prepare($eliminar);
+    
+        // Enlaza los parámetros
+        $result->bindParam(":id_pedido", $id_pedido, PDO::PARAM_INT);
+        $result->bindParam(":id_producto", $id_producto, PDO::PARAM_INT);
+        $result->bindParam(":id", $id, PDO::PARAM_INT);
+    
+        try {
+            // Ejecuta la consulta
+            $result->execute();
+    
+            // Muestra un mensaje de éxito
+            echo '<script> 
+                swal.fire({
+                    icon: "success",
+                    title: "Eliminación exitosa",
+                    text: "Pedido eliminado con éxito.",
+                    confirmButtonText: "Ir al menú"
+                }).then(function() {
+                    window.location = "../Views/cliente/pedidos.php";
+                });
+            </script>';
+        } catch (PDOException $e) {
+            // Muestra un mensaje de error en caso de excepción
+            echo '<script> 
+                swal.fire({
+                    icon: "error",
+                    title: "Error en la eliminación",
+                    text: "Ocurrió un error al intentar eliminar el pedido.",
+                    confirmButtonText: "Volver"
+                }).then(function() {
+                    window.history.back();
+                });
+            </script>';
+        }
+    }
+    
+    
      public function eliminarCalificacion ($id, $id_producto) {
         $objConexion = new Conexion();
         
@@ -668,58 +716,64 @@ class consultas{
       }
       public function modificarProducto($arg_campo, $arg_valor, $arg_id_producto){
         $objConexion = new Conexion();
-        $conexion = $objConexion -> get_conexion();
-
-        $consulta = "UPDATE productos set $arg_campo = :valor WHERE id = :id_producto";
-
-        $result = $conexion ->prepare($consulta);
-
-        $result->bindParam(":valor", $arg_valor);
-        $result->bindParam(":id_producto", $arg_id_producto);
-
-        if(!$result){
-            return "Error al modificar el producto";
-        }else{
-            $result -> execute();
+        $conexion = $objConexion->get_conexion();
+    
+        try {
+            $consulta = "UPDATE productos SET $arg_campo = :valor WHERE id = :id_producto";
+    
+            $result = $conexion->prepare($consulta);
+            $result->bindParam(":valor", $arg_valor);
+            $result->bindParam(":id_producto", $arg_id_producto);
+    
+            if (!$result->execute()) {
+                throw new Exception("Error al modificar el producto");
+            }
+    
             echo '<script> 
-            swal.fire({
-                icon: "success",
-                title: "¡Producto actualizado con exito.!",
-                text: "Producto actualizado con exito.",
-                confirmButtonText: "Ir al menu"
-            }).then(function() {
-                window.location = "../views/emprendedor/verProductos.php";
-            });</script>';
+                swal.fire({
+                    icon: "success",
+                    title: "¡Producto actualizado con éxito!",
+                    text: "Producto actualizado con éxito.",
+                    confirmButtonText: "Ir al menú"
+                }).then(function() {
+                    window.location = "../views/emprendedor/verProductos.php";
+                });</script>';
+        } catch (Exception $e) {
+            // Manejar el error de manera adecuada, por ejemplo, mostrar un mensaje al usuario.
+            
         }
-        
-      }
-      public function modificarServicio($arg_campo, $arg_valor, $id_servicio){
+    }
+    
+    public function modificarServicio($arg_campo, $arg_valor, $id_servicio){
         $objConexion = new Conexion();
-        $conexion = $objConexion -> get_conexion();
-
-        $consulta = "UPDATE servicios set $arg_campo = :valor WHERE id = :id_servicio";
-
-        $result = $conexion ->prepare($consulta);
-
-        $result->bindParam(":valor", $arg_valor);
-        $result->bindParam(":id_servicio", $id_servicio);
-
-        if(!$result){
-            return "Error al modificar el producto";
-        }else{
-            $result -> execute();
+        $conexion = $objConexion->get_conexion();
+    
+        try {
+            $consulta = "UPDATE servicios SET $arg_campo = :valor WHERE id = :id_servicio";
+    
+            $result = $conexion->prepare($consulta);
+            $result->bindParam(":valor", $arg_valor);
+            $result->bindParam(":id_servicio", $id_servicio);
+    
+            if (!$result->execute()) {
+                throw new Exception("Error al modificar el servicio");
+            }
+    
             echo '<script> 
-            swal.fire({
-                icon: "success",
-                title: "¡Servicio actualizado con exito.!",
-                text: "Servicio actualizado con exito.",
-                confirmButtonText: "Ir al menu"
-            }).then(function() {
-                window.location = "../views/emprendedor/verServicio.php";
-            });</script>';
+                swal.fire({
+                    icon: "success",
+                    title: "¡Servicio actualizado con éxito!",
+                    text: "Servicio actualizado con éxito.",
+                    confirmButtonText: "Ir al menú"
+                }).then(function() {
+                    window.location = "../views/emprendedor/verServicio.php";
+                });</script>';
+        } catch (Exception $e) {
+            // Manejar el error de manera adecuada, por ejemplo, mostrar un mensaje al usuario.
+            
         }
-        
-      }
+    }
+    
       public function modificarProductoAdmin($estado, $id_producto){
         $objConexion = new Conexion();
         $conexion = $objConexion -> get_conexion();
@@ -1368,6 +1422,9 @@ class consultas{
         }, 6000);
     </script>";
     }
+
+
+
     public function insertarDetallesProductos($id_pedido, $id_producto){
         
         
@@ -1793,6 +1850,36 @@ class consultas{
         return $f;
     }
     
+    public function mostrarPedidoCliente($usuario) {
+        $f = null;
+    
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+    
+        $consultar = "
+        SELECT *
+        FROM productos
+        JOIN detalles_pedido ON productos.id = detalles_pedido.id_producto
+        JOIN pedidos ON detalles_pedido.id_pedido = pedidos.id
+        WHERE pedidos.id_usuario = :usuario
+        ORDER BY pedidos.id;
+        ";
+    
+        $result = $conexion->prepare($consultar);
+    
+        // Enlaza el parámetro :usuario
+        $result->bindParam(':usuario', $usuario, PDO::PARAM_INT);
+    
+        $result->execute();
+    
+        while ($resultado = $result->fetch()) {
+            $f[] = $resultado;
+        }
+    
+        return $f;
+    }
+    
+    
     
     
     
@@ -1815,6 +1902,33 @@ class consultas{
       
       
       }
+      public function verCantidad($id_producto, $id_usuario) {
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+    
+        $consulta = "SELECT cantidad FROM carrito WHERE id_producto = :id_producto AND id_usuario = :id_usuario";
+        
+        $result = $conexion->prepare($consulta);
+        $result->bindParam(":id_producto", $id_producto);
+        $result->bindParam(":id_usuario", $id_usuario);
+    
+        $result->execute();
+    
+        // Verificar si hay coincidencias
+        if ($result->rowCount() > 0) {
+            // Obtener el valor de la cantidad
+            $fila = $result->fetch(PDO::FETCH_ASSOC);
+            $cantidad = $fila['cantidad'];
+    
+            // Devolver la cantidad
+            return $cantidad;
+        } else {
+            // Devolver un valor predeterminado o lanzar una excepción según tus necesidades
+            return 0; // Por ejemplo, si el producto no se encuentra en el carrito
+        }
+    }
+    
+    
       public function promedioCalificacion($id) {
         $objConexion = new Conexion();
         $conexion = $objConexion->get_conexion();
@@ -1971,71 +2085,69 @@ class ValidarSesion
 
                 // Redirigimos al usuario según el tipo_de_rol
                 
-                if ($tipo_de_rol == "administrador") {
+                if ($_SESSION['estado'] == 0) {
                     echo '<script> 
-            swal.fire({
-                icon: "success",
-                title: "¡Bienvenido.!",
-                text: "Bienvenido.",
-                confirmButtonText: "Ir al menu"
-            }).then(function() {
-                window.location = "../views/administrador/home.php";
-            });</script>';
+                        swal.fire({
+                            icon: "success",
+                            title: "¡Su cuenta está bloqueada!",
+                            text: "Su cuenta está bloqueada.",
+                            confirmButtonText: "Ir al menú"
+                        }).then(function() {
+                            window.location = "../theme/login.php";
+                        });</script>';
+                } elseif ($tipo_de_rol == "administrador") {
+                    echo '<script> 
+                        swal.fire({
+                            icon: "success",
+                            title: "¡Bienvenido!",
+                            text: "Que bueno volverte a ver.",
+                            confirmButtonText: "Ir al menú"
+                        }).then(function() {
+                            window.location = "../views/administrador/home.php";
+                        });</script>';
+                } elseif ($tipo_de_rol == "cliente") {
+                    echo '<script> 
+                        swal.fire({
+                            icon: "success",
+                            title: "¡Bienvenido cliente!",
+                            text: "Que bueno volverte a ver.",
+                            confirmButtonText: "Ir al menú"
+                        }).then(function() {
+                            window.location = "../Views/cliente/usuario.php";
+                        });</script>';
+                } else{
+                    echo '<script> 
+                        swal.fire({
+                            icon: "success",
+                            title: "¡Bienvenido Emprendedor!",
+                            text: "Que bueno volverte a ver.",
+                            confirmButtonText: "Ir al menú"
+                        }).then(function() {
+                            window.location = "../Views/emprendedor/emprendedor.php";
+                        });</script>';
 
-                }elseif($_SESSION['estado'] == 0){
-                    echo '<script> 
-                    swal.fire({
-                        icon: "success",
-                        title: "¡Su cuenta esta bloqueda.!",
-                        text: "Su cuenta esta bloqueda.",
-                        confirmButtonText: "Ir al menu"
-                    }).then(function() {
-                        window.location = "../theme/login.php";
-                    });</script>';
-                } 
-                elseif($tipo_de_rol == "cliente"){
-                    echo '<script> 
-                    swal.fire({
-                        icon: "success",
-                        title: "¡Bienvenido cliente.!",
-                        text: "Bienvenido cliente.",
-                        confirmButtonText: "Ir al menu"
-                    }).then(function() {
-                        window.location = "../Views/cliente/usuario.php";
-                    });</script>';
-                } 
-                else {
-                    echo '<script> 
-                    swal.fire({
-                        icon: "success",
-                        title: "¡Bienvenido.!",
-                        text: "Bienvenido.",
-                        confirmButtonText: "Ir al menu"
-                    }).then(function() {
-                        window.location = "../Views/emprendedor/emprendedor.php";
-                    });</script';
                 }
             } else {
                 echo '<script> 
                 swal.fire({
                     icon: "error",
-                    title: "¡La clave no coincide intetalo de nuevo.!",
-                    text: "La clave no coincide intetalo de nuevo.",
+                    title: "¡La clave no coincide.!",
+                    text: "La clave no coincide.",
                     confirmButtonText: "Ir al menu"
                 }).then(function() {
                     window.location = "../theme/login.php";
-                });</script';
+                });</script>';
             }
         } else {
             echo '<script> 
             swal.fire({
                 icon: "error",
-                title: "¡La clave no coincide intetalo de nuevo.!",
-                text: "La clave no coincide intetalo de nuevo.",
+                title: "¡Error.!",
+                text: "Verifica que tu correo esté bien diligenciado o regístrate si no tienes cuenta.",
                 confirmButtonText: "Ir al menu"
             }).then(function() {
                 window.location = "../theme/login.php";
-            });</script';
+            });</script>';
         }
     }
 
@@ -2043,8 +2155,15 @@ class ValidarSesion
     {
         session_start();
         session_destroy();
-        
-        echo '<script> location.href="../theme/login.php" </script>';
+        echo '<script> 
+                swal.fire({
+                    icon: "error",
+                    title: "¡Sesion cerrada.!",
+                    text: "Nos vemos pronto.",
+                    confirmButtonText: "Ir al menu"
+                }).then(function() {
+                    window.location = "../theme/login.php";
+                });</script>';
     }
 }
 

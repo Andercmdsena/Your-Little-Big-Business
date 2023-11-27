@@ -3,8 +3,9 @@
 
 require_once ("../../model/conexion.php");
 require_once ("../../model/consultas.php");
-require_once ("../../controller/mostrarInfoEmprendedor.php");
-require_once ("../../model/seguridadEmprendedor.php");
+require_once ("../../model/seguridadUsuario.php");
+require_once ("../../controller/mostrarPedidosCliente.php");
+require_once ("../../controller/mostrarInfoUsuario.php");
 ?>
 
 
@@ -17,7 +18,7 @@ require_once ("../../model/seguridadEmprendedor.php");
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>YLBB | Administrador</title>
+ 
 
     <!-- ================= Favicon ================== -->
     <!-- Standard -->
@@ -67,12 +68,11 @@ require_once ("../../model/seguridadEmprendedor.php");
 
 <body>
 
-    <?php
-
-    include"menu_emprendedor.php"
+<?php
 
 
-    ?>
+include "menu_usuario.php"
+?>
     <!-- /# sidebar -->
 
 
@@ -101,105 +101,96 @@ require_once ("../../model/seguridadEmprendedor.php");
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                                <h1>Hola,
-                                    <span>Bienvenido a la vista de usuario</span>
+                                <h1>Ver predidos
                                 </h1>
+                                <p>Mira los pedidos que has realizado</p>
                             </div>
                         </div>
                     </div>
                     <!-- /# column -->
-                   
+                    <div class="col-lg-4 p-l-0 title-margin-left">
+                        <div class="page-header">
+                            <div class="page-title">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item">
+                                        
+                                        </li>
+                                        
+                                    </ol>
+                            </div>
+                        </div>
+                    </div>
                     <!-- /# column -->
                 </div>
                 <!-- /# row -->
                 <section id="main-content">
-
-                <div class="row">
+                    
+                    <div class="row">
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-title">
-                                    <h4>Nuevo Producto</h4>
+                                    <h4>Pedidos</h4>
                                     
                                 </div>
                                 <div class="card-body">
-                                    <div class="basic-elements">
-                                    <form action="../../controller/registrarProducto.php" method="POST" enctype="multipart/form-data">
-                                
-                                <div class="row formulario">
-                                    <div class="form-group col-md-6">
-                                        <label>Nombre</label>
-                                        <input type="text" class="form-control" placeholder="Computador, celular" name="nombre_pro">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label>Precio</label>
-                                        <input type="text" class="form-control" placeholder="200000" name="precio_pro">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                    <label>Cantidad</label>
-<select class="form-control" name="cantidad" id="cantidadSelect" onchange="checkIfTenPlus()">
-  <option value="1">1</option>
-  <option value="2">2</option>
-  <option value="3">3</option>
-  <option value="4">4</option>
-  <option value="5">5</option>
-  <option value="6">6</option>
-  <option value="7">7</option>
-  <option value="8">8</option>
-  <option value="9">9</option>
-  <option value="10">10+</option>
-</select>
+                                    <tbody>
+                                        <?php
+                                        $usuario = $_SESSION['id'];
+                                        
+                                        ?>
+                                    </tbody>
+                                    <div class="table-responsive">
+                                        <table class="table table-hover">
+                                        <style>
+    table {
+        width: 100%; /* Opcional: Hace que la tabla ocupe todo el ancho disponible */
+        border-collapse: collapse; /* Combina los bordes de las celdas */
+    }
 
-<!-- Campo de entrada adicional para "10+" -->
-<input type="number" class="form-control" placeholder="Ingrese cantidad" name="cantidad_input" step="any" pattern="[0-9]*" maxlength="4" id="cantidadInput" style="display: none;">
+    th, td {
+        text-align: center; /* Centra el texto horizontalmente */
+        padding: 10px; /* Agrega espaciado interno */   
+        border: 1px solid #ddd; /* Agrega bordes a las celdas */
 
-
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label>Categoria</label>
-                                        <select name="categoria" id="categoria" class="form-control" onchange="checkCategoria()">
-                                            <option value="">Seleccione la categoria</option>
-                                            <option value="1">Tecnologia</option>
-                                            <option value="2">Moda</option>
-                                            <option value="3">Salud y belleza</option>
-                                            <option value="4">Deportes</option>
-                                            <option value="5">Bebes y juegos</option>
-                                            <option value="6">Alimentos y bebidas</option>
-                                            <option value="7">Oficina</option>
-                                            <option value="8">Hogar</option>
-                                            <option value="9">Mascotas</option>
-                                            <option value="10">Libros y medios</option>
-                                            <option value="11">Otra</option>
-                                           
-
-                                        </select>
-                                        <input type="text" class="form-control" placeholder="Ingrese categoria" name="categoriaInput" step="any" id="categoriaInput" style="display: none;">
-
-                                    </div>
-                                    <div class="form-group col-md-12">
-                                        <div>Descripción</div>
-                                        <textarea name="descripcion" id="" cols="100" rows="5"></textarea>
-                                    </div>
-                                    
-                                    <div class="form-group col-md-12">
-                                    <label>Foto 1</label>
-                                    <input type="file" class="form-control" name="foto" accept=".jpg, .jpeg, .png, .gif">
-                                    <label>Foto 2</label>
-                                    <input type="file" class="form-control" name="foto2" accept=".jpg, .jpeg, .png, .gif">
-                                    <label>Foto 3</label>
-                                    <input type="file" class="form-control" name="foto3" accept=".jpg, .jpeg, .png, .gif">
-                                    </div>
+    }
+    /* Aplica el estilo a todos los td que no son el primer hijo */
+td:not(:first-child) {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    position: relative;
+    
+}
 
 
-                                </div>
-                                
-                                
-                                <button type="submit" class="btn btn-primary btn-flat m-b-30 m-t-30">Crear nuevo producto</button>
-                                
-                                
-                            </form>
+    thead th {
+        background-color: #f2f2f2; /* Color de fondo para los encabezados */
+    }
+</style>
+                                            <thead>
+                                                <tr>
+                                                    <th>Foto</th>
+                                                    <th>ID pedido</th>
+                                                    <th>Nombre</th>
+                                                    <th>Precio</th>
+                                                    <th style="text-align:center;">Cantidad</th>
+                                                    <th></th>
+                                                   
+                                                    
+
+                                            
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php
+                                        
+                                              mostrarPedido($usuario)
+                                              ?>
+                                            </tbody>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
                         </div>
                         <!-- /# column -->
                         
@@ -221,30 +212,8 @@ require_once ("../../model/seguridadEmprendedor.php");
     </div>
 
 
-    <script>
-  function checkIfTenPlus() {
-    var selectElement = document.getElementById("cantidadSelect");
-    var inputElement = document.getElementById("cantidadInput");
 
-    if (selectElement.value === "10") {
-      inputElement.style.display = "block";
-      inputElement.style.marginTop = "15px";
-    } else {
-      inputElement.style.display = "none";
-    }
-  }
-  function checkCategoria() {
-    var selectElement = document.getElementById("categoria");
-    var inputElement = document.getElementById("categoriaInput");
 
-    if (selectElement.value === "11") {
-      inputElement.style.display = "block";
-      inputElement.style.marginTop = "15px";
-    } else {
-      inputElement.style.display = "none";
-    }
-  }
-</script>
 
     <!-- Common -->
     <script src="../Dashboard/js/lib/jquery.min.js"></script>

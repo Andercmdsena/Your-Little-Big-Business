@@ -28,7 +28,7 @@ function cargarPublicacion() {
         <div style="padding: 0 18px;" class="card col-md-4 producto">
             <div class="thumb-content">
                 <!-- <div class="price">$200</div> -->
-                <img src="' . $f['foto'] . '" alt="Foto user" style="width:250px; height:120px; ">
+                <img src="' . $f['foto'] . '" alt="Foto user" style="width:249px; height:120px; ">
             </div>
             <div class="card-body producto_catalogo">
                 <h4 class="card-title"><a id="tit" href="../theme/single2.php?id=' . $f['id'] . '">' . $f['nombre'] . '</a></h4>
@@ -54,10 +54,12 @@ function cargarPublicacion() {
                 <div class="botonesCarrito">';
                 if (isset($_SESSION['id'])) {
                     echo '<button class="btn btn-light"><a id="agre" href="../controller/agregarCarrito.php?id_producto=' . $f['id'] . '"> Agregar al carrito</a></button>
-                    <button class="btn btn-light"><a id="comp" href="pasarelapagos.php">Comprar ahora</a></button>';
+                    <button class="btn btn-light"><a id="tit" href="../theme/single2.php?id=' . $f['id'] . '"> Ver producto</a></button>
+                    ';
                 } else {
                     echo '<button class="btn btn-light"><a id="agre" href="../theme/login.php">Agregar al carrito</a></button>
-                    <button class="btn btn-light"><a id="comp" href="../theme/login.php">Comprar ahora</a></button>';
+                    <button class="btn btn-light"><a id="tit" href="../theme/single2.php?id=' . $f['id'] . '"> Ver producto</a></button>
+                    ';
                 }
                 echo '
                 </div>

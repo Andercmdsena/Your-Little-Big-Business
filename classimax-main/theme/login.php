@@ -43,9 +43,7 @@
 </head>
 
 <body class="body-wrapper">
-
-
-<?php include("../components/header.php") ?>
+  <?php include("../components/header.php") ?>
 
   <section id="content-main" class="login container w-100 p-4 mt-4">
     <div class="row m-auto w-100 p-4">
@@ -66,7 +64,7 @@
                       <option value="cliente">Cliente</option>
                       <option value="emprendedor">Emprendedor</option>
                       <option value="administrador">Administrador</option>
-f
+
                 </select>
               </div>
             <button id="btn-ingresar"  type="submit" class="btn font-weight-bold w-75 mt-3"  >Ingresar</button>
@@ -86,7 +84,8 @@ f
         </form>
       </div>
       <div class="col-lg-7 d-none d-lg-flex align-items-center">
-        <img id="ilustracion_login" class="img-fluid" src="images/login/Team meeting_Monochromatic 2.png" alt="">
+        
+      <img id="ilustracion_login" class="img-fluid" src="images/login/Team meeting_Monochromatic 2.png" alt="">
       </div>
     </div>
 

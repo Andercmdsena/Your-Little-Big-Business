@@ -176,7 +176,7 @@ figure {
 
 a {
   transition: all 0.3s ease-in 0s;
-  color: #d3d2d2e5  !important;
+  color: #cacacae5  !important;
 }
 
 iframe {
@@ -1101,7 +1101,7 @@ ul.pagination .active a {
 }
 .product-item .card {
   border: none;
-  height: 750px;
+  height: 680px;
   background: #ffffff;
 }
 .product-item .cardCarrusel {

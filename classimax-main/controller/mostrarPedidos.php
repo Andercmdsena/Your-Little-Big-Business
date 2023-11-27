@@ -9,7 +9,7 @@ function mostrarPedido($usuario) {
     $resultPedido = $objConsulta->mostrarPedido($usuario);
 
     if (!isset($resultPedido)) {
-        echo '<h2>No hay usuarios registrados</h2>';
+        echo '<h2>No pedidos pendientes</h2>';
     } else {
         foreach($resultPedido as $f) {
             $objConsultaCantidad = new Consultas();
@@ -25,6 +25,8 @@ function mostrarPedido($usuario) {
                     <td style="text-align: center;">
                         <!-- Botón Cancelar Pedido -->
                         <button class="boton-cancelar" style="background-color: #ff3333; color: #fff; padding: 5px 10px; border: none; border-radius: 5px; margin-bottom: 5px;">Cancelar Pedido</button>
+                        </td>
+                    <td>
                         <button class="boton-enviar" style="background-color: #4caf50; color: #fff; padding: 5px 10px; border: none; border-radius: 5px;">Enviar Pedido</button>
                     </td>
                 </tr>';

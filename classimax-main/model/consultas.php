@@ -1802,6 +1802,36 @@ class consultas{
         return $f;
     }
     
+    public function mostrarPedidoCliente($usuario) {
+        $f = null;
+    
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+    
+        $consultar = "
+        SELECT *
+        FROM productos
+        JOIN detalles_pedido ON productos.id = detalles_pedido.id_producto
+        JOIN pedidos ON detalles_pedido.id_pedido = pedidos.id
+        WHERE pedidos.id_usuario = :usuario
+        ORDER BY pedidos.id;
+        ";
+    
+        $result = $conexion->prepare($consultar);
+    
+        // Enlaza el parámetro :usuario
+        $result->bindParam(':usuario', $usuario, PDO::PARAM_INT);
+    
+        $result->execute();
+    
+        while ($resultado = $result->fetch()) {
+            $f[] = $resultado;
+        }
+    
+        return $f;
+    }
+    
+    
     
     
     

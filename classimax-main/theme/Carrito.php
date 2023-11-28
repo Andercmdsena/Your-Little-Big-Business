@@ -28,7 +28,11 @@ require_once("../controller/mostrarCarrito.php");
     </header>
 
 
+<<<<<<< HEAD
 
+=======
+    <h1 style="font-size: 50px; font-weight: bold; padding: 15px 200px;" class="nombreCarrito">CARRITO <img style="width: 48px; height: 48px; margin-right: 10px; margin-bottom: 10px; margin-right:10px;" src="../Uploads/iconos/carrito-de-comprasxdd.png"> </h1>
+>>>>>>> 6773887cd39e43d188c410204f60c345e050f8eb
 
     <main>
       <div >

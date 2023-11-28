@@ -142,7 +142,7 @@ color: white !important;
           <div class="card-body bg-gray text-center">
             <h5 class="card-title">Anderson Tovar</h5>
             <p class="card-text">Fundador/Desarollador</p>
-            <a href="#">Portafolio</a>
+            <a href="https://andercmdsena.github.io/portafolio_final/" target="_blank">Portafolio</a>
           </div>
         </div>
       </div>

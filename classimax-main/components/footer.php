@@ -60,10 +60,10 @@
       <div class="col-lg-6">
         <!-- Social Icons -->
         <ul class="social-media-icons text-center text-lg-right">
-          <li><a class="fa fa-facebook" href="https://www.facebook.com/"></a></li>
-          <li><a class="fa fa-twitter" href="https://www.twitter.com/"></a></li>
-          <li><a class="fa fa-pinterest-p" href="https://www.pinterest.com/"></a></li>
-          <li><a class="fa fa-github-alt" href="https://www.github.com/"></a></li>
+          <li><a class="fa fa-facebook" href="https://www.facebook.com/profile.php?id=61553871637018"></a></li>
+          <li><a class="fa fa-twitter" href="https://twitter.com/big_ylbb"></a></li>
+          <li><a class="fa fa-instagram" href="https://www.instagram.com/youlittlebigbusiness/"></a></li>
+          <li><a class="fa fa-github-alt" href="https://github.com/Andercmdsena/Your-Little-Big-Business.git"></a></li>
         </ul>
       </div>
     </div>

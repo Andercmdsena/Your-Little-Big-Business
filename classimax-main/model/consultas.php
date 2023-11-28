@@ -398,6 +398,42 @@ class consultas{
       
       
       }
+      public function restarEmprendedor($id_producto, $cantidad) {
+        $objConexion = new Conexion();
+        
+        $conexion = $objConexion->get_conexion();
+      
+        // Actualiza la cantidad en la tabla productos
+        $actualizar = "UPDATE productos SET cantidad = cantidad - :cantidad WHERE id = :id_producto";
+      
+        $result = $conexion->prepare($actualizar);
+        $result->bindParam(":cantidad", $cantidad);
+        $result->bindParam(":id_producto", $id_producto);
+        
+        $result->execute();
+    
+        // Agrega aquí la lógica que desees para manejar el resultado de la actualización
+    
+        
+    }
+    public function resetearCarrito($id_Usuario, $id_producto) {
+        $objConexion = new Conexion();
+        
+        $conexion = $objConexion->get_conexion();
+      
+        // Elimina la fila en la tabla carrito
+        $eliminar = "DELETE FROM carrito WHERE id_usuario = :id_usuario AND id_producto = :id_producto";
+      
+        $result = $conexion->prepare($eliminar);
+        $result->bindParam(":id_usuario", $id_Usuario);
+        $result->bindParam(":id_producto", $id_producto);
+        
+        $result->execute();
+    
+        // Agrega aquí la lógica que desees para manejar el resultado de la eliminación
+    }
+    
+    
 
 
       public function cancelarPedido($id_pedido, $id_producto,$id) {
@@ -2031,6 +2067,9 @@ if ($promedioRedondeado == 1) {
     
         return $f;
     }
+
+
+
     
 }
 

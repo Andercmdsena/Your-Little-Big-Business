@@ -15,7 +15,7 @@ class GenerarClave{
         $objConexion = new conexion();
         $conexion = $objConexion->get_conexion();
 
-        $consultar = "SELECT * from user where Identificacion=:identificacion and Email=:email";
+        $consultar = "SELECT * from usuario where ID=:identificacion and Email=:email";
 
         $result = $conexion->prepare($consultar);
 
@@ -33,7 +33,7 @@ class GenerarClave{
 
                 $claveMd = md5($newPass);
 
-                $actualizarClave = "UPDATE user Set clave=:claveMd where Identificacion=:identificacion";
+                $actualizarClave = "UPDATE usuario Set clave=:claveMd where ID=:identificacion";
 
                 $result = $conexion->prepare($actualizarClave);
 

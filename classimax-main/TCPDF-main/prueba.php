@@ -17,22 +17,17 @@ $pdf->AddPage();
 // Define el contenido del recibo
 date_default_timezone_set('America/Bogota');
 
-
 session_start();
 
 $arg_id_usuario = $_SESSION['id'];
 
 // Función para cargar los productos del carrito y devolver una cadena HTML
-function cargarProductoCarrito() {
-    global $arg_id_usuario, $pdf;
-
-    $objConsulta = new Consultas();
-    $result = $objConsulta->mostrarRecibo($arg_id_usuario); // Utiliza la función mostrarRecibo para obtener los datos
+function cargarProductoCarrito($result) {
+    global $pdf;
 
     $tablaHTML = '
     <tr class="table-dark">
         <th>Producto</th>
-    
         <th>Cantidad</th>
         <th>Precio</th>
         <th>Nombre del vendedor</th>
@@ -40,14 +35,23 @@ function cargarProductoCarrito() {
     </tr>';
 
     if (!empty($result)) {
-        $totalPrecio = 0; // Inicializamos la variable de suma en cero
+        $totalPrecio = 0;
         foreach ($result as $f) {
             $descripcion = (strlen($f['descripcion']) > 100) ? substr($f['descripcion'], 0, 100) . "..." : $f['descripcion'];
             $cliente = $f['nombre'];
-    
+
             // Suma el valor de $f['precio'] al totalPrecio
             $totalPrecio += $f['precio'];
-    
+
+            $id_producto = $f['id']; 
+            $cantidad = $f['cantidad_carrito']; 
+            $objConsulta = new Consultas();
+            $resultRestar = $objConsulta->restarEmprendedor($id_producto, $cantidad);
+
+            $id_Usuario = $f['ID']; 
+            $objConsulta = new Consultas();
+            $resultRestar = $objConsulta->resetearCarrito($id_Usuario, $id_producto);
+
             $tablaHTML .= '
             <tr class="table-dark">
                 <td>' . $f['nombre'] . '</td>
@@ -57,11 +61,9 @@ function cargarProductoCarrito() {
                 <td>' . $f['telefono_emprendedor'] . '</td>
             </tr>';
         }
-    
-        // Calcula el IVA (19%)
+
         $iva = $totalPrecio * 0.19;
-    
-        // Agrega una fila al final de la tabla para mostrar el IVA y el total neto
+
         $tablaHTML .= '
         <tr class="table-dark">
             <td colspan="2"></td>
@@ -69,11 +71,7 @@ function cargarProductoCarrito() {
             <td><strong>IVA (19%): ' . number_format($iva, 2, ',', '.') . '</strong></td>
             <td><strong>Total (con IVA): ' . number_format(($totalPrecio + $iva), 2, ',', '.') . '</strong></td>
         </tr>';
-        
-
-    }
-    
-    else {
+    } else {
         $tablaHTML .= '
         <tr class="table-dark">
             <td colspan="4">No hay productos registrados</td>
@@ -83,29 +81,24 @@ function cargarProductoCarrito() {
     return $tablaHTML;
 }
 
-function resivo() {
-    global $arg_id_usuario, $pdf;
+   
 
-    $objConsulta = new Consultas();
-    $result = $objConsulta->mostrarRecibo($arg_id_usuario); // Utiliza la función mostrarRecibo para obtener los datos
-
+function resivo($result) {
+    global $pdf;
 
     if (!empty($result)) {
         $numeroAleatorio = str_pad(mt_rand(1, 999999999999), 12, '0', STR_PAD_LEFT);
         foreach ($result as $f) {
-            
-
             $cliente = $f['Nombre'];
             $email = $f['Email'];
             $telefono = $f['Telefono'];
             $email_emprendedor = $f['email_emprendedor'];
             $telefono_emprendedor = $f['telefono_emprendedor'];
-            $nombre_emprendedor=  $f['nombre_emprendedor'];
+            $nombre_emprendedor =  $f['nombre_emprendedor'];
             $contenido = '
-
     <h1>Recibo</h1>
-    <p> Fecha: '. date('d/m/Y') .' </p>
-    <p> Fecha: '. date('H:i:s') .' </p>
+    <p> Fecha: ' . date('d/m/Y') . ' </p>
+    <p> Hora: ' . date('H:i:s') . ' </p>
     <h2 style="text-align: center;">ID: ' . $numeroAleatorio . ' </h2>
     <h2>Factura a:</h2>
     <h3>' . $cliente . '</h3>
@@ -114,22 +107,15 @@ function resivo() {
         <b><i>Cel: </i></b> ' . $telefono . '
     </p>
     <br>
-    
-    
     <table border="1" class="table table-striped" style="padding:5px 10px">
-        ' . cargarProductoCarrito() . '
+        ' . cargarProductoCarrito($result) . '
     </table>
-
-    
-
     <h2>Metodo de pago</h2>
     <p><strong>con tarjeta débito</strong> <br>
         <strong>Nombre del banco:</strong> bancolombia <br>
         <strong>Nombre de la cuenta:</strong>' . $cliente . '<br>
         <strong>número de cuenta:</strong> *********123
-    </p>
-';
-
+    </p>';
         }
     } else {
         $contenido .= '
@@ -140,13 +126,13 @@ function resivo() {
 
     return $contenido;
 }
-resivo();
 
+// Llama a mostrarRecibo una vez
+$objConsulta = new Consultas();
+$result = $objConsulta->mostrarRecibo($arg_id_usuario);
 
 // Agrega el contenido al documento
-
-// Genera el PDF y lo muestra en el navegador
-$pdf->writeHTML(resivo(), true, false, true, false, '');
+$pdf->writeHTML(resivo($result), true, false, true, false, '');
 ob_end_clean(); // Desactiva el búfer de salida
 $pdf->Output('recibo.pdf', 'I');
 ?>

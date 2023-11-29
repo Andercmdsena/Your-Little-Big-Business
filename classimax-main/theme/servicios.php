@@ -122,54 +122,7 @@ require_once("../model/consultas.php");
 	</ul>
 </div>
 
-<div class="widget filter">
-	<h4 class="widget-header">Mostrar productos</h4>
-	<select>
-		<option>Populares</option>
-		<option value="1">Ma relevante</option>
-		<option value="2">Precio mas bajo</option>
-		<option value="4">Precio mas alto</option>
-	</select>
-</div>
 
-<div class="widget price-range w-100">
-	<h4 class="widget-header">Rango de precio</h4>
-	<div class="block">
-						<input class="range-track w-100" type="text" data-slider-min="0" data-slider-max="5000" data-slider-step="5"
-						data-slider-value="[0,5000]">
-				<div class="d-flex justify-content-between mt-2">
-						<span class="value">$10 - $5000</span>
-				</div>
-	</div>
-</div>
-
-<div class="widget product-shorting">
-	<h4 class="widget-header">Condiciones</h4>
-	<div class="form-check">
-	  <label class="form-check-label">
-	    <input class="form-check-input" type="checkbox" value="">
-	    1 hora
-	  </label>
-	</div>
-	<div class="form-check">
-	  <label class="form-check-label">
-	    <input class="form-check-input" type="checkbox" value="">
-	    2 - 4 horas 
-	  </label>
-	</div>
-	<div class="form-check">
-	  <label class="form-check-label">
-	    <input class="form-check-input" type="checkbox" value="">
-	    Fines de semana
-	  </label>
-	</div>
-	<div class="form-check">
-	  <label class="form-check-label">
-	    <input class="form-check-input" type="checkbox" value="">
-	    Toda la semana
-	  </label>
-	</div>
-</div>
 
 				</div>
 			</div>

@@ -90,7 +90,7 @@ function cargarPublicacionCarrusel() {
 
             if ($f['Estado'] == 1) {
                 // Limitar la descripción a un cierto número de caracteres
-                $descripcion = (strlen($f['descripcion']) > 50) ? substr($f['descripcion'], 0, 50) . "..." : $f['descripcion'];
+                $descripcion = (strlen($f['descripcion']) > 60) ? substr($f['descripcion'], 0, 60) . "..." : $f['descripcion'];
 
                 echo  '
                 <div class="product-item bg-light producto_catalogo">

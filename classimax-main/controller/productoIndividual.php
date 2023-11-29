@@ -408,7 +408,7 @@ function cargarProductoIndividual(){
     ';
 	echo '
 	<div class="bg-gray">
-	<div style="width: 80%; margin: auto; text-align: center; padding: 10px; margin-top: -80px;">';
+	<div style="width: 80%; margin: auto; text-align: center; padding: 4px; margin-top: -80px;">';
 echo cargarCalificacion($id);
 echo '</div> </div>';
 

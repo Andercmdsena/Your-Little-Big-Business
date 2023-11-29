@@ -518,6 +518,42 @@ class consultas{
       
       
       }
+     public function eliminarCalificacionServicio ($id, $id_servicio) {
+        $objConexion = new Conexion();
+        
+        $conexion = $objConexion -> get_conexion();
+      
+        $eliminar= "DELETE from calificacion where id = :id";
+      
+        $result = $conexion->prepare($eliminar);
+        $result-> bindParam (":id", $id );
+        
+        $result->execute ();
+        echo "<script>
+        swal.fire({
+            icon: 'error',
+            title: '¡Calificacion eliminada con éxito!',
+            text: 'Calificacion eliminada con éxito.',
+            confirmButtonText: 'Ir al menú',
+            willClose: function() {
+                // Redirección al hacer clic en el botón de confirmación
+                location.href='../theme/servicioIndividual.php?id=" . $id_servicio . "';
+            }
+        });
+    
+        // Agrega un retraso de 2000 milisegundos (2 segundos) antes de ejecutar la siguiente función
+        setTimeout(function() {
+            // Llamada a la segunda función con el retraso de 3 segundos
+            setTimeout(function() {
+                location.href='../theme/servicioIndividual.php?id=" . $id_servicio . "';
+            }, 6000);
+        }, 6000);
+    </script>";
+
+      
+      
+      
+      }
       public function eliminarUsuario ($id) {
         $objConexion = new Conexion();
         
@@ -1458,6 +1494,44 @@ class consultas{
         }, 6000);
     </script>";
     }
+    public function calificacionServicio($calificacion, $usuario, $id_servicio, $comentarios){
+        
+        
+        $objConexion = new  Conexion();
+        $conexion = $objConexion->get_conexion();
+        
+        $consultar = "INSERT INTO calificacion (calificacion, id_usuario, id_servicio,  comentarios) values(:calificacion, :id_usuario, :id_servicio , :comentarios)";
+        
+        $result = $conexion->prepare($consultar);
+        
+        
+        $result -> bindParam(":calificacion", $calificacion);
+        $result -> bindParam(":comentarios", $comentarios);
+        $result -> bindParam(":id_usuario", $usuario);
+        $result -> bindParam(":id_servicio", $id_servicio);
+        
+        $result->execute();
+        echo "<script>
+        swal.fire({
+            icon: 'success',
+            title: '¡Comentario registrado con éxito!',
+            text: 'Comentario registrado con éxito.',
+            confirmButtonText: 'Ir al menú',
+            willClose: function() {
+                // Redirección al hacer clic en el botón de confirmación
+                location.href='../theme/servicioIndividual.php?id=" . $id_servicio . "';
+            }
+        });
+    
+        // Agrega un retraso de 2000 milisegundos (2 segundos) antes de ejecutar la siguiente función
+        setTimeout(function() {
+            // Llamada a la segunda función con el retraso de 3 segundos
+            setTimeout(function() {
+                location.href='../theme/servicioIndividual.php?id=" . $id_servicio . "';
+            }, 6000);
+        }, 6000);
+    </script>";
+    }
 
 
 
@@ -1529,15 +1603,33 @@ class consultas{
     
         return $f;
     }
-    
-    
-    
-    
-    
-    
+    public function mostrarCalificacionServicio($id) {
+        $f = null;
         
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
     
-
+        // Consulta con LEFT JOIN a la tabla usuario y administradores
+        $consultar = "SELECT calificacion.*, usuario.foto as foto_usuario, usuario.*, administradores.foto as foto_administrador, administradores.*
+                      FROM calificacion 
+                      LEFT JOIN usuario ON calificacion.id_usuario = usuario.id
+                      LEFT JOIN administradores ON calificacion.id_usuario = administradores.Identificacion
+                      WHERE calificacion.id_servicio = :id_servicio";
+    
+        $result = $conexion->prepare($consultar);
+    
+        // Asigna el valor del parámetro antes de ejecutar la consulta
+        $result->bindParam(':id_servicio', $id, PDO::PARAM_INT);
+    
+        $result->execute();
+    
+        while ($resultado = $result->fetch()) {
+            $f[] = $resultado;
+        }
+    
+        return $f;
+    }
+    
 
 
      public function contarUsuarios(){
@@ -1938,6 +2030,37 @@ class consultas{
       
       
       }
+      public function solicitarServicio($servicio, $usuario) {
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+    
+        $consulta = "SELECT u.Email
+                     FROM servicios s
+                     JOIN usuario u ON s.id_emprendedor = u.id
+                     WHERE s.id = :id";
+    
+        $resultado = $conexion->prepare($consulta);
+        $resultado->bindParam(":id", $servicio);  // Corregido a :id y utilizando $servicio
+        $resultado->execute();
+    
+        if ($resultado->rowCount() > 0) {
+            $row = $resultado->fetch(PDO::FETCH_ASSOC);
+            $email = $row['Email'];
+    
+            // Construir el enlace mailto
+            $mailtoLink = "mailto:" . $email;
+    
+            // Redirigir al usuario al enlace mailto
+            header("Location: $mailtoLink");
+            exit;  // Asegura que la redirección se realice correctamente
+        } else {
+            echo 'No se encontró información para el ID de producto proporcionado.';
+        }
+    }
+    
+    
+    
+    
       public function verCantidad($id_producto, $id_usuario) {
         $objConexion = new Conexion();
         $conexion = $objConexion->get_conexion();

@@ -10,7 +10,10 @@ function cargarPublicacion() {
             
             $estado = ($f['Disponibilidad'] == 1) ? 'Disponible' : (($f['Disponibilidad'] == 0) ? 'Agotado' : 'Pendiente');
             // Limitar la descripción a un cierto número de caracteres
-            $descripcion = (strlen($f['descripcion']) > 100) ? substr($f['descripcion'], 0, 100) . "..." : $f['descripcion'];
+
+            $nombre = (strlen($f['nombre']) > 16) ? substr($f['nombre'], 0, 16) . "..." : $f['nombre'];
+
+            $descripcion = (strlen($f['descripcion']) > 90) ? substr($f['descripcion'], 0, 90) . "..." : $f['descripcion'];
 
             $categoria = ($f['categoria'] == 1) ? 'Tecnologia' :    
 (($f['categoria'] == 2) ? 'Moda' :
@@ -31,7 +34,7 @@ function cargarPublicacion() {
                 <img src="' . $f['foto'] . '" alt="Foto user" style="width:249px; height:120px; ">
             </div>
             <div class="card-body producto_catalogo">
-                <h4 class="card-title"><a id="tit" href="../theme/single2.php?id=' . $f['id'] . '">' . $f['nombre'] . '</a></h4>
+                <h4 class="card-title"><a id="tit" href="../theme/single2.php?id=' . $f['id'] . '">' . $nombre . '</a></h4>
                 <ul class="list-inline product-meta">
                     <li class="list-inline-item">
                         <a id="cat" href="single.html"><i class="fa fa-folder-open-o"></i>' . $categoria. '</a>

@@ -1,5 +1,5 @@
 <?php
-
+require_once("mostrarCalificacionServicios.php");
 function cargarServicioIndividual(){
 	$id = $_GET['id'];
     $objConsulta = new Consultas();
@@ -10,6 +10,17 @@ function cargarServicioIndividual(){
     }   else{
 
         foreach($result as $f){
+			$categoria = ($f['categoria'] == 11) ? 'Carpintería' :
+            (($f['categoria'] == 12) ? 'Fontanería' :
+            (($f['categoria'] == 13) ? 'Electricidad' :
+            (($f['categoria'] == 14) ? 'Pintura' :
+            (($f['categoria'] == 15) ? 'Jardinería' :
+            (($f['categoria'] == 16) ? 'Limpieza' :
+            (($f['categoria'] == 17) ? 'Reparación de electrodomésticos' :
+            (($f['categoria'] == 18) ? 'Cerrajería' :
+            (($f['categoria'] == 19) ? 'Construcción' :
+            (($f['categoria'] == 20) ? 'Mantenimiento general' : 'Otro')))))))));
+            $estado = ($f['Disponibilidad'] == 1) ? 'Disponible' : (($f['Disponibilidad'] == 0) ? 'Agotado' : 'Pendiente');
             $estado = ($f['Estado'] == 1) ? 'Activo' : (($f['Estado'] == 0) ? 'Bloqueado' : 'Pendiente');
             if ($f['Estado'] == 1) {
                 echo  '
@@ -24,7 +35,7 @@ function cargarServicioIndividual(){
 					<div class="product-meta">
 						<ul class="list-inline">
 							<li class="list-inline-item"><i class="fa fa-user-o"></i> Vendido por '. $f['usuario_nombre'] .'<a href="user-profile.html"></a></li>
-							<li class="list-inline-item"><i class="fa fa-folder-open-o"></i><a style="margin-left: 10px; color: #000000;" href="#">'. $f['categoria'] .'</a></li>
+							<li class="list-inline-item"><i class="fa fa-folder-open-o"></i><a style="margin-left: 10px; color: #000000;" href="#">'. $categoria .'</a></li>
 							<li class="list-inline-item"><i class="fa fa-location-arrow"></i> Localización<a href="#"></a></li>
 						</ul>
 					</div>
@@ -44,134 +55,151 @@ function cargarServicioIndividual(){
 					<!-- product slider -->
 
 					<div class="content mt-5 pt-5">
-						<ul class="nav nav-pills  justify-content-center" id="pills-tab" role="tablist">
-							<li class="nav-item">
-								<a style="color: #000 !important;" class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home"
-								 aria-selected="true">	<datagrid>Detalles del Servicio</datagrid></a>
-							</li>
-							<li class="nav-item">
-								<a style="color: #000 !important;" class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile"
-								 aria-selected="false">Especificaciones</a>
-							</li>
-							<li class="nav-item">
-								<a style="color: #000 !important;" class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact"
-								 aria-selected="false">Reseñas</a>
-							</li>
-						</ul>
 						<div class="tab-content" id="pills-tabContent">
 							<div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
 								<h3 class="tab-title">Descripción del producto</h3>
 								<p>'. $f['descripcion'] .'</p>
-
 							</div>
-							<div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-								<h3 class="tab-title">Product Specifications</h3>
-								<table class="table table-bordered product-table">
-									<tbody>
-										<tr>
-											<td>Precio del vendedor</td>
-											<td>'. $f['precio'] .'</td>
-										</tr>
-										<tr>
-											<td>Agregado</td>
-											<td>26 Diciembre</td>
-										</tr>
-										<tr>
-											<td>Localidad</td>
-											<td>......</td>
-										</tr>
-										<tr>
-											<td>Marca</td>
-											<td>MSI</td>
-										</tr>
-										<tr>
-											<td>Condición</td>
-											<td>Nuevo</td>
-										</tr>
-										<tr>
-											<td>Modelo</td>
-											<td>2017</td>
-										</tr>
-										<tr>
-											<td>State</td>
-											<td>Dhaka</td>
-										</tr>
-										<tr>
-											<td>Battery Life</td>
-											<td>23</td>
-										</tr>
-									</tbody>
-								</table>
+							<div>
+							<style>
+				/* Estilos generales para las estrellas y el formulario */
+				#producto {
+					text-align: center;
+					margin-top: 20px;
+				}
+				
+				input[type="checkbox"] {
+					display: none; /* Ocultar los checkboxes originales */
+				}
+				
+				label {
+					font-size: 24px; /* Tamaño de la fuente de las estrellas */
+					color: #ccc; /* Color de las estrellas inactivas */
+					cursor: pointer;
+					display: block; /* Hace que las estrellas aparezcan una debajo de la otra */
+					margin-bottom: 5px; /* Espaciado entre las estrellas */
+				}
+				
+				/* Estilos para las estrellas activas */
+				input[type="checkbox"]:checked + label {
+					color: #ffd700; /* Color de las estrellas activas */
+				}
+				
+				/* Estilos adicionales para resaltar las estrellas */
+				label:hover {
+					transform: scale(1.2); /* Aumentar el tamaño al pasar el ratón por encima */
+					transition: transform 0.2s ease-in-out;
+				}
+				
+				/* Estilos para el área de comentario y el botón */
+				#comentario {
+					resize: none;
+					width: 100%;
+					box-sizing: border-box;
+					margin-top: 10px;
+					padding: 10px;
+				}
+				
+				button {
+					margin-top: 10px;
+					background-color: #555; /* Cambiado el color del botón */
+					color: #fff; /* Texto del botón en blanco */
+					padding: 10px;
+					cursor: pointer;
+					border: none;
+					border-radius: 5px;
+				}
+				
+				button:hover {
+					background-color: #333; /* Cambiado el color del botón al pasar el ratón por encima */
+				}
+				</style>
+				
+				<style>
+				/* Estilos generales para las estrellas y el formulario */
+				#producto {
+					text-align: left; /* Alineado a la izquierda */
+					margin-top: 20px;
+				}
+				
+				input[type="checkbox"] {
+					display: none; /* Ocultar los checkboxes originales */
+				}
+				
+				label {
+					font-size: 24px; /* Tamaño de la fuente de las estrellas */
+					color: #ccc; /* Color de las estrellas inactivas */
+					cursor: pointer;
+					display: block; /* Hace que las estrellas aparezcan una debajo de la otra */
+					margin-bottom: 5px; /* Espaciado entre las estrellas */
+				}
+				
+				/* Estilos para las estrellas activas */
+				input[type="checkbox"]:checked + label {
+					color: #ffd700; /* Color de las estrellas activas */
+				}
+				
+				/* Estilos adicionales para resaltar las estrellas */
+				label:hover {
+					transform: scale(1.2); /* Aumentar el tamaño al pasar el ratón por encima */
+					transition: transform 0.2s ease-in-out;
+				}
+				
+				/* Estilos para el área de comentario y el botón */
+				#comentario {
+					resize: none;
+					width: 100%;
+					box-sizing: border-box;
+					margin-top: 10px;
+					padding: 10px;
+				}
+				
+				button {
+					margin-top: 10px;
+					background-color: #555; /* Cambiado el color del botón */
+					color: #fff; /* Texto del botón en blanco */
+					padding: 10px;
+					cursor: pointer;
+					border: none;
+					border-radius: 5px;
+				}
+				
+				button:hover {
+					background-color: #333; /* Cambiado el color del botón al pasar el ratón por encima */
+				}
+				</style>
+							';
+				
+							require_once("promedioCalificacion.php");
+			
+							echo '
+							
+							<form id="formularioCalificacion" action="../controller/calificacionServicios.php?id='. $f['id'] .'" method="post">
+							
+							<input type="checkbox" name="calificacion" value="1" id="estrella1"><label for="estrella1">&#9733; </label> 	 |
+							<input type="checkbox" name="calificacion" value="2" id="estrella2"><label for="estrella2">&#9733;&#9733; </label> 	 |
+							<input type="checkbox" name="calificacion" value="3" id="estrella3"><label for="estrella3">&#9733;&#9733;&#9733; </label> 	 |
+							<input type="checkbox" name="calificacion" value="4" id="estrella4"><label for="estrella4">&#9733;&#9733;&#9733;&#9733 </label> 	 |
+							<input type="checkbox" name="calificacion" value="5" id="estrella5"><label for="estrella5">&#9733;&#9733;&#9733;&#9733;&#9733; </label>
+							<textarea name="comentario" id="comentario" placeholder="Comentario..." maxlength="100"></textarea>
+							<button id="botoncalificacion" style="margin-top:15px;" type="submit">Enviar Calificación</button>
+							</form>
 							</div>
-							<div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-								<h3 class="tab-title">Reseñas del producto</h3>
-								<div class="product-review">
-									<div class="media">
-										<!-- Avater -->
-										<img src="images/user/user-thumb.jpg" alt="avater">
-										<div class="media-body">
-											<!-- Ratings -->
-											<div class="ratings">
-												<ul class="list-inline">
-													<li class="list-inline-item">
-														<i class="fa fa-star"></i>
-													</li>
-													<li class="list-inline-item">
-														<i class="fa fa-star"></i>
-													</li>
-													<li class="list-inline-item">
-														<i class="fa fa-star"></i>
-													</li>
-													<li class="list-inline-item">
-														<i class="fa fa-star"></i>
-													</li>
-													<li class="list-inline-item">
-														<i class="fa fa-star"></i>
-													</li>
-												</ul>
-											</div>
-											<div class="name">
-												<h5>JAlguien</h5>
-											</div>
-											<div class="date">
-												<p>Marzo 20, 2018</p>
-											</div>
-											<div class="review-comment">
-												<p>
-												Mi experiencia con este portátil ha sido impresionante. Su rendimiento es excepcional gracias a su potente CPU y una generosa cantidad de RAM, lo que facilita la multitarea sin problemas. La pantalla Full HD ofrece colores vibrantes y detalles nítidos, perfecta para ver películas o trabajar en proyectos creativos
-												</p>
-											</div>
-										</div>
-									</div>
-									<div class="review-submission">
-										<h3 class="tab-title">Enviar tu reseña</h3>
-										<!-- Rate -->
-										<div class="rate">
-											<div class="starrr"></div>
-										</div>
-										<div class="review-submit">
-											<form action="#" method="POST" class="row">
-												<div class="col-lg-6 mb-3">
-													<input type="text" name="name" id="name" class="form-control" placeholder="Nombre" required>
-												</div>
-												<div class="col-lg-6 mb-3">
-													<input type="email" name="email" id="email" class="form-control" placeholder="Correo" required>
-												</div>
-												<div class="col-12 mb-3">
-													<textarea name="review" id="review" rows="6" class="form-control" placeholder="Mensaje" required></textarea>
-												</div>
-												<div class="col-12">
-													<button type="submit" class="btn btn-main">Enviar</button>
-												</div>
-											</form>
-										</div>
-									</div>
-								</div>
-							</div>
+							
+							
+							
+						
+							
+							
 						</div>
+						
 					</div>
+					
 				</div>
+				
 			</div>
+			
+			
 			<div class="col-lg-4">
 				<div class="sidebar">
 					<div class="widget price text-center">
@@ -185,8 +213,7 @@ function cargarServicioIndividual(){
 						<p class="member-time">Miembro desde Junio 27, 2017</p>
 						<a href="single.html">Ver todas publicaciones</a>
 						<ul class="list-inline mt-20">
-							<li class="list-inline-item"><a href="contact-us.html" class="btn btn-contact d-inline-block  btn-primary px-lg-5 my-1 px-md-3">Contacto</a></li>
-							<li class="list-inline-item"><a href="single.html" class="btn btn-offer d-inline-block btn-primary ml-n1 my-1 px-lg-4 px-md-3">Hacer una oferta</a></li>
+							<li class="list-inline-item"><a href="../controller/solicitarServicio.php?id_servicio='. $f['id'] .'" class="btn btn-contact d-inline-block  btn-primary px-lg-5 my-1 px-md-3">Contacto</a></li>
 						</ul>
 					</div>
 					<!-- Map Widget -->
@@ -196,32 +223,8 @@ function cargarServicioIndividual(){
 						</div>
 					</div>
 					<!-- Rate Widget -->
-					<div class="widget rate">
-						<!-- Heading -->
-						<h5 class="widget-header text-center">Como calificarías 
-							<br>
-							este Servicio</h5>
-						<!-- Rate -->
-						<div class="starrr"></div>
-					</div>
-					<!-- Safety tips widget -->
-					<div class="widget disclaimer">
-						<h5 class="widget-header">Consejo seguros</h5>
-						<ul>
-							<li>Reunete con el vendedor enn un lugar publico</li>
-							<li>Revisa el producto antes de comprarlo</li>
-							<li>Pagar despues de adquirir el producto</li>
-						
-						</ul>
-					</div>
-					<!-- Coupon Widget -->
-					<div class="widget coupon text-center">
-						<!-- Coupon description -->
-						<p>Tienes un prodcuto para publicar, compartelo con tus usuarios.
-						</p>
-						<!-- Submii button -->
-						<a href="single.php" class="btn btn-transparent-white">Enviar listado</a>
-					</div>
+					
+					
 
 				</div>
 			</div>
@@ -233,6 +236,12 @@ function cargarServicioIndividual(){
   
 
     ';
+	echo '
+	<div class="bg-gray">
+	<div style="width: 80%; margin: auto; text-align: center; padding: 4px; margin-top: -80px;">';
+echo cargarCalificacion($id);
+echo '</div> </div>';
+	
             }
 
         

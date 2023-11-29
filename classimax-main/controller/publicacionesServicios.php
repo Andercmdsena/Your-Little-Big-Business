@@ -19,7 +19,9 @@ function cargarPublicacionServicios(){
             (($f['categoria'] == 19) ? 'Construcción' :
             (($f['categoria'] == 20) ? 'Mantenimiento general' : 'Otro')))))))));
             $estado = ($f['Disponibilidad'] == 1) ? 'Disponible' : (($f['Disponibilidad'] == 0) ? 'Agotado' : 'Pendiente');
-            $descripcion = (strlen($f['descripcion']) > 100) ? substr($f['descripcion'], 0, 100) . "..." : $f['descripcion'];
+
+            $nombre = (strlen($f['nombre']) > 16) ? substr($f['nombre'], 0, 16) . "..." : $f['nombre'];
+            $descripcion = (strlen($f['descripcion']) > 80) ? substr($f['descripcion'], 0, 80) . "..." : $f['descripcion'];
             if ($f['Estado'] == 1) {
                 echo  '
         
@@ -30,7 +32,7 @@ function cargarPublicacionServicios(){
                 <img src="'.$f['foto'].'" alt="Foto user" style="width:250px; height:150px; ">
             </div>
             <div class="card-body producto_catalogo">
-                <h4 class="card-title"><a id="tit" href="../theme/servicioIndividual.php?id=' . $f['id'] . '">'. $f['nombre'] .'</a></h4>
+                <h4 class="card-title"><a id="tit" href="../theme/servicioIndividual.php?id=' . $f['id'] . '">'. $nombre .'</a></h4>
                 <ul class="list-inline product-meta">
                     <li class="list-inline-item">
                         <a id="cat" href="single.html"><i class="fa fa-folder-open-o"></i>'. $categoria .'</a>
@@ -58,11 +60,11 @@ function cargarPublicacionServicios(){
                 <div class="botonesCarrito">
                 ';
                 if (isset($_SESSION['id'])) {
-                    echo '<button class="btn btn-light"><a id="agre" href="../controller/agregarCarrito.php?id_producto='. $f['id'] .'"> Agregar al carrito</a></button>
-                    <button class="btn btn-light"><a id="comp" href="pasarelapagos.php">Comprar ahora</a></button>';
+                    echo '<button class="btn btn-light"><a id="agre" href="../controller/solicitarServicio.php?id_servicio='. $f['id'] .'">Contactar</a></button>
+                ';
                 } else {
-                    echo '<button class="btn btn-light"><a id="agre" href="../theme/login.php">Agregar al carrito</a></button>
-                    <button class="btn btn-light"><a id="comp" href="../theme/login.php">Comprar ahora</a></button>';
+                    echo '<button class="btn btn-light"><a id="agre" href="../theme/login.php">Contactar</a></button>
+                    ';
                 }
                 echo '
                 </div>

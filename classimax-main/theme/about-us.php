@@ -194,12 +194,7 @@ color: white !important;
   <div class="container">
     <div class="row">
       <div class="col-lg-3 col-sm-6 my-lg-0 my-3">
-        <div class="counter-content text-center bg-light py-4 rounded">
-          <i class="fa fa-smile-o d-block"></i>
-          <span class="counter my-2 d-block" data-count="2314">0</span>
-          <h5>Usuarios felices</h5>
-          </script>
-        </div>
+        
       </div>
       <div class="col-lg-3 col-sm-6 my-lg-0 my-3">
         <div class="counter-content text-center bg-light py-4 rounded">
@@ -219,12 +214,7 @@ color: white !important;
         </div>
       </div>
       <div class="col-lg-3 col-sm-6 my-lg-0 my-3">
-        <div class="counter-content text-center bg-light py-4 rounded">
-          <i class="fa fa-smile-o d-block"></i>
-          <span class="counter my-2 d-block" data-count="200">0</span>
-          <h5>Servicios activos</h5>
-
-        </div>
+        
       </div>
     </div>
   </div>

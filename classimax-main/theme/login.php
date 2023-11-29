@@ -77,9 +77,6 @@
                 <p style="font-weight: 600;" class="mx-2">O</p>
                 <hr class="border border-secondary w-50">
               </div>
-            <button id="btn-google" type="submit"
-              class="btn font-weight-bold m-auto d-flex justify-content-between align-items-center"><img
-                src="images/login/google.png" class="mr-2" width="auto" height="auto" alt="">Ingresar con Google </button>
           </fieldset>
         </form>
       </div>

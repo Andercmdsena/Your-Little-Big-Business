@@ -2468,7 +2468,7 @@ hr{
 
 .botonpagar{
   background-color: #2f3e8a;
-  color: #fff;
+  color: #fff !important;
   border: none;
   padding: 10px 20px;
   border-radius: 10px;
@@ -2479,7 +2479,7 @@ hr{
 
 .botonpagar1{
   background-color: #2f3e8a;
-  color: #fff;
+  color: #fff !important;
   border: none;
   padding: 10px 20px;
   border-radius: 10px;

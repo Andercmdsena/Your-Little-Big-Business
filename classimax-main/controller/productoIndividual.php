@@ -377,13 +377,13 @@ function cargarProductoIndividual(){
 		
 					</div>
 					<div class="widget boton text-center">
-						<ul class="list-inline">
-							<li class="list-inline-item botones_productos"><a href="contact-us.html" class="btn btn-contact d-inline-block  btn-primary px-lg-5 my-1 px-md-3">Contacto</a></li>
+						<ul style="margin:0px;" class="list-inline">
+							
 							';
                 if (isset($_SESSION['id'])) {
-                    echo '<li class="list-inline-item"><a class="btn btn-offer d-inline-block btn-primary ml-n1 my-1 px-lg-4 px-md-3" href="../controller/agregarCarrito.php?id_producto=' . $f['id'] . '">Agregar al carrito</a></li>';
+                    echo '<li  class="list-inline-item"><a class="btn btn-offer d-inline-block btn-primary ml-n1 my-1 px-lg-4 px-md-3" href="../controller/agregarCarrito.php?id_producto=' . $f['id'] . '">Agregar al carrito</a></li>';
                 } else {
-                    echo '<li class="list-inline-item"><a class="btn btn-offer d-inline-block btn-primary ml-n1 my-1 px-lg-4 px-md-3" href="../theme/login.php?id_producto=' . $f['id'] . '">Agregar al carrito</a></li>';
+                    echo '<li " class="list-inline-item"><a class="btn btn-offer d-inline-block btn-primary ml-n1 my-1 px-lg-4 px-md-3" href="../theme/login.php?id_producto=' . $f['id'] . '">Agregar al carrito</a></li>';
                 }
                 echo '
 						</ul>

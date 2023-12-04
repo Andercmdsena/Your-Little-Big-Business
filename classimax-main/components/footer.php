@@ -20,10 +20,10 @@
         <div class="block" id="listas">
           <h4 style="color: white; font-size: 20px;">Cosas de interés</h4>
           <ul>
-            <li><a href="dashboard-favourite-ads.html">Artículos favoritos</a></li>
-            <li><a href="dashboard-archived-ads.html">Servicios favoritos</a></li>
-            <li><a href="about-us.php">Sobre nosotros</a></li>
-            <li><a href="terms-condition.html">Términos y condiciones</a></li>
+            <li> <a style="color:white !important;"   href="dashboard-favourite-ads.html">Artículos favoritos</a></li>
+            <li><a  style="color:white !important;" href="dashboard-archived-ads.html">Servicios favoritos</a></li>
+            <li><a  style="color:white !important;" href="about-us.php">Sobre nosotros</a></li>
+            <li><a  style="color:white !important;" href="terms-condition.html">Términos y condiciones</a></li>
 
           </ul>
         </div>
@@ -33,8 +33,8 @@
         <div class="block" id="listas2">
           <h4 style="color: white; font-size: 20px;">Páginas</h4>
           <ul>
-            <li><a href="servicios.php">Servicios</a></li>
-            <li><a href="productos.php">Productos</a></li>
+            <li><a style="color:white !important;" href="servicios.php">Servicios</a></li>
+            <li><a style="color:white !important;" href="productos.php">Productos</a></li>
           </ul>
         </div>
       </div>
@@ -60,17 +60,18 @@
       <div class="col-lg-6">
         <!-- Social Icons -->
         <ul class="social-media-icons text-center text-lg-right">
-          <li><a class="fa fa-facebook" href="https://www.facebook.com/profile.php?id=61553871637018"></a></li>
-          <li><a class="fa fa-twitter" href="https://twitter.com/big_ylbb"></a></li>
-          <li><a class="fa fa-instagram" href="https://www.instagram.com/youlittlebigbusiness/"></a></li>
-          <li><a class="fa fa-github-alt" href="https://github.com/Andercmdsena/Your-Little-Big-Business.git"></a></li>
+          <li><a  style="color:white !important; border:none;" class="fa fa-facebook" href="https://www.facebook.com/profile.php?id=61553871637018"></a></li>
+          <li><a style="color:white !important; border:none;"  class="fa fa-twitter" href="https://twitter.com/big_ylbb"></a></li>
+          <li><a style="color:white !important; border:none;"  class="fa fa-instagram" href="https://www.instagram.com/youlittlebigbusiness/"></a></li>
+          <li><a  style="color:white !important; border:none;" class="fa fa-github-alt" href="https://github.com/Andercmdsena/Your-Little-Big-Business.git"></a></li>
         </ul>
       </div>
     </div>
   </div>
   <!-- Container End -->
   <!-- To Top -->
-  <div class="scroll-top-to">
-    <i class="fa fa-angle-up"></i>
+  <div class="scroll-top-to" id="sobre">
+    <i style="position: relative;
+    top: 10px;" class="fa fa-angle-up"></i>
   </div>
 </footer>

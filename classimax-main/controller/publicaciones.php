@@ -85,60 +85,49 @@ function cargarPublicacionCarrusel() {
     if (!isset($result)) {
         echo '<h2>No hay productos registrados</h2>';
     } else {
-        foreach ($result as $f) {
+        $totalProducts = count($result);
+
+        foreach ($result as $key => $f) {
             $estado = ($f['Estado'] == 1) ? 'Activo' : (($f['Estado'] == 0) ? 'Bloqueado' : 'Pendiente');
 
             if ($f['Estado'] == 1) {
-                // Limitar la descripción a un cierto número de caracteres
                 $descripcion = (strlen($f['descripcion']) > 60) ? substr($f['descripcion'], 0, 60) . "..." : $f['descripcion'];
 
                 echo  '
-                <div class="product-item bg-light producto_catalogo">
-                    <div class="cardCarrusel">
-                        <div class="thumb-content">
-                            <!-- <div class="price">$200</div>
-                            -->
-                            <img src="' . $f['foto'] . '" alt="Foto usuario" style="width:340px; height:150px; object-fit: cover;">
-                        </div>
-                        <div class="card-body">
-                            <h4 class="card-title"><a id="tit" href="../theme/single2.php?id=' . $f['id'] . '">' . $f['nombre'] . '</a></h4>
-                            <ul class="list-inline product-meta">
-                                <li class="list-inline-item">
-                                    <a id="cat" href="single.html"><i class="fa fa-folder-open-o"></i>' . $f['categoria'] . '</a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a id="calen" href="category.html"><i class="fa fa-calendar"></i>26 de Julio</a>
-                                </li>
-                            </ul>
-                            <p class="card-text">'. $descripcion .'</p>
-                        <div class="product-ratings">
-                            <ul class="list-inline">
-                            </ul>
+                    <div class="product-item bg-light producto_catalogo">
+                        <div class="cardCarrusel">
+                            <div class="thumb-content">
+                                <img src="' . $f['foto'] . '" alt="Foto usuario" style="width:340px; height:150px; object-fit: cover;">
+                            </div>
+                            <div class="card-body">
+                                <h4 class="card-title"><a id="tit" href="../theme/single2.php?id=' . $f['id'] . '">' . $f['nombre'] . '</a></h4>
+                                <ul class="list-inline product-meta">
+                                    <li class="list-inline-item">
+                                        <a id="cat" href="single.html"><i class="fa fa-folder-open-o"></i>' . $f['categoria'] . '</a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a id="calen" href="category.html"><i class="fa fa-calendar"></i>26 de Julio</a>
+                                    </li>
+                                </ul>
+                                <p class="card-text">'. $descripcion .'</p>
+                                <div class="product-ratings">
+                                    <ul class="list-inline">
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            
-            
-            
-                                </div>
-                                <div class="col-sm-12 col-lg-4">
-        
-        
-        
-                            
-        
-            
-            
-            
-            ';
-                };
-            }
-       
-        
-    };
+                ';
 
+                // Check if it's not the last iteration
+                if ($key < $totalProducts - 1) {
+                    echo '</div><div class="col-sm-12 col-lg-4">';
+                }
+            }
+        }
+    }
 }
+
            
 function buscarProducto($nombre){
     $objConsulta = new Consultas();

@@ -81,8 +81,15 @@ border-radius: 1px solid
 ;
 }
 
+i{
+  position: relative !important;
+  top:0px !important;
+}
+
 .copyright p {
 color: white !important;
+
+
 }
 </style>
 <?php include("../components/header.php") ?>

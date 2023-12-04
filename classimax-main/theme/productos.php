@@ -216,27 +216,7 @@ if (isset($_POST['filtrar_menor'])) {
 
 						
 				</div>
-				<div class="pagination justify-content-center">
-					<nav aria-label="Page navigation example">
-						<ul class="pagination">
-							<li class="page-item">
-								<a class="page-link" href="category.html" aria-label="Previous">
-									<span aria-hidden="true">&laquo;</span>
-									<span class="sr-only">Anterior</span>
-								</a>
-							</li>
-							<li class="page-item"><a class="page-link" href="category.html">1</a></li>
-							<li class="page-item active"><a class="page-link" href="category.html">2</a></li>
-							<li class="page-item"><a class="page-link" href="category.html">3</a></li>
-							<li class="page-item">
-								<a class="page-link" href="category.html" aria-label="Next">
-									<span aria-hidden="true">&raquo;</span>
-									<span class="sr-only">Siguiente</span>
-								</a>
-							</li>
-						</ul>
-					</nav>
-				</div>
+				
 			</div>
 		</div>
 	</div>

@@ -23,7 +23,9 @@ if (isset($_SESSION['id'])) {
             echo '<script>location.href="../theme/single2.php?id=' . $id_producto . '";</script>';
         } 
     } else {
+        $calificacion='';
         echo '<script>alert("Error: Datos de entrada no válidos.");</script>';
+        echo '<script>location.href="../theme/single2.php?id=' . $id_producto . '";</script>';
     }
 } else {
     // El usuario no ha iniciado sesión, muestra un mensaje

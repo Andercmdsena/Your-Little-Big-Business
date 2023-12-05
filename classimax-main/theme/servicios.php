@@ -1,6 +1,7 @@
 <?php include_once("../controller/Main.php");
 require_once("../controller/publicacionesServicios.php");
 
+
 require_once("../model/conexion.php");
 require_once("../model/consultas.php");
 
@@ -60,28 +61,14 @@ require_once("../model/consultas.php");
 			<div class="col-md-12">
 				<!-- Advance Search -->
 				<div class="advance-search nice-select-white">
-					<form>
-						<div class="form-row align-items-center">
-							<div class="form-group col-xl-4 col-lg-3 col-md-6">
-								<input type="text" class="form-control my-2 my-lg-0" id="inputtext4" placeholder="What are you looking for">
-							</div>
-							<div class="form-group col-lg-3 col-md-6">
-								<select class="w-100 form-control my-2 my-lg-0">
-									<option>Categoria</option>
-									<option value="1">Mas relevantes</option>
-									<option value="2">Menor precio</option>
-									<option value="4">Mayor precio</option>
-								</select>
-							</div>
-							<div class="form-group col-lg-3 col-md-6">
-								<input type="text" class="form-control my-2 my-lg-0" id="inputLocation4" placeholder="Location">
-							</div>
-							<div class="form-group col-xl-2 col-lg-3 col-md-6">
-
-								<button type="submit" class="boton1">Buscar</button>
-							</div>
-						</div>
-					</form>
+					
+							
+							<form metho="get">
+                                <input class="busquedas" type="text" name="buscar">
+                                <input class="busqueda" type="submit" value="Buscar">
+                            </form>
+							
+					
 				</div>
 			</div>
 		</div>
@@ -101,26 +88,39 @@ require_once("../model/consultas.php");
 			<div class="col-lg-3 col-md-4">
 				<div class="category-sidebar">
 					<div class="widget category-list categorias">
-	<h4 class="widget-header">Todas</h4>
-	<ul class="category-list">
-		<li><a class="juas" href="category.html">Mecanicos <span>93</span></a></li>
-		<li><a class="juas" href="category.html">Albañiles <span>233</span></a></li>
-		<li><a class="juas" href="category.html">Carpintero  <span>183</span></a></li>
-		<li><a class="juas" href="category.html">Pintor <span>343</span></a></li>
+
+	
+					<h4 class="widget-header" style="font-weight: bold; margin-bottom: 10px;">Todas</h4>
+
+					<form id="filtroForm" method="get" style="max-width: 300px; margin: 0 auto; padding: 20px; background-color: #f8f9fa; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+    <label for="categoria" style="display: block; margin-bottom: 10px; font-weight: bold; color: black; font-size:20px">Categoría:</label>
+    <select name="categoria" id="categoria" style="width: calc(100% - 20px); padding: 10px; margin-bottom: 20px; border: 1px solid #ced4da; border-radius: 4px; box-sizing: border-box; font-weight: bold; color: black; ">
+        <option value="" selected style="font-weight: bold; color: black;"><span style="font-size:30px">Categoría</span></option>
+        <option value="11" style="font-weight: bold; color: black;">Carpintería</option>
+        <option value="12" style="font-weight: bold; color: black;">Fontanería</option>
+        <option value="13" style="font-weight: bold; color: black;">Electricidad</option>
+        <option value="14" style="font-weight: bold; color: black;">Pintura</option>
+        <option value="15" style="font-weight: bold; color: black;">Jardinería</option>
+        <option value="16" style="font-weight: bold; color: black;">Limpieza</option>
+        <option value="17" style="font-weight: bold; color: black;">Reparación de electrodomésticos</option>
+        <option value="18" style="font-weight: bold; color: black;">Cerrajería</option>
+        <option value="19" style="font-weight: bold; color: black;">Construcción</option>
+        <option value="20" style="font-weight: bold; color: black;">Mantenimiento general</option>
+        <option value="otra" style="font-weight: bold; color: black;">Otra</option>
+    </select>
+    <button type="submit" style="background-color: #8ca4e2; color: #000; padding: 8px 15px; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; font-size: 14px; margin-top: 20px;">Filtrar</button>
+</form>
+
+
+
+
+
+
+
 	</ul>
 </div>
 
-<div class="widget category-list">
-	<h4 class="widget-header">Lugares</h4>
-	<ul class="category-list">
-		<li><a class="juas" href="category.html">Kennedy <span>93</span></a></li>
-		<li><a class="juas" href="category.html">Patio bonito <span>233</span></a></li>
-		<li><a class="juas" href="category.html">Santa fe  <span>183</span></a></li>
-		<li><a class="juas" href="category.html">Suba <span>120</span></a></li>
-		<li><a class="juas" href="category.html">Barrios unidos <span>40</span></a></li>
-		<li><a class="juas" href="category.html">12 de octubre <span>81</span></a></li>
-	</ul>
-</div>
+
 
 
 
@@ -130,34 +130,29 @@ require_once("../model/consultas.php");
 				<div class="category-search-filter">
 					<div class="row">
 						<div class="col-md-6 text-center text-md-left" >
-							<strong>Filtro</strong>
-							<select id="filtro">
-								<option>Mas reciente</option>
-								<option value="1" >Mas popular</option>
-								<option value="2">Menor precio</option>
-								<option value="4">Mayor precio</option>
-							</select>
+							
 						</div>
 						<div class="col-md-6 text-center text-md-right mt-2 mt-md-0">
-							<div class="view">
-								<strong>Visitas</strong>
-								<ul class="list-inline view-switcher">
-									<li class="list-inline-item">
-										<a href="#!" onclick="event.preventDefault();" class="text-info"><i class="fa fa-th-large"></i></a>
-									</li>
-									<li class="list-inline-item">
-										<a href="ad-list-view.html"><i class="fa fa-reorder"></i></a>
-									</li>
-								</ul>
-							</div>
+							
 						</div>
 					</div>
 				</div>
 				<div class="product-grid-list">
 				<div class="row product-item bg-light">
 				
-							<?php
-							cargarPublicacionServicios()
+				<?php
+							
+							if (isset($_GET['categoria']) && $_GET['categoria'] !== '') {
+								// El formulario de categoría ha sido enviado con una categoría seleccionada, se filtra por esa categoría
+								filtroCategoria($_GET['categoria']);
+							} elseif (isset($_GET['buscar']) && $_GET['buscar'] !== '') {
+								// El formulario de búsqueda ha sido enviado con un término de búsqueda, se filtra por esa búsqueda
+								buscarServicio($_GET['buscar']);
+							} else {
+								// Ni formulario de categoría ni formulario de búsqueda especificados, carga la publicación de servicios normalmente
+								cargarPublicacionServicios();
+							}
+							
 
 							?>
 				
@@ -192,7 +187,7 @@ Essential Scripts
 <script src="plugins/tether/js/tether.min.js"></script>
 <script src="plugins/raty/jquery.raty-fa.js"></script>
 <script src="plugins/slick/slick.min.js"></script>
-<script src="plugins/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+
 <!-- google map -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU" defer></script>
 <script src="plugins/google-map/map.js" defer></script>

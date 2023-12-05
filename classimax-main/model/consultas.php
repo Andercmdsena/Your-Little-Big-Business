@@ -327,6 +327,57 @@ class consultas{
         return $f;
      }
 
+
+
+     public function filtroCategoria($categoria){
+        $f = null;
+     
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+    
+        // Utilizamos % en los extremos para permitir coincidencias parciales
+        $categoria = "%".$categoria."%";
+        
+        $consultar = "SELECT * FROM servicios WHERE categoria LIKE :categoria";
+    
+        $result = $conexion->prepare($consultar);
+    
+        $result->bindParam(":categoria", $categoria);
+    
+        $result->execute();
+        
+        while ($resultado = $result->fetch()) {
+            $f[] = $resultado;
+        }
+    
+        return $f;
+    }
+    
+     public function filtroCategoriaProductos($categoria){
+        $f = null;
+     
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+    
+        // Utilizamos % en los extremos para permitir coincidencias parciales
+        $categoria = "%".$categoria."%";
+        
+        $consultar = "SELECT * FROM productos WHERE categoria LIKE :categoria";
+    
+        $result = $conexion->prepare($consultar);
+    
+        $result->bindParam(":categoria", $categoria);
+    
+        $result->execute();
+        
+        while ($resultado = $result->fetch()) {
+            $f[] = $resultado;
+        }
+    
+        return $f;
+    }
+    
+
      public function buscarProducto($arg_nombre){
         $f=null;
  
@@ -335,6 +386,28 @@ class consultas{
          $conexion = $objConexion -> get_conexion();
          $nombre = "%".$arg_nombre."%";
          $consultar = "SELECT * FROM productos where nombre like :nombre";
+ 
+         $result=$conexion->prepare($consultar);
+
+         $result->bindParam(":nombre", $nombre);
+ 
+        $result->execute();
+        
+ 
+        while ($resultado=$result->fetch()) {
+         $f[] = $resultado;
+        }
+ 
+        return $f;
+     }
+     public function buscarServicio($arg_nombre){
+        $f=null;
+ 
+ 
+         $objConexion = new Conexion();
+         $conexion = $objConexion -> get_conexion();
+         $nombre = "%".$arg_nombre."%";
+         $consultar = "SELECT * FROM servicios where nombre like :nombre";
  
          $result=$conexion->prepare($consultar);
 
@@ -1553,6 +1626,31 @@ class consultas{
         echo '<script>location.href="../TCPDF-main/prueba.php"</script>';
 
     }
+    public function consultaCarrito($id_usuario){
+        
+        
+       
+            $objConexion = new Conexion();
+            $conexion = $objConexion->get_conexion();
+        
+            $consultar = "SELECT * FROM carrito WHERE id_usuario = :id_usuario";
+            
+            $result = $conexion->prepare($consultar);
+        
+            $result->bindParam(":id_usuario", $id_usuario);
+        
+            $result->execute();
+        
+            // Verificar si hay productos en el carrito
+            if ($result->rowCount() > 0) {
+                echo '<a style="font-size: 25px; font-weight: bold; padding: 15px 20px;" class="botonpagar" href="../theme/pasarelapagos.php">Pagar</a>';
+            } else {
+                echo '';
+            }
+        
+        
+
+    }
     
     
     public function pedido($id_usuario, $id_emprendedor, $fecha_pedido) {
@@ -2088,7 +2186,63 @@ class consultas{
     }
     
     
-      public function promedioCalificacion($id) {
+      public function promedioCalificacionProductos($id) {
+        $objConexion = new Conexion();
+        $conexion = $objConexion->get_conexion();
+    
+        // Consulta para obtener las calificaciones
+        $consulta = "SELECT * FROM calificacion WHERE id_producto = :id_producto";
+        $result = $conexion->prepare($consulta);
+        $result->bindParam(":id_producto", $id);
+        $result->execute();
+    
+        // Obtener los resultados
+        $calificaciones = $result->fetchAll(PDO::FETCH_ASSOC);
+    
+        // Calcular el promedio de calificaciones
+        $totalCalificaciones = count($calificaciones);
+        $sumaCalificaciones = 0;
+    
+        foreach ($calificaciones as $calificacion) {
+            $sumaCalificaciones += $calificacion['calificacion'];
+        }
+    
+        $promedio = ($totalCalificaciones > 0) ? $sumaCalificaciones / $totalCalificaciones : 0;
+    
+        // Convertir el promedio a un formato de estrellas (0 a 5)
+        $promedioEstrellas = round($promedio, 1);
+    
+// Supongamos que $promedioEstrellas ya está definido con un valor entre 1 y 5
+
+
+// Supongamos que $promedioEstrellas ya está definido con un valor entre 1 y 5, incluyendo decimales
+
+// Obtener el entero inferior o el siguiente entero según el valor decimal
+$promedioRedondeado = floor($promedioEstrellas);
+
+echo "<strong>Promedio de calificaciones: </strong> <strong>" . $promedioEstrellas . "</strong>";
+
+// Agregar condicionales para mostrar la cantidad correspondiente de estrellas
+if ($promedioRedondeado == 1) {
+    echo " &#9733;";
+} elseif ($promedioRedondeado == 2) {
+    echo " &#9733;&#9733;";
+} elseif ($promedioRedondeado == 3) {
+    echo " &#9733;&#9733;&#9733;";
+} elseif ($promedioRedondeado == 4) {
+    echo " &#9733;&#9733;&#9733;&#9733;";
+} elseif ($promedioRedondeado == 5) {
+    echo " &#9733;&#9733;&#9733;&#9733;&#9733;";
+} else {
+    echo "<strong> Sin calificación</strong>";
+}
+
+
+    
+        // No es necesario realizar un DELETE en esta función, ya que parece que originalmente había un código de eliminación que fue eliminado.
+        // Si necesitas más ayuda o aclaraciones, no dudes en preguntar.
+    }
+      public function promedioCalificacionServicio($id) {
         $objConexion = new Conexion();
         $conexion = $objConexion->get_conexion();
     

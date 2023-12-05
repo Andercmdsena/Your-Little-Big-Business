@@ -1,5 +1,6 @@
 <?php
 require_once("../controller/mostrarCarrito.php");
+require_once("../controller/consultaCarrito.php");
 
 
 ?>
@@ -40,7 +41,11 @@ require_once("../controller/mostrarCarrito.php");
             
               ?>
               <br>
-              <a style="font-size: 25px; font-weight: bold; padding: 15px 20px;" class="botonpagar" href="../theme/pasarelapagos.php">Pagar</a>
+              <?php
+
+              consulta()
+            
+              ?>
               <br>
               <br>
               <br>

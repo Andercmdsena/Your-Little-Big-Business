@@ -133,56 +133,57 @@ function cargarProductoIndividual(){
 				
 				<style>
 				/* Estilos generales para las estrellas y el formulario */
-				#producto {
-					text-align: left; /* Alineado a la izquierda */
-					margin-top: 20px;
-				}
-				
-				input[type="checkbox"] {
-					display: none; /* Ocultar los checkboxes originales */
-				}
-				
-				label {
-					font-size: 24px; /* Tamaño de la fuente de las estrellas */
-					color: #ccc; /* Color de las estrellas inactivas */
-					cursor: pointer;
-					display: block; /* Hace que las estrellas aparezcan una debajo de la otra */
-					margin-bottom: 5px; /* Espaciado entre las estrellas */
-				}
-				
-				/* Estilos para las estrellas activas */
-				input[type="checkbox"]:checked + label {
-					color: #ffd700; /* Color de las estrellas activas */
-				}
-				
-				/* Estilos adicionales para resaltar las estrellas */
-				label:hover {
-					transform: scale(1.2); /* Aumentar el tamaño al pasar el ratón por encima */
-					transition: transform 0.2s ease-in-out;
-				}
-				
-				/* Estilos para el área de comentario y el botón */
-				#comentario {
-					resize: none;
-					width: 100%;
-					box-sizing: border-box;
-					margin-top: 10px;
-					padding: 10px;
-				}
-				
-				button {
-					margin-top: 10px;
-					background-color: #555; /* Cambiado el color del botón */
-					color: #fff; /* Texto del botón en blanco */
-					padding: 10px;
-					cursor: pointer;
-					border: none;
-					border-radius: 5px;
-				}
-				
-				button:hover {
-					background-color: #333; /* Cambiado el color del botón al pasar el ratón por encima */
-				}
+#producto {
+    text-align: left; /* Alineado a la izquierda */
+    margin-top: 20px;
+}
+
+input[type="radio"] {
+    display: none; /* Ocultar los radios originales */
+}
+
+label {
+    font-size: 24px; /* Tamaño de la fuente de las estrellas */
+    color: #ccc; /* Color de las estrellas inactivas */
+    cursor: pointer;
+    display: inline-block; /* Alinea las estrellas en línea */
+    margin-right: 5px; /* Espaciado entre las estrellas */
+}
+
+/* Estilos para las estrellas activas */
+input[type="radio"]:checked + label {
+    color: #ffd700; /* Color de las estrellas activas */
+}
+
+/* Estilos adicionales para resaltar las estrellas */
+label:hover {
+    transform: scale(1.2); /* Aumentar el tamaño al pasar el ratón por encima */
+    transition: transform 0.2s ease-in-out;
+}
+
+/* Estilos para el área de comentario y el botón */
+#comentario {
+    resize: none;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+button {
+    margin-top: 10px;
+    background-color: #555; /* Cambiado el color del botón */
+    color: #fff; /* Texto del botón en blanco */
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #333; /* Cambiado el color del botón al pasar el ratón por encima */
+}
+
 				</style>
 				
 				<div id="producto">';
@@ -192,12 +193,12 @@ function cargarProductoIndividual(){
 				echo '
 				<form id="formularioCalificacion" action="../controller/calificacionProductos.php?id='. $f['id'] .'" method="post">
 				
-				<input type="checkbox" name="calificacion" value="1" id="estrella1"><label for="estrella1">&#9733; </label> 	 |
-				<input type="checkbox" name="calificacion" value="2" id="estrella2"><label for="estrella2">&#9733;&#9733; </label> 	 |
-				<input type="checkbox" name="calificacion" value="3" id="estrella3"><label for="estrella3">&#9733;&#9733;&#9733; </label> 	 |
-				<input type="checkbox" name="calificacion" value="4" id="estrella4"><label for="estrella4">&#9733;&#9733;&#9733;&#9733 </label> 	 |
-				<input type="checkbox" name="calificacion" value="5" id="estrella5"><label for="estrella5">&#9733;&#9733;&#9733;&#9733;&#9733; </label>
-				<textarea name="comentario" id="comentario" placeholder="Comentario..." maxlength="100"></textarea>
+				<input type="radio"  required name="calificacion" value="1" id="estrella1" required><label for="estrella1">&#9733; </label> |
+				<input type="radio"  required name="calificacion" value="2" id="estrella2" required><label for="estrella2">&#9733;&#9733; </label> |
+				<input type="radio" required  name="calificacion" value="3" id="estrella3" required><label for="estrella3">&#9733;&#9733;&#9733; </label> |
+				<input type="radio"  required name="calificacion" value="4" id="estrella4" required><label for="estrella4">&#9733;&#9733;&#9733;&#9733; </label> |
+				<input type="radio"  required name="calificacion" value="5" id="estrella5" required><label for="estrella5">&#9733;&#9733;&#9733;&#9733;&#9733; </label>
+				<textarea name="comentario" required id="comentario" placeholder="Comentario..." maxlength="100"></textarea>
 				<button id="botoncalificacion" style="margin-top:15px;" type="submit">Enviar Calificación</button>
 				</form>
 				</div>

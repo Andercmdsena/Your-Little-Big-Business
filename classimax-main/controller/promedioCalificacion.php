@@ -8,7 +8,7 @@ $id = $_GET['id'];
 
 
 $objconexion = new consultas();
-$conexion = $objconexion -> promedioCalificacion($id)
+$conexion = $objconexion -> promedioCalificacionProductos($id)
 
 
 ?>

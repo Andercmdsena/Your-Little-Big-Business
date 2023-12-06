@@ -49,27 +49,30 @@
 <body class="body-wrapper">
 
 <style>
-  .text-center a {
-
-font-weight: bolder;
-color: #000 !important;
-font-size: 20px;
-text-decoration: none !important;
-list-style: none;
-border-radius: 1px solid;
-border: 1px solid black;
-border-radius: 20px;
-padding: 8px;
+.text-center a {
+  font-weight: bolder;
+  color: #000 !important;
+  font-size: 20px;
+  text-decoration: none !important;
+  list-style: none;
+  border-bottom: 2px solid; /* Añade una línea sólida abajo más gruesa */
+  padding: 2px;
+  transition: border-color 0.3s, color 0.3s; /* Agrega transición para el cambio suave de color en hover */
 }
+
+.text-center a:hover {
+  color: #888 !important; /* Cambia el color del texto en hover */
+  border-color: #888; /* Cambia el color de la línea en hover */
+}
+
 .text-center .botonPortafolio:hover {
-
-font-weight: bolder;
-background-color: #ddd !important;
-
-text-decoration: none !important;
-list-style: none;
-
+  font-weight: bolder;
+  color: #888 !important; /* Cambia el color del texto en hover */
+  text-decoration: none !important;
+  list-style: none;
 }
+
+
 .text-center p {
 
 font-weight: bolder;

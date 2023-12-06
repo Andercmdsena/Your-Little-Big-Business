@@ -139,12 +139,7 @@ include "menu_emprendedor.php"
                                 <div class="card-body">
                                 <div class="table-responsive">
                                         <table class="table table-hover">
-                                            <div>
-                                                <form metho="get">
-                                                    <input type="text" name="buscar">
-                                                    <input type="submit" value="Buscar">
-                                                </form>
-                                            </div>
+                                            
                                             <thead>
                                                 <tr>
                                                     <th>Foto</th>

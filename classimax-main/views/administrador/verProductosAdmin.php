@@ -132,19 +132,14 @@ include "menu.php"
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-title">
-                                    <h4>Productos</h4>
+                                    <h4 style="padding:0px">Productos</h4>
                                     
                                 </div>
                                 <div class="card-body">
                                 <div class="table-responsive">
                                     
                                         <table class="table table-hover">
-                                        <div>
-                                                <form metho="get">
-                                                    <input type="text" name="buscar">
-                                                    <input type="submit" value="Buscar">
-                                                </form>
-                                            </div>
+                                        
                                             <thead>
                                                 <tr>
                                                     <th>Foto</th>

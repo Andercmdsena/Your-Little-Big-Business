@@ -219,7 +219,7 @@ class consultas{
          $objConexion = new Conexion();
          $conexion = $objConexion -> get_conexion();
  
-         $consultar = "SELECT * FROM Administradores where Identificacion=:id";
+         $consultar = "SELECT * FROM administradores where Identificacion=:id";
  
          $result=$conexion->prepare($consultar);
 
@@ -2396,7 +2396,7 @@ class ValidarSesion
 
         // Elegimos la consulta y la tabla según el tipo_de_rol
         if ($tipo_de_rol == "administrador") {
-            $consultar .= "Administradores WHERE email=:email";
+            $consultar .= "administradores WHERE email=:email";
         } else {
             $consultar .= "usuario WHERE Email=:email";
         }
@@ -2456,7 +2456,7 @@ class ValidarSesion
                             text: "Que bueno volverte a ver.",
                             confirmButtonText: "Ir al menú"
                         }).then(function() {
-                            window.location = "../Views/cliente/usuario.php";
+                            window.location = "../views/cliente/usuario.php";
                         });</script>';
                 } else{
                     echo '<script> 
@@ -2466,7 +2466,7 @@ class ValidarSesion
                             text: "Que bueno volverte a ver.",
                             confirmButtonText: "Ir al menú"
                         }).then(function() {
-                            window.location = "../Views/emprendedor/emprendedor.php";
+                            window.location = "../views/emprendedor/emprendedor.php";
                         });</script>';
 
                 }

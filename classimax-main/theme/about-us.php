@@ -61,7 +61,7 @@ border: 1px solid black;
 border-radius: 20px;
 padding: 8px;
 }
-.text-center a:hover {
+.text-center .botonPortafolio:hover {
 
 font-weight: bolder;
 background-color: #ddd !important;
@@ -91,6 +91,11 @@ color: white !important;
 
 
 }
+.personas {
+    object-fit: cover;  /* Para que la imagen se ajuste manteniendo la proporción y cubriendo el contenedor */
+    height: 300px;  /* Ajusta la altura según tus necesidades */
+    border-radius: 0px;  /* Agrega bordes redondeados */
+  }
 </style>
 <?php include("../components/header.php") ?>
     <!-- capturar nombre de usuario -->
@@ -149,7 +154,7 @@ color: white !important;
           <div class="card-body bg-gray text-center">
             <h5 class="card-title">Anderson Tovar</h5>
             <p class="card-text">Fundador/Desarollador</p>
-            <a href="https://andercmdsena.github.io/portafolio_final/" target="_blank">Portafolio</a>
+            <a class="botonPortafolio" href="https://andercmdsena.github.io/portafolio_final/" target="_blank">Portafolio</a>
           </div>
         </div>
       </div>
@@ -159,7 +164,7 @@ color: white !important;
           <div class="card-body bg-gray text-center">
             <h5 class="card-title">Juan Alvis</h5>
             <p class="card-text">Fundador/Desarollador</p>
-            <a href="#" >Portafolio</a>
+            <a class="botonPortafolio" href="#" >Portafolio</a>
           </div>
         </div>
       </div>
@@ -169,7 +174,7 @@ color: white !important;
           <div class="card-body bg-gray text-center">
             <h5 class="card-title">Samuel Diaz</h5>
             <p class="card-text">Fundador/Desarollador</p>
-            <a href="#">Portafolio</a>
+            <a class="botonPortafolio" href="https://panfletagg.github.io/portafolio/" target="_blank">Portafolio</a>
           </div>
         </div>
       </div>
@@ -179,7 +184,7 @@ color: white !important;
           <div class="card-body bg-gray text-center">
             <h5 class="card-title">Simon Peralta</h5>
             <p class="card-text">Fundador/Desarollador</p>
-            <a href="#">Portafolio</a>
+            <a class="botonPortafolio" href="https://thesimmon253.github.io/Portafolio-Renovado/#sobremi" target="_blank">Portafolio</a>
           </div>
         </div>
       </div>
@@ -189,7 +194,7 @@ color: white !important;
           <div class="card-body bg-gray text-center">
             <h5 class="card-title">Edison Ramirez</h5>
             <p class="card-text">Fundador/Desarollador</p>
-            <a href="#">Portafolio</a>
+            <a class="botonPortafolio" href="#">Portafolio</a>
           </div>
         </div>
       </div>

@@ -641,7 +641,7 @@ class consultas{
         echo '<script> 
         swal.fire({
             icon: "error",
-            title: "¡Elminiación exitosa!",
+            title: "¡Eliminiación exitosa!",
             text: "Usuario usuario con exito.",
             confirmButtonText: "Ir al menu"
         }).then(function() {
@@ -664,7 +664,7 @@ class consultas{
             echo '<script> 
         swal.fire({
             icon: "success",
-            title: "¡Elminiación exitosa!",
+            title: "¡Eliminiación exitosa!",
             text: "Usuario usuario con exito.",
             confirmButtonText: "Ir al login"
         }).then(function() {
@@ -674,7 +674,7 @@ class consultas{
             echo '<script> 
             swal.fire({
                 icon: "error",
-                title: "¡Elminiación exitosa!",
+                title: "¡Eliminiación exitosa!",
                 text: "Usuario usuario con exito.",
                 confirmButtonText: "Ir al registro"
             }).then(function() {
@@ -696,8 +696,8 @@ class consultas{
             echo '<script> 
             swal.fire({
                 icon: "success",
-                title: "¡Elminiación exitosa!",
-                text: "Usuario usuario con exito.",
+                title: "¡Cantidad actualizada con éxito!",
+                text: "Cantidad actualizada con éxito.",
                 confirmButtonText: "Ir al carrito"
             }).then(function() {
                 window.location = "../theme/carrito.php";
@@ -854,7 +854,7 @@ class consultas{
                 text: "Usuario actualizado con exito.",
                 confirmButtonText: "Ir al menu"
             }).then(function() {
-                window.location = "../views/administrador/home.php";
+                window.location = "../views/administrador/ver_usuarioo.php";
             });</script>';
         }
         
@@ -1042,6 +1042,33 @@ class consultas{
                 confirmButtonText: "Ir al menu"
             }).then(function() {
                 window.location = "../views/administrador/home.php";
+            });</script>';
+        }
+        
+      }
+      public function modificarUsuarioAdminRegistrados($arg_campo, $arg_valor, $arg_id_producto){
+        $objConexion = new Conexion();
+        $conexion = $objConexion -> get_conexion();
+
+        $consulta = "UPDATE Administradores set $arg_campo = :valor WHERE Identificacion = :id_producto";
+
+        $result = $conexion ->prepare($consulta);
+
+        $result->bindParam(":valor", $arg_valor);
+        $result->bindParam(":id_producto", $arg_id_producto);
+
+        if(!$result){
+            return "Error al actualizar el usuario";
+        }else{
+            $result -> execute();
+            echo '<script> 
+            swal.fire({
+                icon: "success",
+                title: "¡Usuario actualizado con exito.!",
+                text: "Usuario actualizado con exito.",
+                confirmButtonText: "Ir al menu"
+            }).then(function() {
+                window.location = "../views/administrador/ver_usuario_admin.php";
             });</script>';
         }
         
@@ -2242,14 +2269,14 @@ if ($promedioRedondeado == 1) {
         // No es necesario realizar un DELETE en esta función, ya que parece que originalmente había un código de eliminación que fue eliminado.
         // Si necesitas más ayuda o aclaraciones, no dudes en preguntar.
     }
-      public function promedioCalificacionServicio($id) {
+      public function promedioCalificacionServicio($id_servicio) {
         $objConexion = new Conexion();
         $conexion = $objConexion->get_conexion();
     
         // Consulta para obtener las calificaciones
-        $consulta = "SELECT * FROM calificacion WHERE id_producto = :id_producto";
+        $consulta = "SELECT * FROM calificacion WHERE id_servicio = :id_servicio";
         $result = $conexion->prepare($consulta);
-        $result->bindParam(":id_producto", $id);
+        $result->bindParam(":id_servicio", $id_servicio);
         $result->execute();
     
         // Obtener los resultados

@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 
 require_once ("../../model/conexion.php");
@@ -102,7 +102,7 @@ require_once ("../../model/seguridadEmprendedor.php");
                         <div class="page-header">
                             <div class="page-title">
                                 <h1>Hola,
-                                    <span>Bienvenido a la vista de usuario</span>
+                                    <span>Bienvenido a la vista de registro de productos</span>
                                 </h1>
                             </div>
                         </div>
@@ -118,7 +118,7 @@ require_once ("../../model/seguridadEmprendedor.php");
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-title">
-                                    <h4>Nuevo Producto</h4>
+                                    <h4 style="padding-left:10px">Nuevo Producto</h4>
                                     
                                 </div>
                                 <div class="card-body">

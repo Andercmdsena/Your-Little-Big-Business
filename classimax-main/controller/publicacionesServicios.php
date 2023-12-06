@@ -37,9 +37,6 @@ function cargarPublicacionServicios(){
                     <li class="list-inline-item">
                         <a id="cat" href="single.html"><i class="fa fa-folder-open-o"></i>'. $categoria .'</a>
                     </li>
-                    <li class="list-inline-item">
-                        <a id="calen" href="category.html"><i class="fa fa-calendar"></i>11 de enero</a>
-                    </li>
                 </ul>
                 <p class="card-text">'. $descripcion .'</p>
                 <div class="product-ratings">
@@ -101,16 +98,16 @@ function filtroCategoria($categoria){
             // Limitar la descripción a un cierto número de caracteres
             $descripcion = (strlen($f['descripcion']) > 100) ? substr($f['descripcion'], 0, 100) . "..." : $f['descripcion'];
     
-            $categoria = ($f['categoria'] == 1) ? 'Tecnologia' :    
-    (($f['categoria'] == 2) ? 'Moda' :
-    (($f['categoria'] == 3) ? 'Salud y belleza' :
-    (($f['categoria'] == 4) ? 'Deportes' :
-    (($f['categoria'] == 5) ? 'Bebes y juegos' :
-    (($f['categoria'] == 6) ? 'Alimentos y bebidas' :
-    (($f['categoria'] == 7) ? 'Oficina' :
-    (($f['categoria'] == 8) ? 'Hogar' :
-    (($f['categoria'] == 9) ? 'Mascotas' :
-    (($f['categoria'] == 10) ? 'Libros y medios' : 'Otro')))))))));
+            $categoria = ($f['categoria'] == 11) ? 'Carpintería' :
+            (($f['categoria'] == 12) ? 'Fontanería' :
+            (($f['categoria'] == 13) ? 'Electricidad' :
+            (($f['categoria'] == 14) ? 'Pintura' :
+            (($f['categoria'] == 15) ? 'Jardinería' :
+            (($f['categoria'] == 16) ? 'Limpieza' :
+            (($f['categoria'] == 17) ? 'Reparación de electrodomésticos' :
+            (($f['categoria'] == 18) ? 'Cerrajería' :
+            (($f['categoria'] == 19) ? 'Construcción' :
+            (($f['categoria'] == 20) ? 'Mantenimiento general' : 'Otro')))))))));
     
             if ($f['Estado'] == 1 && $f['Disponibilidad'] == 1) {
                 echo  '
@@ -120,7 +117,7 @@ function filtroCategoria($categoria){
                 <img src="' . $f['foto'] . '" alt="Foto user" style="width:250px; height:120px; ">
             </div>
             <div class="card-body producto_catalogo">
-                <h4 class="card-title"><a id="tit" href="../theme/single2.php?id=' . $f['id'] . '">' . $f['nombre'] . '</a></h4>
+                <h4 class="card-title"><a id="tit" href="../theme/servicioIndividual.php?id=' . $f['id'] . '">' . $f['nombre'] . '</a></h4>
                 <ul class="list-inline product-meta">
                     <li class="list-inline-item">
                         <a id="cat" href="single.html"><i class="fa fa-folder-open-o"></i>' . $categoria. '</a>
@@ -172,16 +169,17 @@ function buscarServicio($nombre){
             // Limitar la descripción a un cierto número de caracteres
             $descripcion = (strlen($f['descripcion']) > 100) ? substr($f['descripcion'], 0, 100) . "..." : $f['descripcion'];
 
-            $categoria = ($f['categoria'] == 1) ? 'Tecnologia' :    
-(($f['categoria'] == 2) ? 'Moda' :
-(($f['categoria'] == 3) ? 'Salud y belleza' :
-(($f['categoria'] == 4) ? 'Deportes' :
-(($f['categoria'] == 5) ? 'Bebes y juegos' :
-(($f['categoria'] == 6) ? 'Alimentos y bebidas' :
-(($f['categoria'] == 7) ? 'Oficina' :
-(($f['categoria'] == 8) ? 'Hogar' :
-(($f['categoria'] == 9) ? 'Mascotas' :
-(($f['categoria'] == 10) ? 'Libros y medios' : 'Otro')))))))));
+            
+            $categoria = ($f['categoria'] == 11) ? 'Carpintería' :
+            (($f['categoria'] == 12) ? 'Fontanería' :
+            (($f['categoria'] == 13) ? 'Electricidad' :
+            (($f['categoria'] == 14) ? 'Pintura' :
+            (($f['categoria'] == 15) ? 'Jardinería' :
+            (($f['categoria'] == 16) ? 'Limpieza' :
+            (($f['categoria'] == 17) ? 'Reparación de electrodomésticos' :
+            (($f['categoria'] == 18) ? 'Cerrajería' :
+            (($f['categoria'] == 19) ? 'Construcción' :
+            (($f['categoria'] == 20) ? 'Mantenimiento general' : 'Otro')))))))));
 
             if ($f['Estado'] == 1 && $f['Disponibilidad'] == 1) {
                 echo  '
@@ -191,13 +189,10 @@ function buscarServicio($nombre){
                 <img src="' . $f['foto'] . '" alt="Foto user" style="width:250px; height:120px; ">
             </div>
             <div class="card-body producto_catalogo">
-                <h4 class="card-title"><a id="tit" href="../theme/single2.php?id=' . $f['id'] . '">' . $f['nombre'] . '</a></h4>
+                <h4 class="card-title"><a id="tit" href="../theme/servicioIndividual.php?id=' . $f['id'] . '">' . $f['nombre'] . '</a></h4>
                 <ul class="list-inline product-meta">
                     <li class="list-inline-item">
                         <a id="cat" href="single.html"><i class="fa fa-folder-open-o"></i>' . $categoria. '</a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a id="calen" href="category.html"><i class="fa fa-calendar"></i>11 de enero</a>
                     </li>
                 </ul>
                 <p class="card-text">' . $descripcion . '</p>

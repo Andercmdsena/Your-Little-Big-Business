@@ -102,7 +102,7 @@ require_once ("../../model/seguridadEmprendedor.php");
                         <div class="page-header">
                             <div class="page-title">
                                 <h1>Hola,
-                                    <span>Bienvenido a la vista de emprendedor</span>
+                                    <span>Bienvenido a la vista de registro de servicios</span>
                                 </h1>
                             </div>
                         </div>
@@ -118,7 +118,7 @@ require_once ("../../model/seguridadEmprendedor.php");
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-title">
-                                    <h4>Nuevo Servicio</h4>
+                                    <h4 style="padding-left:10px">Nuevo Servicio</h4>
                                     
                                 </div>
                                 <div class="card-body">

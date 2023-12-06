@@ -13,6 +13,19 @@ function seleccionar(){
             echo "
         <form action = '../../controller/modificarUsuario.php' method = 'post'>
         
+        <style>
+
+        input{
+            width:535px;
+            margin:5px;
+        }
+
+        select{
+
+            padding:5px;
+        }
+        
+    </style>
         <table>
             <tr>
                 <td>Nombre:</td>

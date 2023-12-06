@@ -79,7 +79,7 @@ function seleccionarServicio(){
         </tr>
         <tr>
             <td>&nbsp;</td>
-            <td><input type='submit' value='Modificar servicio'></td>
+            <td><input style='padding:5px' type='submit' value='Modificar servicio'></td>
         </tr>
     </table>
 

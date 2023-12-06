@@ -133,7 +133,7 @@ include "menu.php"
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-title">
-                                    <h4>Reportes Productos</h4>
+                                    <h4 style="padding:0px">Reportes Productos</h4>
                                     
                                 </div>
                                 <div class="card-body">

@@ -13,15 +13,15 @@ $nombre= $_POST['nombre'];
 $apellido= $_POST['apellidos'];
 $email= $_POST['email'];
 $telefono= $_POST['telefono'];
-$dato= $_POST['dato'];
+$estado= $_POST['estado'];
 $id_producto= $_POST['id_producto'];
 
 if (strlen($nombre) > 0) {
-    $msj = $consultas ->modificarUsuarioAdmin("Nombres", $nombre, $id_producto);
-    $msj = $consultas ->modificarUsuarioAdmin("Apellidos", $apellido, $id_producto);
-    $msj = $consultas ->modificarUsuarioAdmin("Email", $email, $id_producto);
-    $msj = $consultas ->modificarUsuarioAdmin("telefono", $telefono, $id_producto);
-    $msj = $consultas ->modificarUsuarioAdmin("Tipo_de_dato", $dato, $id_producto);
+    $msj = $consultas ->modificarUsuarioAdminRegistrados("Nombres", $nombre, $id_producto);
+    $msj = $consultas ->modificarUsuarioAdminRegistrados("Apellidos", $apellido, $id_producto);
+    $msj = $consultas ->modificarUsuarioAdminRegistrados("Email", $email, $id_producto);
+    $msj = $consultas ->modificarUsuarioAdminRegistrados("telefono", $telefono, $id_producto);
+    $msj = $consultas ->modificarUsuarioAdminRegistrados("estado",$estado, $id_producto);
     echo $msj;
 }else{
     echo "Error al modificar";

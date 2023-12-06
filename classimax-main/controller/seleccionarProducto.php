@@ -89,7 +89,7 @@ function seleccionarProducto(){
             </tr>
             <tr>
                 <td>&nbsp;</td>
-                <td><input type='submit' value = 'Modificar productos' ></td>
+                <td><input style='padding:5px' type='submit' value = 'Modificar productos' ></td>
             </tr>
         </table>
 

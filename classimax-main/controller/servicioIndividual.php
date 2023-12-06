@@ -34,9 +34,10 @@ function cargarServicioIndividual(){
 					<h1 class="product-title">'. $f['nombre'] .'</h1>
 					<div class="product-meta">
 						<ul class="list-inline">
-							<li class="list-inline-item"><i class="fa fa-user-o"></i> Vendido por '. $f['usuario_nombre'] .'<a href="user-profile.html"></a></li>
-							<li class="list-inline-item"><i class="fa fa-folder-open-o"></i><a style="margin-left: 10px; color: #000000;" href="#">'. $categoria .'</a></li>
-							<li class="list-inline-item"><i class="fa fa-location-arrow"></i> Localización<a href="#"></a></li>
+							<li class="list-inline-item"><i class="fa fa-user-o"></i> Vendido por <strong>'. $f['usuario_nombre'] .'</strong></li>
+							<li class="list-inline-item"><i class="fa fa-folder-open-o"></i><a style="margin-left: 10px; color: #000000; cursor: default; text-decoration: none;" href="#">'. $categoria .'</a>
+							</li>
+							<hr>
 						</ul>
 					</div>
 
@@ -117,7 +118,7 @@ button:hover {
 				</style>
 							';
 				
-							require_once("promedioCalificacion.php");
+							require_once("promedioCalificacionServicios.php");
 			
 							echo '
 							
@@ -128,7 +129,7 @@ button:hover {
 				<input type="radio" required  name="calificacion" value="3" id="estrella3" required><label for="estrella3">&#9733;&#9733;&#9733; </label> |
 				<input type="radio"  required name="calificacion" value="4" id="estrella4" required><label for="estrella4">&#9733;&#9733;&#9733;&#9733; </label> |
 				<input type="radio"  required name="calificacion" value="5" id="estrella5" required><label for="estrella5">&#9733;&#9733;&#9733;&#9733;&#9733; </label>
-				<textarea name="comentario" required id="comentario" placeholder="Comentario..." maxlength="100"></textarea>
+				<textarea style="font-weight: bold; color: black;" name="comentario" required id="comentario" placeholder="Comentario..." maxlength="100"></textarea>
 				<button id="botoncalificacion" style="margin-top:15px;" type="submit">Enviar Calificación</button>
 							</form>
 							</div>
@@ -155,10 +156,9 @@ button:hover {
 					</div>
 					<!-- User Profile widget -->
 					<div class="widget user text-center">
-						<img class="rounded-circle img-fluid mb-5 px-5" src="'. $f['usuario_foto'] .'" alt="">
-						<h4><a href="user-profile.html">'. $f['usuario_nombre'] .'</a></h4>
-						<p class="member-time">Miembro desde Junio 27, 2017</p>
-						<a href="single.html">Ver todas publicaciones</a>
+					<img style="border-radius: 20px !important;" class="img-fluid mb-5 px-12" src="'. $f['usuario_foto'] .'" alt="">
+
+						<h4>'. $f['usuario_nombre'] .'</h4>
 						<ul class="list-inline mt-20">
 							<li class="list-inline-item"><a href="../controller/solicitarServicio.php?id_servicio='. $f['id'] .'" class="btn btn-contact d-inline-block  btn-primary px-lg-5 my-1 px-md-3">Contacto</a></li>
 						</ul>
@@ -185,7 +185,7 @@ button:hover {
     ';
 	echo '
 	<div class="bg-gray">
-	<div style="width: 80%; margin: auto; text-align: center; padding: 4px; margin-top: -80px;">';
+	<div style="width: 80%; margin: auto; text-align: center; padding: 4px; margin-top: -110px;">';
 echo cargarCalificacion($id);
 echo '</div> </div>';
 	

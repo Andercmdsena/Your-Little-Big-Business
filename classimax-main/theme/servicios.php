@@ -55,32 +55,42 @@ require_once("../model/consultas.php");
 <body class="body-wrapper">
 
 <?php include("../components/header.php") ?>
+
 <section class="page-search">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
 				<!-- Advance Search -->
 				<div class="advance-search nice-select-white">
-					
-							
+					<form>
+						<div class="form-row align-items-center">
+							<div class="xds">
+							<
+
+
+							</div>	
 							<form metho="get">
                                 <input class="busquedas" type="text" name="buscar">
                                 <input class="busqueda" type="submit" value="Buscar">
                             </form>
+							</div>
+							</div>	
 							
-					
+							</div>
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>
 	</div>
 </section>
+
 <section class="section-sm">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
 				<div class="search-result bg-gray " id="resultados">
 					<h2>Resultados para tu "busqueda"</h2>
-					<p>123 resultadps en 12 Diciembre, 2017</p>
 				</div>
 			</div>
 		</div>
@@ -93,7 +103,7 @@ require_once("../model/consultas.php");
 					<h4 class="widget-header" style="font-weight: bold; margin-bottom: 10px;">Todas</h4>
 
 					<form id="filtroForm" method="get" style="max-width: 300px; margin: 0 auto; padding: 20px; background-color: #f8f9fa; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
-    <label for="categoria" style="display: block; margin-bottom: 10px; font-weight: bold; color: black; font-size:20px">Categoría:</label>
+    <label for="categoria" style="display: block; margin-bottom: 10px; font-weight: bold; color: black; font-size:20px">Selecciona una categoría:</label>
     <select name="categoria" id="categoria" style="width: calc(100% - 20px); padding: 10px; margin-bottom: 20px; border: 1px solid #ced4da; border-radius: 4px; box-sizing: border-box; font-weight: bold; color: black; ">
         <option value="" selected style="font-weight: bold; color: black;"><span style="font-size:30px">Categoría</span></option>
         <option value="11" style="font-weight: bold; color: black;">Carpintería</option>

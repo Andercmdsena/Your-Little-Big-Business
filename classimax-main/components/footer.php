@@ -20,10 +20,9 @@
         <div class="block" id="listas">
           <h4 style="color: white; font-size: 20px;">Cosas de interés</h4>
           <ul>
-            <li> <a style="color:white !important;"   href="dashboard-favourite-ads.html">Artículos favoritos</a></li>
-            <li><a  style="color:white !important;" href="dashboard-archived-ads.html">Servicios favoritos</a></li>
+            <li> <a style="color:white !important;"   href="login.php">Ingresar</a></li>
+            <li><a  style="color:white !important;" href="register.php">Regístrate</a></li>
             <li><a  style="color:white !important;" href="about-us.php">Sobre nosotros</a></li>
-            <li><a  style="color:white !important;" href="terms-condition.html">Términos y condiciones</a></li>
 
           </ul>
         </div>

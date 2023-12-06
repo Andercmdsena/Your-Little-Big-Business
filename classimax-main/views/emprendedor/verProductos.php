@@ -133,7 +133,7 @@ include "menu_emprendedor.php"
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-title">
-                                    <h4>Productos</h4>
+                                    <h4 style="padding-left:10px">Productos</h4>
                                     
                                 </div>
                                 <div class="card-body">

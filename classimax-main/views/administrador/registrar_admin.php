@@ -130,7 +130,7 @@ include "menu.php"
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-title">
-                                    <h4>Nuevo usuario</h4>
+                                    <h4 style="padding-left:12px">Nuevo usuario</h4>
                                     
                                 </div>
                                 <div class="card-body">

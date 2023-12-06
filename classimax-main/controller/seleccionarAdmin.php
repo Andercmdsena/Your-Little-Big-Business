@@ -11,13 +11,24 @@ function seleccionarAdmin(){
         foreach ($filas as $fila){
             $estado = ($fila['estado'] == 1) ? 'Activo' : (($fila['estado'] == 0) ? 'Bloqueado' : 'Pendiente');
             echo "
-        <form action = '../../controller/modificarUsuarioAdmin.php' method = 'post'>
-        
+        <form action = '../../controller/modificarUsuarioAdminRegistrados.php' method = 'post'>
+        <style>
+
+            input{
+                width:535px;
+                margin:5px;
+            }
+
+            select{
+
+                padding:5px;
+            }
+            
+        </style>
         <table>
             <tr>
                 <td>Nombre: </td>
                 <td><input type='text' class='form-control' name = 'nombre' value='".$fila['Nombres']."' ></td>
-
             </tr>
             <tr>
                 <td>Apellidos: </td>
@@ -51,9 +62,10 @@ function seleccionarAdmin(){
             </tr>
             <tr>
                 <td>&nbsp;</td>
-                <td><input type='submit' value = 'Modificar usuarios' ></td>
+                <td><input style='padding:10px' type='submit' value = 'Modificar usuarios' ></td>
             </tr>
         </table>
+        
 
         </form>
         ";
@@ -64,3 +76,4 @@ function seleccionarAdmin(){
     }
 }
 ?>
+

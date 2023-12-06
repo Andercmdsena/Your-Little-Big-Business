@@ -95,7 +95,7 @@ function verEmprendedor(){
                         <div class="col-md-8">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <h3 style="font-family: Poiret One, cursive;"><strong>nombre: '.$f['Nombre'].'</strong></h3>
+                                    <h3 style="font-family: Poiret One, cursive;"><strong>Nombre: '.$f['Nombre'].'</strong></h3>
                                 </div>
                             </div>
                             <div class="row">
@@ -111,12 +111,12 @@ function verEmprendedor(){
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    <h3 style="font-family: Poiret One, cursive;"><strong>telefono: '.$f['Telefono'].'</strong></h3>
+                                    <h3 style="font-family: Poiret One, cursive;"><strong>Teléfono : '.$f['Telefono'].'</strong></h3>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    <h3 style="font-family: Poiret One, cursive;"><strong>rol: '.$f['Rol'].'</strong></h3> 
+                                    <h3 style="font-family: Poiret One, cursive;"><strong>Rol: '.$f['Rol'].'</strong></h3> 
                                 </div>
                             </div>
                         </div>

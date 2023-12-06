@@ -40,12 +40,13 @@ function cargarCalificacion($id){
 
             // Muestra el comentario
             echo '</p>';
-            echo '<p style="font-size: 20px; margin-bottom: 20px;">' . $f['comentarios'] . '</p>';
+            echo '<p style="font-size: 20px; margin-bottom: 20px; font-weight: bold; color: black;">'. $f['comentarios'] . '</p>
+            ';
             echo '</div>';
 
             // Agrega el botón de eliminar con estilos solo si el usuario inició sesión y es el propietario del comentario
             if ($usuario && $usuario == $f['id_usuario']) {
-                echo '<a href="../controller/eliminarCalificacion.php?id=' . $f['id'] . '&id_producto=' . $f['id_producto'] . '" style="position: absolute; top: 80px; left: 115px; margin: 10px 0; padding: 10px; font-weight: bold; background-color: #d9534f; color: white; border: none; cursor: pointer; transition: opacity 0.3s; text-decoration: none;" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1">Eliminar</a>';
+                echo '<a href="../controller/eliminarCalificacion.php?id=' . $f['id'] . '&id_producto=' . $f['id_producto'] . '" style="position: absolute; top: 80px; left: 115px; margin: 10px 0; padding: 8px;border-radius:12px; font-weight: bold; background-color: #d9534f; font-size: 15px; color: white; border: none; cursor: pointer; transition: opacity 0.3s; text-decoration: none;" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1">Eliminar</a>';
             }
 
             echo '</div>';

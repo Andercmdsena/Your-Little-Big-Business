@@ -39,9 +39,7 @@ function cargarPublicacion() {
                     <li class="list-inline-item">
                         <a id="cat" href="single.html"><i class="fa fa-folder-open-o"></i>' . $categoria. '</a>
                     </li>
-                    <li class="list-inline-item">
-                        <a id="calen" href="category.html"><i class="fa fa-calendar"></i>11 de enero</a>
-                    </li>
+                  
                 </ul>
                 <p class="card-text">' . $descripcion . '</p>
                 <div class="product-ratings">
@@ -159,9 +157,21 @@ function cargarPublicacionCarrusel() {
         echo '<h2>No hay productos registrados</h2>';
     } else {
         $totalProducts = count($result);
+        
 
         foreach ($result as $key => $f) {
             $estado = ($f['Estado'] == 1) ? 'Activo' : (($f['Estado'] == 0) ? 'Bloqueado' : 'Pendiente');
+            
+            $categoria = ($f['categoria'] == 1) ? 'Tecnologia' :    
+(($f['categoria'] == 2) ? 'Moda' :
+(($f['categoria'] == 3) ? 'Salud y belleza' :
+(($f['categoria'] == 4) ? 'Deportes' :
+(($f['categoria'] == 5) ? 'Bebes y juegos' :
+(($f['categoria'] == 6) ? 'Alimentos y bebidas' :
+(($f['categoria'] == 7) ? 'Oficina' :
+(($f['categoria'] == 8) ? 'Hogar' :
+(($f['categoria'] == 9) ? 'Mascotas' :
+(($f['categoria'] == 10) ? 'Libros y medios' : 'Otro')))))))));
 
             if ($f['Estado'] == 1) {
                 $descripcion = (strlen($f['descripcion']) > 55) ? substr($f['descripcion'], 0, 55) . "..." : $f['descripcion'];
@@ -176,7 +186,7 @@ function cargarPublicacionCarrusel() {
                                 <h4 class="card-title"><a id="tit" href="../theme/single2.php?id=' . $f['id'] . '">' . $f['nombre'] . '</a></h4>
                                 <ul class="list-inline product-meta">
                                     <li class="list-inline-item">
-                                        <a id="cat" href="single.html"><i class="fa fa-folder-open-o"></i>' . $f['categoria'] . '</a>
+                                        <a id="cat" href="single.html"><i class="fa fa-folder-open-o"></i>' . $categoria . '</a>
                                     </li>
                                     <li class="list-inline-item">
                                         <a id="calen" href="category.html"><i class="fa fa-calendar"></i>26 de Julio</a>

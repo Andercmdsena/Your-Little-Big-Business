@@ -12,7 +12,7 @@ function cargarCalificacion($id){
     } else {
         $comentariosMostrados = 0;
 
-        echo '<div style="max-height: 500px; overflow-y: auto; position: relative; margin: 50px;">';
+        echo '<div style="max-height: 500px; overflow-y: auto; position: relative; margin: 20px;">';
 
         foreach ($result as $f) {
             // Aplica estilos al div contenedor
@@ -45,7 +45,7 @@ function cargarCalificacion($id){
 
             // Agrega el botón de eliminar con estilos solo si el usuario inició sesión y es el propietario del comentario
             if ($usuario && $usuario == $f['id_usuario']) {
-                echo '<a href="../controller/eliminarCalificacionServicio.php?id=' . $f['id'] . '&id_servicio=' . $f['id_servicio'] . '" style="position: absolute; top: 80px; left: 115px; margin: 10px 0; padding: 10px; font-weight: bold; background-color: #d9534f; color: white; border: none; cursor: pointer; transition: opacity 0.3s; text-decoration: none;" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1">Eliminar</a>';
+                echo '<a href="../controller/eliminarCalificacionServicio.php?id=' . $f['id'] . '&id_servicio=' . $f['id_servicio'] . '" style="position: absolute; top: 80px; left: 115px; margin: 10px 0; padding: 8px;border-radius:12px; font-weight: bold; background-color: #d9534f; font-size: 15px; color: white; border: none; cursor: pointer; transition: opacity 0.3s; text-decoration: none;" onmouseover="this.style.opacity=0.8" onmouseout="this.style.opacity=1">Eliminar</a>';
             }
 
             echo '</div>';

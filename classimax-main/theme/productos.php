@@ -88,7 +88,6 @@ require_once("../model/consultas.php");
 			<div class="col-md-12">
 				<div class="search-result bg-gray " id="resultados">
 					<h2>Resultados para tu "busqueda"</h2>
-					<p>123 resultadps en 12 Diciembre, 2017</p>
 				</div>
 			</div>
 		</div>

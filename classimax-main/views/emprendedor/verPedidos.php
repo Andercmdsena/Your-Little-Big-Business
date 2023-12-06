@@ -111,8 +111,8 @@ include "menu_emprendedor.php"
                     <div class="col-lg-8 p-r-0 title-margin-right">
                         <div class="page-header">
                             <div class="page-title">
-                                <h1>Ver predidos
-                                </h1>
+                                <h4 >Ver pedidos
+                                </h4 >
                                 <p>Mira los pedidos que te han hecho</p>
                             </div>
                         </div>
@@ -139,7 +139,7 @@ include "menu_emprendedor.php"
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-title">
-                                    <h4>Pedidos</h4>
+                                    <h4 style="padding-left:10px">Pedidos</h4>
                                     
                                 </div>
                                 <div class="card-body">
@@ -184,7 +184,7 @@ td:not(:first-child) {
                                                     <th>Nombre</th>
                                                     <th>Precio</th>
                                                     <th>Cantidad</th>
-                                                   
+                                                    <th></th>
                                                     <th></th>
 
                                             

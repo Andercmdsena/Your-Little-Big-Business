@@ -132,7 +132,7 @@ include "menu.php"
                         <div class="col-lg-12">
                             <div class="card">
                                 <div class="card-title">
-                                    <h4>usuarios</h4>
+                                    <h4 style="padding-left:12px">Usuarios</h4>
                                     
                                 </div>
 
@@ -151,7 +151,6 @@ include "menu.php"
                                                     <th>Foto</th>
                                                     <th>Nombres</th>
                                                     <th>Apellidos</th>
-                                                    <th>Rol</th>
                                                     <th>Estado</th>
                                                     <th>Editar</th>
                                                     <th>Eliminar</th>

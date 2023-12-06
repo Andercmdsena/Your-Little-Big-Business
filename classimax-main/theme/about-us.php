@@ -153,7 +153,7 @@ color: white !important;
       </div>
       <div class="col-lg-3 col-sm-6">
         <div class="card my-3 my-lg-0">
-          <img class="card-img-top personas" src="images/admins/personas.png" class="img-fluid w-100" alt="Card image cap">
+          <img class="card-img-top personas" src="images/admins/yo.png" class="img-fluid w-100" alt="Card image cap">
           <div class="card-body bg-gray text-center">
             <h5 class="card-title">Anderson Tovar</h5>
             <p class="card-text">Fundador/Desarollador</p>

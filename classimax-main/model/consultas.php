@@ -172,7 +172,7 @@ class consultas{
          $objConexion = new Conexion();
          $conexion = $objConexion -> get_conexion();
  
-         $consultar = "SELECT * FROM Administradores order by Nombres asc";
+         $consultar = "SELECT * FROM administradores order by Nombres asc";
  
          $result=$conexion->prepare($consultar);
  
@@ -735,7 +735,7 @@ class consultas{
             text: "Producto eliminado con exito.",
             confirmButtonText: "Ir al carrito"
         }).then(function() {
-            window.location = "../Views/emprendedor/verProductos.php";
+            window.location = "../views/emprendedor/verProductos.php";
         });</script>';
       
       
@@ -1764,7 +1764,7 @@ class consultas{
         $consultar = "SELECT SUM(total_registros) as total FROM (
                         SELECT COUNT(*) as total_registros FROM usuario
                         UNION ALL
-                        SELECT COUNT(*) as total_registros FROM Administradores
+                        SELECT COUNT(*) as total_registros FROM administradores
                      ) as combined";
     
         $result = $conexion->prepare($consultar);
